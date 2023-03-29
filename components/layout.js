@@ -28,7 +28,7 @@ export default function Layout({ children, home }) {
       <header className={styles.header}>
         {home ? (
           <>
-            <Image
+            <img
               priority
               src="/images/profile.jpg"
               className={utilStyles.borderCircle}
