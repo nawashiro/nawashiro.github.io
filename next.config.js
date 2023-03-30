@@ -2,9 +2,7 @@
  * @type {import('next').NextConfig}
  */
 module.exports = {
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || "",
-  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || "",
-
+  basePath: process.env.GITHUB_ACTIONS && "/nextjs-blog-learn",
   trailingSlash: true,
   images: {
     unoptimized: true,
