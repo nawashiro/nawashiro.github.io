@@ -3,13 +3,13 @@
  */
 
 const isProd = process.env.NODE_ENV === "production";
-const repositoryName = "/nextjs-blog-learn";
+const basePath = process.env.GITHUB_ACTIONS && "/nextjs-blog-learn";
 
 module.exports = {
-  basePath: process.env.GITHUB_ACTIONS && repositoryName,
+  basePath: basePath,
   trailingSlash: true,
   images: {
     unoptimized: true,
   },
-  assetPrefix: isProd ? "https://nwsr.f5.si/" + repositoryName : "",
+  assetPrefix: isProd ? basePath : "",
 };
