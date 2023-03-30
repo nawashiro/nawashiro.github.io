@@ -1,17 +1,19 @@
+import getConfig from "next/config";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 
 const name = "Nawashiro";
 export const siteTitle = "Next.js Sample Website";
+const { publicRuntimeConfig } = getConfig();
 
 export default function Layout({ children, home }) {
+  const basePath = (publicRuntimeConfig && publicRuntimeConfig.basePath) || "";
   return (
     <div className={styles.container}>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={`${basePath}/favicon.ico`} />
         <meta
           name="description"
           content="Learn how to build a personal website using Next.js"
@@ -28,9 +30,9 @@ export default function Layout({ children, home }) {
       <header className={styles.header}>
         {home ? (
           <>
-            <Image
+            <img
               priority
-              src="/images/profile.jpg"
+              src={`${basePath}/images/profile.jpg`}
               className={utilStyles.borderCircle}
               height={144}
               width={144}
@@ -41,9 +43,9 @@ export default function Layout({ children, home }) {
         ) : (
           <>
             <Link href="/">
-              <Image
+              <img
                 priority
-                src="/images/profile.jpg"
+                src={`${basePath}/images/profile.jpg`}
                 className={utilStyles.borderCircle}
                 height={108}
                 width={108}
