@@ -2,8 +2,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
-    "start": "next start"
+    "start": "next start",
+    "next.build": "next build",
+    "next.export:prod": "NODE_ENV=production next export",
+    "next.export:dev": "next export",
+    "build:prod": "yarn next.build && yarn next.export:prod",
+    "build:dev": "yarn next.build && yarn next.export:dev"
   },
   "dependencies": {
     "date-fns": "^2.29.3",
