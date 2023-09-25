@@ -4,6 +4,7 @@ import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
+import indexStyle from "../styles/index.module.css";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -20,20 +21,55 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section>
-        <p>Development</p>
-        <p>Distributed social networking</p>
-        <p>Social VR</p>
-        <p>Travel</p>
+      <section className={indexStyle.hero}>
+        <p className={indexStyle.heroA}>Development</p>
+        <div className={indexStyle.heroB}>
+          <p>Distributed social networking</p>
+          <p>Social VR</p>
+          <p>Travel</p>
+        </div>
       </section>
 
-      <section>
-        <div>
+      <section className={indexStyle.cardSection}>
+        <div className={indexStyle.card}>
           <img src="/images/code.webp" />
-          <div>
+          <div className={indexStyle.innerCard}>
             <h2>Development</h2>
             <p>
               Misskeyの投稿を読み上げるWebクライアントを作成中です。Chromeでのみ動作を確認しています。
+            </p>
+          </div>
+        </div>
+
+        <div className={indexStyle.card}>
+          <img src="/images/nostr.webp" />
+          <div className={indexStyle.innerCard}>
+            <h2>Distributed social networking</h2>
+            <p>
+              分散型SNSが好きでいろいろ調べています。
+              ActivityPub、Nostr、ATProtocolなど、いくつかの試みがあります。
+            </p>
+          </div>
+        </div>
+
+        <div className={indexStyle.card}>
+          <img src="/images/social-vr.webp" />
+          <div className={indexStyle.innerCard}>
+            <h2>Social VR</h2>
+            <p>
+              よくVRChatやclusterにいます。
+              SNSにまつわる技術について雑談する「分散SNS集会」を主催しています。
+            </p>
+          </div>
+        </div>
+
+        <div className={indexStyle.card}>
+          <img src="/images/nagashima.webp" />
+          <div className={indexStyle.innerCard}>
+            <h2>Travel</h2>
+            <p>
+              旅が好きです。たまに鉄道で旅行に行きます。
+              これは静岡県榛原郡の長島ダムに行った時の写真です。
             </p>
           </div>
         </div>

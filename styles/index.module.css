@@ -1,0 +1,30 @@
+.hero p {
+  font-weight: bold;
+}
+.heroA {
+  font-size: 36px;
+}
+.heroB p {
+  font-size: 20px;
+}
+.hero {
+  margin-bottom: 128px;
+}
+.innerCard {
+  padding: 24px;
+}
+.innerCard h2 {
+  margin: 0 0 24px 0;
+}
+.card {
+  background-color: white;
+  border-radius: 24px;
+  overflow: hidden;
+  margin-bottom: 64px;
+}
+.card img {
+  width: 100%;
+}
+.cardSection {
+  margin-bottom: 64px;
+}
