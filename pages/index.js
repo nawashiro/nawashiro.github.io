@@ -38,6 +38,9 @@ export default function Home({ allPostsData }) {
             <p>
               Misskeyの投稿を読み上げるWebクライアントを作成中です。Chromeでのみ動作を確認しています。
             </p>
+            <a href="https://nawashiro.github.io/ashiga-kayui/">
+              <div className={indexStyle.cardLink}>テスト版を開く</div>
+            </a>
           </div>
         </div>
 

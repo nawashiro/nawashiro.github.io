@@ -28,3 +28,12 @@
 .cardSection {
   margin-bottom: 64px;
 }
+.cardLink {
+  margin-top: 24px;
+  color: white;
+  background-color: #0017c1;
+  padding: 16px;
+  width: 256px;
+  text-align: center;
+  border-radius: 8px;
+}
