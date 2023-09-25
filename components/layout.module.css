@@ -54,3 +54,7 @@
 .back {
   margin-top: 64px;
 }
+.backArrow {
+  margin-right: 16px;
+  vertical-align: middle;
+}

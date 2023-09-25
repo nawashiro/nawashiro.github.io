@@ -3,7 +3,7 @@ import Head from "next/head";
 import styles from "./layout.module.css";
 import Link from "next/link";
 import cx from "classnames";
-import { MdMenu } from "react-icons/md";
+import { MdMenu, MdWest } from "react-icons/md";
 import { IconContext } from "react-icons";
 import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
@@ -83,7 +83,12 @@ export default function Layout({ children, home }) {
           {children}
           {!home && (
             <div className={styles.back}>
-              <Link href="/">← Back to Home</Link>
+              <Link href="/">
+                <IconContext.Provider value={{ size: "16px" }}>
+                  <MdWest className={styles.backArrow} />
+                </IconContext.Provider>
+                Back to Home
+              </Link>
             </div>
           )}
         </div>

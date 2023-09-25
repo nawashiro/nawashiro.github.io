@@ -9,8 +9,7 @@
 }
 
 body,
-p,
-ul {
+p {
   color: var(--sumi-1000);
   padding: 0;
   margin: 0;
