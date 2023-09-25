@@ -1,24 +1,9 @@
-.headingLg {
-  font-size: 1.5rem;
-  line-height: 1.4;
-  margin: 1rem 0;
-}
-
-.headingMd {
-  font-size: 1.2rem;
-  line-height: 1.5;
-}
-
 .borderCircle {
   border-radius: 9999px;
 }
 
 .colorInherit {
   color: inherit;
-}
-
-.padding1px {
-  padding-top: 1px;
 }
 
 .list {
@@ -28,10 +13,17 @@
 }
 
 .listItem {
-  margin: 0 0 1.25rem;
+  margin: 0 0 16px;
 }
 
 .lightText {
   color: var(--sumi-700);
-  margin-bottom: 64px;
+}
+
+.lightBlogText {
+  margin: 0 0 64px;
+}
+
+.link {
+  font-size: 24px;
 }

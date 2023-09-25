@@ -20,27 +20,37 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>
-          Hello, my name is Nawashiro. I usually inhabit VRChat, Twitter. Nice
-          to meet you!
-        </p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
+      <section>
+        <p>Development</p>
+        <p>Distributed social networking</p>
+        <p>Social VR</p>
+        <p>Travel</p>
       </section>
 
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
+      <section>
+        <div>
+          <img src="/images/code.webp" />
+          <div>
+            <h2>Development</h2>
+            <p>
+              Misskeyの投稿を読み上げるWebクライアントを作成中です。Chromeでのみ動作を確認しています。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Blog</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>{title}</Link>
+              <Link className={utilStyles.link} href={`/posts/${id}`}>
+                {title}
+              </Link>
               <br />
-              <small className={utilStyles.lightText}>
+              <p className={utilStyles.lightText}>
                 <Date dateString={date} />
-              </small>
+              </p>
             </li>
           ))}
         </ul>
