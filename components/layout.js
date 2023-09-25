@@ -1,17 +1,19 @@
 import getConfig from "next/config";
 import Head from "next/head";
 import styles from "./layout.module.css";
-import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
+import cx from "classnames";
+import { MdMenu } from "react-icons/md";
+import { IconContext } from "react-icons";
 
-const name = "Nawashiro";
+const name = "NAWASHIRO";
 export const siteTitle = "Next.js Sample Website";
 const { publicRuntimeConfig } = getConfig();
 
 export default function Layout({ children, home }) {
   const basePath = (publicRuntimeConfig && publicRuntimeConfig.basePath) || "";
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <link rel="icon" href={`${basePath}/favicon.ico`} />
         <meta
@@ -27,45 +29,44 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
-        {home ? (
-          <>
-            <img
-              priority
-              src={`${basePath}/images/profile.jpg`}
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt=""
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <img
-                priority
-                src={`${basePath}/images/profile.jpg`}
-                className={utilStyles.borderCircle}
-                height={108}
-                width={108}
-                alt=""
-              />
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/" className={utilStyles.colorInherit}>
-                {name}
-              </Link>
-            </h2>
-          </>
-        )}
-      </header>
-      <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">← Back to home</Link>
+      <header>
+        <div className={cx(styles.wrapContent, styles.wrapHeader)}>
+          <h2 className={styles.name}>
+            <Link href="/">{name}</Link>
+          </h2>
+          <nav className={styles.nav}>
+            <ul>
+              <li>
+                <Link href={"/"}>Home</Link>
+              </li>
+              <li>
+                <Link href={"/posts/projects"}>Projects</Link>
+              </li>
+              <li>
+                <Link href={"/posts/links"}>Links</Link>
+              </li>
+              <li>
+                <a href={"https://github.com/nawashiro"}>GitHub</a>
+              </li>
+            </ul>
+          </nav>
+          <button className={styles.menu}>
+            <IconContext.Provider value={{ size: "36px" }}>
+              <MdMenu />
+            </IconContext.Provider>
+          </button>
         </div>
-      )}
+      </header>
+      <main>
+        <div className={cx(styles.wrapMain, styles.wrapContent)}>
+          {children}
+          {!home && (
+            <div className={styles.back}>
+              <Link href="/">← Back to Home</Link>
+            </div>
+          )}
+        </div>
+      </main>
     </div>
   );
 }
