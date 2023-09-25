@@ -5,6 +5,9 @@ import Link from "next/link";
 import cx from "classnames";
 import { MdMenu } from "react-icons/md";
 import { IconContext } from "react-icons";
+import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
+import "@szhsin/react-menu/dist/index.css";
+import "@szhsin/react-menu/dist/transitions/slide.css";
 
 const name = "NAWASHIRO";
 export const siteTitle = "Next.js Sample Website";
@@ -50,11 +53,29 @@ export default function Layout({ children, home }) {
               </li>
             </ul>
           </nav>
-          <button className={styles.menu}>
-            <IconContext.Provider value={{ size: "36px" }}>
-              <MdMenu />
-            </IconContext.Provider>
-          </button>
+          <Menu
+            menuButton={
+              <MenuButton className={styles.menu}>
+                <IconContext.Provider value={{ size: "36px" }}>
+                  <MdMenu />
+                </IconContext.Provider>
+              </MenuButton>
+            }
+            transition
+          >
+            <MenuItem>
+              <Link href={"/"}>Home</Link>
+            </MenuItem>
+            <MenuItem>
+              <Link href={"/posts/projects"}>Projects</Link>
+            </MenuItem>
+            <MenuItem>
+              <Link href={"/posts/links"}>Links</Link>
+            </MenuItem>
+            <MenuItem>
+              <a href="https://github.com/nawashiro">GitHub</a>
+            </MenuItem>
+          </Menu>
         </div>
       </header>
       <main>
