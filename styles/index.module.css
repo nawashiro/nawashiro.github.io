@@ -61,6 +61,11 @@
   .innerCard {
     max-width: 640px;
     width: 58.9%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .innnerText {
   }
   .card {
     display: flex;

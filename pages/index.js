@@ -36,10 +36,12 @@ export default function Home({ allPostsData }) {
             <img src="/images/code.webp" />
           </div>
           <div className={indexStyle.innerCard}>
-            <div>
+            <div className={indexStyle.innnerText}>
               <h2>Development</h2>
               <p>
-                Misskeyの投稿を読み上げるWebクライアントを作成中です。Chromeでのみ動作を確認しています。
+                Misskeyの投稿を読み上げるWebクライアントを作成中です。
+                <br />
+                Chromeでのみ動作を確認しています。
               </p>
               <a href="https://nawashiro.github.io/ashiga-kayui/">
                 <div className={indexStyle.cardLink}>テスト版を開く</div>
@@ -57,6 +59,7 @@ export default function Home({ allPostsData }) {
               <h2>Distributed social networking</h2>
               <p>
                 分散型SNSが好きでいろいろ調べています。
+                <br />
                 ActivityPub、Nostr、ATProtocolなど、いくつかの試みがあります。
               </p>
             </div>
@@ -72,6 +75,7 @@ export default function Home({ allPostsData }) {
               <h2>Social VR</h2>
               <p>
                 よくVRChatやclusterにいます。
+                <br />
                 SNSにまつわる技術について雑談する「分散SNS集会」を主催しています。
               </p>
             </div>
@@ -87,6 +91,7 @@ export default function Home({ allPostsData }) {
               <h2>Travel</h2>
               <p>
                 旅が好きです。たまに鉄道で旅行に行きます。
+                <br />
                 これは静岡県榛原郡の長島ダムに行った時の写真です。
               </p>
             </div>
