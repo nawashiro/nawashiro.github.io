@@ -28,8 +28,8 @@
 .card img {
   width: 100%;
 }
-.cardSection {
-  margin-bottom: 128px;
+.h2 {
+  margin-top: 128px;
 }
 .cardLink {
   margin-top: 24px;
@@ -65,11 +65,14 @@
     justify-content: center;
     align-items: center;
   }
-  .innnerText {
-  }
+
   .card {
     display: flex;
     flex-wrap: wrap;
     min-height: 298.6px;
+  }
+
+  .leftCard {
+    order: -1;
   }
 }
