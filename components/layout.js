@@ -10,7 +10,7 @@ import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 
 const name = "NAWASHIRO";
-export const siteTitle = "Next.js Sample Website";
+export const siteTitle = "Nawashiro";
 const { publicRuntimeConfig } = getConfig();
 
 export default function Layout({ children, home }) {
