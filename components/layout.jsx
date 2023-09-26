@@ -10,10 +10,10 @@ import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 
 const name = "NAWASHIRO";
-export const siteTitle = "Nawashiro";
+export const siteTitle = "NAWASHIRO";
 const { publicRuntimeConfig } = getConfig();
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, home, title }) {
   const basePath = (publicRuntimeConfig && publicRuntimeConfig.basePath) || "";
   return (
     <div>
@@ -22,9 +22,9 @@ export default function Layout({ children, home }) {
         <meta name="description" content="Nawashiroの個人サイト" />
         <meta
           property="og:image"
-          content={`https://og-image.vercel.app/${encodeURI(
-            siteTitle
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
+          content={`https://vercel-og-nextjs-4iakfhvyx-yineleyici.vercel.app/api/og?title=${encodeURI(
+            title ? title : siteTitle
+          )}`}
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
