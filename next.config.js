@@ -1,7 +1,7 @@
 /**
  * @type {import('next').NextConfig}
  */
-repoName = process.env.GITHUB_ACTIONS && "/nextjs-blog-learn";
+repoName = process.env.GITHUB_ACTIONS && "/nawashiro.github.io.git";
 module.exports = {
   basePath: repoName,
   assetPrefix: repoName,
