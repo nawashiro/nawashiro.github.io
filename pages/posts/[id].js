@@ -35,7 +35,10 @@ export default function Post({ postData }) {
         <div className={cx(utilStyles.lightBlogText, utilStyles.lightText)}>
           <Date dateString={postData.date} />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div
+          className={"blog"}
+          dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
+        />
       </article>
     </Layout>
   );
