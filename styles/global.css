@@ -122,3 +122,23 @@ h5 {
   display: block;
   margin: 8px 0 8px 0;
 }
+
+/* code block */
+.blog .remark-code-container {
+  margin: 16px 0 16px 0;
+}
+
+.blog .remark-code-title {
+  background-color: white;
+  border-radius: 8px 8px 0 0;
+  padding-left: 8px;
+  margin: 0;
+}
+
+.blog pre {
+  background-color: var(--sumi-1000);
+  overflow-x: scroll;
+  color: white;
+  margin: 0;
+  padding: 8px;
+}
