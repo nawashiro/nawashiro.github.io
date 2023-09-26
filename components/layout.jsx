@@ -22,7 +22,7 @@ export default function Layout({ children, home, title }) {
         <meta name="description" content="Nawashiroの個人サイト" />
         <meta
           property="og:image"
-          content={`https://vercel-og-nextjs-4iakfhvyx-yineleyici.vercel.app/api/og?title=${encodeURI(
+          content={`https://vercel-og-nextjs-4iakfhvyx-yineleyici.vercel.app/api/og?title=${encodeURIComponent(
             title ? title : siteTitle
           )}`}
         />
