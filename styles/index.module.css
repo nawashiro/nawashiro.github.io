@@ -31,14 +31,20 @@
 .h2 {
   margin-top: 128px;
 }
+
 .cardLink {
   margin-top: 24px;
-  color: white;
-  background-color: #0017c1;
-  padding: 16px;
-  width: 256px;
-  text-align: center;
   border-radius: 8px;
+  background-color: #0017c1;
+  color: white;
+  width: 256px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 @media screen and (min-width: 768px) {

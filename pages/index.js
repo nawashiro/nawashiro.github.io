@@ -45,9 +45,14 @@ export default function Home({ allPostsData }) {
                 <br />
                 Chromeでのみ動作を確認しています。
               </p>
-              <a href="https://nawashiro.github.io/ashiga-kayui/">
-                <div className={indexStyle.cardLink}>テスト版を開く</div>
-              </a>
+              <div>
+                <a
+                  className={indexStyle.cardLink}
+                  href="https://nawashiro.github.io/ashiga-kayui/"
+                >
+                  テスト版を開く
+                </a>
+              </div>
             </div>
           </div>
         </div>
