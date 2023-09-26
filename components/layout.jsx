@@ -26,7 +26,7 @@ export default function Layout({ children, home, title }) {
             title ? title : siteTitle
           )}`}
         />
-        <meta name="og:title" content={siteTitle} />
+        <meta name="og:title" content={title ? title : siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header>
