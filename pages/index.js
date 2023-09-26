@@ -32,48 +32,64 @@ export default function Home({ allPostsData }) {
 
       <section className={indexStyle.cardSection}>
         <div className={indexStyle.card}>
-          <img src="/images/code.webp" />
+          <div className={indexStyle.imgWrap}>
+            <img src="/images/code.webp" />
+          </div>
           <div className={indexStyle.innerCard}>
-            <h2>Development</h2>
-            <p>
-              Misskeyの投稿を読み上げるWebクライアントを作成中です。Chromeでのみ動作を確認しています。
-            </p>
-            <a href="https://nawashiro.github.io/ashiga-kayui/">
-              <div className={indexStyle.cardLink}>テスト版を開く</div>
-            </a>
+            <div>
+              <h2>Development</h2>
+              <p>
+                Misskeyの投稿を読み上げるWebクライアントを作成中です。Chromeでのみ動作を確認しています。
+              </p>
+              <a href="https://nawashiro.github.io/ashiga-kayui/">
+                <div className={indexStyle.cardLink}>テスト版を開く</div>
+              </a>
+            </div>
           </div>
         </div>
 
         <div className={indexStyle.card}>
-          <img src="/images/nostr.webp" />
+          <div className={indexStyle.imgWrap}>
+            <img src="/images/nostr.webp" />
+          </div>
           <div className={indexStyle.innerCard}>
-            <h2>Distributed social networking</h2>
-            <p>
-              分散型SNSが好きでいろいろ調べています。
-              ActivityPub、Nostr、ATProtocolなど、いくつかの試みがあります。
-            </p>
+            <div>
+              <h2>Distributed social networking</h2>
+              <p>
+                分散型SNSが好きでいろいろ調べています。
+                ActivityPub、Nostr、ATProtocolなど、いくつかの試みがあります。
+              </p>
+            </div>
           </div>
         </div>
 
         <div className={indexStyle.card}>
-          <img src="/images/social-vr.webp" />
+          <div className={indexStyle.imgWrap}>
+            <img src="/images/social-vr.webp" />
+          </div>
           <div className={indexStyle.innerCard}>
-            <h2>Social VR</h2>
-            <p>
-              よくVRChatやclusterにいます。
-              SNSにまつわる技術について雑談する「分散SNS集会」を主催しています。
-            </p>
+            <div>
+              <h2>Social VR</h2>
+              <p>
+                よくVRChatやclusterにいます。
+                SNSにまつわる技術について雑談する「分散SNS集会」を主催しています。
+              </p>
+            </div>
           </div>
         </div>
 
         <div className={indexStyle.card}>
-          <img src="/images/nagashima.webp" />
+          <div className={indexStyle.imgWrap}>
+            <img src="/images/nagashima.webp" />
+          </div>
           <div className={indexStyle.innerCard}>
-            <h2>Travel</h2>
-            <p>
-              旅が好きです。たまに鉄道で旅行に行きます。
-              これは静岡県榛原郡の長島ダムに行った時の写真です。
-            </p>
+            <div>
+              <h2>Travel</h2>
+              <p>
+                旅が好きです。たまに鉄道で旅行に行きます。
+                これは静岡県榛原郡の長島ダムに行った時の写真です。
+              </p>
+            </div>
           </div>
         </div>
       </section>

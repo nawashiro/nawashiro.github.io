@@ -10,6 +10,9 @@
 .hero {
   margin-bottom: 128px;
 }
+
+/* ##### card ##### */
+
 .innerCard {
   padding: 24px;
 }
@@ -26,7 +29,7 @@
   width: 100%;
 }
 .cardSection {
-  margin-bottom: 64px;
+  margin-bottom: 128px;
 }
 .cardLink {
   margin-top: 24px;
@@ -36,4 +39,32 @@
   width: 256px;
   text-align: center;
   border-radius: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .heroA {
+    font-size: 64px;
+  }
+  .heroB p {
+    font-size: 36px;
+  }
+  .imgWrap {
+    max-width: 448px;
+    width: 41.1%;
+    align-items: stretch;
+  }
+  .imgWrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .innerCard {
+    max-width: 640px;
+    width: 58.9%;
+  }
+  .card {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 298.6px;
+  }
 }

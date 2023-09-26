@@ -60,18 +60,18 @@ export default function Layout({ children, home }) {
             }
             transition
           >
-            <MenuItem>
-              <Link href={"/"}>Home</Link>
-            </MenuItem>
-            <MenuItem>
-              <Link href={"/posts/projects"}>Projects</Link>
-            </MenuItem>
-            <MenuItem>
-              <Link href={"/posts/links"}>Links</Link>
-            </MenuItem>
-            <MenuItem>
-              <a href="https://github.com/nawashiro">GitHub</a>
-            </MenuItem>
+            <Link href={"/"}>
+              <MenuItem>Home</MenuItem>
+            </Link>
+            <Link href={"/posts/projects"}>
+              <MenuItem>Projects</MenuItem>
+            </Link>
+            <Link href={"/posts/links"}>
+              <MenuItem>Links</MenuItem>
+            </Link>
+            <a href="https://github.com/nawashiro">
+              <MenuItem>github</MenuItem>
+            </a>
           </Menu>
         </div>
       </header>
