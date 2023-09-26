@@ -12,6 +12,12 @@
 }
 .wrapHeader h2 {
   margin: 0;
+}
+.wrapHeader ul {
+  margin: 0;
+}
+.wrapHeader a,
+.wrapHeader h2 {
   font-size: 24px;
 }
 .wrapMain {
