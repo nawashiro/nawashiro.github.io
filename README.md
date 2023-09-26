@@ -1,1 +1,3 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+Nawahiro の個人サイトです。
+
+[Next.js](https://nextjs.org/)によって作成されました。
