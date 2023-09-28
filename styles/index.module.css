@@ -10,6 +10,9 @@
 .hero {
   margin-bottom: 128px;
 }
+.hero p {
+  margin: 0;
+}
 
 /* ##### card ##### */
 
