@@ -102,7 +102,7 @@ Uncaught SyntaxError: Unexpected token '<'
 -  trailingSlash: true,
 -  publicRuntimeConfig: {
 -    basePath: repoName,
-  },
+-  },
  };
 ```
 
@@ -110,10 +110,37 @@ Uncaught SyntaxError: Unexpected token '<'
 
 なわしろ「なんで！？」
 
+識者「`basePath`だね。これはコードに書かれたパスの前に付け足されるパスを指定する設定だよ。たとえば」
+
+```js:home.jsx
+<Link href="/home">home</Link>
+```
+
+```js:next.config.js
+module.exports = {
+    basePath: "/example",
+};
+```
+
+識者「これが出力されると」
+
+```html
+<a href="/example/home">home</a>
+```
+
+識者「こうなる」
+
+なわしろ「はえー」
+
+識者「あと、`assetPrefix`は Next.js 9.5 以降では推奨されていない。古い情報には気を付けたほうがいいよ」
+
+識者「データを流用するとこういうことも起こる。過去の資産に固執せず一から作ったほうが早いこともあるよ」
+
 ## まとめ
 
 - GitHub Pages にデプロイするときは`nextjs.yml`をちゃんと確認すること。特にバージョン。
 - `next.config.js`もしっかりと確認すること。
-- `next.config.js`の設定の仕方は今後ちゃんと勉強すること。
+- 古い情報に気をつけろ。
+- 過去のデータを流用するときも気をつけろ。
 
 次回、og 編へ続く。
