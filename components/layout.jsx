@@ -53,7 +53,7 @@ export default function Layout({ children, home, title }) {
           <Menu
             menuButton={
               <MenuButton className={styles.menu}>
-                <IconContext.Provider value={{ size: "36px" }}>
+                <IconContext.Provider value={{ size: "2rem" }}>
                   <MdMenu />
                 </IconContext.Provider>
               </MenuButton>
@@ -81,7 +81,7 @@ export default function Layout({ children, home, title }) {
           {!home && (
             <div className={styles.back}>
               <Link href="/">
-                <IconContext.Provider value={{ size: "16px" }}>
+                <IconContext.Provider value={{ size: "1rem" }}>
                   <MdWest className={styles.backArrow} />
                 </IconContext.Provider>
                 Back to Home
