@@ -110,9 +110,11 @@ Uncaught SyntaxError: Unexpected token '<'
 
 なわしろ「なんで！？」
 
+### basePath
+
 識者「`basePath`だね。これはコードに書かれたパスの前に付け足されるパスを指定する設定だよ。たとえば」
 
-```js:home.jsx
+```jsx:home.jsx
 <Link href="/home">home</Link>
 ```
 
@@ -132,7 +134,9 @@ module.exports = {
 
 なわしろ「はえー」
 
-識者「あと、`assetPrefix`は Next.js 9.5 以降では推奨されていない。古い情報には気を付けたほうがいいよ」
+### assetPrefix
+
+識者「`assetPrefix`は Next.js 9.5 以降では推奨されていない。古い情報には気を付けたほうがいいよ」
 
 識者「データを流用するとこういうことも起こる。過去の資産に固執せず一から作ったほうが早いこともあるよ」
 
