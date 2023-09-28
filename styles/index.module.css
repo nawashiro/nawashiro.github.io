@@ -1,11 +1,11 @@
-.hero p {
-  font-weight: bold;
-}
 .heroA {
   font-size: 36px;
+  font-weight: 900;
 }
 .heroB p {
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
 }
 .hero {
   margin-bottom: 128px;
@@ -52,7 +52,7 @@
     font-size: 64px;
   }
   .heroB p {
-    font-size: 36px;
+    font-size: 24px;
   }
   .imgWrap {
     max-width: 448px;
