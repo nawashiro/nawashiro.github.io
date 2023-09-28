@@ -25,9 +25,13 @@ export default function Home({ allPostsData }) {
       <section className={indexStyle.hero}>
         <p className={indexStyle.heroA}>Development</p>
         <div className={indexStyle.heroB}>
-          <p>Distributed social networking</p>
-          <p>Social VR</p>
-          <p>Travel</p>
+          <p>
+            Distributed social networking
+            <br />
+            Social VR
+            <br />
+            Travel
+          </p>
         </div>
       </section>
 
