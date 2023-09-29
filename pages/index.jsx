@@ -19,6 +19,7 @@ export async function getStaticProps() {
 export default function Home({ allPostsData }) {
   return (
     <Layout home>
+      <a rel="me" href="https://gamelinks007.net/@nawashiro"></a>
       <Head>
         <title>{siteTitle}</title>
       </Head>
