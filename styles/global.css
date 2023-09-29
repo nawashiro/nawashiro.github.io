@@ -142,7 +142,7 @@ h5 {
 .blog .remark-code-title + .remark-highlight pre {
   padding-top: calc(2.5rem + 4px);
 }
-
+/* インラインコード */
 .blog p code,
 .blog ul li code {
   background-color: var(--sumi-300);
@@ -151,11 +151,13 @@ h5 {
   padding: 1px 4px;
   border-radius: 0.2rem;
 }
-
+/* svg */
 .blog svg {
   background-color: white;
   border-radius: 0.3rem;
 }
+
+/* 引用 */
 .blog blockquote {
   position: relative;
   margin: 2rem 0 2rem 0;
@@ -167,7 +169,7 @@ h5 {
 }
 
 .blog blockquote ::before {
-  background-color: var(--sumi-1000);
+  background-color: var(--sumi-700);
   border-radius: 4px;
   content: "";
   height: 100%;
@@ -175,4 +177,87 @@ h5 {
   position: absolute;
   top: 0;
   width: 4px;
+}
+
+/* リンクカード */
+.blog .rlc-container {
+  color: var(--sumi-1000);
+  background-color: white;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 767px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+.blog .rlc-container:hover {
+  text-decoration: none;
+}
+.blog .rlc-info {
+  padding: 1rem;
+}
+.blog .rlc-favicon {
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  line-height: 1.5rem;
+  margin: auto 0.25rem auto 0;
+  display: block;
+}
+.blog .rlc-url-container {
+  display: flex;
+}
+.blog .rlc-url {
+  width: 100%;
+  height: 1.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--sumi-700);
+}
+.blog .rlc-image-container {
+  order: -1;
+}
+.blog .rlc-image-container img {
+  height: auto;
+  width: 100%;
+  margin: 0;
+  aspect-ratio: 1.911/1;
+  object-fit: cover;
+}
+.blog .rlc-description {
+  width: 100%;
+  color: var(--sumi-700);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.blog .rlc-title {
+  font-weight: 700;
+  width: 100%;
+  height: 1.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media screen and (min-width: 768px) {
+  .blog .rlc-container {
+    flex-direction: row;
+    height: 8rem;
+  }
+  .blog .rlc-image-container img {
+    width: auto;
+    height: 100%;
+  }
+  .blog .rlc-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .blog .rlc-url-container {
+    margin-top: auto;
+  }
 }
