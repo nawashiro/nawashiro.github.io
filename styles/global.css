@@ -242,6 +242,15 @@ h5 {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+/* table */
+.blog th,
+.blog td {
+  border: 1px solid var(--sumi-700);
+  padding: 0.5rem 1rem;
+}
+.blog table {
+  border-collapse: collapse;
+}
 
 @media screen and (min-width: 768px) {
   .blog .rlc-container {
