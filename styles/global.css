@@ -9,6 +9,7 @@
   --sumi-1000: #111;
   --content-max-widh: 1120px;
   --code-font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono";
+  --max-content-width: calc(767px - 2rem);
 }
 
 body,
@@ -117,14 +118,14 @@ h5 {
 
 .blog img {
   width: 100%;
-  max-width: 767px;
+  max-width: var(--max-content-width);
   display: block;
-  margin: 0.5rem 0 0.5rem 0;
+  margin: 1rem 0;
 }
 
 /* code block */
 .blog .remark-code-container {
-  margin: 1rem 0 1rem 0;
+  margin: 1rem 0;
 }
 .blog .remark-code-container {
   position: relative;
@@ -185,7 +186,7 @@ h5 {
   background-color: white;
   border-radius: 0.5rem;
   width: 100%;
-  max-width: 767px;
+  max-width: var(--max-content-width);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -196,6 +197,10 @@ h5 {
 }
 .blog .rlc-info {
   padding: 1rem;
+  height: 8rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .blog .rlc-favicon {
   width: 1rem;
@@ -207,6 +212,7 @@ h5 {
 }
 .blog .rlc-url-container {
   display: flex;
+  margin-top: auto;
 }
 .blog .rlc-url {
   width: 100%;
@@ -249,6 +255,7 @@ h5 {
   padding: 0.5rem 1rem;
 }
 .blog table {
+  margin: 1rem 0;
   border-collapse: collapse;
 }
 
@@ -257,14 +264,12 @@ h5 {
     flex-direction: row;
     height: 8rem;
   }
+  .blog .rlc-info {
+    overflow: hidden;
+  }
   .blog .rlc-image-container img {
     width: auto;
     height: 100%;
-  }
-  .blog .rlc-info {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
   }
   .blog .rlc-url-container {
     margin-top: auto;
