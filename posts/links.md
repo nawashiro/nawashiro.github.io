@@ -19,15 +19,17 @@ https://bookmeter.com/users/1240014
 
 ## Mastodon
 
-主に使用している ActivityPub 対応 SNS のアカウントです。
+主に使用している ActivityPub プロトコル対応 SNS のアカウントです。
 
 https://gamelinks007.net/@nawashiro
 
-## Misskey
+## Nostr
 
-たまにこちらにもいます。国産の SNS は貴重なので注目しています。
+Nostr プロトコルで私を示す公開鍵です。
 
-https://misskey.io/@continue5645
+```
+npub1qnzq38u72npcsv645eeezs09gdm0024a02zkte6g86qh8h7355fqrzhnms
+```
 
 ## Qiita
 
