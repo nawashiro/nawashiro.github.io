@@ -115,13 +115,21 @@ did-web の場合は DID にドメインが書いてあるので、そこに問�
 ## 参考資料
 
 https://atproto.com/
+
 https://gihyo.jp/article/2023/04/bluesky-atprotocol
+
 https://www.nri.com/-/media/Corporate/jp/Files/PDF/service/ips/technology_1.pdf
+
 https://qiita.com/gpsnmeajp/items/eb665d639f088b85454e
+
 https://gist.github.com/yamarten/a37acb70d421014029f33a8e8380c22e
+
 https://blueskyweb.xyz/blog/5-5-2023-federation-architecture
+
 https://atproto.com/guides/identity
+
 https://qiita.com/kazuhideYS/items/2f533bf14e8587c7c131
+
 https://bsky.app/profile/dholms.xyz/post/3jt2vwzb7t42a
 
 ## 追伸
