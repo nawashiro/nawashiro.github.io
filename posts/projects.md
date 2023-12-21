@@ -5,6 +5,16 @@ date: "2023-09-26 12:50"
 
 ここでは私が作ったものを紹介していきます。
 
+## ライトニングトーク「Bluesky / ATProtocol をながめる」
+
+VR コミュニティ「エンジニア作業飲み集会」と「分散 SNS 集会」でライトニングトークを行いました。
+
+今回は分散 SNS の試みの一つである Bluesky / ATProtocol について取り上げました。
+
+<iframe class="slide" src="https://docs.google.com/presentation/d/e/2PACX-1vRs3slNhUu0LqxzWMl9qA1n0-E4laLaGkKSkKkg2zDXbw9u6Dghut08SuZXVI_q_dGfU6guha3R0Sy_/embed?start=false&loop=false&delayms=3000" frameborder="0" width="560" height="315" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+(2023/11/11)
+
 ## Misskey クライアント
 
 ラジオ感覚で聞ける Misskey クライアントを作成中です。
@@ -12,6 +22,8 @@ date: "2023-09-26 12:50"
 Chrome でのみテストを行っています。
 
 https://nawashiro.github.io/ashiga-kayui/
+
+(2023/9/11)
 
 ## ライトニングトーク「いろいろな分散型 SNS / 分散 SNS 集会へのいざない」
 
