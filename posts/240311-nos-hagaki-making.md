@@ -41,7 +41,8 @@ https://zenn.dev/kaiji/articles/e855dccba73211
 
 陸地かどうか判定するために、容量とライセンスがいい感じの geojson を拾ってきました。これで地域名が取得できたら陸地と考えます。すみかに日本語の地域名が、消印に ISO 3166-1 の国名コードが表示されます。
 海岸線が OpenStreetMap と比較して誤差を含むようですが、目を瞑りました。何も見えません。あと、北方領土がロシアだったりします。各国の主張には目を瞑りました。何も見えません。
-さて、住所が扱えるようになり、すると距離とかかる日数もわかるはずなので、あとは予約投稿のような仕組みがあれば完成しそうです。あいにく、Nostrそのものにはそういった仕組みはなさそうなので、自分で作るしかなさそうです。
+
+さて、住所が扱えるようになり、すると距離とかかる日数もわかるはずなので、あとは予約投稿のような仕組みがあれば完成しそうです。あいにく、Nostrそのものにはそういった仕組みはないので、自分で作るしかありません。あらかじめ時刻がわかっているので、実際に投稿される時刻で署名してサーバーにとっておき、時刻に達したら投稿する、というフローで良さそうです。
 
 ### 使用した技術
 
@@ -52,4 +53,104 @@ https://zenn.dev/kaiji/articles/e855dccba73211
 
 ### タイムラインを作る
 
-まずはタイムラインを作りました。とはいっても、ほとんど NDK が提供する機能に GUI を与えるだけです。
+まずはタイムラインを作りました。とはいっても、ほとんど NDK が提供する機能に GUI を与えるだけです。ただひとつ、シングルトンインスタンスとして実装するのが望ましいとREADMEに書いてあったので、そこだけ気をつける必要があります（一敗）。では、敗因を見ていきましょう。
+以下がクラスです。一緒にキャッシュも作成しているのがわかりますね。
+```ts
+import NDK from "@nostr-dev-kit/ndk";
+import NDKCacheAdapterDexie from "@nostr-dev-kit/ndk-cache-dexie";
+
+export class NDKSingleton extends NDK {
+  private static _instance: NDKSingleton;
+
+  public static get instance(): NDKSingleton {
+    if (!this._instance) {
+      const dexieAdapter = new NDKCacheAdapterDexie({
+        dbName: "ndk-cache",
+      });
+      this._instance = new NDKSingleton({ cacheAdapter: dexieAdapter });
+    }
+
+    return this._instance;
+  }
+}
+```
+これのインスタンスを作成するときに、instanceメソッドを作成したのをすっかり忘れて普通に作ってしまいました。以下が正誤です。
+```diff
+-ndk: new NDKSingleton(),
++ndk: NDKSingleton.instance,
+```
+キャッシュが作成されない症状が発生し、発見に至りました。気づけてよかった。
+### すみかを計算する
+公開鍵から乱数を生成して、地域名が取得できればOK、できなければやり直し、というフローです。
+
+ランダムな緯度経度を計算する方法ですが、迂曲余接ありました。というのも、緯度はただランダムに出すだけだと北極点と南極点に集中してしまうのです。あいにく私は算数に弱く、ましてや球面座標なんてやったこともありません。指摘してくれた方やプルリクエストを送ってくださった方もおり、現状は以下の式にしています。
+```ts
+const longitude = rng() * 360 - 180;
+const latitude = -Math.asin(2 * rng() - 1) * (180 / Math.PI);
+```
+地域名と国の形を記憶したポリゴンはgeojsonファイルに入っているので、構造を見てみましょう。
+```ts
+export interface GeoJSONFeature {
+  type: string;
+  properties: {
+    iso: string; // ISO 3166-1 alpha-2 code
+    pais: string;
+    ja: string;
+  };
+  geometry: {
+    type: string;
+    coordinates: number[][][]; // MultiPolygon coordinates
+  };
+}
+```
+こんな感じです。`properties`に国名コードや日本語の地域名が入っています。
+国の形は`coordinates`の中にポリゴンが書いてありますね。指定した点がポリゴンの中にあるか、という判定は`point-in-polygon`というそのものなライブラリがあったのでこれを使いました。
+
+毎回geojsonを読み込むのもよくないなと思ったので、IndexedDBにキャッシュしておくようにしました。`zustand`と`idb-keyval`を使用しています。
+```ts
+import { createStore } from "zustand/vanilla";
+import { persist, createJSONStorage, StateStorage } from "zustand/middleware";
+
+export const IdbStorage: StateStorage = {
+  getItem: async (name) => {
+    // Exit early on server
+    if (typeof indexedDB === "undefined") {
+      return null;
+    }
+    const value = await get(name);
+    console.log("load indexeddb called");
+    return value || null;
+  },
+  setItem: async (name, value) => {
+    // Exit early on server
+    if (typeof indexedDB === "undefined") {
+      return;
+    }
+    return set(name, value);
+  },
+  removeItem: async (name) => {
+    // Exit early on server
+    if (typeof indexedDB === "undefined") {
+      return;
+    }
+    await del(name);
+  },
+};
+
+...
+
+interface State {
+  features: GeoJSONFeature[];
+  get: boolean;
+}
+
+const store = createStore(
+  persist<State>(
+    () => ({
+      features: [],
+      get: true,
+    }),
+    { name: "features-storage", storage: createJSONStorage(() => IdbStorage) }
+  )
+);
+```
