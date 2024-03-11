@@ -74,12 +74,12 @@ export class NDKSingleton extends NDK {
   }
 }
 ```
-これのインスタンスを作成するときに、instanceメソッドを作成したのをすっかり忘れて普通に作ってしまいました。以下が正誤です。
+これのインスタンスを作成するときに、`get instance`を作成したのをすっかり忘れて普通に作ってしまいました。以下が正誤です。
 ```diff
 -ndk: new NDKSingleton(),
 +ndk: NDKSingleton.instance,
 ```
-キャッシュが作成されない症状が発生し、発見に至りました。気づけてよかった。
+キャッシュが作成されない症状が発生し、発見に至りました。気づけてよかったです。
 ### すみかを計算する
 公開鍵から乱数を生成して、地域名が取得できればOK、できなければやり直し、というフローです。
 
@@ -88,7 +88,7 @@ export class NDKSingleton extends NDK {
 const longitude = rng() * 360 - 180;
 const latitude = -Math.asin(2 * rng() - 1) * (180 / Math.PI);
 ```
-地域名と国の形を記憶したポリゴンはgeojsonファイルに入っているので、構造を見てみましょう。
+地域名と国の形を記憶したファイル、geojsonの構造を見ていきましょう。
 ```ts
 export interface GeoJSONFeature {
   type: string;
