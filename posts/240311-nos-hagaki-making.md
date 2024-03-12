@@ -23,11 +23,11 @@ VRChat で開催する週と Cluster で開催する週があります。よく�
 
 https://nos-hagaki.vercel.app/
 
-### 構想
-
 登場人物
 - なわしろ：私。関西型言語を話す人の影響でエセ関西弁を喋る。
 - ハ・サタン：旧約聖書に登場するキャラ。対立する者の意。神の命令を受けて人間に試練を与える。
+
+### 構想
 
 なわしろ「距離が離れていて時間がかかる文通アプリを作ってみてえなあ。ついでに相互運用可能ならもっとええなあ」
 ハ・サタン「どした？」
@@ -100,6 +100,7 @@ export class NDKSingleton extends NDK {
 
 なわしろ「公開鍵から乱数を生成して、地域名が取得できれば OK、できなければやり直し、というフローやで」
 ハ・サタン「緯度の計算はどうするんや？緯度は単純な乱数だと南極点と北極点に住所が偏るで」
+なわしろ「算数わからん」
 
 ランダムな緯度経度を計算する方法ですが、迂曲余接ありました。あいにく私は算数に弱く、ましてや球面座標なんてやったこともありません。指摘してくれた方やプルリクエストを送ってくださった方もおり、現状は以下の式にしています。今後も変わる可能性はあります。
 
@@ -220,4 +221,9 @@ model SubmittedData {
   relays    String[]
   ip        String
 }
+```
+`Event`のここを注目してください。`SubmittedData`を親、`Event`を子として関連付けています。また、`SubmittedData`の行が消されたら自動的にこちらも消えるように指定しています。
+```ts
+  SubmittedData   SubmittedData  @relation(fields: [submittedDataId], references: [id], onDelete: Cascade)
+  submittedDataId Int @unique
 ```
