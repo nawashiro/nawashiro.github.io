@@ -227,3 +227,57 @@ model SubmittedData {
   SubmittedData   SubmittedData  @relation(fields: [submittedDataId], references: [id], onDelete: Cascade)
   submittedDataId Int @unique
 ```
+### API
+なわしろ「DBへのインサートはこんな感じでええかな」
+```ts
+  await prisma.submittedData.create({
+    data: {
+      sendDay: sendDay,
+      relays: Array.from(outbox),
+      event: {
+        create: {
+          kind: res.event.kind,
+          content: res.event.content,
+          pubkey: res.event.pubkey,
+          created_at: res.event.created_at,
+          address: res.event.tags[0][1],
+          sig: res.event.sig,
+          id: res.event.id,
+        },
+      },
+      ip: ip,
+    },
+```
+なわしろ「確か『しずかなインターネット』は一時間に6稿のレート制限があったな。あれ真似したい。Redisと`upstash/ratelimit`を使うと良いらしいな」
+```ts
+import { Ratelimit } from "@upstash/ratelimit";
+
+const ratelimit = new Ratelimit({
+  redis: redis,
+  limiter: Ratelimit.slidingWindow(6, "1 h"),
+});
+
+export async function POST(req: NextRequest) {
+  …
+  const successIp = (await ratelimit.limit(ip)).success;
+  if (!successIp) {
+    return new Response(null, { status: 429 });
+  }
+  …
+}
+```
+### ブロック
+フェディバース「現在スパムbotがPOSTのみでアカウントを作れるサーバーを中心に猛威を奮っており、各所に管理人メールアドレスを使用した爆破予告が…」
+なわしろ「サイバー攻撃めっちゃ怖い。Torブロックしたいなあ」
+Google先生「Torは出口IPリストを公開してるからブロックは難しくない。ただ、IPリストは動的に変わるので定期的な更新が必要」
+なわしろ「30分おきくらいに取得してRedisに格納して、一致したらブロックしておけばええか」
+ハ・サタン「ちょい待ち、今どこにそれを実装した？」
+なわしろ「リクエストが来た時に最初に実行される`middleware.ts`やけど」
+ハ・サタン（やったなこいつ）
+
+〜リリース後〜
+
+Shino3「なんか nos-hagaki おちた」
+なわしろ「わあ」
+ハ・サタン「`middleware.ts`に書いたからやね。全てのリクエストに対して実行されるから、Redisへのリクエストが殺到したんや。投稿APIあたりに実装するのが妥当やね」
+なわしろ「メンテ入りまーす」
