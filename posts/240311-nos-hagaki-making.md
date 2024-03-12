@@ -1,6 +1,6 @@
 ---
-title: ハッカソンでバーチャルな文通ができるNostrクライアント「NosHagaki」を作ってみた
-date: 2024-03-11
+title: "ハッカソンでバーチャルな文通ができるNostrクライアント「NosHagaki」を作ってみた"
+date: "2024-03-11"
 ---
 
 よくきたな。俺は逆噴射なわしろだ。俺は普段ものすごい量の文章を書いているが、誰にも読ませるつもりはない。
@@ -24,6 +24,7 @@ VRChat で開催する週と Cluster で開催する週があります。よく�
 https://nos-hagaki.vercel.app/
 
 登場人物
+
 - なわしろ：私。関西型言語を話す人の影響でエセ関西弁を喋る。
 - ハ・サタン：旧約聖書に登場するキャラ。対立する者の意。神の命令を受けて人間に試練を与える。
 
@@ -31,13 +32,13 @@ https://nos-hagaki.vercel.app/
 
 なわしろ「距離が離れていて時間がかかる文通アプリを作ってみてえなあ。ついでに相互運用可能ならもっとええなあ」
 ハ・サタン「どした？」
-なわしろ「スマホアプリで『Slowly』っていうのがあるんやけど、これを分散型 SNS でできないかと思ってるんよ。ActivityPubでできないかな」
-ハ・サタン「あれ色々大変やで。SNSひとつローンチするのと変わらんからな」
-kaijiさん「Nostrはいいぞ」
+なわしろ「スマホアプリで『Slowly』っていうのがあるんやけど、これを分散型 SNS でできないかと思ってるんよ。ActivityPub でできないかな」
+ハ・サタン「あれ色々大変やで。SNS ひとつローンチするのと変わらんからな」
+kaiji さん「Nostr はいいぞ」
 
 https://zenn.dev/kaiji/articles/e855dccba73211
 
-なわしろ「パスワードみたいなセンシティブなデータを扱わなくてもええんやね。なんかNostr良さそうやね。これでクライアント作りやってみよう」
+なわしろ「パスワードみたいなセンシティブなデータを扱わなくてもええんやね。なんか Nostr 良さそうやね。これでクライアント作りやってみよう」
 ハ・サタン「位置情報はどうするん？他のクライアント使ってる人からは取れんやろ」
 なわしろ「あんまり現実の位置にこだわらなくてもええんじゃない？個人情報だし、気にする人もいるやろ。公開鍵からランダム生成すれば解決や」
 ハ・サタン「それだと海に住んでる人も発生するのと違うか？地球の七割は海やで」
@@ -57,18 +58,19 @@ https://zenn.dev/kaiji/articles/e855dccba73211
 理由：慣れていたし、フルスタックアプリを作るには都合が良さそうだったから。それに、デプロイ先として無料プランのある Vercel が使える。
 
 DB：Postgres、KV（Redis）
-理由：Vercelで用意されていて便利そうだったから。
+理由：Vercel で用意されていて便利そうだったから。
 
 言語：TypeScript
 理由：静的型付けができた方が楽なのかな、という軽い気持ちで決めた。
 
 Nostr ライブラリ：NDK
-理由；nostr-toolsより使いやすそうだったから。IndexedDB を利用したキャッシュも備えている。
+理由；nostr-tools より使いやすそうだったから。IndexedDB を利用したキャッシュも備えている。
 
 ### タイムラインを作る
 
 なわしろ「まずはタイムラインを作るで。とはいっても、ほとんど NDK が提供する機能に GUI を与えるだけや」
 ハ・サタン「シングルトンインスタンスとして実装するのが望ましいと README に書いてあったので、そこだけ気をつけなあかんで」
+
 ```ts
 import NDK from "@nostr-dev-kit/ndk";
 import NDKCacheAdapterDexie from "@nostr-dev-kit/ndk-cache-dexie";
@@ -88,14 +90,17 @@ export class NDKSingleton extends NDK {
   }
 }
 ```
+
 なわしろ「あれ？キャッシュが作成されない。なんで？」
 ハ・サタン（ほら言わんこっちゃない）
 なわしろ「あ、クラスはシングルトン書いたけど、インスタンス作る時にシングルトンとして書いてなかった！」
 ハ・サタン「キャッシュの機能もつけてたから気づいたものの、けっこう危ない間違いだと思うで」
+
 ```diff
 -ndk: new NDKSingleton(),
 +ndk: NDKSingleton.instance,
 ```
+
 ### すみかを計算する
 
 なわしろ「公開鍵から乱数を生成して、地域名が取得できれば OK、できなければやり直し、というフローやで」
@@ -109,7 +114,7 @@ const longitude = rng() * 360 - 180;
 const latitude = -Math.asin(2 * rng() - 1) * (180 / Math.PI);
 ```
 
-なわしろ「geojsonの中身はだいたいこんな感じやね」
+なわしろ「geojson の中身はだいたいこんな感じやね」
 
 ```ts
 export interface GeoJSONFeature {
@@ -162,7 +167,7 @@ export const IdbStorage: StateStorage = {
   },
 };
 
-...
+…
 
 interface State {
   features: GeoJSONFeature[];
@@ -179,9 +184,11 @@ const store = createStore(
   )
 );
 ```
+
 ### データベース
-なわしろ「デプロイ先のVercelにはPostgresが用意されているけど、SQLを書くのはしんどい気がするな」
-Google先生「Object-Relational Mapping（オブジェクト関連マッピング、対象関係映射、ORM、O/RM）を使うと良い。例えば`prisma`というのがある」
+
+なわしろ「デプロイ先の Vercel には Postgres が用意されているけど、SQL を書くのはしんどい気がするな」
+Google 先生「Object-Relational Mapping（オブジェクト関連マッピング、対象関係映射、ORM、O/RM）を使うと良い。例えば`prisma`というのがある」
 登場人物が増えた「なわしろ」
 
 `prisma`をインストールすると`prisma`ディレクトリに`schema.prisma`ファイルが生成されます。データベースやテーブルの設定を書いていきます。
@@ -190,7 +197,7 @@ Google先生「Object-Relational Mapping（オブジェクト関連マッピン�
 generator client {
   provider = "prisma-client-js"
 }
- 
+
 datasource db {
   provider = "postgresql"
   // Uses connection pooling
@@ -222,13 +229,18 @@ model SubmittedData {
   ip        String
 }
 ```
+
 `Event`のここを注目してください。`SubmittedData`を親、`Event`を子として関連付けています。また、`SubmittedData`の行が消されたら自動的にこちらも消えるように指定しています。
+
 ```ts
   SubmittedData   SubmittedData  @relation(fields: [submittedDataId], references: [id], onDelete: Cascade)
   submittedDataId Int @unique
 ```
+
 ### API
-なわしろ「DBへのインサートはこんな感じでええかな」
+
+なわしろ「DB へのインサートはこんな感じでええかな」
+
 ```ts
   await prisma.submittedData.create({
     data: {
@@ -248,7 +260,9 @@ model SubmittedData {
       ip: ip,
     },
 ```
-なわしろ「確か『しずかなインターネット』は一時間に6稿のレート制限があったな。あれ真似したい。Redisと`upstash/ratelimit`を使うと良いらしいな」
+
+なわしろ「確か『しずかなインターネット』は一時間に 6 稿のレート制限があったな。あれ真似したい。Redis と`upstash/ratelimit`を使うと良いらしいな」
+
 ```ts
 import { Ratelimit } from "@upstash/ratelimit";
 
@@ -266,11 +280,13 @@ export async function POST(req: NextRequest) {
   …
 }
 ```
+
 ### ブロック
-フェディバース「現在スパムbotがPOSTのみでアカウントを作れるサーバーを中心に猛威を奮っており、各所に管理人メールアドレスを使用した爆破予告が…」
-なわしろ「サイバー攻撃めっちゃ怖い。Torブロックしたいなあ」
-Google先生「Torは出口IPリストを公開してるからブロックは難しくない。ただ、IPリストは動的に変わるので定期的な更新が必要」
-なわしろ「30分おきくらいに取得してRedisに格納して、一致したらブロックしておけばええか」
+
+フェディバース「現在スパム bot が POST のみでアカウントを作れるサーバーを中心に猛威を奮っており、各所に管理人メールアドレスを使用した爆破予告が…」
+なわしろ「サイバー攻撃めっちゃ怖い。Tor ブロックしたいなあ」
+Google 先生「Tor は出口 IP リストを公開してるからブロックは難しくない。ただ、IP リストは動的に変わるので定期的な更新が必要」
+なわしろ「30 分おきくらいに取得して Redis に格納して、一致したらブロックしておけばええか」
 ハ・サタン「ちょい待ち、今どこにそれを実装した？」
 なわしろ「リクエストが来た時に最初に実行される`middleware.ts`やけど」
 ハ・サタン（やったなこいつ）
@@ -279,5 +295,5 @@ Google先生「Torは出口IPリストを公開してるからブロックは難
 
 Shino3「なんか nos-hagaki おちた」
 なわしろ「わあ」
-ハ・サタン「`middleware.ts`に書いたからやね。全てのリクエストに対して実行されるから、Redisへのリクエストが殺到したんや。投稿APIあたりに実装するのが妥当やね」
+ハ・サタン「`middleware.ts`に書いたからやね。全てのリクエストに対して実行されるから、Redis へのリクエストが殺到したんや。投稿 API あたりに実装するのが妥当やね」
 なわしろ「メンテ入りまーす」
