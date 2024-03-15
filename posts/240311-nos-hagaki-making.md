@@ -166,6 +166,7 @@ export interface GeoJSONFeature {
 なわしろ「IndexedDB にキャッシュしておくか。`zustand`と`idb-keyval`を使えば良さそうやね」
 
 ```ts
+import { del, get, set } from "idb-keyval";
 import { createStore } from "zustand/vanilla";
 import { persist, createJSONStorage, StateStorage } from "zustand/middleware";
 
