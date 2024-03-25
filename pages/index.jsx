@@ -45,17 +45,16 @@ export default function Home({ allPostsData }) {
             <div>
               <h2>Development</h2>
               <p>
-                <a href="https://join.misskey.page/">Misskey</a>
-                の投稿を読み上げるWebクライアントを作成中です。
-                <br />
-                Chromeでのみ動作を確認しています。
+                エンジニア集会ハッカソンにて
+                <a href="https://nostr.com/">Nostrプロトコル</a>
+                のWebクライアント「NosHagaki」を開発しました。ユーザーにバーチャルな住所を割り当てることにより、時間がかかるやり取りを実現しています。
               </p>
               <div>
                 <a
                   className={indexStyle.cardLink}
-                  href="https://nawashiro.github.io/ashiga-kayui/"
+                  href="https://nos-hagaki.vercel.app/"
                 >
-                  テスト版を開く
+                  NosHagakiを開く
                 </a>
               </div>
             </div>
@@ -92,7 +91,7 @@ export default function Home({ allPostsData }) {
                 よく<a href="https://hello.vrchat.com/">VRChat</a>や
                 <a href="https://cluster.mu/">cluster</a>にいます。
                 <br />
-                SNSにまつわる技術について雑談する「分散SNS集会」を主催しています。
+                相互運用可能なSNSにまつわる技術について情報交換する「分散SNS集会」を主催しています。
               </p>
             </div>
           </div>
