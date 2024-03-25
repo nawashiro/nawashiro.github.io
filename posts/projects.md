@@ -1,9 +1,34 @@
 ---
 title: "Projects"
-date: "2023-12-21"
+date: "2024-03-25"
 ---
 
 ここでは私が作ったものを紹介していきます。
+
+## エンジニア集会ハッカソン「NosHagaki」
+
+VR コミュニティ「エンジニア作業飲み集会」のハッカソンにて、NosHagaki という SNS のクライアントを開発しました。
+
+分散 SNS の試みの一つに「[Nostr プロトコル](https://nostr.com/)」があります。これはクライアント・サーバー間の通信に関するプロトコルで、主に SNS を実現するために使用されます。強力な障害耐性が特徴です。
+
+Nostr では投稿文に必ず電子署名をします。署名する際の鍵ペアのうち、公開鍵が永続的な識別子として用いられます。
+
+この特徴を利用して、公開鍵をシードにランダムな住所を生成します。
+
+場所が離れていて時間のかかる、手紙のようなユーザー体験を目指しました。
+
+- [こちら](../posts/240311-nos-hagaki-making)に開発したときのすったもんだを記録しています。
+- バーチャルライフマガジンさんが[ハッカソンを取材](https://vr-lifemagazine.com/vr-engineer-meeting-hackathon-0-presentation/)しました。[NosHagaki についても紙面を割いて下さった](https://vr-lifemagazine.com/vr-engineer-meeting-hackathon-0-presentation/#NawashiroNosHagaki)ので、是非見てみてください。
+
+https://nos-hagaki.vercel.app/
+
+<iframe class="slide" src="https://docs.google.com/presentation/d/e/2PACX-1vQTE47Jcwr2C6JfCXtEbRb8AkNEgnN08-K-4NTDn5_Dr6ewuhOKwEq4cD4xrzk2qpVAqg4SVdJn9Wxf/embed?start=false&loop=false&delayms=3000" frameborder="0" width="560" height="315" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+[51:03](https://youtu.be/Q28jUVoY0GY?t=3063) あたりからが NosHagaki の発表です。
+
+<iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/Q28jUVoY0GY" title="第0回 エンジニア集会ハッカソン 成果発表会 2024/03/03" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+(2024/3/25)
 
 ## ライトニングトーク「Bluesky / ATProtocol をながめる」
 
@@ -12,6 +37,8 @@ VR コミュニティ「エンジニア作業飲み集会」と「分散 SNS 集
 今回は分散 SNS の試みの一つである Bluesky / ATProtocol について取り上げました。
 
 <iframe class="slide" src="https://docs.google.com/presentation/d/e/2PACX-1vRs3slNhUu0LqxzWMl9qA1n0-E4laLaGkKSkKkg2zDXbw9u6Dghut08SuZXVI_q_dGfU6guha3R0Sy_/embed?start=false&loop=false&delayms=3000" frameborder="0" width="560" height="315" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/S_fErE9IAng" title="「Bluesky/AT Protocolをながめる」エンジニア集会" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 (2023/11/11)
 
