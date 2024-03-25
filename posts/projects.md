@@ -11,14 +11,15 @@ VR コミュニティ「エンジニア作業飲み集会」のハッカソン�
 
 分散 SNS の試みの一つに「[Nostr プロトコル](https://nostr.com/)」があります。これはクライアント・サーバー間の通信に関するプロトコルで、主に SNS を実現するために使用されます。強力な障害耐性が特徴です。
 
-Nostr では投稿文に必ず電子署名をします。署名する際の鍵ペアのうち、公開鍵が永続的な識別子として用いられます。
+Nostr では投稿文に必ず電子署名をします。署名に使う鍵ペアのうち、公開鍵が永続的な識別子として用いられます。
 
 この特徴を利用して、公開鍵をシードにランダムな住所を生成します。
 
 場所が離れていて時間のかかる、手紙のようなユーザー体験を目指しました。
 
 - [こちら](../posts/240311-nos-hagaki-making)に開発したときのすったもんだを記録しています。
-- バーチャルライフマガジンさんが[ハッカソンを取材](https://vr-lifemagazine.com/vr-engineer-meeting-hackathon-0-presentation/)しました。[NosHagaki についても紙面を割いて下さった](https://vr-lifemagazine.com/vr-engineer-meeting-hackathon-0-presentation/#NawashiroNosHagaki)ので、是非見てみてください。
+- バーチャルライフマガジンさんが[ハッカソンを取材](https://vr-lifemagazine.com/vr-engineer-meeting-hackathon-0-presentation/)しており、[NosHagaki についても紙面を割いて下さりました](https://vr-lifemagazine.com/vr-engineer-meeting-hackathon-0-presentation/#NawashiroNosHagaki)。
+- 個人ブログ「あたしンちのおとうさんの独り言」にて[紹介していただきました](https://atasinti.chu.jp/dad3/archives/70297)。
 
 https://nos-hagaki.vercel.app/
 
