@@ -15,7 +15,7 @@ date: "2024-03-11"
 
 <ruby>慕狼<rp>(</rp><rt>しのがみ</rt><rp>)</rp></ruby>家の末っ子、慕狼ゆにさんが、いくつかの VR プラットフォームで運営している集会です。エンジニアならハード・ソフト・その他何でも OK、金曜日にお酒を飲んでワイワイしよう、というゆるい集会です｡毎回「進捗共有会」が催されます。飲んだお酒を進捗に数えても OK です。話が長くて制限時間を超えると、床が抜けて落とされます。
 
-VRChat で開催する週と Cluster で開催する週があります。よくある誤解なのですが、これらのソフトは VR 機器が無くても、デスクトップで使えます。特に Cluster はスマホや Mac からでも入れるので、敷居はかなり低いです。
+VRChat で開催する週と Cluster で開催する週があります。よくある誤解なのですが、これらのソフトは VR 機器が無くても、デスクトップで使えます。特に Cluster はMacやスマホからでも入れるので、敷居はかなり低いです。
 
 ### テーマ「バーチャルな〇〇」第一回エンジニア集会ハッカソン
 
@@ -166,6 +166,7 @@ export interface GeoJSONFeature {
 なわしろ「IndexedDB にキャッシュしておくか。`zustand`と`idb-keyval`を使えば良さそうやね」
 
 ```ts
+import { del, get, set } from "idb-keyval";
 import { createStore } from "zustand/vanilla";
 import { persist, createJSONStorage, StateStorage } from "zustand/middleware";
 
