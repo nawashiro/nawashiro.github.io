@@ -78,7 +78,7 @@ date: "2024-08-06"
 - 1989 年 6 月 : 番組「闇に沈む声」制作中、田辺澄子から筆者に、娘の学校に提出した原爆に関する童話 2 篇が送られてくる。
 - 1992 年 7 月 20 日 : 本書『幻の声』出版。
 
-## 感想 Recenzo
+### 感想 Recenzo
 
 幻の声 NHK 広島 8 月 6 日 - 白井久夫 岩波書店
 
@@ -123,3 +123,29 @@ Gazetaroj kaj eldonejoj estis tre senfortaj. Tiuj kiuj rezistis kaj malsukcesis.
 死んだときはともかく、生き残ったとき、私はあがき伝える方になれるだろうか。
 
 Kiam mi mortos, ĉiuokaze. Kiam mi postvivos, ĉu mi povos esti homo, kiu povas paroli?
+
+## “わたし”はどこにあるのか - マイケル・S. ガザニガ
+
+『“わたし”はどこにあるのか ガザニガ脳科学講義』
+
+- 出版日付: 2014 年 09 月 09 日
+- 著者: マイケル・S.ガザニガ
+- 出版社: 紀伊国屋書店
+
+### 感想 Recenzo
+
+責任や自由が何か（何に対する責任/自由なのか？）脳科学から捉え直していて、とても楽しかった。
+
+Ĉi tiu libro estas tre interesa, ĉar ĝi reekzamenante kion libervolon kaj respondeco (libereco / respondeco de kio?) per cerboscienco.
+
+道徳などの判断がどうやって生まれるか知ることができて、それに自信を持てるようになった。
+
+Mi eksciis kiel moralaj juĝoj aperas per cerboscienca vidpunkto.
+
+この本は道徳に自信が持てない人におすすめかもしれない。
+
+Ĝi eble rekomendi por angoraj homoj pri homa moralo.
+
+ただ、「直感的な道徳」だけではいけないことも理解できた。今の司法では、「直感的な道徳」が支配的であることも。
+
+Sed, mi eksciis ankaŭ ”intuicia moralo” sole estas malbone. ankaŭ ĝi dominas en nuna justico.
