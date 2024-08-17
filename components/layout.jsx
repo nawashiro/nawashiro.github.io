@@ -46,6 +46,9 @@ export default function Layout({ children, home, title }) {
                 <Link href={"/posts/links"}>Links</Link>
               </li>
               <li>
+                <Link href={"/posts/support-me"}>Support me!</Link>
+              </li>
+              <li>
                 <a href={"https://github.com/nawashiro"}>GitHub</a>
               </li>
             </ul>
@@ -68,6 +71,9 @@ export default function Layout({ children, home, title }) {
             </Link>
             <Link href={"/posts/links"}>
               <MenuItem>Links</MenuItem>
+            </Link>
+            <Link href={"/posts/support-me"}>
+              <MenuItem>Support me!</MenuItem>
             </Link>
             <a href="https://github.com/nawashiro">
               <MenuItem>github</MenuItem>
