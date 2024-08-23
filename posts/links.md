@@ -37,13 +37,19 @@ https://bsky.app/profile/did:plc:oszui3uk43smfv7nihtli3pq
 
 ## Nostr
 
+もし Nostr クライアントをお持ちでないなら、こちらから私の投稿を見ることができます。
+
+https://nawashiro.npub.pro/
+
+以下は Nostr クライアントをお持ちの方向けの情報です。
+
 Nostr プロトコルで私を示す公開鍵です。分散 SNS 集会の告知も行っています。
 
 ```
 npub1qnzq38u72npcsv645eeezs09gdm0024a02zkte6g86qh8h7355fqrzhnms
 ```
 
-Nostr プロトコルで私へアクセスするためのアドレスです。
+Nostr プロトコルで私のプロフィールへアクセスするためのアドレスです。
 
 ```
 nostr:nprofile1qy88wumn8ghj7mn0wvhxcmmv9uq32amnwvaz7tmjv4kxz7fwv3sk6atn9e5k7tcpramhxue69uhkummnw3ez6un9d3shjtnwda4k7arpwfhjucm0d5hszxthwden5te0dehhxarj9enx2erfwejhyum99e48qtcppemhxue69uhhjctzw5hx6ef0qyshwumn8ghj7un9d3shjtt2wqhxummnw3ezuamfwfjkgmn9wshx5up0qyv8wumn8ghj7mn0wd68ytngdak8jcn9vyhxxmmd9uqzqpxypz0eu4xr3qe4tfnnj9q72smk774t6759vhn5s05pw00arfgju8fxry
