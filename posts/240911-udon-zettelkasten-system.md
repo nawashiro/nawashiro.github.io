@@ -20,7 +20,7 @@ date: "2024-09-11"
 
 ## Udon Zettelkasten System
 
-**VRChat 内で使える **PKM** ギミックを開発しました！**
+**VRChat 内で使える PKM ギミックを開発しました！**
 
 (PKM = Personal Knowledge Management)
 
