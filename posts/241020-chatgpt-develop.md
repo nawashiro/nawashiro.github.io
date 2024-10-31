@@ -1,7 +1,11 @@
 ---
-title: "雪さんとつむぎちゃんのChatGPT超活用術！面接官のように使え！"
+title: "コード書くときChatGPTはどう使える？【WhiteCUL/春日部つむぎ】"
 date: "2024-10-20"
 ---
+
+動画になりました。
+
+https://www.nicovideo.jp/watch/sm44247610?ref=garage_share_other
 
 ## README
 
