@@ -12,7 +12,7 @@ date: "2024-12-09"
 - [禅なBluesky](241124-zen-bluesky.md)
 - [Nostrの音楽アプリをぼんやり構想してみる](240905-nostr-music-client-memo.md)
 
-## 分散 SNS 集会
+## 分散 SNS 関連
 
 - [分散SNS集会の紹介](240421-introducing-the-gathering-of-distributed-social-network.md)
 - [ハッカソンでバーチャルな文通ができるNostrクライアント「NosHagaki」を作ってみた](240311-nos-hagaki-making.md)
