@@ -13,7 +13,7 @@ date: "2023-09-29 15:32"
 
 ## vercel/og チュートリアル
 
-なわしろ「今度は古い情報に踊らされないぞ。検索すると`og-image`の使用例が最初に出てくるけど、GitHub に但し書きが書いてある」
+なわしろ「今度は古い情報に踊らされないぞ。検索すると `og-image` の使用例が最初に出てくるけど、GitHub に但し書きが書いてある」
 
 > Warning This repo is outdated and only works with Node.js 14. Please use @vercel/og for new projects.
 >
@@ -21,9 +21,9 @@ date: "2023-09-29 15:32"
 >
 > For all other issues with @vercel/og, please reach out to Vercel Support.
 
-なわしろ「[公式の案内](https://vercel.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images)に載ってる[例](https://vercel.com/docs/functions/edge-functions/og-image-generation/og-image-examples)を見て頑張ってみよう」
+なわしろ「[公式の案内](https://vercel.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images) に載ってる [例](https://vercel.com/docs/functions/edge-functions/og-image-generation/og-image-examples) を見て頑張ってみよう」
 
-なわしろ「背景デザインには[haikei](https://app.haikei.app/)を使おう」
+なわしろ「背景デザインには [haikei](https://app.haikei.app/) を使おう」
 
 ## つまづき encodeURI
 
@@ -41,7 +41,7 @@ date: "2023-09-29 15:32"
 
 なわしろ「になっちゃうんだよね」
 
-識者「`&`が含まれているけど、URI エンコードはかけてるんだよね？」
+識者「`&` が含まれているけど、URI エンコードはかけてるんだよね？」
 
 なわしろ「こんな感じにかけてるよ」
 
@@ -54,11 +54,11 @@ date: "2023-09-29 15:32"
 />
 ```
 
-識者「ああ、それは`encodeURI`を使用しているからだよ」
+識者「ああ、それは `encodeURI` を使用しているからだよ」
 
 ### encodeURIComponent
 
-識者「正しくは`encodeURIComponent`を使うんだよ」
+識者「正しくは `encodeURIComponent` を使うんだよ」
 
 ```diff:layout.jsx
  <meta
@@ -70,11 +70,15 @@ date: "2023-09-29 15:32"
  />
 ```
 
-識者「`encodeURI`は`&`を含めた機能を持つ文字をエンコードしないんだ。機能があるのにエンコードされたら困るからね」
+識者「`encodeURI` は `&` を含めた機能を持つ文字をエンコードしないんだ。機能があるのにエンコードされたら困るからね」
 
 なわしろ「なるほどなあ」
 
 ## まとめ
 
-- `encodeURI`は`&`などの文字をパーセントエンコードしない。
-- かわりに`encodeURIComponent`を使う。
+- `encodeURI` は `&` などの文字をパーセントエンコードしない。
+- かわりに `encodeURIComponent` を使う。
+
+## 関連項目
+
+- [GitHub Pages & Next.jsで個人サイト作ってつまづいたところ](230928-create-ssg-1.md)

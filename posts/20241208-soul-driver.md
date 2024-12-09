@@ -58,4 +58,4 @@ Mastodon 界隈の、特におひとり様サーバはこの例だと思う。�
 
 ## 関連項目
 
-- [📱ソーシャルメディア - インデックス](20241209-socialmedia-index.md)
+- [Misskeyなどの分散SNSにみんなも来ようよ、楽しいよ、という話](231107-lets-distributed-social-network-1.md)
