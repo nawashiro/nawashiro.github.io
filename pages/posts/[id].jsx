@@ -4,6 +4,7 @@ import Head from "next/head";
 import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
 import cx from "classnames";
+import Link from "next/link";
 
 export async function getStaticProps({ params }) {
   // Add the "await" keyword like this:
@@ -39,6 +40,18 @@ export default function Post({ postData }) {
           className={"blog"}
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
         />
+        {postData.backLinks.length > 0 && (
+          <>
+            <h2>バックリンク</h2>
+            <ul>
+              {postData.backLinks.map(({ id, title }) => (
+                <li key={id}>
+                  <Link href={id}>{title}</Link>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
       </article>
     </Layout>
   );
