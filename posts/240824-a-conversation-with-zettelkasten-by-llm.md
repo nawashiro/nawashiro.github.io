@@ -165,4 +165,4 @@ Misskey 画像クライアント構想は、画像中心のシンプルなコミ
 
 ## 関連項目
 
-- [240911-udon-zettelkasten-system](240911-udon-zettelkasten-system.md)
+- [ハッカソン成果物発表 - Udon Zettelkasten System の紹介](240911-udon-zettelkasten-system.md)
