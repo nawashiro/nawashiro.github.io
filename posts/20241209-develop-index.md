@@ -1,6 +1,6 @@
 ---
-title: "🔧技術 - インデックス"
-date: "2024-12-09"
+title: 🔧技術 - インデックス
+date: 2024-12-10
 ---
 
 技術関連の記事をまとめています。
@@ -13,6 +13,7 @@ date: "2024-12-09"
 - [個人サイトに動的ogを作ってつまづいたところ](230929-create-ssg-2.md)
 - [NotebookLMを通じたツェッテルカステンとの対話](240824-a-conversation-with-zettelkasten-by-llm.md)
 - [ハッカソンでバーチャルな文通ができるNostrクライアント「NosHagaki」を作ってみた](240311-nos-hagaki-making.md)
+- [デジタルガーデンの整備を進めた話](20241210-digital-gerden.md)
 
 ## メモの手法
 
