@@ -117,7 +117,55 @@ export default function Home({ allPostsData }) {
       </section>
 
       <section>
-        <h2 className={indexStyle.h2}>Blog</h2>
+        <h2 className={indexStyle.h2}>About</h2>
+        <p>
+          ここはNawashiroのデジタルガーデンです。一般的なブログと違うのは、ページを互いにリンクしたり、ときにはインデックスしたりなど、手作業でキュレーションしているところです。
+        </p>
+        <p>
+          各ページにはときに「関連項目」や「バックリンク」が含まれており、ページ間の相互関係を知り、参照することができます。ブログに慣れていると時系列順に参照したくなりますが、ここではその衝動を抑えて、相互関係を頼りに参照してみてください。
+        </p>
+      </section>
+
+      <section>
+        <h2 className={indexStyle.h2}>Index</h2>
+        <ul className={utilStyles.list}>
+          <li className={utilStyles.listItem}>
+            <Link
+              className={utilStyles.link}
+              href={`/posts/20241209-develop-index`}
+            >
+              🔧技術 - インデックス
+            </Link>
+          </li>
+          <li className={utilStyles.listItem}>
+            <Link
+              className={utilStyles.link}
+              href={`/posts/20241209-book-reading-memo-index`}
+            >
+              📚感想 - インデックス
+            </Link>
+          </li>
+          <li className={utilStyles.listItem}>
+            <Link
+              className={utilStyles.link}
+              href={`/posts/20241209-socialmedia-index`}
+            >
+              📱ソーシャルメディア - インデックス
+            </Link>
+          </li>
+          <li className={utilStyles.listItem}>
+            <Link
+              className={utilStyles.link}
+              href={`/posts/20241209-scribble-index`}
+            >
+              ✒️落書き - インデックス
+            </Link>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 className={indexStyle.h2}>Pages</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
