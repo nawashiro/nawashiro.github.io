@@ -8,6 +8,7 @@ import { IconContext } from "react-icons";
 import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
+import { useEffect } from "react";
 
 const name = "NAWASHIRO";
 export const siteTitle = "NAWASHIRO";
@@ -15,6 +16,16 @@ const { publicRuntimeConfig } = getConfig();
 
 export default function Layout({ children, home, title }) {
   const basePath = (publicRuntimeConfig && publicRuntimeConfig.basePath) || "";
+
+  useEffect(() => {
+    kofiWidgetOverlay.draw("nawashiro", {
+      type: "floating-chat",
+      "floating-chat.donateButton.text": "Support me",
+      "floating-chat.donateButton.background-color": "#48731d",
+      "floating-chat.donateButton.text-color": "#fff",
+    });
+  }, []);
+
   return (
     <div>
       <Head>
