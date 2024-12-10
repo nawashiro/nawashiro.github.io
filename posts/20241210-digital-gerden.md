@@ -52,6 +52,7 @@ Next.js という Web フレームワークで静的サイトを生成しまし�
 とある方が言いました。
 
 > If you want your writing to still be readable on a computer from the 2060s or 2160s, it’s important that your notes can be read on a computer from the 1960s.
+> 
 > 自分の文章を 2060 年代や 2160 年代のコンピューターでも読めるようにしたいなら、 1960 年代のコンピューターでも読める形式にしておくことが重要です。
 
 マークダウンエディタは Obsidian を使っています。この言葉は Obsidian CEO の Steph Ango 氏のものですね。
