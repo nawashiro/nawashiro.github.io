@@ -9,7 +9,7 @@ https://www.nicovideo.jp/watch/sm44247610?ref=garage_share_other
 
 ## README
 
-このドキュメントは、Jaz 氏のブログ[「How to use ChatGPT to Write Good Code Faster」](https://jazco.dev/2023/04/19/using-chatgpt-to-write-good-code-faster/)の翻訳及び要約です。正確な内容が知りたい方は原典を参照してください。本ドキュメントはいかなる保証もなく、あるがまま提供されます。
+このドキュメントは、Jaz 氏のブログ [「How to use ChatGPT to Write Good Code Faster」](https://jazco.dev/2023/04/19/using-chatgpt-to-write-good-code-faster/) の翻訳及び要約です。正確な内容が知りたい方は原典を参照してください。本ドキュメントはいかなる保証もなく、あるがまま提供されます。
 
 ## 分裂
 
@@ -80,7 +80,7 @@ https://www.nicovideo.jp/watch/sm44247610?ref=garage_share_other
 
 雪さん「すごい！ ChatGPT はパフォーマンス改善のアドバイスもしてくれるんだね！」
 
-春日部つむぎ「そうなの！ しかも、ChatGPT はエラーメッセージも理解してくれるから超便利！並列処理のコードを試したら、今度は`dictionary changed size during iteration`ってエラーが出ちゃったんだけど、エラーメッセージとコードを ChatGPT に送ったら、エラーの原因を特定して修正案まで出してくれたんだ！」
+春日部つむぎ「そうなの！ しかも、ChatGPT はエラーメッセージも理解してくれるから超便利！並列処理のコードを試したら、今度は `dictionary changed size during iteration` ってエラーが出ちゃったんだけど、エラーメッセージとコードを ChatGPT に送ったら、エラーの原因を特定して修正案まで出してくれたんだ！」
 
 雪さん「えー、それはすごい！ 自分でデバッグする手間が省けるね！」
 
@@ -88,7 +88,7 @@ https://www.nicovideo.jp/watch/sm44247610?ref=garage_share_other
 
 雪さん「なるほど！ ChatGPT はまるでプログラミングのパートナーみたいだね！」
 
-春日部つむぎ「まさにその通り！ さらに、ChatGPT はコードのドキュメント作成も得意だから、完成したスクリプトの説明を`README.md`にまとめてもらうこともできるんだ。」
+春日部つむぎ「まさにその通り！ さらに、ChatGPT はコードのドキュメント作成も得意だから、完成したスクリプトの説明を `README.md` にまとめてもらうこともできるんだ。」
 
 雪さん「それは助かるね！ ドキュメント作成って地味に大変だから。」
 

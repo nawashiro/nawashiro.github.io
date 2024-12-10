@@ -90,10 +90,10 @@ https://ja.wikibooks.org/wiki/%E3%82%A8%E3%82%B9%E3%83%9A%E3%83%A9%E3%83%B3%E3%8
 | instrumaterialoj | o 名詞語尾, j 複数語尾      | 教材                     |
 | Ĉi               |                             | ［副］（近接をあらわす） |
 | tio              |                             | ［代］それ               |
-| estas            | as 動詞語尾(直説法現在形)   | ［自］（～）である       |
+| estas            | as 動詞語尾 (直説法現在形)   | ［自］（～）である       |
 | lerno            | o 名詞語尾                  | 学習                     |
 | libro            | o 名詞語尾                  | 本                       |
-| vortaro          | ar 接尾辞(集団), o 名詞語尾 | 辞書                     |
+| vortaro          | ar 接尾辞 (集団), o 名詞語尾 | 辞書                     |
 | medio            | o 名詞語尾                  | 環境                     |
 | alfabeto         | o 名詞語尾                  | アルファベット           |
 | majuskloj        | o 名詞語尾, j 複数語尾      | 大文字                   |

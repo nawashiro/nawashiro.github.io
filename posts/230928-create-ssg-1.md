@@ -7,7 +7,7 @@ date: "2023-09-27 02:44"
 
 ## 登場人物
 
-なわしろ：私。[関西型言語](https://qiita.com/Yametaro)を使う人の影響で言葉がぶれる。
+なわしろ：私。[関西型言語](https://qiita.com/Yametaro) を使う人の影響で言葉がぶれる。
 
 識者：主に Google 先生。
 
@@ -23,7 +23,7 @@ date: "2023-09-27 02:44"
 
 ## Next.js チュートリアル
 
-識者「まず[チュートリアル](https://nextjs.org/learn/foundations/about-nextjs)をやってみようか」
+識者「まず [チュートリアル](https://nextjs.org/learn/foundations/about-nextjs) をやってみようか」
 
 なわしろ「千里の道もチュートリアルやればひとっ飛びやね」
 
@@ -31,7 +31,7 @@ date: "2023-09-27 02:44"
 
 なわしろ「でけた！ローカルで動くことを確認したやで」
 
-なわしろ「せっかくだからチュートリアルで作ったサイトを個人サイトに改造してしまおう。モックは[Figma](https://www.figma.com/)で作ってあるんだよね。[デジタル庁のデザインシステム](https://www.digital.go.jp/policies/servicedesign/designsystem)が役に立ったよ」
+なわしろ「せっかくだからチュートリアルで作ったサイトを個人サイトに改造してしまおう。モックは [Figma](https://www.figma.com/) で作ってあるんだよね。[デジタル庁のデザインシステム](https://www.digital.go.jp/policies/servicedesign/designsystem) が役に立ったよ」
 
 ## つまづき デプロイ時のバージョン設定
 
@@ -49,7 +49,7 @@ error npm@10.1.0: The engine "node" is incompatible with this module. Expected v
 
 なわしろ「GitHub Actions で使われてる node のバージョンが古くていけないってこと？どうすればいいの？」
 
-識者「`workflows/nextjs.yml`を利用してバージョンを指定できる。GitHub Actions 作るとき聞かれるんだけど、さては見落としていたね？」
+識者「`workflows/nextjs.yml` を利用してバージョンを指定できる。GitHub Actions 作るとき聞かれるんだけど、さては見落としていたね？」
 
 ```diff:workflows/nextjs.yml
 -node-version:16
@@ -70,7 +70,7 @@ remote: Permission to nawashiro/nawashiro.github.io.git denied to github-actions
 
 識者「考えられることがあるとすれば、他のリポジトリにアクセスしようとしている、とかかな？」
 
-なわしろ「あっ、`next.config.js`がチュートリアルのときのままだ」
+なわしろ「あっ、`next.config.js` がチュートリアルのときのままだ」
 
 ```diff:next.config.js
 -repoName = process.env.GITHUB_ACTIONS && "/nextjs-blog-learn";
@@ -87,7 +87,7 @@ remote: Permission to nawashiro/nawashiro.github.io.git denied to github-actions
 Uncaught SyntaxError: Unexpected token '<'
 ```
 
-識者「なぜか js が読み込まれなくて、代わりに index.html が読み込まれている状態だね。`next.config.js`になにかあることが多いよ」
+識者「なぜか js が読み込まれなくて、代わりに index.html が読み込まれている状態だね。`next.config.js` になにかあることが多いよ」
 
 なわしろ「なんもわかんない……とりあえず設定全部消してみよう」
 
@@ -112,7 +112,7 @@ Uncaught SyntaxError: Unexpected token '<'
 
 ### basePath
 
-識者「`basePath`だね。これはコードに書かれたパスの前に付け足されるパスを指定する設定だよ。たとえば」
+識者「`basePath` だね。これはコードに書かれたパスの前に付け足されるパスを指定する設定だよ。たとえば」
 
 ```jsx:home.jsx
 <Link href="/home">home</Link>
@@ -136,14 +136,14 @@ module.exports = {
 
 ### assetPrefix
 
-識者「`assetPrefix`は Next.js 9.5 以降では推奨されていない。古い情報には気を付けたほうがいいよ」
+識者「`assetPrefix` は Next.js 9.5 以降では推奨されていない。古い情報には気を付けたほうがいいよ」
 
 識者「データを流用するとこういうことも起こる。過去の資産に固執せず一から作ったほうが早いこともあるよ」
 
 ## まとめ
 
-- GitHub Pages にデプロイするときは`nextjs.yml`をちゃんと確認すること。特にバージョン。
-- `next.config.js`もしっかりと確認すること。
+- GitHub Pages にデプロイするときは `nextjs.yml` をちゃんと確認すること。特にバージョン。
+- `next.config.js` もしっかりと確認すること。
 - 古い情報に気をつけろ。
 - 過去のデータを流用するときも気をつけろ。
 
