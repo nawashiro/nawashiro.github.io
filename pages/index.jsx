@@ -1,22 +1,25 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
-import { getSortedPostsData } from "../lib/posts";
+import { getPostNetworkData, getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
 import indexStyle from "../styles/index.module.css";
 import cx from "classnames";
+import NetworkGraph from "../components/network_graph";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
+  const networkData = getPostNetworkData();
   return {
     props: {
       allPostsData,
+      networkData,
     },
   };
 }
 
-export default function Home({ allPostsData }) {
+export default function Home({ allPostsData, networkData }) {
   return (
     <Layout home>
       <a rel="me" href="https://gamelinks007.net/@nawashiro"></a>
@@ -117,7 +120,65 @@ export default function Home({ allPostsData }) {
       </section>
 
       <section>
-        <h2 className={indexStyle.h2}>Blog</h2>
+        <h2 className={indexStyle.h2}>About</h2>
+        <p>
+          ここはNawashiroのデジタルガーデンです。一般的なブログと違うのは、ページを互いにリンクしたり、ときにはインデックスしたりなど、手作業でキュレーションしているところです。
+        </p>
+        <p>
+          各ページにはときに「関連項目」や「バックリンク」が含まれており、ページ間の相互関係を知り、参照することができます。ブログに慣れていると時系列順に参照したくなりますが、ここではその衝動を抑えて、相互関係を頼りに参照してみてください。
+        </p>
+      </section>
+
+      <section>
+        <h2 className={indexStyle.h2}>Graph</h2>
+        <p>
+          各ページの相互関係をグラフに出力しています。ノードをダブルクリックするとページを開くことができます。拡大縮小したり、ぐりぐりとノードを移動させたりして遊んでみてください。
+        </p>
+        <div className={indexStyle.card}>
+          <NetworkGraph networkData={networkData} />
+        </div>
+      </section>
+
+      <section>
+        <h2 className={indexStyle.h2}>Index</h2>
+        <ul className={utilStyles.list}>
+          <li className={utilStyles.listItem}>
+            <Link
+              className={utilStyles.link}
+              href={`/posts/20241209-develop-index`}
+            >
+              🔧技術 - インデックス
+            </Link>
+          </li>
+          <li className={utilStyles.listItem}>
+            <Link
+              className={utilStyles.link}
+              href={`/posts/20241209-book-reading-memo-index`}
+            >
+              📚感想 - インデックス
+            </Link>
+          </li>
+          <li className={utilStyles.listItem}>
+            <Link
+              className={utilStyles.link}
+              href={`/posts/20241209-socialmedia-index`}
+            >
+              📱ソーシャルメディア - インデックス
+            </Link>
+          </li>
+          <li className={utilStyles.listItem}>
+            <Link
+              className={utilStyles.link}
+              href={`/posts/20241209-scribble-index`}
+            >
+              ✒️落書き - インデックス
+            </Link>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 className={indexStyle.h2}>Pages</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>

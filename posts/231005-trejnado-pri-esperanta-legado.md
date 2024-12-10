@@ -85,8 +85,8 @@ komencante de Robotoj / al Fondaĵo kaj Tero.
 
 ### ポイント
 
-- deは「～の（所有・関係）」以外にも「～から（起点・原因）」、「～によって（動作の主体）」という意味があるよ。
-- -ant-は分詞接尾辞（能動・継続）で、「している」という意味だよ。ほかにも-int-完了（してしまった）、-out-未然（しようとしている）があるよ。
+- de は「～の（所有・関係）」以外にも「～から（起点・原因）」、「～によって（動作の主体）」という意味があるよ。
+- -ant- は分詞接尾辞（能動・継続）で、「している」という意味だよ。ほかにも -int- 完了（してしまった）、-out- 未然（しようとしている）があるよ。
 
 ## 2
 
@@ -117,7 +117,7 @@ kiuj venis partopreni.
 
 ### ポイント
 
-- kiunは「どれ」以外にも「だれ」という意味があるよ。
+- kiun は「どれ」以外にも「だれ」という意味があるよ。
 
 ## 3
 
@@ -203,13 +203,13 @@ Mi kaj nevino / ĉi vespere farigis meĥanismojn / en Minecraft / per la Create 
 
 Ni havis grandan amuzon.
 
-私 ～と～ 姪 / 夕方ごろに 作った メカニズムを / ～の中で マインクラフト / ～で 定冠詞 クリエイトMOD
+私 ～と～ 姪 / 夕方ごろに 作った メカニズムを / ～の中で マインクラフト / ～で 定冠詞 クリエイト MOD
 
 私たち ～のあった 大きい娯楽を
 
 ### 訳:
 
-私と姪は、夕方ごろにマインクラフトの中でクリエイトMODを使ってメカを作りました。とても楽しかったです。
+私と姪は、夕方ごろにマインクラフトの中でクリエイト MOD を使ってメカを作りました。とても楽しかったです。
 
 ## 6
 
@@ -223,11 +223,11 @@ https://esperanto.masto.host/@esperantoparis/111213296838546060
 
 Sabate 28a de oktobro,
 
-土曜日に 28に ~の 10月
+土曜日に 28 に ~の 10 月
 
 7a ptm, surloke: Esperanto-kafejo
 
-7に 午後, 現地で: エスペラントカフェ
+7 に 午後, 現地で: エスペラントカフェ
 
 La Kafejo-esperanto okazas la duan sabaton / de ĉiu monato (krom escepto😁),
 
@@ -247,7 +247,7 @@ Venu, trinku, manĝu kaj babilu / en agrabla etoso.
 
 ### 訳
 
-10月28日土曜日 午後7時に現地で：エスペラントカフェ
+10 月 28 日土曜日 午後 7 時に現地で：エスペラントカフェ
 
 カフェエスペラントは毎月第二土曜日に毎回違ったカフェレストランで開催されます。
 
@@ -399,7 +399,7 @@ Ni restis en la parko / ĝis la sunsubiro.
 
 私たちは後で買い物をしました。
 
-とても暑い天気の13時でした。
+とても暑い天気の 13 時でした。
 
 暑さが和らいだ時に、姻戚家族と一緒にピクニックに行くために公園へ行きました。
 
@@ -426,7 +426,7 @@ https://esperanto.masto.host/@sorchist/111201087345131290
 
 Mi spektis (aŭdis) la muzikgrupon / "Violent Femmes" (Perfortaj Inuloj) vendredvespere.
 
-私 見た （聞いた） 定冠詞 バンドを / “ヴァイオレント・ファムズ" （暴力的な 女性たち）金曜日の夕方
+私 見た （聞いた） 定冠詞 バンドを / “ヴァイオレント・ファムズ " （暴力的な 女性たち）金曜日の夕方
 
 Ilin mi tre ŝatas!
 
@@ -461,3 +461,7 @@ kiujn mi manĝis \ ĉe mia loka Meksika restoracio
 ### 訳
 
 これは近所のメキシコ料理店で食べたチョリソータコスです。
+
+## 関連項目
+
+- [Mi eklernis Esperanton - alfabeto](231001-mi-eklernis-esperanton.md)
