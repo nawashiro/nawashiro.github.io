@@ -134,9 +134,7 @@ export default function Home({ allPostsData, networkData }) {
         <p>
           各ページの相互関係をグラフに出力しています。ノードをダブルクリックするとページを開くことができます。拡大縮小したり、ぐりぐりとノードを移動させたりして遊んでみてください。
         </p>
-        <div className={indexStyle.card}>
-          <NetworkGraph networkData={networkData} />
-        </div>
+        <NetworkGraph networkData={networkData} />
       </section>
 
       <section>

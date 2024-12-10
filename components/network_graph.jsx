@@ -31,7 +31,15 @@ export default function NetworkGraph({ networkData }) {
   return (
     <div>
       {/* Network図 を表示する領域 */}
-      <div style={{ height: 500, width: "100%" }} ref={ref} />
+      <div
+        style={{
+          height: 500,
+          width: "100%",
+          borderRadius: "1.5rem",
+          backgroundColor: "#FFFF",
+        }}
+        ref={ref}
+      />
     </div>
   );
 }
