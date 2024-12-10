@@ -7,7 +7,7 @@ date: "2024-07-08"
 
 ## 分散 SNS 集会『「Nostr and ATProto」by Shreyan Jain を読む』
 
-私が主催する「分散 SNS 集会」で、分散型の SNS プロトコルである Nostr と ATProto について包括的に比較した Shreyan Jain 氏のブログ記事[「Nostr and ATProto」](https://shreyanjain.net/2024/07/05/nostr-and-atproto.html)をみんなで読む催しをしました。
+私が主催する「分散 SNS 集会」で、分散型の SNS プロトコルである Nostr と ATProto について包括的に比較した Shreyan Jain 氏のブログ記事 [「Nostr and ATProto」](https://shreyanjain.net/2024/07/05/nostr-and-atproto.html) をみんなで読む催しをしました。
 
 記事では Nostr と ATProto の共通の祖先、アプローチのちがい、これからの分散型 SNS について語られていました。
 
@@ -35,9 +35,9 @@ Nostr では投稿文に必ず電子署名をします。署名に使う鍵ペ�
 
 場所が離れていて時間のかかる、手紙のようなユーザー体験を目指しました。
 
-- [こちら](../posts/240311-nos-hagaki-making)に開発したときのすったもんだを記録しています。
-- バーチャルライフマガジンさんが[ハッカソンを取材](https://vr-lifemagazine.com/vr-engineer-meeting-hackathon-0-presentation/)しており、[NosHagaki についても紙面を割いて下さりました](https://vr-lifemagazine.com/vr-engineer-meeting-hackathon-0-presentation/#NawashiroNosHagaki)。
-- 個人ブログ「あたしンちのおとうさんの独り言」にて[紹介していただきました](https://atasinti.chu.jp/dad3/archives/70297)。
+- [こちら](../posts/240311-nos-hagaki-making) に開発したときのすったもんだを記録しています。
+- バーチャルライフマガジンさんが [ハッカソンを取材](https://vr-lifemagazine.com/vr-engineer-meeting-hackathon-0-presentation/) しており、[NosHagaki についても紙面を割いて下さりました](https://vr-lifemagazine.com/vr-engineer-meeting-hackathon-0-presentation/#NawashiroNosHagaki)。
+- 個人ブログ「あたしンちのおとうさんの独り言」にて [紹介していただきました](https://atasinti.chu.jp/dad3/archives/70297)。
 
 https://nos-hagaki.vercel.app/
 

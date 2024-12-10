@@ -15,13 +15,13 @@ date: "2024-03-11"
 
 <ruby>慕狼<rp>(</rp><rt>しのがみ</rt><rp>)</rp></ruby>家の末っ子、慕狼ゆにさんが、いくつかの VR プラットフォームで運営している集会です。エンジニアならハード・ソフト・その他何でも OK、金曜日にお酒を飲んでワイワイしよう、というゆるい集会です｡毎回「進捗共有会」が催されます。飲んだお酒を進捗に数えても OK です。話が長くて制限時間を超えると、床が抜けて落とされます。
 
-VRChat で開催する週と Cluster で開催する週があります。よくある誤解なのですが、これらのソフトは VR 機器が無くても、デスクトップで使えます。特に Cluster はMacやスマホからでも入れるので、敷居はかなり低いです。
+VRChat で開催する週と Cluster で開催する週があります。よくある誤解なのですが、これらのソフトは VR 機器が無くても、デスクトップで使えます。特に Cluster は Mac やスマホからでも入れるので、敷居はかなり低いです。
 
 ### テーマ「バーチャルな〇〇」第一回エンジニア集会ハッカソン
 
 最初の開催ということで、テーマは応募前から開示されていました。テーマは上記の通り、バーチャルと関係していれば何でも OK ということで、参加者は仮想マシンを作ったり、きゅうりに蜂蜜をかけてメロンの味を再現しようとしたり、面白い試みを色々やっていました。
 
-[バーチャルライフマガジン](https://vr-lifemagazine.com/vr-engineer-meeting-hackathon-0-presentation/)の取材もあったとのことですので、そちらのアクセスカウンターも回していただけると幸いです。
+[バーチャルライフマガジン](https://vr-lifemagazine.com/vr-engineer-meeting-hackathon-0-presentation/) の取材もあったとのことですので、そちらのアクセスカウンターも回していただけると幸いです。
 
 ## NosHagaki について
 
@@ -157,13 +157,13 @@ export interface GeoJSONFeature {
 }
 ```
 
-`properties`に国名コードや日本語の地域名が入っています。
+`properties` に国名コードや日本語の地域名が入っています。
 
-国の形は`coordinates`の中にポリゴンが書いてありますね。指定した点がポリゴンの中にあるか、という判定は`point-in-polygon`というそのものなライブラリがあったのでこれを使いました。
+国の形は `coordinates` の中にポリゴンが書いてありますね。指定した点がポリゴンの中にあるか、という判定は `point-in-polygon` というそのものなライブラリがあったのでこれを使いました。
 
 ハ･サタン「毎回 geojson を読み込むの、よくないと思うで」
 
-なわしろ「IndexedDB にキャッシュしておくか。`zustand`と`idb-keyval`を使えば良さそうやね」
+なわしろ「IndexedDB にキャッシュしておくか。`zustand` と `idb-keyval` を使えば良さそうやね」
 
 ```ts
 import { del, get, set } from "idb-keyval";
@@ -218,11 +218,11 @@ const store = createStore(
 
 なわしろ「デプロイ先の Vercel には Postgres が用意されているけど、SQL を書くのはしんどい気がするな」
 
-Google 先生「Object-Relational Mapping（オブジェクト関連マッピング、対象関係映射、ORM、O/RM）を使うと良い。例えば`prisma`というのがある」
+Google 先生「Object-Relational Mapping（オブジェクト関連マッピング、対象関係映射、ORM、O/RM）を使うと良い。例えば `prisma` というのがある」
 
 登場人物が増えた「なわしろ」
 
-`prisma`をインストールすると`prisma`ディレクトリに`schema.prisma`ファイルが生成されます。データベースやテーブルの設定を書いていきます。
+`prisma` をインストールすると `prisma` ディレクトリに `schema.prisma` ファイルが生成されます。データベースやテーブルの設定を書いていきます。
 
 ```ts:prisma/schema.prisma
 generator client {
@@ -261,7 +261,7 @@ model SubmittedData {
 }
 ```
 
-`Event`のここを注目してください。`SubmittedData`を親、`Event`を子として関連付けています。また、`SubmittedData`の行が消されたら自動的にこちらも消えるように指定しています。
+`Event` のここを注目してください。`SubmittedData` を親、`Event` を子として関連付けています。また、`SubmittedData` の行が消されたら自動的にこちらも消えるように指定しています。
 
 ```ts
 SubmittedData   SubmittedData  @relation(fields: [submittedDataId], references: [id], onDelete: Cascade)
@@ -293,7 +293,7 @@ await prisma.submittedData.create({
 });
 ```
 
-なわしろ「確か『しずかなインターネット』は一時間に 6 稿のレート制限があったな。あれ真似したい。Redis と`upstash/ratelimit`を使うと良いらしいな」
+なわしろ「確か『しずかなインターネット』は一時間に 6 稿のレート制限があったな。あれ真似したい。Redis と `upstash/ratelimit` を使うと良いらしいな」
 
 ```ts
 import { Ratelimit } from "@upstash/ratelimit";
@@ -357,7 +357,7 @@ Google 先生「Tor は出口 IP リストを公開してるからブロック�
 
 ハ・サタン「ちょい待ち、今どこにそれを実装した？」
 
-なわしろ「リクエストが来た時に最初に実行される`middleware.ts`やけど」
+なわしろ「リクエストが来た時に最初に実行される `middleware.ts` やけど」
 
 ハ・サタン（やったなこいつ）
 
@@ -367,7 +367,7 @@ Shino3「なんか nos-hagaki おちた」
 
 なわしろ「わあ」
 
-ハ・サタン「`middleware.ts`に書いたからやね。全てのリクエストに対して実行されるから、Redis へのリクエストが殺到したんや。投稿 API あたりに実装するのが妥当やね」
+ハ・サタン「`middleware.ts` に書いたからやね。全てのリクエストに対して実行されるから、Redis へのリクエストが殺到したんや。投稿 API あたりに実装するのが妥当やね」
 
 なわしろ「メンテ入りまーす」
 
