@@ -16,6 +16,7 @@ date: "2024-12-14"
 ## 関連資料
 
 - [「すべての人に本を。」小学館のアクセシビリティへの取り組み - 小学館](https://www.shogakukan.co.jp/closeups/475675)
+- [誰もが読書をできる社会を目指して～読書のカタチを選べる「読書バリアフリー法」～（啓発用リーフレット） - 文部科学省](https://www.mext.go.jp/a_menu/ikusei/gakusyushien/mext_01304.html)
 
 ## 関連項目
 
