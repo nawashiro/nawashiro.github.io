@@ -20,3 +20,4 @@ date: "2024-12-14"
 ## 関連項目
 
 - [障害者の定義](20241214-disabled-people.md)
+- [NHK広島は原爆のなかいかに死んだか - 読書メモ](240806-book-esperanto-nuke.md)
