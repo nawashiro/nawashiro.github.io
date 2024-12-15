@@ -43,7 +43,7 @@ JIS 規格が達成基準を制定している。JIS X 8341-3:2016
 
 また、デジタル庁がガイドブックを作成している。
 
-- [ウェブアクセシビリティ導入ガイドブック - 文部科学省](https://www.digital.go.jp/resources/introduction-to-web-accessibility-guidebook)
+- [ウェブアクセシビリティ導入ガイドブック - デジタル庁](https://www.digital.go.jp/resources/introduction-to-web-accessibility-guidebook)
 
 ## 出版業界の取り組み
 
