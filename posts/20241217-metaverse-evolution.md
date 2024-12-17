@@ -13,3 +13,5 @@ date: "2024-12-17"
 ## 関連項目
 
 - [メタバースさよならアトムの時代 - 読書メモ](20241217-metaverse-goodbye-atom-age.md)
+- [ソファのアセット構想](241031-sofa-asset-concept.md)
+	- メタバースのいち実装、VRChatのアセットに関する構想。
