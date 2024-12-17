@@ -10,6 +10,19 @@ export default function NetworkGraph({ networkData }) {
     nodes: {
       shape: "dot",
       size: 8,
+      color: {
+        highlight: {
+          background: "#005aff",
+          border: "#005aff",
+        },
+      },
+    },
+    groups: {
+      none: { color: { background: "#bfe4ff" } },
+      index: { color: { background: "#ff4b00" } },
+      book: { color: { background: "#03af7a" } },
+      javascript: { color: { background: "#990099" } },
+      sns: { color: { background: "#f6aa00" } },
     },
   };
 
