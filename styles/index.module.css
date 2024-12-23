@@ -35,7 +35,7 @@
 .cardLink {
   margin-top: 1.5rem;
   border-radius: 0.5rem;
-  background-color: #0017c1;
+  background-color: var(--sea-800);
   color: white;
   width: 256px;
   height: 56px;
