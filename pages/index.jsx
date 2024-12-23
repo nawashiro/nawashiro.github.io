@@ -168,6 +168,14 @@ export default function Home({ allPostsData, networkData }) {
           <li className={utilStyles.listItem}>
             <Link
               className={utilStyles.link}
+              href={`/posts/20241217-one-thing-comment-index`}
+            >
+              💬ひとこと感想 - インデックス
+            </Link>
+          </li>
+          <li className={utilStyles.listItem}>
+            <Link
+              className={utilStyles.link}
               href={`/posts/20241209-socialmedia-index`}
             >
               📱ソーシャルメディア - インデックス
