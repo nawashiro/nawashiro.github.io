@@ -3,10 +3,13 @@
 
 :root {
   --sea-800: #0017c1;
-  --sumi-200: #e8e8eb;
-  --sumi-300: #d8d8db;
-  --sumi-700: #626264;
-  --sumi-1000: #111;
+  --blue-1000: #00118f;
+  --blue-500: #4979f5;
+  --gray-100: #e6e6e6;
+  --gray-200: #cccccc;
+  --gray-536: #767676;
+  --gray-600: #666666;
+  --gray-900: #1a1a1a;
   --content-max-widh: 1120px;
   --code-font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono";
   --max-content-width: calc(767px - 2rem);
@@ -15,7 +18,7 @@
 body,
 p,
 html {
-  color: var(--sumi-1000);
+  color: var(--gray-900);
   padding: 0;
   margin: 0;
   font-family: "Noto Sans JP", sans-serif;
@@ -30,7 +33,7 @@ p {
 }
 
 body {
-  background-color: var(--sumi-200);
+  background-color: var(--gray-100);
 }
 
 * {
@@ -38,12 +41,13 @@ body {
 }
 
 a {
-  color: var(--sea-800);
-  text-decoration: none;
+  color: var(--blue-1000);
+  text-decoration: underline;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: var(--blue-500);
+  text-decoration: none;
 }
 
 h1,
@@ -132,7 +136,7 @@ h5 {
 }
 .blog .remark-code-title {
   position: absolute;
-  background-color: var(--sumi-700);
+  background-color: var(--gray-600);
   color: white;
   border-radius: 0 0 0.2rem 0.2rem;
   left: 1rem;
@@ -146,8 +150,8 @@ h5 {
 /* インラインコード */
 .blog p code,
 .blog ul li code {
-  background-color: var(--sumi-300);
-  color: var(--sumi-1000);
+  background-color: var(--gray-200);
+  color: var(--gray-900);
   font-family: var(--code-font-family);
   padding: 1px 4px;
   border-radius: 0.2rem;
@@ -166,11 +170,11 @@ h5 {
 }
 
 .blog blockquote p {
-  color: var(--sumi-700);
+  color: var(--gray-600);
 }
 
 .blog blockquote ::before {
-  background-color: var(--sumi-700);
+  background-color: var(--gray-600);
   border-radius: 4px;
   content: "";
   height: 100%;
@@ -182,7 +186,7 @@ h5 {
 
 /* リンクカード */
 .blog .rlc-container {
-  color: var(--sumi-1000);
+  color: var(--gray-900);
   background-color: white;
   border-radius: 0.5rem;
   width: 100%;
@@ -220,7 +224,7 @@ h5 {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  color: var(--sumi-700);
+  color: var(--gray-600);
 }
 .blog .rlc-image-container {
   order: -1;
@@ -234,7 +238,7 @@ h5 {
 }
 .blog .rlc-description {
   width: 100%;
-  color: var(--sumi-700);
+  color: var(--gray-600);
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -251,7 +255,7 @@ h5 {
 /* table */
 .blog th,
 .blog td {
-  border: 1px solid var(--sumi-700);
+  border: 1px solid var(--gray-600);
   padding: 0.5rem 1rem;
 }
 .blog table {

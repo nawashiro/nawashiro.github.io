@@ -8,7 +8,7 @@
   display: flex;
 }
 .wrapHeader a {
-  color: var(--sumi-1000);
+  color: var(--gray-900);
 }
 .wrapMain {
   margin: 0 auto 4rem auto;
@@ -17,6 +17,15 @@
   font-weight: 900;
   margin: 0;
   font-size: 1.5rem;
+}
+.name a,
+.nav a {
+  text-decoration: none;
+}
+.name a:hover,
+.nav a:hover {
+  text-decoration: underline;
+  color: var(--gray-536);
 }
 .nav {
   display: none;
