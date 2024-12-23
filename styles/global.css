@@ -185,6 +185,9 @@ h5 {
 }
 
 /* リンクカード */
+.blog a {
+  text-decoration: none;
+}
 .blog .rlc-container {
   color: var(--gray-900);
   background-color: white;
