@@ -42,7 +42,7 @@ export default function Home({ allPostsData, networkData }) {
       <section>
         <div className={indexStyle.card}>
           <div className={indexStyle.imgWrap}>
-            <img src="/images/code.webp" />
+            <img src="/images/code.webp" alt="ハッカソンのために書いたコード" />
           </div>
           <div className={indexStyle.innerCard}>
             <div>
@@ -66,7 +66,10 @@ export default function Home({ allPostsData, networkData }) {
 
         <div className={indexStyle.card}>
           <div className={indexStyle.imgWrap}>
-            <img src="/images/nostr.webp" />
+            <img
+              src="/images/nostr.webp"
+              alt="Nostrプロトコルにおけるひと単位のデータ（イベント）のJSON構造"
+            />
           </div>
           <div className={cx(indexStyle.innerCard, indexStyle.leftCard)}>
             <div>
@@ -85,7 +88,7 @@ export default function Home({ allPostsData, networkData }) {
 
         <div className={indexStyle.card}>
           <div className={indexStyle.imgWrap}>
-            <img src="/images/social-vr.webp" />
+            <img src="/images/social-vr.webp" alt="VRChatとCluster" />
           </div>
           <div className={indexStyle.innerCard}>
             <div>
@@ -102,7 +105,7 @@ export default function Home({ allPostsData, networkData }) {
 
         <div className={indexStyle.card}>
           <div className={indexStyle.imgWrap}>
-            <img src="/images/nagashima.webp" />
+            <img src="/images/nagashima.webp" alt="長島ダム" />
           </div>
           <div className={cx(indexStyle.innerCard, indexStyle.leftCard)}>
             <div>
