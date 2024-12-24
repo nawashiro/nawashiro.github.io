@@ -11,7 +11,7 @@
   color: var(--gray-900);
 }
 .wrapMain {
-  margin: 0 auto 4rem auto;
+  margin: 0 auto 6rem auto; /* Support me ボタンができたので 4rem から 6rem に変更したよ */
 }
 .name {
   font-weight: 900;
