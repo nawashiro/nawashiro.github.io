@@ -70,9 +70,11 @@ export default function Layout({ children, home, title }) {
                 <IconContext.Provider value={{ size: "2rem" }}>
                   <MdMenu />
                 </IconContext.Provider>
+                <p>Menu</p>
               </MenuButton>
             }
             transition
+            className={styles.menulist}
           >
             <Link href={"/"}>
               <MenuItem>Home</MenuItem>
