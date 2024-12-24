@@ -185,9 +185,6 @@ h5 {
 }
 
 /* リンクカード */
-.blog a {
-  text-decoration: none;
-}
 .blog .rlc-container {
   color: var(--gray-900);
   background-color: white;
@@ -198,6 +195,7 @@ h5 {
   display: flex;
   flex-direction: column;
   margin: 1rem 0;
+  text-decoration: none;
 }
 .blog .rlc-container:hover {
   text-decoration: none;
