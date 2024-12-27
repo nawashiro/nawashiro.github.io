@@ -31,6 +31,7 @@ date: "2024-12-10"
 - [ソファのアセット構想](241031-sofa-asset-concept.md)
 - [Nostrの音楽アプリをぼんやり構想してみる](240905-nostr-music-client-memo.md)
 - [NosHagaki大改造計画](20241218-nos-hagaki-great-changing-plan.md)
+- [ウェブサイトにコメントボタンを追加する](20241227-social-media-comment-button.md)
 
 ## 関連項目
 
