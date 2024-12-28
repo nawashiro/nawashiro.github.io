@@ -17,7 +17,10 @@
 
 body,
 p,
-html {
+html,
+textarea,
+input,
+label {
   color: var(--gray-900);
   padding: 0;
   margin: 0;
