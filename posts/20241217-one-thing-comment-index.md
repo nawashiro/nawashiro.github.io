@@ -15,3 +15,4 @@ date: "2024-12-17"
 - [エヴァンゲリオンの夢 使徒進化論の幻影 - 読書メモ](20241217-the-dream-of-evangelion-the-illusion-of-the-evolution-of-the-engels.md)
 - [ヴィジョンズ - 読書メモ](20241217-visions.md)
 - [ぼくらは都市を愛していた - 読書メモ](20241217-we-loved-the-city.md)
+- [3・11後を生きるきみたちへ - 読書メモ](20241228-to-those-of-you-living-after-3-11.md)
