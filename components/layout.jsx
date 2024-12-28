@@ -14,7 +14,7 @@ const name = "NAWASHIRO";
 export const siteTitle = "NAWASHIRO";
 const { publicRuntimeConfig } = getConfig();
 
-export default function Layout({ children, home, title }) {
+export default function Layout({ children, blog, title }) {
   const basePath = (publicRuntimeConfig && publicRuntimeConfig.basePath) || "";
 
   useEffect(() => {
@@ -97,7 +97,7 @@ export default function Layout({ children, home, title }) {
       <main>
         <div className={cx(styles.wrapMain, styles.wrapContent)}>
           {children}
-          {!home && (
+          {blog && (
             <div className={styles.back}>
               <Link href="/">
                 <IconContext.Provider value={{ size: "1rem" }}>

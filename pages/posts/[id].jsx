@@ -27,7 +27,7 @@ export async function getStaticPaths() {
 
 export default function Post({ postData }) {
   return (
-    <Layout title={postData.title}>
+    <Layout title={postData.title} blog>
       <Head>
         <title>{postData.title}</title>
       </Head>
