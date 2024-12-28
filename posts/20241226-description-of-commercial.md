@@ -11,7 +11,7 @@ date: "2024-12-26"
 
 メールアドレス:
 
-<img src="/images/mail.svg" alt="email" height="32" width="314">
+<img src="/images/mail.svg" alt="email" height="32">
 
 運営統括責任者: 請求があったら遅滞なく開示します
 
