@@ -79,5 +79,5 @@ https://obsidian.md/publish
 
 ## 関連項目
 
-- [Obsidianでツェッテルカステンをつけてみた](240601-zettelkasten-obsidian.md)
+- [TAKE NOTES! - 読書メモ](20250105-take-notes.md)
 	- デジタルガーデンはツェッテルカステンとの関連がとても深いです。

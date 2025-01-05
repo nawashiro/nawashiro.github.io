@@ -68,4 +68,5 @@ https://vrchat.com/home/world/wrld_b6c40f25-1670-4e73-849e-d8b5f4794951
 
 ## 関連項目
 
-- [Obsidianでツェッテルカステンをつけてみた](240601-zettelkasten-obsidian.md)
+- [TAKE NOTES! - 読書メモ](20250105-take-notes.md)
+	- メモの技法「ツェッテルカステン」について解説する。
