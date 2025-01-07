@@ -1,7 +1,11 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
-import { getPostNetworkData, getSortedPostsData } from "../lib/posts";
+import {
+  getPostNetworkData,
+  getSortedPostsData,
+  getIndexPagesData,
+} from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
 import indexStyle from "../styles/index.module.css";
@@ -11,15 +15,17 @@ import NetworkGraph from "../components/network_graph";
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
   const networkData = getPostNetworkData();
+  const indexPagesData = getIndexPagesData();
   return {
     props: {
       allPostsData,
       networkData,
+      indexPagesData,
     },
   };
 }
 
-export default function Home({ allPostsData, networkData }) {
+export default function Home({ allPostsData, networkData, indexPagesData }) {
   return (
     <Layout>
       <a rel="me" href="https://gamelinks007.net/@nawashiro"></a>
@@ -152,51 +158,18 @@ export default function Home({ allPostsData, networkData }) {
       <section>
         <h2 className={indexStyle.h2}>Index</h2>
         <ul className={utilStyles.list}>
-          <li className={utilStyles.listItem}>
-            <Link
-              className={utilStyles.link}
-              href={`/posts/20241209-develop-index`}
-            >
-              🔧技術 - インデックス
-            </Link>
-          </li>
-          <li className={utilStyles.listItem}>
-            <Link
-              className={utilStyles.link}
-              href={`/posts/20241209-book-reading-memo-index`}
-            >
-              📚感想 - インデックス
-            </Link>
-          </li>
-          <li className={utilStyles.listItem}>
-            <Link
-              className={utilStyles.link}
-              href={`/posts/20241217-one-thing-comment-index`}
-            >
-              💬ひとこと感想 - インデックス
-            </Link>
-          </li>
-          <li className={utilStyles.listItem}>
-            <Link
-              className={utilStyles.link}
-              href={`/posts/20241209-socialmedia-index`}
-            >
-              📱ソーシャルメディア - インデックス
-            </Link>
-          </li>
-          <li className={utilStyles.listItem}>
-            <Link
-              className={utilStyles.link}
-              href={`/posts/20241209-scribble-index`}
-            >
-              ✒️落書き - インデックス
-            </Link>
-          </li>
+          {indexPagesData.map(({ id, date, title }) => (
+            <li className={utilStyles.listItem} key={id}>
+              <Link className={utilStyles.link} href={`/posts/${id}`}>
+                {title}
+              </Link>
+            </li>
+          ))}
         </ul>
       </section>
 
       <section>
-        <h2 className={indexStyle.h2}>Pages</h2>
+        <h2 className={indexStyle.h2}>All Pages</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>

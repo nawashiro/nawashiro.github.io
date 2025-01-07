@@ -51,7 +51,7 @@ export default function Layout({ children, blog, title }) {
                 <Link href={"/"}>Home</Link>
               </li>
               <li>
-                <Link href={"/posts/projects"}>Projects</Link>
+                <Link href={"/posts/projects-index"}>Projects</Link>
               </li>
               <li>
                 <Link href={"/posts/links"}>Links</Link>
@@ -70,7 +70,7 @@ export default function Layout({ children, blog, title }) {
                 <IconContext.Provider value={{ size: "2rem" }}>
                   <MdMenu />
                 </IconContext.Provider>
-                <p>Menu</p>
+                <p>MENU</p>
               </MenuButton>
             }
             transition
@@ -79,7 +79,7 @@ export default function Layout({ children, blog, title }) {
             <Link href={"/"}>
               <MenuItem>Home</MenuItem>
             </Link>
-            <Link href={"/posts/projects"}>
+            <Link href={"/posts/projects-index"}>
               <MenuItem>Projects</MenuItem>
             </Link>
             <Link href={"/posts/links"}>
