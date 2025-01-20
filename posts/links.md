@@ -5,6 +5,30 @@ date: "2023-09-26 13:03"
 
 私の各種 SNS へのリンクを紹介します。
 
+## Ko-fi
+
+制作物の販売・支援の受付をしています。なるべくここから買ってください！いちばん手数料が低いので……
+
+https://ko-fi.com/nawashiro
+
+## Booth
+
+制作物の販売・支援の受付をしています。
+
+https://nawashiro.booth.pm/
+
+## Gumroad
+
+制作物の販売・支援の受付をしています。
+
+https://nawashiro.gumroad.com/
+
+## Misskey
+
+分散 SNS 集会の告知に使用している ActivityPub プロトコル対応 SNS のアカウントです。
+
+https://misskey.io/@continue5645
+
 ## 読書メーター
 
 読んだ本をまとめています。たまに感想も書きます。
@@ -22,12 +46,6 @@ https://twitter.com/yineleyici
 主に使用している ActivityPub プロトコル対応 SNS のアカウントです。
 
 https://gamelinks007.net/@nawashiro
-
-## Misskey
-
-サブで使用している ActivityPub プロトコル対応 SNS のアカウントです。基本的に分散 SNS 集会の告知のみを行っています。
-
-https://misskey.io/@continue5645
 
 ## Bluesky
 
