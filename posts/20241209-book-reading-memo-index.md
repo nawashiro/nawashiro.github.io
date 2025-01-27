@@ -12,6 +12,10 @@ date: "2025-01-04"
 - [三体 - 読書メモ](20241217-the-three-body-problem-1.md)
 	- 最高の SF
 
+## 美術展
+
+- [ソフィ・カルとともに死を見つめる](20250127-sophie-calle-with-death-focus-on.md)
+
 ## ノンフィクション
 
 - [SNS はなぜ人を過激化させるのか - 読書メモ](240810-social-media-prism.md)
