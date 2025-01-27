@@ -25,7 +25,9 @@ VRChat で開催する週と Cluster で開催する週があります。よく�
 
 ## NosHagaki について
 
-https://nos-hagaki.vercel.app/
+[Nos-hagaki](https://nos-hagaki.vercel.app/)
+
+![Nos-hagaki 外観](https://imgur.com/bNdk7bR.png1)
 
 登場人物
 
