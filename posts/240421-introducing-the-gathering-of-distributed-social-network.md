@@ -103,18 +103,11 @@ https://discord.gg/4NTwMMMw9P
 
 ## VRChat 初めて使うんだけど、どうすればいい？
 
-会場に入るやりかたはふた通りあります。WindowsPC か Android スマートフォン、あるいは Quest などの VR 機器に VRChat をインストールできている前提で話します。
+まずはVRChat の分散 SNS 集会グループに入る必要があります。
 
-### SAKURA street の Group Public インスタンスに Join
+https://vrc.group/DSNS.7786
 
-1. 当日の開催時刻に、VRChat を起動して「SAKURA street」で検索するか、ブラウザで [https://vrchat.com/home/world/wrld_3c816a4f-e298-4750-9628-14a878b45573](https://vrchat.com/home/world/wrld_3c816a4f-e298-4750-9628-14a878b45573) にアクセスしてください。
-2. インスタンス一覧（VRChat 内なら Instances、ブラウザなら Active Instances）を見てください。Group Public と併記されたインスタンスがあるはずです（無かったらまだ開場してません）。それをクリックして、入場できます。
-
-### 主催にフレンド申請して Join
-
-1. [https://vrchat.com/home](https://vrchat.com/home) にアクセスして、検索窓に主催の名前「Nawashiro」を入力してください。もし、「Nawashiro のスケジュールの都合がつかなくて別の人が開催している」という告知が出ていた場合は、名前をその人に読み替えてください。
-2. Add Friend ボタンを押して、フレンド申請を送ってください。主催が申請を確認し、許可をします。
-3. 当日、時間になったら VRChat のフレンド一覧から主催を選択して「Join」ボタンを押してください。
+このグループでインスタンスを開くので、当日、時刻になったらお越しください。
 
 ## ルールはある？
 
