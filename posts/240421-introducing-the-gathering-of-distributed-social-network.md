@@ -103,7 +103,7 @@ https://discord.gg/4NTwMMMw9P
 
 ## VRChat 初めて使うんだけど、どうすればいい？
 
-まずはVRChat の分散 SNS 集会グループに入る必要があります。
+まずは VRChat の分散 SNS 集会グループに入る必要があります。
 
 https://vrc.group/DSNS.7786
 
