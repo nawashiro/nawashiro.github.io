@@ -128,3 +128,5 @@ private void OnAudioFilterRead(float[] _, int __)
 ## 次回予告
 
 次回は軽量化の続きを、特に斥力のランダムスキップと疑似乱数について扱います。
+
+[ハッカソン成果物発表 - Udon Zettelkasten System の紹介](240911-udon-zettelkasten-system.md)

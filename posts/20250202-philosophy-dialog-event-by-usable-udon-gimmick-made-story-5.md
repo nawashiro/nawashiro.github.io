@@ -72,3 +72,5 @@ else
 ## 次回予告
 
 次回は、今回登場したキャリー付き乗算（MWC）について解説します。
+
+[ハッカソン成果物発表 - Udon Zettelkasten System の紹介](240911-udon-zettelkasten-system.md)
