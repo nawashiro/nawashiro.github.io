@@ -2,8 +2,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
-    "start": "next start"
+    "build": "next build",
+    "output": "export"
   },
   "dependencies": {
     "@szhsin/react-menu": "^4.0.3",
