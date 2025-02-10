@@ -124,7 +124,6 @@ export default function Post({ id, postData }) {
               )}
               {commentState == "selectSNS" && (
                 <>
-                  Choose SNS:
                   <input
                     type="button"
                     value="Mastodon or Misskey"
