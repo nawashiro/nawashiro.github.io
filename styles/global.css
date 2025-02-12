@@ -187,6 +187,11 @@ h5 {
   width: 4px;
 }
 
+/* 罫線 */
+hr {
+  margin: 4rem 0 4rem 0;
+}
+
 /* リンクカード */
 .blog .rlc-container {
   color: var(--gray-900);
