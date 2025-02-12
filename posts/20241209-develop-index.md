@@ -7,6 +7,8 @@ date: "2025-01-04"
 
 ## ノウハウ
 
+- [哲学対話イベントで使える Udon ギミックを作った話 まとめ](20250212-philosophy-dialog-event-by-usable-udon-gimmick-made-story-conclusion.md)
+	- ハッカソン成果物の使用技術に関するまとめです。
 - [WCAG 2.0 達成基準 1.4.1 を理解する](20241223-wcag20-visual-audio-contrast-without-color.md)
 	- ウェブコンテンツにおける色の扱いについて解説している。
 - [GitHub Pages & Next.jsで個人サイト作ってつまづいたところ](230928-create-ssg-1.md)

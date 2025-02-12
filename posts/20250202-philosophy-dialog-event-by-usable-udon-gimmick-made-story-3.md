@@ -33,5 +33,3 @@ forces = forces + centerAttractiveForce // 既存の力に反映
 ## 次回予告
 
 次回は軽量化のためのマルチスレッド処理について扱います。
-
-[ハッカソン成果物発表 - Udon Zettelkasten System の紹介](240911-udon-zettelkasten-system.md)

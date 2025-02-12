@@ -111,5 +111,3 @@ while (温度が一定以上) {
 ## 次回予告
 
 次回は、この力学モデルを具体的に UdonSharp でどのように実装したのか、その技術的な詳細についてご紹介したいと思います。
-
-[ハッカソン成果物発表 - Udon Zettelkasten System の紹介](240911-udon-zettelkasten-system.md)

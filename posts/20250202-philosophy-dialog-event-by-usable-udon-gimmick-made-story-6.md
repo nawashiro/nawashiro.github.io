@@ -112,5 +112,3 @@ private int Next()
 ## 次回予告
 
 次回は、軽量化で試みて失敗したグリッド処理と近傍探索（kd-Tree 探索）について扱います。
-
-[ハッカソン成果物発表 - Udon Zettelkasten System の紹介](240911-udon-zettelkasten-system.md)
