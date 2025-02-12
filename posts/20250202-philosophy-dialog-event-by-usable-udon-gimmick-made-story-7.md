@@ -64,5 +64,3 @@ UdonSharp の制約によって再帰処理が行えなかったので、for 文
 [^2]: 最後の `-1` が必要だったのか今となっては思い出せません。
 
 結果的に、再帰が使えなかったので、夢は泡となりました。
-
-[ハッカソン成果物発表 - Udon Zettelkasten System の紹介](240911-udon-zettelkasten-system.md)

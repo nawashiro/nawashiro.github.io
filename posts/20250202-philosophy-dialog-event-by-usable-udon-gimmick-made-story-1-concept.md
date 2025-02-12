@@ -46,5 +46,3 @@ date: "2025-02-02"
 ## 次回予告
 
 次回は、今回登場した力学モデルの具体的なアルゴリズムについて扱います。
-
-[ハッカソン成果物発表 - Udon Zettelkasten System の紹介](240911-udon-zettelkasten-system.md)

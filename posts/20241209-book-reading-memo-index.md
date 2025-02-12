@@ -9,7 +9,7 @@ date: "2025-01-04"
 
 - [現代倫理学入門 - 読書メモ](20241217-introduction-to-modern-ethics.md)
 	- マイ・バイブル
-- [三体 - 読書メモ](20241217-the-three-body-problem-1.md)
+- [三体 - 感想まとめ](20250212-the-three-body-problem-conclusion.md)
 	- 最高の SF
 
 ## 美術展
@@ -29,15 +29,6 @@ date: "2025-01-04"
 - [魂をふるわせるマシン - 読書メモ](20241208-soul-driver.md)
 - [映画『トラペジウム』を観て](240603-trapezium.md)
 - [沈黙のリトルボーイ - 読書メモ](20241217-silent-little-boy.md)
-- [三体2 黒暗森林 上 - 読書メモ](20241217-the-three-body-problem-2.md)
-- [三体2 黒暗森林 下 - 読書メモ](20241217-the-three-body-problem-3.md)
-- [三体3 死神永生 上 - 読書メモ](20241217-the-three-body-problem-4.md)
-- [三体3 死神永生 下 - 読書メモ](20241217-the-three-body-problem-5.md)
-- [三体X 観想之宙 - 読書メモ](20241217-the-three-body-problem-x.md)
-	- ファンによる二次創作が公式レーベルから出たもの。
-- [三体0 球状閃電 - 読書メモ](20241217-the-three-body-problem-0.md)
-	- 実際には三体シリーズより先に書かれたもの。
-	- 前日譚、あるいは並行世界として読むとよい。
 - [ビブリア古書堂の事件手帖6 〜栞子さんと巡るさだめ〜 - 読書メモ](20241217-biblia-used-bookstore-casebook-6.md)
 - [ビートレス - 読書メモ](20241217-beatless.md)
 
