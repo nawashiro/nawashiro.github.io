@@ -71,7 +71,7 @@ fixed4 reflectionColor = UNITY_SAMPLE_TEXCUBE_LOD(unity_SpecCube0, reflDir, 0);
 half vdotn = max(0, dot(viewDir, i.normal));
 ```
 
-フレネル方程式を使って、フレネル反射の強さを計算する（$\text{base}$ はベースの反射率、$\text{fresnel}$ はフレネル係数）。
+Schlick の近似式を使って、フレネル反射の強さを計算する（$\text{base}$ はベースの反射率、$\text{fresnel}$ は反射の強さ）。
 
 $$\text{base}=0$$
 
@@ -81,7 +81,7 @@ $$y=\text{base}+\left(1-\text{base}\right)\cdot\left(1-x\right)^5\cdot\text{fres
 
 ![フレネル方程式のグラフ。xが増えるたびyは急速に 0 へ近づいていく。](https://i.imgur.com/GUBFyIH.png)
 
-`_F0` はベースの反射率、`_Fresnel` はフレネル係数。
+`_F0` はベースの反射率、`_Fresnel` は反射の強さ。
 
 ```c
 half3 fresnel = (_F0 + (1.0h - _F0) * pow(1.0h - vdotn, 5)) * _Fresnel;

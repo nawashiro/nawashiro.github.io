@@ -122,12 +122,15 @@ h5 {
 }
 
 /* img */
-
 .blog img {
   width: 100%;
   max-width: var(--max-content-width);
   display: block;
   margin: 1rem 0;
+  padding: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 3px 10px var(--gray-200);
+  border-radius: 3px;
 }
 
 /* code block */
@@ -188,8 +191,20 @@ h5 {
 }
 
 /* 罫線 */
-hr {
+.blog hr {
   margin: 4rem 0 4rem 0;
+}
+
+/* 数式 */
+.blog .katex {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  max-width: calc(100vw - 2rem);
+  display: inline-flex;
+}
+.blog math {
+  flex-shrink: 0;
+  width: auto;
 }
 
 /* リンクカード */
