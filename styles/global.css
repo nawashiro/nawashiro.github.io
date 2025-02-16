@@ -199,8 +199,13 @@ h5 {
 .blog .katex {
   overflow-x: scroll;
   overflow-y: hidden;
-  max-width: calc(100vw - 2rem);
+  max-width: 100%;
   display: inline-flex;
+  flex-shrink: 1;
+}
+.blog .katex::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
 }
 .blog math {
   flex-shrink: 0;
