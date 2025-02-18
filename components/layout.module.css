@@ -16,7 +16,7 @@
   position: relative;
 }
 
-/* weapMain アニメーション */
+/* wrapMain アニメーション */
 .wrapMain::before {
   animation: wrapMain 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   background: var(--gray-100);
@@ -24,7 +24,7 @@
   inset: 0;
   pointer-events: none;
   position: absolute;
-  z-index: 1;
+  z-index: 10; /* リンクカードで1を使っているため注意 */
   animation-delay: 0.5s;
 }
 @keyframes wrapMain {
