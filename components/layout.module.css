@@ -18,12 +18,6 @@
   margin: 0;
   font-size: 1.5rem;
 }
-.name a {
-  animation: none;
-}
-.name a:hover {
-  animation: none;
-}
 .name a,
 .nav a {
   text-decoration: none;
@@ -76,28 +70,8 @@
 /* \ name hover アニメーション */
 
 .nav a:hover {
-  animation: none;
-}
-.nav a {
-  background: linear-gradient(to left, rgb(0 0 0 / 0) 50%, var(--gray-900) 50%);
-  background-size: 201% 100%;
-  background-position: right;
-  padding: 0px 2px 0px 2px;
-}
-.nav a:hover {
-  animation: slidein 0.3s ease forwards;
-  text-decoration: none;
-  color: white;
-  transition: all 0.3s ease;
-  border-radius: 3px;
-}
-@keyframes slidein {
-  0% {
-    background-position: right;
-  }
-  100% {
-    background-position: left;
-  }
+  text-decoration: underline;
+  color: var(--gray-536);
 }
 .nav {
   display: none;
