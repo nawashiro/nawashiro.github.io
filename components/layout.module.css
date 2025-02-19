@@ -22,7 +22,53 @@
 .nav a {
   text-decoration: none;
 }
-.name a:hover,
+
+/* name hover アニメーション */
+.letter {
+  display: inline-block;
+  animation: none;
+}
+.name:hover .letter {
+  animation: jump 0.3s ease forwards;
+}
+.name:hover .letter:nth-child(1) {
+  animation-delay: 0s;
+}
+.name:hover .letter:nth-child(2) {
+  animation-delay: 0.05s;
+}
+.name:hover .letter:nth-child(3) {
+  animation-delay: 0.1s;
+}
+.name:hover .letter:nth-child(4) {
+  animation-delay: 0.15s;
+}
+.name:hover .letter:nth-child(5) {
+  animation-delay: 0.2s;
+}
+.name:hover .letter:nth-child(6) {
+  animation-delay: 0.25s;
+}
+.name:hover .letter:nth-child(7) {
+  animation-delay: 0.3s;
+}
+.name:hover .letter:nth-child(8) {
+  animation-delay: 0.35s;
+}
+.name:hover .letter:nth-child(9) {
+  animation-delay: 0.4s;
+}
+@keyframes jump {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+/* \ name hover アニメーション */
+
 .nav a:hover {
   text-decoration: underline;
   color: var(--gray-536);
