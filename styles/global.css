@@ -48,11 +48,33 @@ a {
   color: var(--blue-1000);
   text-decoration: underline;
 }
-
-a:hover {
-  color: var(--blue-500);
-  text-decoration: none;
+/* a:hover アニメーション */
+a {
+  background: linear-gradient(
+    to left,
+    rgb(0 0 0 / 0) 50%,
+    var(--blue-1000) 50%
+  );
+  background-size: 201% 100%;
+  background-position: right;
+  padding: 0px 2px 0px 2px;
 }
+a:hover {
+  animation: slidein 0.3s ease forwards;
+  text-decoration: none;
+  color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+@keyframes slidein {
+  0% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+/* \ a:hover アニメーション */
 
 h1,
 h2 {
@@ -215,6 +237,8 @@ h5 {
 
 /* リンクカード */
 .blog .rlc-container {
+  padding: 0;
+  animation: none;
   color: var(--gray-900);
   background-color: white;
   border-radius: 0.5rem;
@@ -284,6 +308,9 @@ h5 {
 }
 
 /* リンクカード hover アニメーション */
+.blog .rlc-container:hover {
+  animation: none;
+}
 .blog .rlc-info {
   position: relative;
 }

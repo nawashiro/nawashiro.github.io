@@ -33,6 +33,7 @@
 }
 
 .cardLink {
+  animation: none;
   margin-top: 1.5rem;
   border-radius: 0.5rem;
   background-color: var(--sea-800);
@@ -45,6 +46,11 @@
   position: relative;
   text-decoration: none;
   transition: 0.3s;
+}
+.cardLink:hover {
+  animation: none;
+  border-radius: 0.5rem;
+  background-color: #0017c14c;
 }
 
 @media screen and (min-width: 768px) {
