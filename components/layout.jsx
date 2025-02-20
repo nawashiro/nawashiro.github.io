@@ -10,6 +10,7 @@ import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 import { useEffect } from "react";
 
+const name = "NAWASHIRO";
 export const siteTitle = "NAWASHIRO";
 const { publicRuntimeConfig } = getConfig();
 
@@ -42,16 +43,7 @@ export default function Layout({ children, blog, title }) {
       <header>
         <div className={cx(styles.wrapContent, styles.wrapHeader)}>
           <h2 className={styles.name}>
-            <Link href="/">
-              <span class={styles.letter}>N</span>
-              <span class={styles.letter}>A</span>
-              <span class={styles.letter}>W</span>
-              <span class={styles.letter}>A</span>
-              <span class={styles.letter}>H</span>
-              <span class={styles.letter}>I</span>
-              <span class={styles.letter}>R</span>
-              <span class={styles.letter}>O</span>
-            </Link>
+            <Link href="/">{name}</Link>
           </h2>
           <nav className={styles.nav}>
             <ul>

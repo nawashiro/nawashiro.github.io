@@ -18,86 +18,14 @@
   margin: 0;
   font-size: 1.5rem;
 }
-.name a {
-  animation: none;
-}
-.name a:hover {
-  animation: none;
-}
 .name a,
 .nav a {
   text-decoration: none;
 }
-
-/* name hover アニメーション */
-.letter {
-  display: inline-block;
-  animation: none;
-}
-.name:hover .letter {
-  animation: jump 0.3s ease forwards;
-}
-.name:hover .letter:nth-child(1) {
-  animation-delay: 0s;
-}
-.name:hover .letter:nth-child(2) {
-  animation-delay: 0.05s;
-}
-.name:hover .letter:nth-child(3) {
-  animation-delay: 0.1s;
-}
-.name:hover .letter:nth-child(4) {
-  animation-delay: 0.15s;
-}
-.name:hover .letter:nth-child(5) {
-  animation-delay: 0.2s;
-}
-.name:hover .letter:nth-child(6) {
-  animation-delay: 0.25s;
-}
-.name:hover .letter:nth-child(7) {
-  animation-delay: 0.3s;
-}
-.name:hover .letter:nth-child(8) {
-  animation-delay: 0.35s;
-}
-.name:hover .letter:nth-child(9) {
-  animation-delay: 0.4s;
-}
-@keyframes jump {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-/* \ name hover アニメーション */
-
+.name a:hover,
 .nav a:hover {
-  animation: none;
-}
-.nav a {
-  background: linear-gradient(to left, rgb(0 0 0 / 0) 50%, var(--gray-900) 50%);
-  background-size: 201% 100%;
-  background-position: right;
-  padding: 0px 2px 0px 2px;
-}
-.nav a:hover {
-  animation: slidein 0.3s ease forwards;
-  text-decoration: none;
-  color: white;
-  transition: all 0.3s ease;
-  border-radius: 3px;
-}
-@keyframes slidein {
-  0% {
-    background-position: right;
-  }
-  100% {
-    background-position: left;
-  }
+  text-decoration: underline;
+  color: var(--gray-536);
 }
 .nav {
   display: none;
