@@ -33,15 +33,21 @@ export default function Home({ allPostsData, networkData, indexPagesData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={indexStyle.hero}>
-        <p className={indexStyle.heroA}>Development</p>
-        <div className={indexStyle.heroB}>
-          <p>
-            Distributed social networking
-            <br />
-            Social VR
-            <br />
-            Travel
-          </p>
+        <p className={indexStyle.heroA}>
+          <span>D</span>
+          <span>e</span>
+          <span>v</span>
+          <span>e</span>
+          <span>l</span>
+          <span>o</span>
+          <span>p</span>
+          <span>m</span>
+          <span>e</span>
+          <span>n</span>
+          <span>t</span>
+        </p>
+        <div className={indexStyle.herotext}>
+          <p>I am a freelance programmer. Looking for work.</p>
         </div>
       </section>
 
@@ -66,63 +72,6 @@ export default function Home({ allPostsData, networkData, indexPagesData }) {
                   NosHagakiを開く
                 </a>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div className={indexStyle.card}>
-          <div className={indexStyle.imgWrap}>
-            <img
-              src="/images/nostr.webp"
-              alt="Nostrプロトコルにおけるひと単位のデータ（イベント）のJSON構造"
-            />
-          </div>
-          <div className={cx(indexStyle.innerCard, indexStyle.leftCard)}>
-            <div>
-              <h2>Distributed social networking</h2>
-              <p>
-                分散型SNSが好きでいろいろ調べています。
-                <br />
-                <a href="https://www.w3.org/TR/activitypub/">ActivityPub</a>、
-                <a href="https://nostr.com/">Nostr</a>、
-                <a href="https://atproto.com/">ATProtocol</a>
-                など、いくつかの試みがあります。
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className={indexStyle.card}>
-          <div className={indexStyle.imgWrap}>
-            <img src="/images/social-vr.webp" alt="VRChatとCluster" />
-          </div>
-          <div className={indexStyle.innerCard}>
-            <div>
-              <h2>Social VR</h2>
-              <p>
-                よく<a href="https://hello.vrchat.com/">VRChat</a>や
-                <a href="https://cluster.mu/">cluster</a>にいます。
-                <br />
-                相互運用可能なSNSにまつわる技術について情報交換する「分散SNS集会」を主催しています。
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className={indexStyle.card}>
-          <div className={indexStyle.imgWrap}>
-            <img src="/images/nagashima.webp" alt="長島ダム" />
-          </div>
-          <div className={cx(indexStyle.innerCard, indexStyle.leftCard)}>
-            <div>
-              <h2>Travel</h2>
-              <p>
-                旅が好きです。たまに鉄道で旅行に行きます。
-                <br />
-                これは静岡県榛原郡の
-                <a href="https://www.cbr.mlit.go.jp/nagashima/">長島ダム</a>
-                に行った時の写真です。
-              </p>
             </div>
           </div>
         </div>
