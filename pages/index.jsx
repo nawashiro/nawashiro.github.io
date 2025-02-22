@@ -69,7 +69,6 @@ export default function Home({
           </div>
           <div className={indexStyle.innerCard}>
             <div>
-              <h2>Development</h2>
               <p>
                 エンジニア集会ハッカソンにて
                 <a href="https://nostr.com/">Nostrプロトコル</a>
