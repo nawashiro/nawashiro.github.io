@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
-import { Network, nodes } from "vis-network";
+import { Network } from "vis-network";
 
-export default function NetworkGraph({ networkData }) {
+export default function NetworkGraph({ networkData, height }) {
   const ref = useRef(null);
 
   let network;
@@ -23,6 +23,7 @@ export default function NetworkGraph({ networkData }) {
       book: { color: { background: "#03af7a" } },
       javascript: { color: { background: "#990099" } },
       sns: { color: { background: "#f6aa00" } },
+      highlight: { color: { background: "#005aff" } },
     },
   };
 
@@ -46,7 +47,7 @@ export default function NetworkGraph({ networkData }) {
       {/* Network図 を表示する領域 */}
       <div
         style={{
-          height: 500,
+          height: height,
           width: "100%",
           borderRadius: "1.5rem",
           backgroundColor: "#FFFF",

@@ -5,27 +5,34 @@ import {
   getPostNetworkData,
   getSortedPostsData,
   getIndexPagesData,
+  getVersion,
 } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
 import indexStyle from "../styles/index.module.css";
-import cx from "classnames";
 import NetworkGraph from "../components/network_graph";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
   const networkData = getPostNetworkData();
   const indexPagesData = getIndexPagesData();
+  const version = getVersion();
   return {
     props: {
       allPostsData,
       networkData,
       indexPagesData,
+      version,
     },
   };
 }
 
-export default function Home({ allPostsData, networkData, indexPagesData }) {
+export default function Home({
+  allPostsData,
+  networkData,
+  indexPagesData,
+  version,
+}) {
   return (
     <Layout>
       <a rel="me" href="https://gamelinks007.net/@nawashiro"></a>
@@ -33,14 +40,24 @@ export default function Home({ allPostsData, networkData, indexPagesData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={indexStyle.hero}>
-        <p className={indexStyle.heroA}>Development</p>
-        <div className={indexStyle.heroB}>
+        <p className={indexStyle.heroA}>
+          <span>D</span>
+          <span>e</span>
+          <span>v</span>
+          <span>e</span>
+          <span>l</span>
+          <span>o</span>
+          <span>p</span>
+          <span>m</span>
+          <span>e</span>
+          <span>n</span>
+          <span>t</span>
+        </p>
+        <div className={indexStyle.herotext}>
           <p>
-            Distributed social networking
+            I am a freelance programmer. looking for a job.
             <br />
-            Social VR
-            <br />
-            Travel
+            website version {version}.
           </p>
         </div>
       </section>
@@ -52,7 +69,6 @@ export default function Home({ allPostsData, networkData, indexPagesData }) {
           </div>
           <div className={indexStyle.innerCard}>
             <div>
-              <h2>Development</h2>
               <p>
                 エンジニア集会ハッカソンにて
                 <a href="https://nostr.com/">Nostrプロトコル</a>
@@ -66,63 +82,6 @@ export default function Home({ allPostsData, networkData, indexPagesData }) {
                   NosHagakiを開く
                 </a>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div className={indexStyle.card}>
-          <div className={indexStyle.imgWrap}>
-            <img
-              src="/images/nostr.webp"
-              alt="Nostrプロトコルにおけるひと単位のデータ（イベント）のJSON構造"
-            />
-          </div>
-          <div className={cx(indexStyle.innerCard, indexStyle.leftCard)}>
-            <div>
-              <h2>Distributed social networking</h2>
-              <p>
-                分散型SNSが好きでいろいろ調べています。
-                <br />
-                <a href="https://www.w3.org/TR/activitypub/">ActivityPub</a>、
-                <a href="https://nostr.com/">Nostr</a>、
-                <a href="https://atproto.com/">ATProtocol</a>
-                など、いくつかの試みがあります。
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className={indexStyle.card}>
-          <div className={indexStyle.imgWrap}>
-            <img src="/images/social-vr.webp" alt="VRChatとCluster" />
-          </div>
-          <div className={indexStyle.innerCard}>
-            <div>
-              <h2>Social VR</h2>
-              <p>
-                よく<a href="https://hello.vrchat.com/">VRChat</a>や
-                <a href="https://cluster.mu/">cluster</a>にいます。
-                <br />
-                相互運用可能なSNSにまつわる技術について情報交換する「分散SNS集会」を主催しています。
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className={indexStyle.card}>
-          <div className={indexStyle.imgWrap}>
-            <img src="/images/nagashima.webp" alt="長島ダム" />
-          </div>
-          <div className={cx(indexStyle.innerCard, indexStyle.leftCard)}>
-            <div>
-              <h2>Travel</h2>
-              <p>
-                旅が好きです。たまに鉄道で旅行に行きます。
-                <br />
-                これは静岡県榛原郡の
-                <a href="https://www.cbr.mlit.go.jp/nagashima/">長島ダム</a>
-                に行った時の写真です。
-              </p>
             </div>
           </div>
         </div>
@@ -152,13 +111,13 @@ export default function Home({ allPostsData, networkData, indexPagesData }) {
         <p>
           各ページの相互関係をグラフに出力しています。ノードをダブルクリックするとページを開くことができます。拡大縮小したり、ぐりぐりとノードを移動させたりして遊んでみてください。
         </p>
-        <NetworkGraph networkData={networkData} />
+        <NetworkGraph networkData={networkData} height={"500px"} />
       </section>
 
       <section>
         <h2 className={indexStyle.h2}>Index</h2>
         <ul className={utilStyles.list}>
-          {indexPagesData.map(({ id, date, title }) => (
+          {indexPagesData.map(({ id, title }) => (
             <li className={utilStyles.listItem} key={id}>
               <Link className={utilStyles.link} href={`/posts/${id}`}>
                 {title}
