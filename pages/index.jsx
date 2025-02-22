@@ -111,7 +111,7 @@ export default function Home({
         <p>
           各ページの相互関係をグラフに出力しています。ノードをダブルクリックするとページを開くことができます。拡大縮小したり、ぐりぐりとノードを移動させたりして遊んでみてください。
         </p>
-        <NetworkGraph networkData={networkData} />
+        <NetworkGraph networkData={networkData} height={"500px"} />
       </section>
 
       <section>

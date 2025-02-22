@@ -1,5 +1,9 @@
 import Layout from "../../components/layout";
-import { getAllPostIds, getPostData } from "../../lib/posts";
+import {
+  getAllPostIds,
+  getPostData,
+  getNeighborNetworkData,
+} from "../../lib/posts";
 import Head from "next/head";
 import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
@@ -7,16 +11,19 @@ import cx from "classnames";
 import Link from "next/link";
 import styles from "./[id].module.css";
 import { useEffect, useState } from "react";
+import NetworkGraph from "../../components/network_graph";
 
 export async function getStaticProps({ params }) {
   // Add the "await" keyword like this:
   const id = params.id;
   const postData = await getPostData(id);
+  const neighborNetwork = getNeighborNetworkData(id);
 
   return {
     props: {
       id,
       postData,
+      neighborNetwork,
     },
   };
 }
@@ -29,7 +36,7 @@ export async function getStaticPaths() {
   };
 }
 
-export default function Post({ id, postData }) {
+export default function Post({ id, postData, neighborNetwork }) {
   const [comment, setComment] = useState("");
   const [commentState, setCommentState] = useState("submitButton");
   const [currentUrl, setCurrentUrl] = useState("");
@@ -101,6 +108,10 @@ export default function Post({ id, postData }) {
             </ul>
           </>
         )}
+        <div className={styles.networkGraph}>
+          <h2>Neighbor Graph</h2>
+          <NetworkGraph height={"300px"} networkData={neighborNetwork} />
+        </div>
         <div className={styles.comment}>
           <h2>Comments</h2>
           <form>
