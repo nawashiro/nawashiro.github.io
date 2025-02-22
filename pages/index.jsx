@@ -5,27 +5,34 @@ import {
   getPostNetworkData,
   getSortedPostsData,
   getIndexPagesData,
+  getVersion,
 } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
 import indexStyle from "../styles/index.module.css";
-import cx from "classnames";
 import NetworkGraph from "../components/network_graph";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
   const networkData = getPostNetworkData();
   const indexPagesData = getIndexPagesData();
+  const version = getVersion();
   return {
     props: {
       allPostsData,
       networkData,
       indexPagesData,
+      version,
     },
   };
 }
 
-export default function Home({ allPostsData, networkData, indexPagesData }) {
+export default function Home({
+  allPostsData,
+  networkData,
+  indexPagesData,
+  version,
+}) {
   return (
     <Layout>
       <a rel="me" href="https://gamelinks007.net/@nawashiro"></a>
@@ -47,7 +54,11 @@ export default function Home({ allPostsData, networkData, indexPagesData }) {
           <span>t</span>
         </p>
         <div className={indexStyle.herotext}>
-          <p>I am a freelance programmer. Looking for work.</p>
+          <p>
+            I am a freelance programmer. looking for a job.
+            <br />
+            website version {version}.
+          </p>
         </div>
       </section>
 
@@ -107,7 +118,7 @@ export default function Home({ allPostsData, networkData, indexPagesData }) {
       <section>
         <h2 className={indexStyle.h2}>Index</h2>
         <ul className={utilStyles.list}>
-          {indexPagesData.map(({ id, date, title }) => (
+          {indexPagesData.map(({ id, title }) => (
             <li className={utilStyles.listItem} key={id}>
               <Link className={utilStyles.link} href={`/posts/${id}`}>
                 {title}
