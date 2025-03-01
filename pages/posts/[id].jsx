@@ -86,6 +86,7 @@ export default function Post({ id, postData, neighborNetwork }) {
     <Layout title={postData.title} blog>
       <Head>
         <title>{postData.title}</title>
+        <link rel="webmention" href="https://webmention.io/nawashiro.dev/webmention" />
       </Head>
       <article>
         <h1>{postData.title}</h1>
