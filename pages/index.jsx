@@ -35,7 +35,8 @@ export default function Home({
 }) {
   return (
     <Layout>
-      <a rel="me" href="https://gamelinks007.net/@nawashiro"></a>
+      <a rel="me" href="https://gamelinks007.net/@nawashiro" style={{ display: "none" }}></a>
+      <a href="https://github.com/nawashiro" rel="me" style={{ display: "none" }}>github.com/nawashiro</a>
       <Head>
         <title>{siteTitle}</title>
       </Head>
