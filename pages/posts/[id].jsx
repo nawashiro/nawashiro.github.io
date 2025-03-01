@@ -86,15 +86,25 @@ export default function Post({ id, postData, neighborNetwork }) {
     <Layout title={postData.title} blog>
       <Head>
         <title>{postData.title}</title>
-        <link rel="webmention" href="https://webmention.io/nawashiro.dev/webmention" />
+        <link
+          rel="webmention"
+          href="https://webmention.io/nawashiro.dev/webmention"
+        />
       </Head>
-      <article>
-        <h1>{postData.title}</h1>
+      <article className="h-entry">
+        <h1 className="p-name">{postData.title}</h1>
         <div className={cx(utilStyles.lightBlogText, utilStyles.lightText)}>
-          <Date dateString={postData.date} />
+          <Date dateString={postData.date} className="dt-published" />
         </div>
+        <a
+          className={cx("p-author", "h-card")}
+          href="https://nawashiro.dev"
+          style={{ display: "none" }}
+        >
+          Nawashiro
+        </a>
         <div
-          className={"blog"}
+          className={cx("blog", "e-content")}
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
         />
         {postData.backLinks.length > 0 && (

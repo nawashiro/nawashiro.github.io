@@ -31,3 +31,9 @@ yarn-error.log*
 
 #obsidian
 .obsidian
+
+## rss
+atom.xml
+feed.json
+feed.xml
+

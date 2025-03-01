@@ -35,10 +35,38 @@ export default function Home({
 }) {
   return (
     <Layout>
-      <a rel="me" href="https://gamelinks007.net/@nawashiro" style={{ display: "none" }}></a>
-      <a rel="me" href="https://github.com/nawashiro" style={{ display: "none" }}>github.com/nawashiro</a>
+      <a
+        rel="me"
+        href="https://gamelinks007.net/@nawashiro"
+        style={{ display: "none" }}
+      ></a>
+      <a
+        rel="me"
+        href="https://github.com/nawashiro"
+        style={{ display: "none" }}
+      >
+        github.com/nawashiro
+      </a>
       <Head>
         <title>{siteTitle}</title>
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="RSS 2.0"
+          href="/rss/feed.xml"
+        />
+        <link
+          rel="alternate"
+          type="application/atom+xml"
+          title="Atom 1.0"
+          href="/rss/atom.xml"
+        />
+        <link
+          rel="alternate"
+          type="application/json"
+          title="JSON Feed"
+          href="/rss/feed.json"
+        />
       </Head>
       <section className={indexStyle.hero}>
         <p className={indexStyle.heroA}>
@@ -60,6 +88,32 @@ export default function Home({
             <br />
             website version {version}.
           </p>
+          <div className={indexStyle.feedLinks}>
+            <a
+              href="/rss/feed.xml"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="RSS Feed"
+            >
+              RSS
+            </a>
+            <a
+              href="/rss/atom.xml"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Atom Feed"
+            >
+              Atom
+            </a>
+            <a
+              href="/rss/feed.json"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="JSON Feed"
+            >
+              JSON
+            </a>
+          </div>
         </div>
       </section>
 
