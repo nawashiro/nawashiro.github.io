@@ -5,11 +5,11 @@ import {
   getNeighborNetworkData,
 } from "../../lib/posts";
 import Head from "next/head";
+import Script from "next/script";
 import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
 import cx from "classnames";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import NetworkGraph from "../../components/network_graph";
 
 export async function getStaticProps({ params }) {
@@ -36,28 +36,6 @@ export async function getStaticPaths() {
 }
 
 export default function Post({ id, postData, neighborNetwork }) {
-  const [comment, setComment] = useState("");
-  const [commentState, setCommentState] = useState("submitButton");
-  const [currentUrl, setCurrentUrl] = useState("");
-  const [inputServer, setInputServer] = useState("");
-
-  useEffect(() => {
-    setCurrentUrl(encodeURIComponent(window.location.href));
-    setComment("");
-    setCommentState("submitButton");
-  }, [id]);
-
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "/webmention.min.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
     <Layout title={postData.title} blog>
       <Head>
@@ -100,6 +78,11 @@ export default function Post({ id, postData, neighborNetwork }) {
           <NetworkGraph height={"300px"} networkData={neighborNetwork} />
         </div>
         <div style={{ marginTop: "4rem" }}>
+          <Script
+            src="/webmention.min.js"
+            data-max-webmentions="60"
+            strategy="afterInteractive"
+          />
           <div id="webmentions"></div>
         </div>
       </article>
