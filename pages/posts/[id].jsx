@@ -47,39 +47,16 @@ export default function Post({ id, postData, neighborNetwork }) {
     setCommentState("submitButton");
   }, [id]);
 
-  const submit = () => {
-    if (comment.length > 0) {
-      setCommentState("selectSNS");
-    }
-  };
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "/webmention.min.js";
+    script.async = true;
+    document.body.appendChild(script);
 
-  const mastodonOrMisskey = () => {
-    setCommentState("inputServer");
-  };
-
-  const toMastodonOrMisskey = () => {
-    const url = `https://${inputServer}/share?text=${encodeURIComponent(
-      `@nawashiro@gamelinks007.net ${comment}`
-    )}&url=${currentUrl}`;
-
-    window.open(url, "_blank");
-  };
-
-  const toBluesky = () => {
-    const url = `https://bsky.app/intent/compose?text=${encodeURIComponent(
-      `@nawashiro.dev ${comment} `
-    )}${currentUrl}`;
-
-    window.open(url, "_blank");
-  };
-
-  const toX = () => {
-    const url = `https://x.com/intent/tweet?text=${encodeURIComponent(
-      `@yineleyici ${comment}`
-    )}&url=${currentUrl}`;
-
-    window.open(url, "_blank");
-  };
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <Layout title={postData.title} blog>
@@ -123,11 +100,6 @@ export default function Post({ id, postData, neighborNetwork }) {
           <NetworkGraph height={"300px"} networkData={neighborNetwork} />
         </div>
         <div style={{ marginTop: "4rem" }}>
-          <script
-            src="/webmention.min.js"
-            data-max-webmentions="60"
-            async
-          ></script>
           <div id="webmentions"></div>
         </div>
       </article>
