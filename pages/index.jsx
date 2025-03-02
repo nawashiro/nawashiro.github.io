@@ -94,7 +94,7 @@ export default function Home({
           <p>
             {note}
             <br />
-            website version {version}.
+            Website version {version}.
           </p>
           <div className={indexStyle.feedLinks}>
             <a

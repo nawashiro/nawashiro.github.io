@@ -123,79 +123,13 @@ export default function Post({ id, postData, neighborNetwork }) {
           <h2>Neighbor Graph</h2>
           <NetworkGraph height={"300px"} networkData={neighborNetwork} />
         </div>
-        <div className={styles.comment}>
-          <h2>Comments</h2>
-          <form>
-            <textarea
-              name="comments"
-              value={comment}
-              placeholder="こうしたほうがいいんじゃないかな"
-              onChange={(event) => setComment(event.target.value)}
-            />
-            <div>
-              {commentState == "submitButton" && (
-                <>
-                  <input
-                    type="button"
-                    value="Submit"
-                    disabled={!comment}
-                    onClick={submit}
-                    className={styles.button}
-                  />
-                </>
-              )}
-              {commentState == "selectSNS" && (
-                <>
-                  <input
-                    type="button"
-                    value="Mastodon or Misskey"
-                    onClick={mastodonOrMisskey}
-                    className={styles.chooseSNSButton}
-                  />
-                  <input
-                    type="button"
-                    value="Bluesky"
-                    onClick={toBluesky}
-                    className={styles.chooseSNSButton}
-                  />
-                  <input
-                    type="button"
-                    value="X"
-                    onClick={toX}
-                    className={styles.chooseSNSButton}
-                  />
-                </>
-              )}
-              {commentState == "inputServer" && (
-                <>
-                  <label for="servername">Your Server:</label>
-                  <input
-                    type="text"
-                    id="servername"
-                    value={inputServer}
-                    placeholder="example.com"
-                    className={styles.inputServerField}
-                    onChange={(event) => setInputServer(event.target.value)}
-                  />
-                  <input
-                    type="button"
-                    value="OK"
-                    disabled={!inputServer}
-                    onClick={toMastodonOrMisskey}
-                    className={styles.button}
-                  />
-                  <input
-                    type="button"
-                    value="Back"
-                    onClick={() => {
-                      setCommentState("selectSNS");
-                    }}
-                    className={styles.button}
-                  />
-                </>
-              )}
-            </div>
-          </form>
+        <div>
+          <script
+            src="/webmention.min.js"
+            data-max-webmentions="60"
+            async
+          ></script>
+          <div id="webmentions"></div>
         </div>
       </article>
     </Layout>
