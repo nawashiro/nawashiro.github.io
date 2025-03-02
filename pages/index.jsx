@@ -11,6 +11,7 @@ import Link from "next/link";
 import Date from "../components/date";
 import indexStyle from "../styles/index.module.css";
 import NetworkGraph from "../components/network_graph";
+import cx from "classnames";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -33,6 +34,7 @@ export default function Home({
   indexPagesData,
   version,
 }) {
+  const note = "I am a freelance programmer. looking for a job.";
   return (
     <Layout>
       <a
@@ -47,6 +49,12 @@ export default function Home({
       >
         github.com/nawashiro
       </a>
+      <div className="h-card" style={{ display: "none" }}>
+        <a className="p-name u-url" href="https://nawashiro.dev">
+          Nawashiro
+        </a>
+        <span className="p-note">{note}</span>
+      </div>
       <Head>
         <title>{siteTitle}</title>
         <link
@@ -84,7 +92,7 @@ export default function Home({
         </p>
         <div className={indexStyle.herotext}>
           <p>
-            I am a freelance programmer. looking for a job.
+            {note}
             <br />
             website version {version}.
           </p>
@@ -184,10 +192,21 @@ export default function Home({
 
       <section>
         <h2 className={indexStyle.h2}>All Pages</h2>
-        <ul className={utilStyles.list}>
+        <ul className={cx(utilStyles.list, "h-feed", "hfeed")}>
           {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link className={utilStyles.link} href={`/posts/${id}`}>
+            <li
+              className={cx(utilStyles.listItem, "h-entry", "hentry")}
+              key={id}
+            >
+              <Link
+                className={cx(
+                  utilStyles.link,
+                  "u-url",
+                  "p-name",
+                  "entry-title"
+                )}
+                href={`/posts/${id}`}
+              >
                 {title}
               </Link>
               <br />
