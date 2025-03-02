@@ -5,11 +5,11 @@ import {
   getNeighborNetworkData,
 } from "../../lib/posts";
 import Head from "next/head";
+import Script from "next/script";
 import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
 import cx from "classnames";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import NetworkGraph from "../../components/network_graph";
 
 export async function getStaticProps({ params }) {
@@ -36,51 +36,6 @@ export async function getStaticPaths() {
 }
 
 export default function Post({ id, postData, neighborNetwork }) {
-  const [comment, setComment] = useState("");
-  const [commentState, setCommentState] = useState("submitButton");
-  const [currentUrl, setCurrentUrl] = useState("");
-  const [inputServer, setInputServer] = useState("");
-
-  useEffect(() => {
-    setCurrentUrl(encodeURIComponent(window.location.href));
-    setComment("");
-    setCommentState("submitButton");
-  }, [id]);
-
-  const submit = () => {
-    if (comment.length > 0) {
-      setCommentState("selectSNS");
-    }
-  };
-
-  const mastodonOrMisskey = () => {
-    setCommentState("inputServer");
-  };
-
-  const toMastodonOrMisskey = () => {
-    const url = `https://${inputServer}/share?text=${encodeURIComponent(
-      `@nawashiro@gamelinks007.net ${comment}`
-    )}&url=${currentUrl}`;
-
-    window.open(url, "_blank");
-  };
-
-  const toBluesky = () => {
-    const url = `https://bsky.app/intent/compose?text=${encodeURIComponent(
-      `@nawashiro.dev ${comment} `
-    )}${currentUrl}`;
-
-    window.open(url, "_blank");
-  };
-
-  const toX = () => {
-    const url = `https://x.com/intent/tweet?text=${encodeURIComponent(
-      `@yineleyici ${comment}`
-    )}&url=${currentUrl}`;
-
-    window.open(url, "_blank");
-  };
-
   return (
     <Layout title={postData.title} blog>
       <Head>
@@ -123,11 +78,11 @@ export default function Post({ id, postData, neighborNetwork }) {
           <NetworkGraph height={"300px"} networkData={neighborNetwork} />
         </div>
         <div style={{ marginTop: "4rem" }}>
-          <script
+          <Script
             src="/webmention.min.js"
             data-max-webmentions="60"
-            async
-          ></script>
+            strategy="afterInteractive"
+          />
           <div id="webmentions"></div>
         </div>
       </article>
