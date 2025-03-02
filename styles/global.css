@@ -344,7 +344,7 @@ h5 {
 /* webmention */
 
 #webmentions {
-  margin: 0;
+  margin-top: 2rem;
   position: relative;
   z-index: 100;
   line-height: 1.2em;

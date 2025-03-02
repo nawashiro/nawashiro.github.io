@@ -9,7 +9,6 @@ import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
 import cx from "classnames";
 import Link from "next/link";
-import styles from "./[id].module.css";
 import { useEffect, useState } from "react";
 import NetworkGraph from "../../components/network_graph";
 
@@ -119,11 +118,11 @@ export default function Post({ id, postData, neighborNetwork }) {
             </ul>
           </>
         )}
-        <div className={styles.networkGraph}>
+        <div>
           <h2>Neighbor Graph</h2>
           <NetworkGraph height={"300px"} networkData={neighborNetwork} />
         </div>
-        <div>
+        <div style={{ marginTop: "4rem" }}>
           <script
             src="/webmention.min.js"
             data-max-webmentions="60"
