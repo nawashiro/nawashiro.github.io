@@ -94,7 +94,7 @@ export default function Post({ id, postData, neighborNetwork }) {
       <article className="h-entry">
         <h1 className="p-name">{postData.title}</h1>
         <div className={cx(utilStyles.lightBlogText, utilStyles.lightText)}>
-          <Date dateString={postData.date} className="dt-published" />
+          <Date dateString={postData.date} />
         </div>
         <a
           className={cx("p-author", "h-card")}
