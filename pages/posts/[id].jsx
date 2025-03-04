@@ -1,28 +1,20 @@
 import Layout from "../../components/layout";
-import {
-  getAllPostIds,
-  getPostData,
-  getNeighborNetworkData,
-} from "../../lib/posts";
+import { getAllPostIds, getPostData } from "../../lib/posts";
 import Head from "next/head";
-import Script from "next/script";
 import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
 import cx from "classnames";
 import Link from "next/link";
-import NetworkGraph from "../../components/network_graph";
+import WebMention from "../../components/WebMention";
 
 export async function getStaticProps({ params }) {
-  // Add the "await" keyword like this:
   const id = params.id;
   const postData = await getPostData(id);
-  const neighborNetwork = getNeighborNetworkData(id);
 
   return {
     props: {
       id,
       postData,
-      neighborNetwork,
     },
   };
 }
@@ -35,7 +27,9 @@ export async function getStaticPaths() {
   };
 }
 
-export default function Post({ id, postData, neighborNetwork }) {
+export default function Post({ postData }) {
+  const isDevelopment = process.env.NODE_ENV === "development";
+
   return (
     <Layout title={postData.title} blog>
       <Head>
@@ -73,18 +67,12 @@ export default function Post({ id, postData, neighborNetwork }) {
             </ul>
           </>
         )}
-        <div>
-          <h2>Neighbor Graph</h2>
-          <NetworkGraph height={"300px"} networkData={neighborNetwork} />
-        </div>
-        <div style={{ marginTop: "4rem" }}>
-          <Script
-            src="/webmention.min.js"
-            data-max-webmentions="60"
-            strategy="afterInteractive"
-          />
-          <div id="webmentions"></div>
-        </div>
+        <WebMention
+          {...(isDevelopment && {
+            pageUrl:
+              "https://nawashiro.dev/posts/20250213-3-create-stained-glass",
+          })}
+        />
       </article>
     </Layout>
   );
