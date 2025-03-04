@@ -100,9 +100,12 @@ const WebMention = ({
       }" rel="nofollow ugc" title="${author} ${action}" href="${
       mention[preventSpoofing ? "wm-source" : "url"]
     }">
-        ${photoHtml}
-        ${REACTIONS[mention["wm-property"]] || "💥"}
-        ${rsvpIcon}
+          <div class="${styles.icon}">
+            ${photoHtml}
+            ${REACTIONS[mention["wm-property"]] || "💥"}
+          </div>
+          ${rsvpIcon}
+        </div>
       </a>
     `;
   };
@@ -154,7 +157,7 @@ const WebMention = ({
         if (comments.length > 0 && comments !== reactions) {
           const uniqueComments = removeDuplicates(comments);
           html += `
-            <h2 class="${styles.heading}">Responses</h2>
+            <h2>Responses</h2>
             <ul class="${styles.comments}">
               ${uniqueComments
                 .map((comment) => {
@@ -185,7 +188,7 @@ const WebMention = ({
         if (reactions.length > 0) {
           const uniqueReactions = removeDuplicates(reactions);
           html += `
-            <h2 class="${styles.heading}">Reactions</h2>
+            <h2>Reactions</h2>
             <ul class="${styles.reacts}">
               ${uniqueReactions
                 .map((reaction) => renderMention(reaction))
