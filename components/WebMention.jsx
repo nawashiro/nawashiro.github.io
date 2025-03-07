@@ -100,12 +100,11 @@ const WebMention = ({
       }" rel="nofollow ugc" title="${author} ${action}" href="${
       mention[preventSpoofing ? "wm-source" : "url"]
     }">
-          <div class="${styles.icon}">
-            ${photoHtml}
-            ${REACTIONS[mention["wm-property"]] || "💥"}
-          </div>
-          ${rsvpIcon}
+        <div class="${styles.icon}">
+          ${photoHtml}
+          ${REACTIONS[mention["wm-property"]] || "💥"}
         </div>
+        ${rsvpIcon}
       </a>
     `;
   };
