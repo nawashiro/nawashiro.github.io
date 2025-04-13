@@ -7,6 +7,8 @@ date: "2025-01-04"
 
 ## ノウハウ
 
+- [ツンデレで学ぶECDSA署名](20250413-ecdsa-sign-learn-in-tsunndere.md)
+	- ECDSA 署名（ビットコインなどで使われる楕円曲線を使った署名）についてツンデレで解説した記事。
 - [そろそろシェーダーをはじめる](20250213-start-shader.md)
 	- シェーダーを勉強し始めた。
 - [哲学対話イベントで使える Udon ギミックを作った話 まとめ](20250212-philosophy-dialog-event-by-usable-udon-gimmick-made-story-conclusion.md)
