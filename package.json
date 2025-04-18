@@ -2,8 +2,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npx playwright install --with-deps chromium && next build",
-    "output": "export"
+    "build": "npm run chrome && next build",
+    "output": "export",
+    "chrome": "npx playwright install chromium"
   },
   "dependencies": {
     "@szhsin/react-menu": "^4.0.3",
