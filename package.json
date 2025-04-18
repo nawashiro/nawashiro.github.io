@@ -13,7 +13,7 @@
     "gray-matter": "^4.0.3",
     "install": "^0.13.0",
     "metadata-scraper": "^0.2.61",
-    "next": "latest",
+    "next": "^15.3.1",
     "npm": "^10.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
