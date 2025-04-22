@@ -7,6 +7,8 @@ date: "2025-04-13"
 
 ## ノウハウ
 
+- [ツンデレで学ぶダイクストラ法](20250418-dijkstras-algorithm-learn-in-tsunndere.md)
+	- 経路探索アルゴリズムのダイクストラ法についてツンデレで解説した記事。
 - [ツンデレで学ぶECDSA署名](20250413-ecdsa-sign-learn-in-tsunndere.md)
 	- ECDSA 署名（ビットコインなどで使われる楕円曲線を使った署名）についてツンデレで解説した記事。
 - [そろそろシェーダーをはじめる](20250213-start-shader.md)
