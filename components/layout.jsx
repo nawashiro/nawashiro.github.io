@@ -16,6 +16,13 @@ const { publicRuntimeConfig } = getConfig();
 
 export default function Layout({ children, blog, title }) {
   const basePath = (publicRuntimeConfig && publicRuntimeConfig.basePath) || "";
+  const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+  const description =
+    "エンジニア・プログラマーNawashiroの個人サイト。プロジェクト、デジタルガーデン、技術ブログなど。";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  const ogImageUrl = `https://vercel-og-nextjs-4iakfhvyx-yineleyici.vercel.app/api/og?title=${encodeURIComponent(
+    title ? title : siteTitle
+  )}`;
 
   useEffect(() => {
     kofiWidgetOverlay.draw("nawashiro", {
@@ -30,15 +37,25 @@ export default function Layout({ children, blog, title }) {
     <div>
       <Head>
         <link rel="icon" href={`${basePath}/favicon.ico`} />
-        <meta name="description" content="Nawashiroの個人サイト" />
+        <title>{pageTitle}</title>
+        <meta name="description" content={description} />
+        <meta property="og:type" content={blog ? "article" : "website"} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={description} />
         <meta
-          property="og:image"
-          content={`https://vercel-og-nextjs-4iakfhvyx-yineleyici.vercel.app/api/og?title=${encodeURIComponent(
-            title ? title : siteTitle
-          )}`}
+          property="og:url"
+          content={siteUrl + (blog ? `/posts/${blog}` : "")}
         />
-        <meta name="og:title" content={title ? title : siteTitle} />
+        <meta property="og:site_name" content={siteTitle} />
+        <meta property="og:image" content={ogImageUrl} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@yineleyici" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImageUrl} />
+        {blog && <link rel="canonical" href={`${siteUrl}/posts/${blog}`} />}
       </Head>
       <header>
         <div className={cx(styles.wrapContent, styles.wrapHeader)}>
