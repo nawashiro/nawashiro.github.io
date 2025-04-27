@@ -35,6 +35,10 @@ export default function Home({
   version,
 }) {
   const note = "I am a freelance programmer. looking for a job.";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  const description =
+    "エンジニア・プログラマーNawashiroの個人サイト。プロジェクト、デジタルガーデン、技術記事など。";
+
   return (
     <Layout>
       <a
@@ -50,13 +54,32 @@ export default function Home({
         github.com/nawashiro
       </a>
       <div className="h-card" style={{ display: "none" }}>
-        <a className="p-name u-url" href="https://nawashiro.dev">
+        <a className="p-name u-url" href={siteUrl}>
           Nawashiro
         </a>
         <span className="p-note">{note}</span>
       </div>
       <Head>
         <title>{siteTitle}</title>
+        <meta name="description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={siteUrl} />
+        <meta property="og:title" content={siteTitle} />
+        <meta property="og:description" content={description} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: siteTitle,
+            url: siteUrl,
+            description: description,
+            author: {
+              "@type": "Person",
+              name: "Nawashiro",
+              url: siteUrl,
+            },
+          })}
+        </script>
         <link
           rel="alternate"
           type="application/rss+xml"

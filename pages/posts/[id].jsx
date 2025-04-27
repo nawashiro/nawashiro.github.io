@@ -27,17 +27,58 @@ export async function getStaticPaths() {
   };
 }
 
-export default function Post({ postData }) {
+export default function Post({ id, postData }) {
   const isDevelopment = process.env.NODE_ENV === "development";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  const canonicalUrl = `${siteUrl}/posts/${id}`;
+  const publishedDate = postData.date;
+
+  // 記事の先頭から説明文を抽出（HTMLタグを除去して最初の120文字）
+  const description = postData.contentHtml
+    ? postData.contentHtml.replace(/<[^>]*>/g, "").substring(0, 120) + "..."
+    : `${postData.title} - Nawashiroのブログ記事`;
 
   return (
-    <Layout title={postData.title} blog>
+    <Layout title={postData.title} blog={id}>
       <Head>
         <title>{postData.title}</title>
+        <meta name="description" content={description} />
+        <meta property="article:published_time" content={publishedDate} />
+        <meta property="article:author" content="Nawashiro" />
+        {postData.tags &&
+          postData.tags.map((tag) => (
+            <meta property="article:tag" content={tag} key={tag} />
+          ))}
+        <link rel="canonical" href={canonicalUrl} />
         <link
           rel="webmention"
           href="https://webmention.io/nawashiro.dev/webmention"
         />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: postData.title,
+            description: description,
+            datePublished: publishedDate,
+            dateModified: publishedDate,
+            author: {
+              "@type": "Person",
+              name: "Nawashiro",
+              url: siteUrl,
+            },
+            publisher: {
+              "@type": "Person",
+              name: "Nawashiro",
+              url: siteUrl,
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": canonicalUrl,
+            },
+            url: canonicalUrl,
+          })}
+        </script>
       </Head>
       <article className="h-entry">
         <h1 className="p-name">{postData.title}</h1>
@@ -46,7 +87,7 @@ export default function Post({ postData }) {
         </div>
         <a
           className={cx("p-author", "h-card")}
-          href="https://nawashiro.dev"
+          href={siteUrl}
           style={{ display: "none" }}
         >
           Nawashiro
