@@ -54,31 +54,34 @@ export default function Post({ id, postData }) {
           rel="webmention"
           href="https://webmention.io/nawashiro.dev/webmention"
         />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            headline: postData.title,
-            description: description,
-            datePublished: publishedDate,
-            dateModified: publishedDate,
-            author: {
-              "@type": "Person",
-              name: "Nawashiro",
-              url: siteUrl,
-            },
-            publisher: {
-              "@type": "Person",
-              name: "Nawashiro",
-              url: siteUrl,
-            },
-            mainEntityOfPage: {
-              "@type": "WebPage",
-              "@id": canonicalUrl,
-            },
-            url: canonicalUrl,
-          })}
-        </script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              headline: postData.title,
+              description: description,
+              datePublished: publishedDate,
+              dateModified: publishedDate,
+              author: {
+                "@type": "Person",
+                name: "Nawashiro",
+                url: siteUrl,
+              },
+              publisher: {
+                "@type": "Person",
+                name: "Nawashiro",
+                url: siteUrl,
+              },
+              mainEntityOfPage: {
+                "@type": "WebPage",
+                "@id": canonicalUrl,
+              },
+              url: canonicalUrl,
+            }),
+          }}
+        ></script>
       </Head>
       <article className="h-entry">
         <h1 className="p-name">{postData.title}</h1>
