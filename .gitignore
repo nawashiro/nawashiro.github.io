@@ -37,3 +37,7 @@ atom.xml
 feed.json
 feed.xml
 
+## sitemap
+sitemap.xml
+sitemap-*.xml
+robots.txt
