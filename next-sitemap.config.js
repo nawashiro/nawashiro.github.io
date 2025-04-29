@@ -12,5 +12,5 @@ module.exports = {
     additionalSitemaps: ["https://nawashiro.dev/sitemap.xml"],
   },
   exclude: ["/404"],
-  outDir: "./out",
+  outDir: "./public",
 };
