@@ -21,7 +21,7 @@ WhiteCUL「ブルースカイ？なにそれ？」
 
 春日部つむぎ「じゃあ今日は ブルースカイについて話していこうか。」
 
-春日部つむぎ「 Bluesky and the AT Protocol: Usable Decentralized Social Media っていう Martin Kleppmann さんの論文だよ。」
+春日部つむぎ「 [Bluesky and the AT Protocol: Usable Decentralized Social Media](https://arxiv.org/abs/2402.03239) っていう Martin Kleppmann さんの論文だよ。」
 
 春日部つむぎ「気に入ったら原典も読んでみてね。」
 
