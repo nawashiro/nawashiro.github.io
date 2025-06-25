@@ -5,6 +5,10 @@ date: "2024-12-09"
 
 落書きです。
 
+## 参考にしてね
+
+- [障害年金をもらおう！](20250625-get-disability-pension.md)
+
 ## 何度も読み返すべき教訓
 
 - [害を受けたとき読む教訓](20241230-lessons-to-read-when-you-are-harmed.md)
