@@ -10,7 +10,3 @@ date: "2022-12-13"
 初期は HTML ベタ打ちでしたが、現在は Next.js にて構築されています。
 
 ![nawashiro website screenshot](/images/nawashiro-website-screenshot.webp)
-
-## 関連項目
-
-- [GitHub Pages & Next.jsで個人サイト作ってつまづいたところ](230928-create-ssg-1.md)

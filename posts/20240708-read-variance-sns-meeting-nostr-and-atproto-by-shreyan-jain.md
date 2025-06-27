@@ -9,7 +9,3 @@ date: "2024-07-08"
 
 <iframe class="slide" src="https://docs.google.com/presentation/d/e/2PACX-1vROrR5zH6XMMHTu6sROtYUxXttlHrK0EhqLCCkc1_AMMPnuoSWgzPGxTbOHLWGUkpcm49Vd0JQUXqFG/embed?start=false&loop=false&delayms=3000" frameborder="0" width="1280" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
-## 関連項目
-
-- [Blueskyなどの分散SNSにみんなも来ようよ、楽しいよ、という話](231107-lets-distributed-social-network-2.md)
-- [ライトニングトーク「分散型 SNS Nostr の世界」](20230609-lightning-talk-distributed-sns-nostr-world.md)

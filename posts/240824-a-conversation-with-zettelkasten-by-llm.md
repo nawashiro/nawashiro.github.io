@@ -162,7 +162,3 @@ Misskey 画像クライアント構想は、画像中心のシンプルなコミ
 当面は NotebookLM の心配より Udon の同期の限界の心配をしたほうがよさそうです。
 
 ではまた。バハハイ。
-
-## 関連項目
-
-- [ハッカソン成果物発表 - Udon Zettelkasten System の紹介](240911-udon-zettelkasten-system.md)

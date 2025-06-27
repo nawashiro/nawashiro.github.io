@@ -23,6 +23,7 @@ date: "2025-01-04"
 - [NHK 広島は原爆のなかいかに死んだか - 読書メモ](240806-book-esperanto-nuke.md)
 - [いやな目にあったら読む本 - 読書メモ](20241207-a-revenge-manual-for-those-who-hate-someone.md)
 - [認知症は謎の恐ろしい病気ではない - 読書メモ](20241208-dementia-is-not-a-mysterious-frightening-disease.md)
+- [哲学対話ってなんだ？ - 読書メモ](20250627-what-is-philosophical-dialogue.md)
 
 ## フィクション
 

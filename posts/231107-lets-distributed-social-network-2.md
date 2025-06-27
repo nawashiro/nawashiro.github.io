@@ -138,7 +138,3 @@ https://bsky.app/profile/dholms.xyz/post/3jt2vwzb7t42a
 私は VRChat で分散 SNS 集会を主催している。ここまで読んでくれたあなたなら、なにかの議論を楽しめると思う。Discord サーバの URL を貼っておくので、興味があればご参加願いたい。
 
 https://discord.gg/4NTwMMMw9P
-
-## 関連項目
-
-- [禅なBluesky](241124-zen-bluesky.md)

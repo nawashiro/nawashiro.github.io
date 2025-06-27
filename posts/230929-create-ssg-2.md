@@ -78,7 +78,3 @@ date: "2023-09-29 15:32"
 
 - `encodeURI` は `&` などの文字をパーセントエンコードしない。
 - かわりに `encodeURIComponent` を使う。
-
-## 関連項目
-
-- [GitHub Pages & Next.jsで個人サイト作ってつまづいたところ](230928-create-ssg-1.md)
