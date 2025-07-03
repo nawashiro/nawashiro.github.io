@@ -5,6 +5,8 @@ date: "2025-04-28"
 
 https://kazaguruma-transit.nawashiro.dev/
 
+![風ぐるま乗換案内](https://imgur.com/63thtgK.jpg)
+
 千代田区福祉交通「風ぐるま」（障害者向けの区営バス）の乗換案内を作りました。
 
 風ぐるまには複雑な紙の時刻表と複雑な GoogleMap（バスのみ + 車いす専用の設定が必要）しか案内が無いので、自作しました。
