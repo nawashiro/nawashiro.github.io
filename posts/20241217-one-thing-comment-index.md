@@ -32,12 +32,21 @@ date: "2025-07-06"
 
 ## フィクション
 
+### SF
+
 - [ハロー・ワールド - 読書メモ](20241217-hello-world.md)
-- [kaze no tanbun 移動図書館の子供たち - 読書メモ](20241217-kaze-no-tanbun-children-at-the-mobile-library.md)
 - [プロジェクト・ヘイル・メアリー - 読書メモ](20241217-project-hail-mary.md)
 - [伊藤計劃トリビュート 2 - 読書メモ](20241217-project-itoh-tribute-2.md)
-- [短篇七芒星 - 読書メモ](20241217-short-story-seven-pointed-star.md)
-- [エヴァンゲリオンの夢 使徒進化論の幻影 - 読書メモ](20241217-the-dream-of-evangelion-the-illusion-of-the-evolution-of-the-engels.md)
 - [ヴィジョンズ - 読書メモ](20241217-visions.md)
 - [ぼくらは都市を愛していた - 読書メモ](20241217-we-loved-the-city.md)
 - [去年、本能寺で - 読書メモ](20250706-last-year-at-honnoji-temple.md)
+
+### 文学
+
+- [短篇七芒星 - 読書メモ](20241217-short-story-seven-pointed-star.md)
+- [kaze no tanbun 移動図書館の子供たち - 読書メモ](20241217-kaze-no-tanbun-children-at-the-mobile-library.md)
+- [回復する人間 - 読書メモ](20250706-the-recovering-human.md)
+
+### 批評
+
+- [エヴァンゲリオンの夢 使徒進化論の幻影 - 読書メモ](20241217-the-dream-of-evangelion-the-illusion-of-the-evolution-of-the-engels.md)
