@@ -41,7 +41,7 @@ date: "2025-07-06"
 - [ぼくらは都市を愛していた - 読書メモ](20241217-we-loved-the-city.md)
 - [去年、本能寺で - 読書メモ](20250706-last-year-at-honnoji-temple.md)
 
-### 文学
+### いわゆる小説
 
 - [短篇七芒星 - 読書メモ](20241217-short-story-seven-pointed-star.md)
 - [kaze no tanbun 移動図書館の子供たち - 読書メモ](20241217-kaze-no-tanbun-children-at-the-mobile-library.md)
