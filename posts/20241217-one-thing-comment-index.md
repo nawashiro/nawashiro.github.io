@@ -12,7 +12,6 @@ date: "2025-07-06"
 ### 社会問題
 
 - [3・11後を生きるきみたちへ - 読書メモ](20241228-to-those-of-you-living-after-3-11.md)
-- [オードリー・タンが語るデジタル民主主義 - 読書メモ](20250706-audrey-tan-on-digital-democracy.md)
 - [闘う図書館 - 読書メモ](20250706-fighting-library.md)
 
 ### 医療
