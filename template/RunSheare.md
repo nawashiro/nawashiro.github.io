@@ -1,8 +1,10 @@
 <%*
 async function share(){
-	const bskyFormData = new FormData();
 	const url = `https://nawashiro.dev/posts/${tp.file.title}`;
 
+	const bskyFormData = new FormData();
+	const mstdnFormData = new FormData();
+	
 	bskyFormData.append("source", url);
 	bskyFormData.append("target", "https://brid.gy/publish/bluesky");
 
@@ -22,9 +24,16 @@ async function share(){
 			body: mstdnFormData,
 		});
 		
-		return `---\n\nここまで読んでくれてありがとう。よければフィードバックをください。 [Bluesky](${await bskyResponse.json().url}) や [Mastodon](${await mstdnResponse.json().url}) から返信するとウェブサイト内にも反映されます。)`;
+		const bskyResult = await bskyResponse.json();
+		const mstdnResult = await mstdnResponse.json();
+		
+		if(typeof bskyResult.url === "undefined" || typeof mstdnResult.url === "undefined"){
+			return `\nfail:\n${bskyResult.error}\n${mstdnResult.error}`
+		}
+		
+		return `\n---\n\nここまで読んでくれてありがとう。よければでいいのだが、フィードバックがほしい。 [Bluesky](${bskyResult.url}) や [Mastodon](${mstdnResult.url}) から返信するとウェブサイト内にも反映される。健闘を祈る。`;
 	} catch (e) {
-		return `fail: ${e}`;
+		return `\nfail: ${e}`;
 	}
 }
 return share();
