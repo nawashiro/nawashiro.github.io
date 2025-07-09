@@ -9,4 +9,4 @@ date: "2025-07-09"
 
 これはテスト用のページだ。
 
- [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
+[](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
