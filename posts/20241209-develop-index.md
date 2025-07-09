@@ -27,6 +27,7 @@ date: "2025-05-07"
 	- このウェブサイトのテコ入れをしたときの話。メモの手法についても触れる。
 - [ウェブサイトにコメントボタンを追加する](20241227-social-media-comment-button.md)
 - [コード書くときChatGPTはどう使える？【WhiteCUL/春日部つむぎ】](241020-chatgpt-develop.md)
+- [Brid.gyでウェブサイトを共有してみる](20250709-share-your-website-with-brid-gy.md)
 
 ## ハッカソン関連
 

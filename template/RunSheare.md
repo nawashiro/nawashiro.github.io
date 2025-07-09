@@ -1,15 +1,28 @@
 <%*
 async function share(){
-	const formData = new FormData();
-	formData.append("source", `https://nawashiro.dev/posts/${tp.file.title}`);
-	formData.append("target", "https://brid.gy/publish/bluesky");
-	formData.append("target", "https://brid.gy/publish/mastodon");
+	const bskyFormData = new FormData();
+	const url = `https://nawashiro.dev/posts/${tp.file.title}`;
+
+	bskyFormData.append("source", url);
+	bskyFormData.append("target", "https://brid.gy/publish/bluesky");
+
+	mstdnFormData.append("source", url);
+	mstdnFormData.append("target", "https://brid.gy/publish/mastodon");
+	
 	try {
-		const response = await fetch("https://brid.gy/publish/webmention", {
+		const webmentionUrl = "https://brid.gy/publish/webmention";
+
+		const bskyResponse = await fetch(webmentionUrl, {
 			method: "POST",
-			body: formData,
+			body: bskyFormData,
 		});
-		return `${JSON.stringify(await response.json())}`;
+		
+		const mstdnResponse = await fetch(webmentionUrl, {
+			method: "POST",
+			body: mstdnFormData,
+		});
+		
+		return `---\n\nここまで読んでくれてありがとう。よければフィードバックをください。 [Bluesky](${await bskyResponse.json().url}) や [Mastodon](${await mstdnResponse.json().url}) から返信するとウェブサイト内にも反映されます。)`;
 	} catch (e) {
 		return `fail: ${e}`;
 	}
