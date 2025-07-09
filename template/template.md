@@ -1,4 +1,4 @@
 ---
 title: "Title"
-date: "{{date:YYYY-MM-DD}}"
+date: "{{date:YYYY-MM-DDThh:mm:ss+09:00}}"
 ---
