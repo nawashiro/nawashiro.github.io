@@ -9,3 +9,5 @@ date: "2025-07-06"
 - ISBN: 9784103311638
 
 どこか様子のおかしい歴史小説が続く。善鸞がアイドルだったり親鸞が伝説のアイドルだったりする。ゲラゲラ笑いながら読んだ。
+
+ [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
