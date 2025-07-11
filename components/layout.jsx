@@ -14,15 +14,24 @@ const name = "NAWASHIRO";
 export const siteTitle = "NAWASHIRO";
 const { publicRuntimeConfig } = getConfig();
 
-export default function Layout({ children, blog, title }) {
+export default function Layout({
+  children,
+  blog,
+  title,
+  postDescription = null,
+  imageUrl = null,
+}) {
   const basePath = (publicRuntimeConfig && publicRuntimeConfig.basePath) || "";
   const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
-  const description =
-    "エンジニア・プログラマーNawashiroの個人サイト。プロジェクト、デジタルガーデン、技術ブログなど。";
+  const description = postDescription
+    ? postDescription
+    : "エンジニア・プログラマーNawashiroの個人サイト。プロジェクト、デジタルガーデン、技術ブログなど。";
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
-  const ogImageUrl = `https://vercel-og-nextjs-4iakfhvyx-yineleyici.vercel.app/api/og?title=${encodeURIComponent(
-    title ? title : siteTitle
-  )}`;
+  const ogImageUrl = imageUrl
+    ? imageUrl
+    : `https://vercel-og-nextjs-4iakfhvyx-yineleyici.vercel.app/api/og?title=${encodeURIComponent(
+        title ? title : siteTitle
+      )}`;
 
   useEffect(() => {
     kofiWidgetOverlay.draw("nawashiro", {
@@ -48,8 +57,12 @@ export default function Layout({ children, blog, title }) {
         />
         <meta property="og:site_name" content={siteTitle} />
         <meta property="og:image" content={ogImageUrl} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        {imageUrl && (
+          <>
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
+          </>
+        )}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@yineleyici" />
         <meta name="twitter:title" content={pageTitle} />

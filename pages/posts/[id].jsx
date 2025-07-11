@@ -39,10 +39,14 @@ export default function Post({ id, postData }) {
     : `${postData.title} - Nawashiroのブログ記事`;
 
   return (
-    <Layout title={postData.title} blog={id}>
+    <Layout
+      title={postData.title}
+      blog={id}
+      postDescription={description}
+      imageUrl={postData.imageUrl}
+    >
       <Head>
         <title>{postData.title}</title>
-        <meta name="description" content={description} />
         <meta property="article:published_time" content={publishedDate} />
         <meta property="article:author" content="Nawashiro" />
         {postData.tags &&
