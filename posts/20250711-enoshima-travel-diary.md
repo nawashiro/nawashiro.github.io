@@ -18,3 +18,7 @@ date: "2025-07-11T05:36:32+09:00"
 ![家路](https://imgur.com/fZ1Ud9i.jpg)
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
+
+---
+
+ここまで読んでくれてありがとう。よければでいいのだが、フィードバックがほしい。 [Bluesky](https://bsky.app/profile/nawashiro.dev/post/3ltohvtxetn2s) や [Mastodon](https://gamelinks007.net/@nawashiro/114833759329243970) から返信するとウェブサイト内にも反映される。健闘を祈る。
