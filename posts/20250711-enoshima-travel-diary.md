@@ -1,6 +1,6 @@
 ---
 title: "海。コーラとサイダー、そしてコーヒー"
-date: "2025-07-11T05:36:32+09:00"
+date: "2025-07-11T17:36:32+09:00"
 ---
 
 江ノ島へ行った。
@@ -21,4 +21,4 @@ date: "2025-07-11T05:36:32+09:00"
 
 ---
 
-ここまで読んでくれてありがとう。よければでいいのだが、フィードバックがほしい。 [Bluesky](https://bsky.app/profile/nawashiro.dev/post/3ltohvtxetn2s) や [Mastodon](https://gamelinks007.net/@nawashiro/114833759329243970) から返信するとウェブサイト内にも反映される。健闘を祈る。
+ここまで読んでくれてありがとう。よければでいいのだが、フィードバックがほしい。 [Bluesky](https://bsky.app/profile/nawashiro.dev/post/3ltojmqdan22q) や [Mastodon](https://gamelinks007.net/@nawashiro/114833890120186212) から返信するとウェブサイト内にも反映される。健闘を祈る。
