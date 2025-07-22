@@ -51,6 +51,8 @@ date: "2025-07-07"
 
 ## 関連項目
 
+- [🎞️写真ブログ - インデックス](photo-blog-index.md)
+	- 旅行記などはこちらにまとめた。
 - [💬ひとこと感想 - インデックス](20241217-one-thing-comment-index.md)
 	- ひとこと程度の感想はこちらにまとめた。
 - [📝メモの技法 - インデックス](20250105-note-taking-techniques-index.md)
