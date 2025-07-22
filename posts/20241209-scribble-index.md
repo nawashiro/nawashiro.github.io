@@ -13,10 +13,6 @@ date: "2025-06-25"
 
 - [害を受けたとき読む教訓](20241230-lessons-to-read-when-you-are-harmed.md)
 
-## 旅行
-
-- [海。コーラとサイダー、そしてコーヒー](20250711-enoshima-travel-diary.md)
-
 ## その他
 
 - [ハングルと都市](241124-hangul-and-cities.md)
