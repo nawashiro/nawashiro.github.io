@@ -7,6 +7,8 @@ date: "2025-05-07"
 
 ## ノウハウ
 
+- [pol.is にインスピレーションを受けた合意検出アルゴリズムについて](20250815-a-pol-is-inspired-consensus-finding-algorithm.md)
+	- 風ぐるま乗換案内で使用した統計処理の内容の説明。
 - [Blueskyってなんだ？ATProtocolのアーキテクチャ入門](20250507-bluesky-and-the-atprotocol.md)
 	- ATProtocol のアーキテクチャについてまとめた。
 - [ツンデレで学ぶダイクストラ法](20250418-dijkstras-algorithm-learn-in-tsunndere.md)
