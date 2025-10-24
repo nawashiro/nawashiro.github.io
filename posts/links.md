@@ -49,6 +49,12 @@ H6uOFUYN5zpxkGqk5qjLBeXCjEZIbXrncjn+dww=
 -----END PGP PUBLIC KEY BLOCK-----
 ```
 
+## Keybase
+
+各種アカウントの真正性の確認を行えます。
+
+https://keybase.io/nawashiro
+
 ## Ko-fi
 
 制作物の販売・支援の受付をしています。なるべくここから買ってください！いちばん手数料が低いので……
