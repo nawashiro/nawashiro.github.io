@@ -28,4 +28,4 @@ date: "2025-11-30T20:07:06+09:00"
 
 [^1]: 障害年金をもらう前にお世話になったことがあります。セカンドハーベスト・ジャパンのみなさま、その節は本当にありがとうございました。
 
-[](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon) [](https://brid.gy/publish/github) <a class="u-in-reply-to" href="https://github.com/nawashiro/nawashiro.github.io"></a>
+[](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon) [](https://brid.gy/publish/github)
