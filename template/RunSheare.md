@@ -7,15 +7,16 @@ async function share(){
     const githubFormData = new FormData();
 	
 	bskyFormData.append("source", url);
-	bskyFormData.append("target", "https://brid.gy/publish/bluesky");
+	bskyFormData.append("target",　"https://brid.gy/publish/bluesky");
 
 	mstdnFormData.append("source", url);
 	mstdnFormData.append("target", "https://brid.gy/publish/mastodon");
 	
 	githubFormData.append("source", url);
-	githubFormData.append("target", "https://brid.gy/publish/mastodon");
+	githubFormData.append("target", "https://brid.gy/publish/github");
+	
 	try {
-		const webmentionUrl = "https://brid.gy/publish/github";
+		const webmentionUrl = "https://brid.gy/publish/webmention";
 
 		const bskyResponse = await fetch(webmentionUrl, {
 			method: "POST",
