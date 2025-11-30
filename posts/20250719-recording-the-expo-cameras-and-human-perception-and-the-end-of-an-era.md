@@ -1,6 +1,6 @@
 ---
-title: "EXPOの記録、カメラと人の認知、そして時代の終わり"
-date: "2025-07-19T16:00:43+09:00"
+title: EXPOの記録、カメラと人の認知、そして時代の終わり
+date: 2025-07-19T16:00:43+09:00
 ---
 
 先日、ようやく現像に出した写真が帰ってきた。初めて万博の思い出と<ruby>相<rt>あいま</rt></ruby>見える。
@@ -56,6 +56,8 @@ Camera: Gakken flex, Film: FUJIFILM PREMIUM 400
 Kodak EKTAR H35 を購入した。
 
 ![砂色の Kodak EKTAR H35](https://imgur.com/wbEsgAd.jpg)
+
+[](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon) [](https://brid.gy/publish/github) <a class="u-in-reply-to" href="https://github.com/nawashiro/nawashiro.github.io"></a>
 
 ---
 
