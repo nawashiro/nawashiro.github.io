@@ -1,6 +1,6 @@
 ---
-title: ここは、日本でいちばん患者が訪れる大人の発達障害診療科 - 読書メモ
-date: 2025-07-06
+title: "ここは、日本でいちばん患者が訪れる大人の発達障害診療科 - 読書メモ"
+date: "2025-07-06"
 ---
 <img class="u-featured" src="http://books.google.com/books/content?id=LIytEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" style="display:none"/>
 
