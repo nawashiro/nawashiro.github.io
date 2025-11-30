@@ -1,6 +1,6 @@
 ---
-title: EXPOの記録、カメラと人の認知、そして時代の終わり
-date: 2025-07-19T16:00:43+09:00
+title: "EXPOの記録、カメラと人の認知、そして時代の終わり"
+date: "2025-07-19T16:00:43+09:00"
 ---
 
 先日、ようやく現像に出した写真が帰ってきた。初めて万博の思い出と<ruby>相<rt>あいま</rt></ruby>見える。
@@ -61,7 +61,7 @@ Kodak EKTAR H35 を購入した。
 
 ---
 
-ここまで読んでくれてありがとう。よければでいいのだが、フィードバックがほしい。 [Bluesky](https://bsky.app/profile/nawashiro.dev/post/3lucidypnts22) や [Mastodon](https://gamelinks007.net/@nawashiro/114878829258549313) 、[Github]()から返信するとウェブサイト内にも反映される。健闘を祈る。
+ここまで読んでくれてありがとう。よければでいいのだが、フィードバックがほしい。 [Bluesky](https://bsky.app/profile/nawashiro.dev/post/3lucidypnts22) や [Mastodon](https://gamelinks007.net/@nawashiro/114878829258549313) 、[Github]() から返信するとウェブサイト内にも反映される。健闘を祈る。
 
 ---
 
