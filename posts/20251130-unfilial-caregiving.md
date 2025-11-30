@@ -1,6 +1,6 @@
 ---
-title: 介護では、親孝行が薬になるとは限らない - 読書メモ
-date: 2025-11-30T14:58:30+09:00
+title: "介護では、親孝行が薬になるとは限らない - 読書メモ"
+date: "2025-11-30T14:58:30+09:00"
 ---
 <img class="u-featured" src="http://books.google.com/books/content?id=tvqSEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" style="display:none"/>
 
