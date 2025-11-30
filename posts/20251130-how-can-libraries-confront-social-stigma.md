@@ -1,6 +1,6 @@
 ---
-title: 社会的「烙印」に図書館はいかに立ち向かうのか
-date: 2025-11-30T20:07:06+09:00
+title: "社会的「烙印」に図書館はいかに立ち向かうのか"
+date: "2025-11-30T20:07:06+09:00"
 ---
 <img class="u-featured" src="http://books.google.com/books/content?id=S-zsjwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api" style="display:none"/>
 
