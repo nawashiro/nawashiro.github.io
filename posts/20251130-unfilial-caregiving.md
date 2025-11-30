@@ -27,3 +27,7 @@ date: "2025-11-30T14:58:30+09:00"
 [地域包括支援センター - Google Search](https://www.google.com/search?q=地域包括支援センター)
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon) [](https://brid.gy/publish/github) <a class="u-in-reply-to" href="https://github.com/nawashiro/nawashiro.github.io"></a>
+
+---
+
+ここまで読んでくれてありがとう。よければでいいのだが、フィードバックがほしい。 [Bluesky](https://bsky.app/profile/did:plc:oszui3uk43smfv7nihtli3pq/post/3m6te4i6phs2u) や [Fediverse](https://gamelinks007.net/@nawashiro/115637385213213221)、[Github](https://github.com/nawashiro/nawashiro.github.io/issues/171#issue-3677491703) から返信するとウェブサイト内にも反映される。健闘を祈る。
