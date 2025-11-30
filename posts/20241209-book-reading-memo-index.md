@@ -34,6 +34,7 @@ date: "2025-07-07"
 
 ### 人生
 
+- [介護では、親孝行が薬になるとは限らない - 読書メモ](20251130-unfilial-caregiving.md)
 - [いやな目にあったら読む本 - 読書メモ](20241207-a-revenge-manual-for-those-who-hate-someone.md)
 - [認知症は謎の恐ろしい病気ではない - 読書メモ](20241208-dementia-is-not-a-mysterious-frightening-disease.md)
 
