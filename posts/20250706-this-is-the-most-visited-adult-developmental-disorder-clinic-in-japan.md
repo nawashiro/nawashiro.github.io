@@ -13,4 +13,5 @@ date: "2025-07-06"
 <p class="e-bridgy-mastodon-content e-bridgy-bluesky-content">
 ド直球に「大人の発達障害」を扱った本。当事者として気になったので。他者とのわかりあえなさというか、外界とのやりとりに困難がある感じがよくわかる。行われている治療など（厳密には治せるものではない&誰でも簡単に受けられるわけではないのだろうが）知れたのでありがたい。
 </p>
-[](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon) [](https://brid.gy/publish/github)
+
+[](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon) [](https://brid.gy/publish/github) <a class="u-in-reply-to" href="https://github.com/nawashiro/nawashiro.github.io"></a>
