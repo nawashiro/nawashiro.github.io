@@ -1,6 +1,6 @@
 ---
-title: "社会的「烙印」に図書館はいかに立ち向かうのか"
-date: "2025-11-30T20:07:06+09:00"
+title: 社会的「烙印」に図書館はいかに立ち向かうのか
+date: 2025-11-30T20:07:06+09:00
 ---
 <img class="u-featured" src="http://books.google.com/books/content?id=S-zsjwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api" style="display:none"/>
 
@@ -29,3 +29,7 @@ date: "2025-11-30T20:07:06+09:00"
 [^1]: 障害年金をもらう前にお世話になったことがあります。セカンドハーベスト・ジャパンのみなさま、その節は本当にありがとうございました。
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon) [](https://brid.gy/publish/github)
+
+---
+
+ここまで読んでくれてありがとう。よければでいいのだが、フィードバックがほしい。 [Bluesky](https://bsky.app/profile/nawashiro.dev/post/3m6twf32gjr2q) や [Fediverse](https://gamelinks007.net/@nawashiro/115638511919572189)、[Github](https://github.com/nawashiro/nawashiro.github.io/issues/179) から返信するとウェブサイト内にも反映される。健闘を祈る。
