@@ -1,6 +1,6 @@
 ---
-title: "ここは、日本でいちばん患者が訪れる大人の発達障害診療科 - 読書メモ"
-date: "2025-07-06"
+title: ここは、日本でいちばん患者が訪れる大人の発達障害診療科 - 読書メモ
+date: 2025-07-06
 ---
 <img class="u-featured" src="http://books.google.com/books/content?id=LIytEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" style="display:none"/>
 
@@ -15,3 +15,7 @@ date: "2025-07-06"
 </p>
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon) [](https://brid.gy/publish/github) <a class="u-in-reply-to" href="https://github.com/nawashiro/nawashiro.github.io"></a>
+
+---
+
+ここまで読んでくれてありがとう。よければでいいのだが、フィードバックがほしい。 [Bluesky](https://bsky.app/profile/nawashiro.dev/post/3m6txgrx5432s) や [Fediverse](https://gamelinks007.net/@nawashiro/115638744944670570)、[Github](https://github.com/nawashiro/nawashiro.github.io/issues/184) から返信するとウェブサイト内にも反映される。健闘を祈る。
