@@ -61,4 +61,4 @@ Kodak EKTAR H35 を購入した。
 
 ---
 
-ここまで読んでくれてありがとう。よければでいいのだが、フィードバックがほしい。 [Bluesky](https://bsky.app/profile/nawashiro.dev/post/3lucidypnts22) や [Mastodon](https://gamelinks007.net/@nawashiro/114878829258549313) から返信するとウェブサイト内にも反映される。健闘を祈る。
+ここまで読んでくれてありがとう。よければでいいのだが、フィードバックがほしい。 [Bluesky](https://bsky.app/profile/nawashiro.dev/post/3lucidypnts22) や [Mastodon](https://gamelinks007.net/@nawashiro/114878829258549313) 、[Github](https://github.com/nawashiro/nawashiro.github.io/issues/173#issue-3677517524) から返信するとウェブサイト内にも反映される。健闘を祈る。
