@@ -17,7 +17,7 @@ date: "2025-07-11T17:36:32+09:00"
 
 ![家路](https://imgur.com/fZ1Ud9i.jpg)
 
-[](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
+[](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon) [](https://brid.gy/publish/github) <a class="u-in-reply-to" href="https://github.com/nawashiro/nawashiro.github.io"></a>
 
 ---
 
