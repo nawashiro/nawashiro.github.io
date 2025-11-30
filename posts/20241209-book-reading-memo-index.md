@@ -22,6 +22,7 @@ date: "2025-07-07"
 
 ### 社会問題
 
+- [社会的「烙印」に図書館はいかに立ち向かうのか](20251130-how-can-libraries-confront-social-stigma.md)
 - [SNS はなぜ人を過激化させるのか - 読書メモ](240810-social-media-prism.md)
 - [NHK 広島は原爆のなかいかに死んだか - 読書メモ](240806-book-esperanto-nuke.md)
 - [読書にはバリアフリーが必要だ - 読書メモ](20250701-reading-requires-barrier-free-access.md)
