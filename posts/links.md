@@ -9,7 +9,7 @@ date: "2025-01-27"
 
 Fingerprint: `4692 96D2 95A6 04C2 630D EC1F 4141 6DA6 C645 A862`
 
-[Public Key \(ASC file\)](openpgp_publickey.asc)
+[Public Key \(ASC file\)](/openpgp_publickey.asc)
 
 ## Keybase
 
