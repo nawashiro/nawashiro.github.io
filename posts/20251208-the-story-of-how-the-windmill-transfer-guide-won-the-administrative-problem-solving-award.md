@@ -5,7 +5,7 @@ date: "2025-12-08T16:53:35+09:00"
 
 これは [Nostr アドベントカレンダー 2025](https://adventar.org/calendars/12046) の 9 日目の記事です。
 
-<img class="u-featured" src="https://imgur.com/c2qhVNo.png" alt="glass"/>
+<img class="u-featured" src="https://imgur.com/c2qhVNo.png" alt="風ぐるま乗換案内のスクリーンショット"/>
 <p class="e-bridgy-mastodon-content e-bridgy-bluesky-content" style="display:none">これはNostrアドベントカレンダーの9日目の記事です。都知事杯で行政課題解決賞をいただいた、千代田区の乗換案内アプリケーションの紹介です。</p>
 
 イラっとしたのよ。
