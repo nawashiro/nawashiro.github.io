@@ -7,6 +7,7 @@ date: "2025-04-28"
 
 ## 2025
 
+- [風ぐるま乗換案内で行政課題解決賞をもらったはなし](20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award.md)
 - [風ぐるま乗換案内をつくった](20250428-kazaguruma-transit.md)
 
 ## 2024
