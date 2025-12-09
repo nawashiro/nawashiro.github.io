@@ -103,3 +103,7 @@ OpenSats にも応募しなければなりません。たいへん。
 というわけで [Code for Chiyoda](https://github.com/code4chiyoda/) を立ち上げました。千代田区に住んでいなくても全く問題ありません。近いうちに準備会の告知をすると思います。今でもメッセージくれれば Github の Organization に招待します。来てね～
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
+
+---
+
+ここまで読んでくれてありがとう。よければでいいのだが、フィードバックがほしい。 [Bluesky](https://bsky.app/profile/nawashiro.dev/post/3m7jgahb2zf2n) や [Fediverse](https://gamelinks007.net/@nawashiro/115687074337463084) から返信するとウェブサイト内にも反映される。健闘を祈る。
