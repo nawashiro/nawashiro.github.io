@@ -5,6 +5,7 @@ date: "2025-12-12T09:11:05+09:00"
 ## 要約
 
 <p class="e-bridgy-mastodon-content e-bridgy-bluesky-content">ObsidianのThinoから「きめ細かく公開範囲を設定できる」SSGマイクロブログを作りたいと考えた。公開範囲の制限に暗号化を検討した。Obsidian内に秘密鍵を置くとほかの拡張機能から読み取られる可能性があるので、SSGサイトにパスキーを配置し秘密鍵を管理、一時的な鍵ペアを利用して、Obsidianのメモリに読み込む手法を考えた。</p>
+
 ## 動機
 
 Obsidian を Mastodon として使いたい欲求があった。というのも、私は Thino が大好きだ。Mastodon も大好きだ。Indieweb も大好きだ。全部混ぜたら最強じゃないか？
@@ -61,3 +62,7 @@ obsidian-->>user: ファイルを表示
 SSG サイトに nosskey の永久秘密鍵が関連付けられるので、SSG サイト上で「自分しか見られない鍵アカウント」として運用できる。
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
+
+---
+
+ここまで読んでくれてありがとう。よければでいいのだが、フィードバックがほしい。 [Bluesky](https://bsky.app/profile/nawashiro.dev/post/3m7qtq4uaae2g) や [Fediverse](https://gamelinks007.net/@nawashiro/115703785945778341) から返信するとウェブサイト内にも反映される。健闘を祈る。
