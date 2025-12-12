@@ -37,6 +37,7 @@ date: "2025-05-07"
 
 ## おもいつき
 
+- [Thinoをインディーウェブなマイクロブログにしたい](20251212-i-want-to-turn-thino-into-an-indie-web-microblog.md)
 - [ソファのアセット構想](241031-sofa-asset-concept.md)
 - [Nostrの音楽アプリをぼんやり構想してみる](240905-nostr-music-client-memo.md)
 - [NosHagaki大改造計画](20241218-nos-hagaki-great-changing-plan.md)
