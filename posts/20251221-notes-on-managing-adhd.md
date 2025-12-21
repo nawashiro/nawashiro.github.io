@@ -481,3 +481,7 @@ ADHD をお持ちの方なら、ポモドーロ・テクニックについて聞
 ## 謝辞
 
 校正にご協力いただいたキャメロン・ピネガー氏に感謝申し上げます。
+
+---
+
+ここまで読んでくれてありがとう。よければでいいのだが、フィードバックがほしい。 [Bluesky](https://bsky.app/profile/nawashiro.dev/post/3mahl4cuhfm2o) や [Fediverse](https://gamelinks007.net/@nawashiro/115754971160439264) から返信するとウェブサイト内にも反映される。健闘を祈る。
