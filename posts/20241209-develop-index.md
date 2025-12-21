@@ -7,6 +7,8 @@ date: "2025-05-07"
 
 ## ノウハウ
 
+- [ADHD自己管理術：戦略と戦術](20251221-notes-on-managing-adhd.md)
+	- 著者のかたに翻訳の許可をいただきました。
 - [Blueskyってなんだ？ATProtocolのアーキテクチャ入門](20250507-bluesky-and-the-atprotocol.md)
 	- ATProtocol のアーキテクチャについてまとめた。
 - [ツンデレで学ぶダイクストラ法](20250418-dijkstras-algorithm-learn-in-tsunndere.md)
