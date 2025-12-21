@@ -89,8 +89,6 @@ ADHD の第一選択治療は刺激薬です。本記事で紹介するその他
 
 Todoist では、すべてのタスクは [プロジェクト](https://www.todoist.com/help/articles/introduction-to-projects-TLTjNftLM) （実際にはリストと呼ぶべき機能）に属しています。私のサイドバーの表示は以下のようになっています。
 
-NOTE: 訳者による複製（雰囲気）です。
-
 ![A screenshot of my Todoist sidebar, showing a list of projects described below.](https://borretti.me/assets/content/notes-on-managing-adhd/sidebar.webp)
 
 **タスクリスト** は、臨時のタスクを管理するリストです。主に家事や他に分類できない雑用を扱います。「食洗機を空にする」「このメールに返信する」などの項目が含まれます。このリストの唯一のルールは、すべての項目にスケジュールを設定することです。
