@@ -1,7 +1,11 @@
-import { parseISO, format } from "date-fns";
+import { format, parseISO } from "date-fns";
 import cx from "classnames";
 
-export default function Date({ dateString }) {
+type DateProps = {
+  dateString: string;
+};
+
+export default function Date({ dateString }: DateProps) {
   const date = parseISO(dateString);
   return (
     <time dateTime={dateString} className={cx("dt-published", "published")}>
