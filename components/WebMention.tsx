@@ -62,6 +62,84 @@ type WebMentionProps = {
   commentsAreReactions?: boolean;
 };
 
+const escapeHtml = (text: string) => {
+  const div = document.createElement("div");
+  div.textContent = text;
+  return div.innerHTML;
+};
+
+const truncateText = (text: string, limit?: number) => {
+  if (!limit) return text;
+  const words = text.replace(/\s+/g, " ").split(" ", limit + 1);
+  if (words.length > limit) {
+    words[limit - 1] += "…";
+    return words.slice(0, limit).join(" ");
+  }
+  return text;
+};
+
+const getHostname = (url: string) => {
+  const index = url.indexOf("//");
+  return index === -1 ? url : url.slice(index);
+};
+
+const removeDuplicates = (mentions: WebMentionEntry[]) => {
+  const seen = new Set<string>();
+  return mentions.filter((mention) => {
+    const url = getHostname(mention.url);
+    if (seen.has(url)) return false;
+    seen.add(url);
+    return true;
+  });
+};
+
+type RenderContext = {
+  preventSpoofing: boolean;
+  wordcount?: number;
+};
+
+const renderMention = (
+  mention: WebMentionEntry,
+  context: RenderContext,
+  isComment = false
+) => {
+  const author = escapeHtml(
+    mention.author?.name || mention.url.split("/")[2] || mention.url
+  );
+  let action = ACTIONS[mention["wm-property"] as keyof typeof ACTIONS] ||
+    "reacted";
+
+  if (!isComment && mention.content?.text) {
+    action += ": " + truncateText(mention.content.text, context.wordcount);
+  }
+
+  const photoHtml = mention.author?.photo
+    ? `<img src="${escapeHtml(
+        mention.author.photo
+      )}" loading="lazy" decoding="async" alt="${author}">`
+    : `<img class="${styles.missing}" src="data:image/webp;base64,UklGRkoCAABXRUJQVlA4TD4CAAAvP8APAIV0WduUOLr/m/iqY6SokDJSMD5xYX23SQizRsVdZmIj/f6goYUbiOj/BED7MOPReuBNT3vBesSzIex+SeqMFFkjebFmzH3S7POxDSJ1yaCbCmMnS2R46cRMPyQLw4GBK4esdK60pYwsZakecUCl5zsHv/5cPH08nx9/7i6rEEVCg2hR8VSd30PxMZpVoJZQO6Dixgg6X5oKFCmlVHIDmmMFShWumAXgCuyqVN8hHff/k+9fj8+ei7BVjpxBmZCUJv+6DhWGZwWvs+UoLHFCKsPYpfJtIcEXBTopEEsKwedZUv4ku1FZErKULLyQwFGgnmTs2vBD5qu44xwnG9uyjgrFOd+KRVlXyQfwQlauydaU6AVI7OjKXLUEqNtxJBmQegNDZgV7lxxqYMOMrDyC1NdAGbdiH9Ij0skjG+oTyfO0lmjdgvoH8iIgreuBMRYLSH+R3sAztXgL+XfS7E2bmfo6gnS0TrpnzHT7kL+skj7PgHuBwv/zpN8LDLQg7zfJZLBubMKnyeh6ZGyfDEfc2LYpnlUtG7JqsSHq1WoASbUS4KVaLwB8be5mfsGMDwBcm5VxbuxWxx3nkFanB6lYqsqSkOGkKicoDvXsneR7BkKU7DtaEuT7+pxBGVwx+9gVyqf2pVA9sC2CsmjZ1RJqEJHS4Tj/pCcS0JoyBYOsB91Xjh3OFfQPQhvCAYyeLJlaOoFp0XNNuD0BC8exr8uPx7D1JWkwFdZIXmD3MOPReuDNzHjBesSzIbQD" alt="${author}">`;
+
+  const rsvpIcon =
+    mention.rsvp && RSVP_ICONS[mention.rsvp as keyof typeof RSVP_ICONS]
+      ? `<sub>${RSVP_ICONS[mention.rsvp as keyof typeof RSVP_ICONS]}</sub>`
+      : "";
+
+  const mentionUrl =
+    mention[context.preventSpoofing ? "wm-source" : "url"] || mention.url;
+
+  return `
+      <a class="${
+        styles.reaction
+      }" rel="nofollow ugc" title="${author} ${action}" href="${mentionUrl}">
+        <div class="${styles.icon}">
+          ${photoHtml}
+          ${REACTIONS[mention["wm-property"] as keyof typeof REACTIONS] || "💥"}
+        </div>
+        ${rsvpIcon}
+      </a>
+    `;
+};
+
 const WebMention = ({
   pageUrl,
   addUrls = "",
@@ -79,75 +157,6 @@ const WebMention = ({
     (typeof window !== "undefined"
       ? window.location.href.replace(/#.*$/, "")
       : "");
-
-  const escapeHtml = (text: string) => {
-    const div = document.createElement("div");
-    div.textContent = text;
-    return div.innerHTML;
-  };
-
-  const truncateText = (text: string, limit?: number) => {
-    if (!limit) return text;
-    const words = text.replace(/\s+/g, " ").split(" ", limit + 1);
-    if (words.length > limit) {
-      words[limit - 1] += "…";
-      return words.slice(0, limit).join(" ");
-    }
-    return text;
-  };
-
-  const getHostname = (url: string) => {
-    const index = url.indexOf("//");
-    return index === -1 ? url : url.slice(index);
-  };
-
-  const removeDuplicates = (mentions: WebMentionEntry[]) => {
-    const seen = new Set<string>();
-    return mentions.filter((mention) => {
-      const url = getHostname(mention.url);
-      if (seen.has(url)) return false;
-      seen.add(url);
-      return true;
-    });
-  };
-
-  const renderMention = (mention: WebMentionEntry, isComment = false) => {
-    const author = escapeHtml(
-      mention.author?.name || mention.url.split("/")[2] || mention.url
-    );
-    let action = ACTIONS[mention["wm-property"] as keyof typeof ACTIONS] ||
-      "reacted";
-
-    if (!isComment && mention.content?.text) {
-      action += ": " + truncateText(mention.content.text, wordcount);
-    }
-
-    const photoHtml = mention.author?.photo
-      ? `<img src="${escapeHtml(
-          mention.author.photo
-        )}" loading="lazy" decoding="async" alt="${author}">`
-      : `<img class="${styles.missing}" src="data:image/webp;base64,UklGRkoCAABXRUJQVlA4TD4CAAAvP8APAIV0WduUOLr/m/iqY6SokDJSMD5xYX23SQizRsVdZmIj/f6goYUbiOj/BED7MOPReuBNT3vBesSzIex+SeqMFFkjebFmzH3S7POxDSJ1yaCbCmMnS2R46cRMPyQLw4GBK4esdK60pYwsZakecUCl5zsHv/5cPH08nx9/7i6rEEVCg2hR8VSd30PxMZpVoJZQO6Dixgg6X5oKFCmlVHIDmmMFShWumAXgCuyqVN8hHff/k+9fj8+ei7BVjpxBmZCUJv+6DhWGZwWvs+UoLHFCKsPYpfJtIcEXBTopEEsKwedZUv4ku1FZErKULLyQwFGgnmTs2vBD5qu44xwnG9uyjgrFOd+KRVlXyQfwQlauydaU6AVI7OjKXLUEqNtxJBmQegNDZgV7lxxqYMOMrDyC1NdAGbdiH9Ij0skjG+oTyfO0lmjdgvoH8iIgreuBMRYLSH+R3sAztXgL+XfS7E2bmfo6gnS0TrpnzHT7kL+skj7PgHuBwv/zpN8LDLQg7zfJZLBubMKnyeh6ZGyfDEfc2LYpnlUtG7JqsSHq1WoASbUS4KVaLwB8be5mfsGMDwBcm5VxbuxWxx3nkFanB6lYqsqSkOGkKicoDvXsneR7BkKU7DtaEuT7+pxBGVwx+9gVyqf2pVA9sC2CsmjZ1RJqEJHS4Tj/pCcS0JoyBYOsB91Xjh3OFfQPQhvCAYyeLJlaOoFp0XNNuD0BC8exr8uPx7D1JWkwFdZIXmD3MOPReuDNzHjBesSzIbQD" alt="${author}">`;
-
-    const rsvpIcon =
-      mention.rsvp && RSVP_ICONS[mention.rsvp as keyof typeof RSVP_ICONS]
-        ? `<sub>${RSVP_ICONS[mention.rsvp as keyof typeof RSVP_ICONS]}</sub>`
-        : "";
-
-    const mentionUrl =
-      mention[preventSpoofing ? "wm-source" : "url"] || mention.url;
-
-    return `
-      <a class="${
-        styles.reaction
-      }" rel="nofollow ugc" title="${author} ${action}" href="${mentionUrl}">
-        <div class="${styles.icon}">
-          ${photoHtml}
-          ${REACTIONS[mention["wm-property"] as keyof typeof REACTIONS] || "💥"}
-        </div>
-        ${rsvpIcon}
-      </a>
-    `;
-  };
 
   useEffect(() => {
     const loadWebMentions = async () => {
@@ -201,7 +210,11 @@ const WebMention = ({
             <ul class="${styles.comments}">
               ${uniqueComments
                 .map((comment) => {
-                  const mentionHtml = renderMention(comment, true);
+                  const mentionHtml = renderMention(
+                    comment,
+                    { preventSpoofing, wordcount },
+                    true
+                  );
                   const source = escapeHtml(comment.url.split("/")[2]);
                   const authorName = comment.author?.name
                     ? escapeHtml(comment.author.name)
@@ -232,7 +245,9 @@ const WebMention = ({
             <h2>Reactions</h2>
             <ul class="${styles.reacts}">
               ${uniqueReactions
-                .map((reaction) => renderMention(reaction))
+                .map((reaction) =>
+                  renderMention(reaction, { preventSpoofing, wordcount })
+                )
                 .join("")}
             </ul>
           `;

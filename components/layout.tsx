@@ -8,7 +8,8 @@ import { IconContext } from "react-icons";
 import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
-import { useEffect, type ReactNode } from "react";
+import { type ReactNode } from "react";
+import Script from "next/script";
 
 const name = "NAWASHIRO";
 export const siteTitle = "NAWASHIRO";
@@ -39,19 +40,23 @@ export default function Layout({
         title ? title : siteTitle
       )}`;
 
-  useEffect(() => {
-    if (typeof window === "undefined" || !window.kofiWidgetOverlay) return;
-
+  const handleKofiReady = () => {
+    if (!window.kofiWidgetOverlay) return;
     window.kofiWidgetOverlay.draw("nawashiro", {
       type: "floating-chat",
       "floating-chat.donateButton.text": "Support me",
       "floating-chat.donateButton.background-color": "#48731d",
       "floating-chat.donateButton.text-color": "#fff",
     });
-  }, []);
+  };
 
   return (
     <div>
+      <Script
+        src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"
+        strategy="afterInteractive"
+        onLoad={handleKofiReady}
+      />
       <Head>
         <link rel="icon" href={`${basePath}/favicon.ico`} />
         <title>{pageTitle}</title>

@@ -15,6 +15,7 @@ import indexStyle from "../styles/index.module.css";
 import NetworkGraph from "../components/network_graph";
 import cx from "classnames";
 import type { GetStaticProps } from "next";
+import Image from "next/image";
 
 type HomeProps = {
   allPostsData: PostMeta[];
@@ -162,7 +163,13 @@ export default function Home({
       <section>
         <div className={indexStyle.card}>
           <div className={indexStyle.imgWrap}>
-            <img src="/images/code.webp" alt="ハッカソンのために書いたコード" />
+            <Image
+              src="/images/code.webp"
+              alt="ハッカソンのために書いたコード"
+              width={640}
+              height={360}
+              style={{ width: "100%", height: "auto" }}
+            />
           </div>
           <div className={indexStyle.innerCard}>
             <div>
