@@ -28,10 +28,42 @@ const ACTIONS = {
   "follow-of": "followed",
 };
 
+type WebMentionAuthor = {
+  name?: string;
+  photo?: string;
+};
+
+type WebMentionContent = {
+  text?: string;
+};
+
+type WebMentionEntry = {
+  url: string;
+  "wm-property": string;
+  "wm-source"?: string;
+  author?: WebMentionAuthor;
+  content?: WebMentionContent;
+  rsvp?: string;
+};
+
+type WebMentionResponse = {
+  children?: WebMentionEntry[];
+};
+
+type WebMentionProps = {
+  pageUrl?: string;
+  addUrls?: string;
+  id?: string;
+  wordcount?: number;
+  maxWebmentions?: number;
+  preventSpoofing?: boolean;
+  sortBy?: "published" | "updated" | "received";
+  sortDir?: "up" | "down";
+  commentsAreReactions?: boolean;
+};
+
 const WebMention = ({
-  pageUrl = typeof window !== "undefined"
-    ? window.location.href.replace(/#.*$/, "")
-    : "",
+  pageUrl,
   addUrls = "",
   id = "webmentions",
   wordcount,
@@ -40,16 +72,21 @@ const WebMention = ({
   sortBy = "published",
   sortDir = "up",
   commentsAreReactions = false,
-}) => {
-  const containerRef = useRef(null);
+}: WebMentionProps) => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const resolvedPageUrl =
+    pageUrl ??
+    (typeof window !== "undefined"
+      ? window.location.href.replace(/#.*$/, "")
+      : "");
 
-  const escapeHtml = (text) => {
+  const escapeHtml = (text: string) => {
     const div = document.createElement("div");
     div.textContent = text;
     return div.innerHTML;
   };
 
-  const truncateText = (text, limit) => {
+  const truncateText = (text: string, limit?: number) => {
     if (!limit) return text;
     const words = text.replace(/\s+/g, " ").split(" ", limit + 1);
     if (words.length > limit) {
@@ -59,12 +96,13 @@ const WebMention = ({
     return text;
   };
 
-  const getHostname = (url) => {
-    return url.substr(url.indexOf("//"));
+  const getHostname = (url: string) => {
+    const index = url.indexOf("//");
+    return index === -1 ? url : url.slice(index);
   };
 
-  const removeDuplicates = (mentions) => {
-    const seen = new Set();
+  const removeDuplicates = (mentions: WebMentionEntry[]) => {
+    const seen = new Set<string>();
     return mentions.filter((mention) => {
       const url = getHostname(mention.url);
       if (seen.has(url)) return false;
@@ -73,11 +111,12 @@ const WebMention = ({
     });
   };
 
-  const renderMention = (mention, isComment = false) => {
+  const renderMention = (mention: WebMentionEntry, isComment = false) => {
     const author = escapeHtml(
-      mention.author?.name || mention.url.split("/")[2]
+      mention.author?.name || mention.url.split("/")[2] || mention.url
     );
-    let action = ACTIONS[mention["wm-property"]] || "reacted";
+    let action = ACTIONS[mention["wm-property"] as keyof typeof ACTIONS] ||
+      "reacted";
 
     if (!isComment && mention.content?.text) {
       action += ": " + truncateText(mention.content.text, wordcount);
@@ -90,19 +129,20 @@ const WebMention = ({
       : `<img class="${styles.missing}" src="data:image/webp;base64,UklGRkoCAABXRUJQVlA4TD4CAAAvP8APAIV0WduUOLr/m/iqY6SokDJSMD5xYX23SQizRsVdZmIj/f6goYUbiOj/BED7MOPReuBNT3vBesSzIex+SeqMFFkjebFmzH3S7POxDSJ1yaCbCmMnS2R46cRMPyQLw4GBK4esdK60pYwsZakecUCl5zsHv/5cPH08nx9/7i6rEEVCg2hR8VSd30PxMZpVoJZQO6Dixgg6X5oKFCmlVHIDmmMFShWumAXgCuyqVN8hHff/k+9fj8+ei7BVjpxBmZCUJv+6DhWGZwWvs+UoLHFCKsPYpfJtIcEXBTopEEsKwedZUv4ku1FZErKULLyQwFGgnmTs2vBD5qu44xwnG9uyjgrFOd+KRVlXyQfwQlauydaU6AVI7OjKXLUEqNtxJBmQegNDZgV7lxxqYMOMrDyC1NdAGbdiH9Ij0skjG+oTyfO0lmjdgvoH8iIgreuBMRYLSH+R3sAztXgL+XfS7E2bmfo6gnS0TrpnzHT7kL+skj7PgHuBwv/zpN8LDLQg7zfJZLBubMKnyeh6ZGyfDEfc2LYpnlUtG7JqsSHq1WoASbUS4KVaLwB8be5mfsGMDwBcm5VxbuxWxx3nkFanB6lYqsqSkOGkKicoDvXsneR7BkKU7DtaEuT7+pxBGVwx+9gVyqf2pVA9sC2CsmjZ1RJqEJHS4Tj/pCcS0JoyBYOsB91Xjh3OFfQPQhvCAYyeLJlaOoFp0XNNuD0BC8exr8uPx7D1JWkwFdZIXmD3MOPReuDNzHjBesSzIbQD" alt="${author}">`;
 
     const rsvpIcon =
-      mention.rsvp && RSVP_ICONS[mention.rsvp]
-        ? `<sub>${RSVP_ICONS[mention.rsvp]}</sub>`
+      mention.rsvp && RSVP_ICONS[mention.rsvp as keyof typeof RSVP_ICONS]
+        ? `<sub>${RSVP_ICONS[mention.rsvp as keyof typeof RSVP_ICONS]}</sub>`
         : "";
+
+    const mentionUrl =
+      mention[preventSpoofing ? "wm-source" : "url"] || mention.url;
 
     return `
       <a class="${
         styles.reaction
-      }" rel="nofollow ugc" title="${author} ${action}" href="${
-      mention[preventSpoofing ? "wm-source" : "url"]
-    }">
+      }" rel="nofollow ugc" title="${author} ${action}" href="${mentionUrl}">
         <div class="${styles.icon}">
           ${photoHtml}
-          ${REACTIONS[mention["wm-property"]] || "💥"}
+          ${REACTIONS[mention["wm-property"] as keyof typeof REACTIONS] || "💥"}
         </div>
         ${rsvpIcon}
       </a>
@@ -112,9 +152,9 @@ const WebMention = ({
   useEffect(() => {
     const loadWebMentions = async () => {
       const container = containerRef.current;
-      if (!container) return;
+      if (!container || !resolvedPageUrl) return;
 
-      const targets = [getHostname(pageUrl)];
+      const targets = [getHostname(resolvedPageUrl)];
       if (addUrls) {
         addUrls.split("|").forEach((url) => targets.push(getHostname(url)));
       }
@@ -133,11 +173,12 @@ const WebMention = ({
         const response = await fetch(apiUrl.toString());
         if (!response.ok) throw new Error("Failed to fetch webmentions");
 
-        const data = await response.json();
+        const data = (await response.json()) as WebMentionResponse;
+        const children = Array.isArray(data.children) ? data.children : [];
 
-        const comments = [];
-        const reactions = [];
-        const mentionsByType = {
+        const comments: WebMentionEntry[] = [];
+        const reactions: WebMentionEntry[] = [];
+        const mentionsByType: Record<string, WebMentionEntry[]> = {
           "in-reply-to": commentsAreReactions ? reactions : comments,
           "like-of": reactions,
           "repost-of": reactions,
@@ -146,7 +187,7 @@ const WebMention = ({
           rsvp: commentsAreReactions ? reactions : comments,
         };
 
-        data.children.forEach((mention) => {
+        children.forEach((mention) => {
           const target = mentionsByType[mention["wm-property"]];
           if (target) target.push(mention);
         });
@@ -168,13 +209,14 @@ const WebMention = ({
                   const content = comment.content?.text
                     ? truncateText(comment.content.text, wordcount)
                     : "(mention)";
+                  const commentUrl =
+                    comment[preventSpoofing ? "wm-source" : "url"] ||
+                    comment.url;
 
                   return `
                   <li>
                     ${mentionHtml}
-                    <a class="source" rel="nofollow ugc" href="${
-                      comment[preventSpoofing ? "wm-source" : "url"]
-                    }">${authorName}</a>
+                    <a class="source" rel="nofollow ugc" href="${commentUrl}">${authorName}</a>
                     <span class="${styles.text}">${content}</span>
                   </li>
                 `;
@@ -206,7 +248,7 @@ const WebMention = ({
       loadWebMentions();
     }
   }, [
-    pageUrl,
+    resolvedPageUrl,
     addUrls,
     maxWebmentions,
     sortBy,

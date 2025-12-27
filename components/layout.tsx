@@ -8,7 +8,7 @@ import { IconContext } from "react-icons";
 import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
-import { useEffect } from "react";
+import { useEffect, type ReactNode } from "react";
 
 const name = "NAWASHIRO";
 export const siteTitle = "NAWASHIRO";
@@ -20,13 +20,19 @@ export default function Layout({
   title,
   postDescription = null,
   imageUrl = null,
+}: {
+  children: ReactNode;
+  blog?: string;
+  title?: string;
+  postDescription?: string | null;
+  imageUrl?: string | null;
 }) {
   const basePath = (publicRuntimeConfig && publicRuntimeConfig.basePath) || "";
   const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   const description = postDescription
     ? postDescription
     : "エンジニア・プログラマーNawashiroの個人サイト。プロジェクト、デジタルガーデン、技術ブログなど。";
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
   const ogImageUrl = imageUrl
     ? imageUrl
     : `https://vercel-og-nextjs-4iakfhvyx-yineleyici.vercel.app/api/og?title=${encodeURIComponent(
@@ -34,7 +40,9 @@ export default function Layout({
       )}`;
 
   useEffect(() => {
-    kofiWidgetOverlay.draw("nawashiro", {
+    if (typeof window === "undefined" || !window.kofiWidgetOverlay) return;
+
+    window.kofiWidgetOverlay.draw("nawashiro", {
       type: "floating-chat",
       "floating-chat.donateButton.text": "Support me",
       "floating-chat.donateButton.background-color": "#48731d",
