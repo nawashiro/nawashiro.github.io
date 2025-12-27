@@ -3,9 +3,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "output": "export",
+    "output": "next export",
     "postbuild": "next-sitemap",
     "lint": "next lint",
+    "test": "playwright test",
     "typecheck": "tsc --noEmit",
     "test:e2e": "playwright test"
   },

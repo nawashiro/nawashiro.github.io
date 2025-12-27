@@ -5,7 +5,6 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
 import remarkGfm from "remark-gfm";
-import rehypeRaw from "rehype-raw";
 import { unified } from "unified";
 import remarkCodeTitles from "remark-flexible-code-titles";
 import remarkPrism from "remark-prism";
@@ -193,10 +192,8 @@ export function getVersion() {
   return nowUTC;
 }
 
-export async function getPostData(id: string): Promise<PostData> {
-  const { matterResult } = getPostBasicData(`${id}.md`);
-
-  const contentHtml = await unified()
+export async function renderMarkdown(content: string): Promise<string> {
+  return unified()
     .use(remarkToc, {
       maxDepth: 3,
       heading: "TOC",
@@ -208,17 +205,41 @@ export async function getPostData(id: string): Promise<PostData> {
     .use(remarkMermaid)
     .use(remarkPrism)
     .use(remarkGfm)
-    .use(remarkRehype, { allowDangerousHtml: true })
-    .use(rehypeRaw)
+    .use(remarkRehype)
     .use(rehypeSlug)
     .use(rehypeKatex, { output: "mathml" })
     .use(rehypeStringify)
-    .process(matterResult.content)
+    .process(content)
     .then((processed) => processed.toString());
+}
+
+export function resolveOgImageUrl(
+  imageUrl: string | null,
+  siteUrl: string
+): string | null {
+  if (!imageUrl) return null;
+  if (!siteUrl) return imageUrl;
+
+  try {
+    const resolved = new URL(imageUrl, siteUrl);
+    return resolved.toString();
+  } catch {
+    return imageUrl;
+  }
+}
+
+export async function getPostData(id: string): Promise<PostData> {
+  const { matterResult } = getPostBasicData(`${id}.md`);
+
+  const contentHtml = await renderMarkdown(matterResult.content);
 
   // 画像URLを取得
   const imageMatch = matterResult.content.match(/!\[.*?\]\((.*?)\)/);
-  const imageUrl = imageMatch ? imageMatch[1] : null;
+  const rawImageUrl = imageMatch ? imageMatch[1] : null;
+  const imageUrl = resolveOgImageUrl(
+    rawImageUrl,
+    process.env.NEXT_PUBLIC_SITE_URL || ""
+  );
 
   // バックリンクの取得
   const backLinks = fs
@@ -304,4 +325,10 @@ export async function generateRssFeed() {
   fs.writeFileSync(path.join(rssDir, "feed.xml"), feed.rss2());
   fs.writeFileSync(path.join(rssDir, "atom.xml"), feed.atom1());
   fs.writeFileSync(path.join(rssDir, "feed.json"), feed.json1());
+}
+
+export async function runServerBuildTasks(
+  generateRssFeedFn: () => Promise<void> = generateRssFeed
+) {
+  await generateRssFeedFn();
 }

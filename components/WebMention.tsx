@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import styles from "./WebMention.module.css";
 
 const REACTIONS = {
@@ -62,12 +62,6 @@ type WebMentionProps = {
   commentsAreReactions?: boolean;
 };
 
-const escapeHtml = (text: string) => {
-  const div = document.createElement("div");
-  div.textContent = text;
-  return div.innerHTML;
-};
-
 const truncateText = (text: string, limit?: number) => {
   if (!limit) return text;
   const words = text.replace(/\s+/g, " ").split(" ", limit + 1);
@@ -98,46 +92,86 @@ type RenderContext = {
   wordcount?: number;
 };
 
+export const safeWebmentionUrl = (value?: string) => {
+  if (!value) return null;
+  try {
+    const parsed = new URL(value);
+    if (parsed.protocol === "http:" || parsed.protocol === "https:") {
+      return value;
+    }
+  } catch {
+    return null;
+  }
+  return null;
+};
+
+const getSourceLabel = (url: string) => {
+  try {
+    return new URL(url).hostname || url;
+  } catch {
+    return url;
+  }
+};
+
+const buildActionLabel = (
+  mention: WebMentionEntry,
+  context: RenderContext,
+  isComment: boolean
+) => {
+  let action = ACTIONS[mention["wm-property"] as keyof typeof ACTIONS] ||
+    "reacted";
+  if (!isComment && mention.content?.text) {
+    action += ": " + truncateText(mention.content.text, context.wordcount);
+  }
+  return action;
+};
+
 const renderMention = (
   mention: WebMentionEntry,
   context: RenderContext,
   isComment = false
 ) => {
-  const author = escapeHtml(
-    mention.author?.name || mention.url.split("/")[2] || mention.url
-  );
-  let action = ACTIONS[mention["wm-property"] as keyof typeof ACTIONS] ||
-    "reacted";
-
-  if (!isComment && mention.content?.text) {
-    action += ": " + truncateText(mention.content.text, context.wordcount);
-  }
-
-  const photoHtml = mention.author?.photo
-    ? `<img src="${escapeHtml(
-        mention.author.photo
-      )}" loading="lazy" decoding="async" alt="${author}">`
-    : `<img class="${styles.missing}" src="data:image/webp;base64,UklGRkoCAABXRUJQVlA4TD4CAAAvP8APAIV0WduUOLr/m/iqY6SokDJSMD5xYX23SQizRsVdZmIj/f6goYUbiOj/BED7MOPReuBNT3vBesSzIex+SeqMFFkjebFmzH3S7POxDSJ1yaCbCmMnS2R46cRMPyQLw4GBK4esdK60pYwsZakecUCl5zsHv/5cPH08nx9/7i6rEEVCg2hR8VSd30PxMZpVoJZQO6Dixgg6X5oKFCmlVHIDmmMFShWumAXgCuyqVN8hHff/k+9fj8+ei7BVjpxBmZCUJv+6DhWGZwWvs+UoLHFCKsPYpfJtIcEXBTopEEsKwedZUv4ku1FZErKULLyQwFGgnmTs2vBD5qu44xwnG9uyjgrFOd+KRVlXyQfwQlauydaU6AVI7OjKXLUEqNtxJBmQegNDZgV7lxxqYMOMrDyC1NdAGbdiH9Ij0skjG+oTyfO0lmjdgvoH8iIgreuBMRYLSH+R3sAztXgL+XfS7E2bmfo6gnS0TrpnzHT7kL+skj7PgHuBwv/zpN8LDLQg7zfJZLBubMKnyeh6ZGyfDEfc2LYpnlUtG7JqsSHq1WoASbUS4KVaLwB8be5mfsGMDwBcm5VxbuxWxx3nkFanB6lYqsqSkOGkKicoDvXsneR7BkKU7DtaEuT7+pxBGVwx+9gVyqf2pVA9sC2CsmjZ1RJqEJHS4Tj/pCcS0JoyBYOsB91Xjh3OFfQPQhvCAYyeLJlaOoFp0XNNuD0BC8exr8uPx7D1JWkwFdZIXmD3MOPReuDNzHjBesSzIbQD" alt="${author}">`;
-
+  const authorLabel =
+    mention.author?.name || getSourceLabel(mention.url) || mention.url;
+  const action = buildActionLabel(mention, context, isComment);
+  const reactionIcon =
+    REACTIONS[mention["wm-property"] as keyof typeof REACTIONS] || "💥";
   const rsvpIcon =
     mention.rsvp && RSVP_ICONS[mention.rsvp as keyof typeof RSVP_ICONS]
-      ? `<sub>${RSVP_ICONS[mention.rsvp as keyof typeof RSVP_ICONS]}</sub>`
-      : "";
-
-  const mentionUrl =
+      ? RSVP_ICONS[mention.rsvp as keyof typeof RSVP_ICONS]
+      : null;
+  const rawMentionUrl =
     mention[context.preventSpoofing ? "wm-source" : "url"] || mention.url;
+  const mentionUrl = safeWebmentionUrl(rawMentionUrl) || "#";
+  const photoUrl = safeWebmentionUrl(mention.author?.photo);
 
-  return `
-      <a class="${
-        styles.reaction
-      }" rel="nofollow ugc" title="${author} ${action}" href="${mentionUrl}">
-        <div class="${styles.icon}">
-          ${photoHtml}
-          ${REACTIONS[mention["wm-property"] as keyof typeof REACTIONS] || "💥"}
-        </div>
-        ${rsvpIcon}
-      </a>
-    `;
+  return (
+    <a
+      className={styles.reaction}
+      rel="nofollow ugc"
+      title={`${authorLabel} ${action}`}
+      href={mentionUrl}
+    >
+      <div className={styles.icon}>
+        {photoUrl ? (
+          <img
+            src={photoUrl}
+            loading="lazy"
+            decoding="async"
+            alt={authorLabel}
+          />
+        ) : (
+          <img
+            className={styles.missing}
+            src="data:image/webp;base64,UklGRkoCAABXRUJQVlA4TD4CAAAvP8APAIV0WduUOLr/m/iqY6SokDJSMD5xYX23SQizRsVdZmIj/f6goYUbiOj/BED7MOPReuBNT3vBesSzIex+SeqMFFkjebFmzH3S7POxDSJ1yaCbCmMnS2R46cRMPyQLw4GBK4esdK60pYwsZakecUCl5zsHv/5cPH08nx9/7i6rEEVCg2hR8VSd30PxMZpVoJZQO6Dixgg6X5oKFCmlVHIDmmMFShWumAXgCuyqVN8hHff/k+9fj8+ei7BVjpxBmZCUJv+6DhWGZwWvs+UoLHFCKsPYpfJtIcEXBTopEEsKwedZUv4ku1FZErKULLyQwFGgnmTs2vBD5qu44xwnG9uyjgrFOd+KRVlXyQfwQlauydaU6AVI7OjKXLUEqNtxJBmQegNDZgV7lxxqYMOMrDyC1NdAGbdiH9Ij0skjG+oTyfO0lmjdgvoH8iIgreuBMRYLSH+R3sAztXgL+XfS7E2bmfo6gnS0TrpnzHT7kL+skj7PgHuBwv/zpN8LDLQg7zfJZLBubMKnyeh6ZGyfDEfc2LYpnlUtG7JqsSHq1WoASbUS4KVaLwB8be5mfsGMDwBcm5VxbuxWxx3nkFanB6lYqsqSkOGkKicoDvXsneR7BkKU7DtaEuT7+pxBGVwx+9gVyqf2pVA9sC2CsmjZ1RJqEJHS4Tj/pCcS0JoyBYOsB91Xjh3OFfQPQhvCAYyeLJlaOoFp0XNNuD0BC8exr8uPx7D1JWkwFdZIXmD3MOPReuDNzHjBesSzIbQD"
+            alt={authorLabel}
+          />
+        )}
+        {reactionIcon}
+      </div>
+      {rsvpIcon && <sub>{rsvpIcon}</sub>}
+    </a>
+  );
 };
 
 const WebMention = ({
@@ -152,6 +186,8 @@ const WebMention = ({
   commentsAreReactions = false,
 }: WebMentionProps) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const [comments, setComments] = useState<WebMentionEntry[]>([]);
+  const [reactions, setReactions] = useState<WebMentionEntry[]>([]);
   const resolvedPageUrl =
     pageUrl ??
     (typeof window !== "undefined"
@@ -185,15 +221,15 @@ const WebMention = ({
         const data = (await response.json()) as WebMentionResponse;
         const children = Array.isArray(data.children) ? data.children : [];
 
-        const comments: WebMentionEntry[] = [];
-        const reactions: WebMentionEntry[] = [];
+        const nextComments: WebMentionEntry[] = [];
+        const nextReactions: WebMentionEntry[] = [];
         const mentionsByType: Record<string, WebMentionEntry[]> = {
-          "in-reply-to": commentsAreReactions ? reactions : comments,
-          "like-of": reactions,
-          "repost-of": reactions,
-          "bookmark-of": reactions,
-          "mention-of": commentsAreReactions ? reactions : comments,
-          rsvp: commentsAreReactions ? reactions : comments,
+          "in-reply-to": commentsAreReactions ? nextReactions : nextComments,
+          "like-of": nextReactions,
+          "repost-of": nextReactions,
+          "bookmark-of": nextReactions,
+          "mention-of": commentsAreReactions ? nextReactions : nextComments,
+          rsvp: commentsAreReactions ? nextReactions : nextComments,
         };
 
         children.forEach((mention) => {
@@ -201,59 +237,8 @@ const WebMention = ({
           if (target) target.push(mention);
         });
 
-        let html = "";
-
-        if (comments.length > 0 && comments !== reactions) {
-          const uniqueComments = removeDuplicates(comments);
-          html += `
-            <h2>Responses</h2>
-            <ul class="${styles.comments}">
-              ${uniqueComments
-                .map((comment) => {
-                  const mentionHtml = renderMention(
-                    comment,
-                    { preventSpoofing, wordcount },
-                    true
-                  );
-                  const source = escapeHtml(comment.url.split("/")[2]);
-                  const authorName = comment.author?.name
-                    ? escapeHtml(comment.author.name)
-                    : source;
-                  const content = comment.content?.text
-                    ? truncateText(comment.content.text, wordcount)
-                    : "(mention)";
-                  const commentUrl =
-                    comment[preventSpoofing ? "wm-source" : "url"] ||
-                    comment.url;
-
-                  return `
-                  <li>
-                    ${mentionHtml}
-                    <a class="source" rel="nofollow ugc" href="${commentUrl}">${authorName}</a>
-                    <span class="${styles.text}">${content}</span>
-                  </li>
-                `;
-                })
-                .join("")}
-            </ul>
-          `;
-        }
-
-        if (reactions.length > 0) {
-          const uniqueReactions = removeDuplicates(reactions);
-          html += `
-            <h2>Reactions</h2>
-            <ul class="${styles.reacts}">
-              ${uniqueReactions
-                .map((reaction) =>
-                  renderMention(reaction, { preventSpoofing, wordcount })
-                )
-                .join("")}
-            </ul>
-          `;
-        }
-
-        container.innerHTML = html;
+        setComments(nextComments);
+        setReactions(nextReactions);
       } catch (error) {
         console.error("Failed to load webmentions:", error);
       }
@@ -273,7 +258,58 @@ const WebMention = ({
     wordcount,
   ]);
 
-  return <div ref={containerRef} id={id} className={styles.container} />;
+  const uniqueComments = useMemo(
+    () => removeDuplicates(comments),
+    [comments]
+  );
+  const uniqueReactions = useMemo(
+    () => removeDuplicates(reactions),
+    [reactions]
+  );
+
+  return (
+    <div ref={containerRef} id={id} className={styles.container}>
+      {uniqueComments.length > 0 && !commentsAreReactions && (
+        <>
+          <h2>Responses</h2>
+          <ul className={styles.comments}>
+            {uniqueComments.map((comment) => {
+              const sourceLabel = getSourceLabel(comment.url);
+              const authorName = comment.author?.name || sourceLabel;
+              const content = comment.content?.text
+                ? truncateText(comment.content.text, wordcount)
+                : "(mention)";
+              const rawCommentUrl =
+                comment[preventSpoofing ? "wm-source" : "url"] || comment.url;
+              const commentUrl = safeWebmentionUrl(rawCommentUrl) || "#";
+
+              return (
+                <li key={comment.url}>
+                  {renderMention(comment, { preventSpoofing, wordcount }, true)}
+                  <a className="source" rel="nofollow ugc" href={commentUrl}>
+                    {authorName}
+                  </a>
+                  <span className={styles.text}>{content}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </>
+      )}
+      {uniqueReactions.length > 0 && (
+        <>
+          <h2>Reactions</h2>
+          <ul className={styles.reacts}>
+            {uniqueReactions.map((reaction) => (
+              <li key={reaction.url}>
+                {renderMention(reaction, { preventSpoofing, wordcount })}
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </div>
+  );
 };
 
 export default WebMention;

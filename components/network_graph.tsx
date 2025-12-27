@@ -56,6 +56,15 @@ export default function NetworkGraph({ networkData, height }: NetworkGraphProps)
     };
   }, [networkData, options]);
 
+  useEffect(() => {
+    return () => {
+      if (networkRef.current) {
+        networkRef.current.destroy();
+        networkRef.current = null;
+      }
+    };
+  }, []);
+
   return (
     <div>
       {/* Network図 を表示する領域 */}

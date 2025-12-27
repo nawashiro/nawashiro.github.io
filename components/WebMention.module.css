@@ -69,6 +69,12 @@
   overflow: hidden;
 }
 
+.reacts li {
+  display: inline;
+  padding-left: 0;
+  text-indent: 0;
+}
+
 .text {
   color: #555;
   font-style: italic;
