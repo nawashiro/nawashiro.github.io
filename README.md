@@ -38,7 +38,7 @@ npm run build
 npm run output
 ```
 - `npm run build` 中に RSS/Atom/JSON が `public/rss/` に生成されます。
-- `npm run output` は `next export` を実行します（静的ホスティング向け）。
+- `npm run output` は `next build` を実行し、`out/` に静的ファイルを出力します（`output: "export"`）。
 
 ## コード品質
 ```bash
@@ -78,4 +78,3 @@ GitHub Pages などの静的ホスティングを想定しています。
 ## 注意点
 - Markdown の生 HTML は安全性のため無効化しています。
 - WebMention の URL は http/https のみ許可します。
-
