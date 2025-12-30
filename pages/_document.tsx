@@ -2,7 +2,7 @@ import { Head, Html, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html lang="ja">
+    <Html lang="ja" data-theme="nawashiro">
       <Head>
         <meta charSet="utf-8" />
         <meta name="format-detection" content="telephone=no" />

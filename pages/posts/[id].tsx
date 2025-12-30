@@ -118,7 +118,13 @@ export default function Post({ id, postData }: PostProps) {
           Nawashiro
         </a>
         <div
-          className={cx("blog", "e-content")}
+          className={cx(
+            "blog",
+            "e-content",
+            "prose",
+            "prose-stone",
+            "max-w-none",
+          )}
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
         />
         {postData.backLinks.length > 0 && (

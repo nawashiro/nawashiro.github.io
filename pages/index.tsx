@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
-import utilStyles from "../styles/utils.module.css";
 import {
   getPostNetworkData,
   getSortedPostsData,
@@ -11,11 +10,8 @@ import {
 } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
-import indexStyle from "../styles/index.module.css";
 import NetworkGraph from "../components/network_graph";
-import cx from "classnames";
 import type { GetStaticProps } from "next";
-import Image from "next/image";
 
 type HomeProps = {
   allPostsData: PostMeta[];
@@ -46,6 +42,7 @@ export default function Home({
   version,
 }: HomeProps) {
   const note = "I am a freelance programmer. looking for a job.";
+  const heroLetters = "Development".split("");
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
   const description =
     "エンジニア・プログラマーNawashiroの個人サイト。プロジェクト、デジタルガーデン、技術記事など。";
@@ -111,121 +108,130 @@ export default function Home({
           href="/rss/feed.json"
         />
       </Head>
-      <section className={indexStyle.hero}>
-        <p className={indexStyle.heroA}>
-          <span>D</span>
-          <span>e</span>
-          <span>v</span>
-          <span>e</span>
-          <span>l</span>
-          <span>o</span>
-          <span>p</span>
-          <span>m</span>
-          <span>e</span>
-          <span>n</span>
-          <span>t</span>
-        </p>
-        <div className={indexStyle.herotext}>
-          <p>
-            {note}
-            <br />
-            Website version {version}.
+      <section className="hero">
+        <div className="hero-content w-full flex-col items-start gap-6 rounded-3xl bg-base-100/90 p-8 shadow-soft backdrop-blur">
+          <p
+            className="text-3xl font-black tracking-[0.4em] text-base-content md:text-6xl"
+            data-testid="hero-title"
+          >
+            {heroLetters.map((letter, index) => (
+              <span
+                className="motion-safe:animate-hero-jump inline-block"
+                key={`${letter}-${index}`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {letter}
+              </span>
+            ))}
           </p>
-          <div className={indexStyle.feedLinks}>
-            <a
-              href="/rss/feed.xml"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="RSS Feed"
-            >
-              RSS
-            </a>
-            <a
-              href="/rss/atom.xml"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Atom Feed"
-            >
-              Atom
-            </a>
-            <a
-              href="/rss/feed.json"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="JSON Feed"
-            >
-              JSON
-            </a>
+          <div className="space-y-3 text-base text-base-content/80">
+            <p>
+              {note}
+              <br />
+              Website version {version}.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <a
+                className="btn btn-outline btn-sm"
+                href="/rss/feed.xml"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="RSS Feed"
+              >
+                RSS
+              </a>
+              <a
+                className="btn btn-outline btn-sm"
+                href="/rss/atom.xml"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Atom Feed"
+              >
+                Atom
+              </a>
+              <a
+                className="btn btn-outline btn-sm"
+                href="/rss/feed.json"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="JSON Feed"
+              >
+                JSON
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      <section>
-        <h2 className={indexStyle.h2}>About</h2>
-        <p>
-          ここはNawashiroのデジタルガーデンです。一般的なブログと違うのは、ページを互いにリンクしたり、ときにはインデックスしたりなど、手作業でキュレーションしているところです。
-        </p>
-        <p>
-          各ページにはときに「関連項目」や「バックリンク」が含まれており、ページ間の相互関係を知り、参照することができます。ブログに慣れていると時系列順に参照したくなりますが、ここではその衝動を抑えて、相互関係を頼りに参照してみてください。
-        </p>
-        <p>
-          注意点として、
-          <strong>デジタルガーデンでは不完全さが許容される</strong>
-          ことを挙げておきます。書き手は「すべてをすぐに正しくしなければならない」というプレッシャーから解放されますが、読み手は「インターネットに書いてあることはぜんぶ本当なんだ……！」という思い込みを捨てなければなりません。
-        </p>
-        <p>
-          しかし、ここでは前向きにとらえてください。私たちはアイデアをテストし、フィードバックを送りあって、意見を修正していくことができます。
-          <Link href="/posts/links">各種SNSへのリンクを載せておきます</Link>。
-        </p>
+      <section className="card mt-10 bg-base-100/85 shadow-soft">
+        <div className="card-body">
+          <h2 className="card-title text-2xl">About</h2>
+          <p>
+            ここはNawashiroのデジタルガーデンです。一般的なブログと違うのは、ページを互いにリンクしたり、ときにはインデックスしたりなど、手作業でキュレーションしているところです。
+          </p>
+          <p>
+            各ページにはときに「関連項目」や「バックリンク」が含まれており、ページ間の相互関係を知り、参照することができます。ブログに慣れていると時系列順に参照したくなりますが、ここではその衝動を抑えて、相互関係を頼りに参照してみてください。
+          </p>
+          <p>
+            注意点として、
+            <strong>デジタルガーデンでは不完全さが許容される</strong>
+            ことを挙げておきます。書き手は「すべてをすぐに正しくしなければならない」というプレッシャーから解放されますが、読み手は「インターネットに書いてあることはぜんぶ本当なんだ……！」という思い込みを捨てなければなりません。
+          </p>
+          <p>
+            しかし、ここでは前向きにとらえてください。私たちはアイデアをテストし、フィードバックを送りあって、意見を修正していくことができます。
+            <Link className="link link-hover" href="/posts/links">
+              各種SNSへのリンクを載せておきます
+            </Link>
+            。
+          </p>
+        </div>
       </section>
 
-      <section>
-        <h2 className={indexStyle.h2}>Index</h2>
-        <ul className={utilStyles.list}>
-          {indexPagesData.map(({ id, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link className={utilStyles.link} href={`/posts/${id}`}>
-                {title}
-              </Link>
-            </li>
-          ))}
-        </ul>
+      <section className="card mt-10 bg-base-100/85 shadow-soft">
+        <div className="card-body">
+          <h2 className="card-title text-2xl">Index</h2>
+          <ul className="space-y-3">
+            {indexPagesData.map(({ id, title }) => (
+              <li key={id}>
+                <Link className="link link-hover text-lg" href={`/posts/${id}`}>
+                  {title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
-      <section>
-        <h2 className={indexStyle.h2}>Graph</h2>
-        <p>
-          各ページの相互関係をグラフに出力しています。ノードをダブルクリックするとページを開くことができます。拡大縮小したり、ぐりぐりとノードを移動させたりして遊んでみてください。
-        </p>
-        <NetworkGraph networkData={networkData} height={"500px"} />
+      <section className="card mt-10 bg-base-100/85 shadow-soft">
+        <div className="card-body">
+          <h2 className="card-title text-2xl">Graph</h2>
+          <p>
+            各ページの相互関係をグラフに出力しています。ノードをダブルクリックするとページを開くことができます。拡大縮小したり、ぐりぐりとノードを移動させたりして遊んでみてください。
+          </p>
+          <NetworkGraph networkData={networkData} height={"500px"} />
+        </div>
       </section>
 
-      <section>
-        <h2 className={indexStyle.h2}>All Pages</h2>
-        <ul className={cx(utilStyles.list, "h-feed", "hfeed")}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li
-              className={cx(utilStyles.listItem, "h-entry", "hentry")}
-              key={id}
-            >
-              <Link
-                className={cx(
-                  utilStyles.link,
-                  "u-url",
-                  "p-name",
-                  "entry-title",
-                )}
-                href={`/posts/${id}`}
-              >
-                {title}
-              </Link>
-              <br />
-              <p className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </p>
-            </li>
-          ))}
-        </ul>
+      <section className="card mt-10 bg-base-100/85 shadow-soft">
+        <div className="card-body">
+          <h2 className="card-title text-2xl">All Pages</h2>
+          <ul className="h-feed hfeed space-y-3">
+            {allPostsData.map(({ id, date, title }) => (
+              <li className="h-entry hentry" key={id}>
+                <Link
+                  className="link link-hover text-lg u-url p-name entry-title"
+                  href={`/posts/${id}`}
+                >
+                  {title}
+                </Link>
+                <br />
+                <p className="text-sm text-base-content/70">
+                  <Date dateString={date} />
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
     </Layout>
   );

@@ -11,29 +11,43 @@ export default function NetworkGraph({ networkData, height }: NetworkGraphProps)
   const containerRef = useRef<HTMLDivElement | null>(null);
   const networkRef = useRef<Network | null>(null);
 
-  const options = useMemo(
-    () => ({
+  const options = useMemo(() => {
+    const getThemeColor = (token: string, fallback: string) => {
+      if (typeof window === "undefined") return fallback;
+      const value = getComputedStyle(document.documentElement)
+        .getPropertyValue(token)
+        .trim();
+      return value ? `hsl(${value})` : fallback;
+    };
+
+    const info = getThemeColor("--in", "#005aff");
+    const primary = getThemeColor("--p", "#48731d");
+    const secondary = getThemeColor("--s", "#cbbba0");
+    const accent = getThemeColor("--a", "#4a6f8a");
+    const warning = getThemeColor("--wa", "#d59a2f");
+    const base = getThemeColor("--b2", "#f5efe7");
+
+    return {
       nodes: {
         shape: "dot",
         size: 8,
         color: {
           highlight: {
-            background: "#005aff",
-            border: "#005aff",
+            background: info,
+            border: info,
           },
         },
       },
       groups: {
-        none: { color: { background: "#bfe4ff" } },
-        index: { color: { background: "#ff4b00" } },
-        book: { color: { background: "#03af7a" } },
-        javascript: { color: { background: "#990099" } },
-        sns: { color: { background: "#f6aa00" } },
-        highlight: { color: { background: "#005aff" } },
+        none: { color: { background: base } },
+        index: { color: { background: primary } },
+        book: { color: { background: secondary } },
+        javascript: { color: { background: accent } },
+        sns: { color: { background: warning } },
+        highlight: { color: { background: info } },
       },
-    }),
-    []
-  );
+    };
+  }, []);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -69,11 +83,10 @@ export default function NetworkGraph({ networkData, height }: NetworkGraphProps)
     <div>
       {/* Network図 を表示する領域 */}
       <div
+        className="rounded-box bg-base-100 shadow-soft"
         style={{
           height: height,
           width: "100%",
-          borderRadius: "1.5rem",
-          backgroundColor: "#FFFF",
         }}
         ref={containerRef}
       />

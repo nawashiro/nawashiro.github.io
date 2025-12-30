@@ -1,93 +1,105 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap");
 @import url("./prism-okaidia.css");
 
-:root {
-  --theme-green: #48731d;
-  --sea-800: #0017c1;
-  --blue-1000: #00118f;
-  --blue-500: #4979f5;
-  --gray-100: #e6e6e6;
-  --gray-200: #cccccc;
-  --gray-536: #767676;
-  --gray-600: #666666;
-  --gray-900: #1a1a1a;
-  --content-max-widh: 1120px;
-  --code-font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono";
-  --max-content-width: calc(767px - 2rem);
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body,
-p,
-html,
-textarea,
-input,
-label {
-  color: var(--gray-900);
-  padding: 0;
-  margin: 0;
-  font-family: "Noto Sans JP", sans-serif;
-  font-weight: 400;
-  line-height: 1.5;
-  font-size: 16px;
-  overflow-wrap: anywhere;
-}
+@layer base {
+  :root {
+    --theme-green: hsl(var(--p));
+    --sea-800: hsl(var(--a));
+    --blue-1000: hsl(var(--in));
+    --blue-500: hsl(var(--in) / 0.8);
+    --gray-100: hsl(var(--b2));
+    --gray-200: hsl(var(--b3));
+    --gray-536: hsl(var(--bc) / 0.6);
+    --gray-600: hsl(var(--bc) / 0.7);
+    --gray-900: hsl(var(--bc));
+    --content-max-widh: 1120px;
+    --code-font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono";
+    --max-content-width: calc(767px - 2rem);
+  }
 
-p {
-  margin: 1rem 0 1rem 0;
-}
+  body,
+  p,
+  html,
+  textarea,
+  input,
+  label {
+    color: var(--gray-900);
+    padding: 0;
+    margin: 0;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 16px;
+    overflow-wrap: anywhere;
+  }
 
-body {
-  background-color: var(--gray-100);
-}
+  p {
+    margin: 1rem 0 1rem 0;
+  }
 
-* {
-  box-sizing: border-box;
-}
+  body {
+    background-color: var(--gray-100);
+    background-image: radial-gradient(
+        circle at top left,
+        hsl(var(--b1)) 0%,
+        hsl(var(--b2)) 45%
+      ),
+      linear-gradient(180deg, hsl(var(--b2)) 0%, hsl(var(--b3)) 100%);
+  }
 
-a {
-  color: var(--blue-1000);
-  text-decoration: underline;
-}
+  * {
+    box-sizing: border-box;
+  }
 
-a:hover {
-  color: var(--blue-500);
-  text-decoration: none;
-}
+  a {
+    color: var(--sea-800);
+    text-decoration: underline;
+  }
 
-h1,
-h2 {
-  margin: 4rem 0 1.5rem 0;
-}
-h3 {
-  margin: 2.5rem 0 1.5rem 0;
-}
-h4,
-h5 {
-  margin: 2.5rem 0 1rem 0;
-}
+  a:hover {
+    color: hsl(var(--a) / 0.8);
+    text-decoration: none;
+  }
 
-h1 {
-  font-size: 2.25rem;
-}
-h2 {
-  font-size: 2rem;
-}
-h3 {
-  font-size: 1.75rem;
-}
-h4 {
-  font-size: 1.5rem;
-}
-h5 {
-  font-size: 1.25rem;
-}
+  h1,
+  h2 {
+    margin: 4rem 0 1.5rem 0;
+  }
+  h3 {
+    margin: 2.5rem 0 1.5rem 0;
+  }
+  h4,
+  h5 {
+    margin: 2.5rem 0 1rem 0;
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-weight: 500;
+  h1 {
+    font-size: 2.25rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1.5rem;
+  }
+  h5 {
+    font-size: 1.25rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-weight: 500;
+  }
 }
 
 /* ##### blog ##### */
@@ -129,7 +141,7 @@ h5 {
   display: block;
   margin: 1rem 0;
   padding: 0.5rem;
-  background-color: #fff;
+  background-color: hsl(var(--b1));
   box-shadow: 0 3px 10px var(--gray-200);
   border-radius: 3px;
 }
@@ -165,7 +177,7 @@ h5 {
 }
 /* svg */
 .blog svg {
-  background-color: white;
+  background-color: hsl(var(--b1));
   border-radius: 0.3rem;
 }
 
@@ -216,7 +228,7 @@ h5 {
 /* リンクカード */
 .blog .rlc-container {
   color: var(--gray-900);
-  background-color: white;
+  background-color: hsl(var(--b1));
   border-radius: 0.5rem;
   width: 100%;
   max-width: var(--max-content-width);
