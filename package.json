@@ -3,7 +3,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "output": "next build",
     "postbuild": "next-sitemap",
     "lint": "next lint",
     "test": "playwright test",
