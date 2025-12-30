@@ -15,6 +15,7 @@ import { Feed } from "feed";
 import remarkMermaid from "remark-mermaidjs";
 import remarkToc from "remark-toc";
 import rehypeSlug from "rehype-slug";
+import rehypeRaw from "rehype-raw";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
@@ -66,7 +67,7 @@ function getPostBasicData(fileName: string) {
   const fullPath = path.join(postsDirectory, fileName);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const matterResult = matter(
-    fileContents.replaceAll(/(\[.+?\]\([a-z0-9\-]+)\.md(\))/g, "$1$2")
+    fileContents.replaceAll(/(\[.+?\]\([a-z0-9\-]+)\.md(\))/g, "$1$2"),
   ) as GrayMatterFile<string> & { data: PostFrontMatter };
 
   return {
@@ -91,10 +92,7 @@ export function getSortedPostsData(): PostMeta[] {
 
 export function getPostNetworkData(): NetworkData {
   const fileNames = fs.readdirSync(postsDirectory);
-  const postsMap = new Map<
-    string,
-    { node: NetworkNode; links: string[] }
-  >();
+  const postsMap = new Map<string, { node: NetworkNode; links: string[] }>();
 
   // 最初にすべてのポストデータを取得
   fileNames.forEach((fileName) => {
@@ -109,7 +107,7 @@ export function getPostNetworkData(): NetworkData {
         value: 0,
       },
       links: [...fileContents.matchAll(/\[.+?\]\(([a-z0-9\-]+)\.md\)/g)].map(
-        (matchText) => matchText[1]
+        (matchText) => matchText[1],
       ),
     });
   });
@@ -205,7 +203,8 @@ export async function renderMarkdown(content: string): Promise<string> {
     .use(remarkMermaid)
     .use(remarkPrism)
     .use(remarkGfm)
-    .use(remarkRehype)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
     .use(rehypeSlug)
     .use(rehypeKatex, { output: "mathml" })
     .use(rehypeStringify)
@@ -215,7 +214,7 @@ export async function renderMarkdown(content: string): Promise<string> {
 
 export function resolveOgImageUrl(
   imageUrl: string | null,
-  siteUrl: string
+  siteUrl: string,
 ): string | null {
   if (!imageUrl) return null;
   if (!siteUrl) return imageUrl;
@@ -238,7 +237,7 @@ export async function getPostData(id: string): Promise<PostData> {
   const rawImageUrl = imageMatch ? imageMatch[1] : null;
   const imageUrl = resolveOgImageUrl(
     rawImageUrl,
-    process.env.NEXT_PUBLIC_SITE_URL || ""
+    process.env.NEXT_PUBLIC_SITE_URL || "",
   );
 
   // バックリンクの取得
@@ -246,7 +245,7 @@ export async function getPostData(id: string): Promise<PostData> {
     .readdirSync(postsDirectory)
     .map((fileName) => getPostBasicData(fileName))
     .filter(({ fileContents }) =>
-      fileContents.match(new RegExp(`\\[.+?\\]\\(${id}\\.md\\)`))
+      fileContents.match(new RegExp(`\\[.+?\\]\\(${id}\\.md\\)`)),
     )
     .map(({ id, matterResult }) => ({
       title: String(matterResult.data.title),
@@ -328,7 +327,7 @@ export async function generateRssFeed() {
 }
 
 export async function runServerBuildTasks(
-  generateRssFeedFn: () => Promise<void> = generateRssFeed
+  generateRssFeedFn: () => Promise<void> = generateRssFeed,
 ) {
   await generateRssFeedFn();
 }

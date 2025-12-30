@@ -1,37 +1,25 @@
 import { test, expect } from "@playwright/test";
-import {
-  renderMarkdown,
-  resolveOgImageUrl,
-  runServerBuildTasks,
-} from "../lib/posts";
+import { resolveOgImageUrl, runServerBuildTasks } from "../lib/posts";
 import { safeWebmentionUrl } from "../components/WebMention";
-
-test("renderMarkdown strips raw HTML nodes", async () => {
-  const html = await renderMarkdown("Hello <script>alert('x')</script>");
-  expect(html).not.toContain("<script>");
-  expect(html).toContain("Hello");
-});
 
 test("resolveOgImageUrl normalizes relative paths", () => {
   expect(resolveOgImageUrl("images/og.png", "https://example.com")).toBe(
-    "https://example.com/images/og.png"
+    "https://example.com/images/og.png",
   );
   expect(resolveOgImageUrl("https://cdn.example.com/og.png", "https://x")).toBe(
-    "https://cdn.example.com/og.png"
+    "https://cdn.example.com/og.png",
   );
 });
 
 test("safeWebmentionUrl rejects unsafe schemes", () => {
   expect(safeWebmentionUrl("javascript:alert(1)")).toBeNull();
-  expect(safeWebmentionUrl("https://example.com")).toBe(
-    "https://example.com"
-  );
+  expect(safeWebmentionUrl("https://example.com")).toBe("https://example.com");
 });
 
 test("runServerBuildTasks surfaces rss failures", async () => {
   await expect(
     runServerBuildTasks(async () => {
       throw new Error("rss failed");
-    })
+    }),
   ).rejects.toThrow("rss failed");
 });

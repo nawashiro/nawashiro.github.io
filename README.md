@@ -92,5 +92,4 @@ GitHub Pages などの静的ホスティングを想定しています。
 
 ## 注意点
 
-- Markdown の生 HTML は安全性のため無効化しています。
 - WebMention の URL は http/https のみ許可します。
