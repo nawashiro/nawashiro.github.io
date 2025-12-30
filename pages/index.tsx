@@ -161,37 +161,6 @@ export default function Home({
       </section>
 
       <section>
-        <div className={indexStyle.card}>
-          <div className={indexStyle.imgWrap}>
-            <Image
-              src="/images/code.webp"
-              alt="ハッカソンのために書いたコード"
-              width={640}
-              height={360}
-              style={{ width: "100%", height: "auto" }}
-            />
-          </div>
-          <div className={indexStyle.innerCard}>
-            <div>
-              <p>
-                エンジニア集会ハッカソンにて
-                <a href="https://nostr.com/">Nostrプロトコル</a>
-                のWebクライアント「NosHagaki」を開発しました。ユーザーにバーチャルな住所を割り当てることにより、時間がかかるやり取りを実現しています。
-              </p>
-              <div>
-                <a
-                  className={indexStyle.cardLink}
-                  href="https://nos-hagaki.vercel.app/"
-                >
-                  NosHagakiを開く
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
         <h2 className={indexStyle.h2}>About</h2>
         <p>
           ここはNawashiroのデジタルガーデンです。一般的なブログと違うのは、ページを互いにリンクしたり、ときにはインデックスしたりなど、手作業でキュレーションしているところです。
@@ -211,14 +180,6 @@ export default function Home({
       </section>
 
       <section>
-        <h2 className={indexStyle.h2}>Graph</h2>
-        <p>
-          各ページの相互関係をグラフに出力しています。ノードをダブルクリックするとページを開くことができます。拡大縮小したり、ぐりぐりとノードを移動させたりして遊んでみてください。
-        </p>
-        <NetworkGraph networkData={networkData} height={"500px"} />
-      </section>
-
-      <section>
         <h2 className={indexStyle.h2}>Index</h2>
         <ul className={utilStyles.list}>
           {indexPagesData.map(({ id, title }) => (
@@ -229,6 +190,14 @@ export default function Home({
             </li>
           ))}
         </ul>
+      </section>
+
+      <section>
+        <h2 className={indexStyle.h2}>Graph</h2>
+        <p>
+          各ページの相互関係をグラフに出力しています。ノードをダブルクリックするとページを開くことができます。拡大縮小したり、ぐりぐりとノードを移動させたりして遊んでみてください。
+        </p>
+        <NetworkGraph networkData={networkData} height={"500px"} />
       </section>
 
       <section>
@@ -244,7 +213,7 @@ export default function Home({
                   utilStyles.link,
                   "u-url",
                   "p-name",
-                  "entry-title"
+                  "entry-title",
                 )}
                 href={`/posts/${id}`}
               >
