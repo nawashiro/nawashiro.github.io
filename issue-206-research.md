@@ -1,20 +1,24 @@
 # issue-206: Research on TailwindCSS/DaisyUI/animation for a warm, smooth design system
 
 ## 調査の前提
+
 - 既存の posts を読み、サイト全体のトーンや価値観（温かみ、非威圧感、なめらかさ）を抽出した。
 - リサーチは原則として英語の一次情報（公式ドキュメント中心）を参照した。
 
 ## 既存 posts から読み取れる「らしさ」
+
 - 「デジタルガーデン」「思考の庭」「友人を招く」といった言葉があり、静かな親密さと丁寧なキュレーションが核（例: `posts/20241210-digital-gerden.md`）。
 - 認知症や障害、読書バリアフリーに関する記述が多く、過剰な演出よりも安心感・尊厳・ケアの視点が強い（例: `posts/20241208-dementia-is-not-a-mysterious-frightening-disease.md`, `posts/20241214-barrier-free-reading-raw.md`）。
 - 文章のトーンは淡々とした事実 + 個人の感覚・共感が同居。威圧感を避け、読む人に安心を渡す文章設計。
 
 ## コンセプト候補（温かみ + なめらかさ）
+
 - **「Digital Garden, Soft Paper」**: 紙のような余白とやさしい陰影。輪郭は丸く、背景は淡いグラデーション。
 - **「Careful Tech」**: 技術は硬質だが、手触りは温かい。グレー/茶/草のニュートラル + 透明感のある差し色。
 - **「Quiet Playfulness」**: 小さな楽しさを散りばめる（微細な動き、控えめな色変化）。威圧しない遊び。
 
 ## TailwindCSS/DaisyUIで独自性を出す方向性
+
 - **DaisyUIのテーマを1つに絞り、独自テーマとして調整**
   - ベースは「caramellatte」「silk」系（温かい白・淡いベージュ）を想定し、
     `--color-base-*` を少し黄み/灰みへ寄せる。
@@ -28,6 +32,7 @@
     Markdown本文は Tailwind Typography か現状の `styles/global.css` を温存し段階移行。
 
 ## アニメーションに使えるデザインシステム候補
+
 - **Tailwind Animation Utilities**
   - 小さなアニメーションを「utilityとして設計」できる。
   - `@theme` + `@keyframes` でサイト専用の動きを登録可能。
@@ -42,6 +47,7 @@
   - 使うなら `fadeIn`, `slideInUp` など穏やかなものに限定。
 
 ## 「楽しいアニメーション」案（威圧感を避ける）
+
 - **ゆらぎ（Float / Drift）**: 重要カードやボタンに 2〜4px の上下移動。
 - **柔らかい登場（Staggered Reveal）**: セクション見出し→本文→カードの順にふわっと出す。
 - **温度のある呼吸（Breathing Shadow）**: カードの影がほんの少しだけ濃淡する。
@@ -50,6 +56,7 @@
 - **タイポの跳ね**: 既存の `heroA` のジャンプを“少し遅く・小さく”調整して穏やかに。
 
 ## 現在のコードベースへの適用可能性（絞り込み）
+
 - **即適用しやすい領域**
   - `components/layout.tsx`: ナビゲーション、メニューを DaisyUI `navbar`/`dropdown` へ寄せることで統一感が出る。
   - `styles/index.module.css`: Hero / Card の構成は DaisyUI `hero`, `card`, `btn` に近く置き換えやすい。
@@ -62,16 +69,18 @@
   - 現在のリンクカード hover アニメーションは DaisyUI/Tailwindへ移植可能（柔らかい色遷移は資産）。
 
 ## 推奨の絞り込みプラン
-1) **TailwindCSS + DaisyUI（カスタムテーマ1本）**
+
+1. **TailwindCSS + DaisyUI（カスタムテーマ1本）**
    - 最小導入で「統一感」「簡潔さ」を達成。
    - DaisyUIのコンポーネントで構造が揃い、レイアウト調整が簡単。
-2) **アニメーションは Tailwind Utility + 小さなカスタムkeyframes**
+2. **アニメーションは Tailwind Utility + 小さなカスタムkeyframes**
    - `animate-[wiggle_...]` のようにサイト固有の動きを少数定義。
    - `motion-safe:` を前提に、アクセシビリティ確保。
-3) **複雑な動きが必要なら Motion を限定的に導入**
+3. **複雑な動きが必要なら Motion を限定的に導入**
    - 例: Hero/Graph だけ、スクロール連動や入場演出を追加。
 
 ## 参照（英語）
+
 - Tailwind CSS docs: https://tailwindcss.com/docs/styling-with-utility-classes
 - Tailwind CSS animation: https://tailwindcss.com/docs/animation
 - daisyUI themes: https://daisyui.com/docs/themes/
