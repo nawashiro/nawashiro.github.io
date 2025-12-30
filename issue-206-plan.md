@@ -80,7 +80,6 @@
   - `layout.tsx` で DaisyUI クラスが無いことをテストで確認。
 - 実装
   - `components/layout.tsx` のヘッダ/ナビを DaisyUI `navbar`/`dropdown` で構成。
-  - `@szhsin/react-menu` を維持する場合は、同一 UI 体系に合わせて段階的に廃止計画を記載。
 - 成功条件
   - `e2e/layout.spec.ts` が通る。
 
