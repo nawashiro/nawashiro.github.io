@@ -1,13 +1,31 @@
 import Layout from "../../components/layout";
-import { getAllPostIds, getPostData } from "../../lib/posts";
+import { getAllPostIds, getPostData, type PostData } from "../../lib/posts";
 import Head from "next/head";
 import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
 import cx from "classnames";
 import Link from "next/link";
 import WebMention from "../../components/WebMention";
+import type { GetStaticPaths, GetStaticProps } from "next";
 
-export async function getStaticProps({ params }) {
+type PostParams = {
+  id: string;
+};
+
+type PostProps = {
+  id: string;
+  postData: PostData;
+};
+
+export const getStaticProps: GetStaticProps<PostProps, PostParams> = async ({
+  params,
+}) => {
+  if (!params) {
+    return {
+      notFound: true,
+    };
+  }
+
   const id = params.id;
   const postData = await getPostData(id);
 
@@ -17,19 +35,19 @@ export async function getStaticProps({ params }) {
       postData,
     },
   };
-}
+};
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths<PostParams> = async () => {
   const paths = getAllPostIds();
   return {
     paths,
     fallback: false,
   };
-}
+};
 
-export default function Post({ id, postData }) {
+export default function Post({ id, postData }: PostProps) {
   const isDevelopment = process.env.NODE_ENV === "development";
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
   const canonicalUrl = `${siteUrl}/posts/${id}`;
   const publishedDate = postData.date;
 

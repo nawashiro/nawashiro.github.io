@@ -6,14 +6,25 @@ import {
   getSortedPostsData,
   getIndexPagesData,
   getVersion,
+  type NetworkData,
+  type PostMeta,
 } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
 import indexStyle from "../styles/index.module.css";
 import NetworkGraph from "../components/network_graph";
 import cx from "classnames";
+import type { GetStaticProps } from "next";
+import Image from "next/image";
 
-export async function getStaticProps() {
+type HomeProps = {
+  allPostsData: PostMeta[];
+  networkData: NetworkData;
+  indexPagesData: PostMeta[];
+  version: string;
+};
+
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const allPostsData = getSortedPostsData();
   const networkData = getPostNetworkData();
   const indexPagesData = getIndexPagesData();
@@ -26,16 +37,16 @@ export async function getStaticProps() {
       version,
     },
   };
-}
+};
 
 export default function Home({
   allPostsData,
   networkData,
   indexPagesData,
   version,
-}) {
+}: HomeProps) {
   const note = "I am a freelance programmer. looking for a job.";
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
   const description =
     "エンジニア・プログラマーNawashiroの個人サイト。プロジェクト、デジタルガーデン、技術記事など。";
 
@@ -152,7 +163,13 @@ export default function Home({
       <section>
         <div className={indexStyle.card}>
           <div className={indexStyle.imgWrap}>
-            <img src="/images/code.webp" alt="ハッカソンのために書いたコード" />
+            <Image
+              src="/images/code.webp"
+              alt="ハッカソンのために書いたコード"
+              width={640}
+              height={360}
+              style={{ width: "100%", height: "auto" }}
+            />
           </div>
           <div className={indexStyle.innerCard}>
             <div>
