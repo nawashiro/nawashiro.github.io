@@ -92,6 +92,13 @@ type RenderContext = {
   wordcount?: number;
 };
 
+export const shouldFetchWebmentions = () => {
+  if (process.env.NODE_ENV === "test") return false;
+  if (process.env.DISABLE_EXTERNAL_FETCH === "1") return false;
+  if (process.env.NEXT_PUBLIC_DISABLE_EXTERNAL_FETCH === "1") return false;
+  return true;
+};
+
 export const safeWebmentionUrl = (value?: string) => {
   if (!value) return null;
   try {
@@ -193,8 +200,10 @@ const WebMention = ({
     (typeof window !== "undefined"
       ? window.location.href.replace(/#.*$/, "")
       : "");
+  const shouldFetch = shouldFetchWebmentions();
 
   useEffect(() => {
+    if (!shouldFetch) return;
     const loadWebMentions = async () => {
       const container = containerRef.current;
       if (!container || !resolvedPageUrl) return;
@@ -248,6 +257,7 @@ const WebMention = ({
       loadWebMentions();
     }
   }, [
+    shouldFetch,
     resolvedPageUrl,
     addUrls,
     maxWebmentions,

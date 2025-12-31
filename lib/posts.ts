@@ -61,6 +61,13 @@ export type PostData = PostFrontMatter & {
   imageUrl: string | null;
 };
 
+export const shouldEnableExternalFetch = () => {
+  if (process.env.NODE_ENV === "test") return false;
+  if (process.env.DISABLE_EXTERNAL_FETCH === "1") return false;
+  if (process.env.NEXT_PUBLIC_DISABLE_EXTERNAL_FETCH === "1") return false;
+  return true;
+};
+
 // 共通の関数を抽出
 function getPostBasicData(fileName: string) {
   const id = fileName.replace(/\.md$/, "");
@@ -191,14 +198,13 @@ export function getVersion() {
 }
 
 export async function renderMarkdown(content: string): Promise<string> {
-  return unified()
+  const processor = unified()
     .use(remarkToc, {
       maxDepth: 3,
       heading: "TOC",
     })
     .use(remarkParse)
     .use(remarkMath)
-    .use(remarkLinkCard)
     .use(remarkCodeTitles)
     .use(remarkMermaid)
     .use(remarkPrism)
@@ -207,9 +213,13 @@ export async function renderMarkdown(content: string): Promise<string> {
     .use(rehypeRaw)
     .use(rehypeSlug)
     .use(rehypeKatex, { output: "mathml" })
-    .use(rehypeStringify)
-    .process(content)
-    .then((processed) => processed.toString());
+    .use(rehypeStringify);
+
+  if (shouldEnableExternalFetch()) {
+    processor.use(remarkLinkCard);
+  }
+
+  return processor.process(content).then((processed) => processed.toString());
 }
 
 export function resolveOgImageUrl(

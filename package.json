@@ -5,9 +5,10 @@
     "build": "next build",
     "postbuild": "next-sitemap",
     "lint": "next lint",
-    "test": "playwright test",
+    "start": "next start",
+    "test": "playwright test --config=playwright.unit.config.ts",
     "typecheck": "tsc --noEmit",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test --config=playwright.config.ts"
   },
   "dependencies": {
     "classnames": "^2.3.2",
