@@ -1,99 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap");
 @import url("./prism-okaidia.css");
-
+@import "tailwindcss";
 @plugin "daisyui";
-@plugin "daisyui/theme" {
-  name: "nawashiro";
-  color-scheme: light;
-  --color-base-100: oklch(98.914% 0.036 31.87);
-  --color-base-200: oklch(95.754% 0.0398 32.764);
-  --color-base-300: oklch(91.049% 0.0432 33.571);
-  --color-base-content: oklch(28.618% 0.0156 39.669);
-  --color-primary: oklch(50.744% 0.0615 100.517);
-  --color-primary-content: oklch(97.113% 0.0355 31.927);
-  --color-secondary: oklch(80.044% 0.0573 39.475);
-  --color-secondary-content: oklch(28.618% 0.0156 39.669);
-  --color-accent: oklch(52.732% 0.0442 216.004);
-  --color-accent-content: oklch(97.113% 0.0355 31.927);
-  --color-neutral: oklch(27.497% 0.0165 37.827);
-  --color-neutral-content: oklch(97.113% 0.0355 31.927);
-  --color-info: oklch(59.278% 0.1088 223.917);
-  --color-info-content: oklch(97.113% 0.0355 31.927);
-  --color-success: oklch(62.3% 0.0528 146.178);
-  --color-success-content: oklch(97.113% 0.0355 31.927);
-  --color-warning: oklch(72.618% 0.1269 42.306);
-  --color-warning-content: oklch(28.618% 0.0156 39.669);
-  --color-error: oklch(61.593% 0.1525 17.526);
-  --color-error-content: oklch(97.113% 0.0355 31.927);
-  --radius-selector: 9999px;
-  --radius-field: 9999px;
-  --radius-box: 1.5rem;
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-  --border: 1px;
-  --depth: 1;
-  --noise: 0;
-}
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @layer base {
-  :root {
-    --theme-green: var(--color-primary);
-    --sea-800: var(--color-accent);
-    --blue-1000: var(--color-info);
-    --blue-500: color-mix(in oklab, var(--color-info) 80%, transparent);
-    --gray-100: var(--color-base-200);
-    --gray-200: var(--color-base-300);
-    --gray-536: color-mix(
-      in oklab,
-      var(--color-base-content) 60%,
-      transparent
-    );
-    --gray-600: color-mix(
-      in oklab,
-      var(--color-base-content) 70%,
-      transparent
-    );
-    --gray-900: var(--color-base-content);
-    --code-font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono";
-    --max-content-width: calc(767px - 2rem);
-  }
-
   body,
   p,
   html,
   textarea,
   input,
   label {
-    color: var(--gray-900);
-    padding: 0;
-    margin: 0;
     font-family: "Noto Sans JP", sans-serif;
-    font-weight: 400;
-    line-height: 1.5;
-    font-size: 16px;
     overflow-wrap: anywhere;
-  }
-
-  p {
-    margin: 1rem 0 1rem 0;
-  }
-
-  body {
-    background-color: var(--gray-100);
-    background-image: radial-gradient(
-        circle at top left,
-        var(--color-base-100) 0%,
-        var(--color-base-200) 45%
-      ),
-      linear-gradient(
-        180deg,
-        var(--color-base-200) 0%,
-        var(--color-base-300) 100%
-      );
   }
 
   * {
@@ -101,12 +18,10 @@
   }
 
   a {
-    color: var(--sea-800);
     text-decoration: underline;
   }
 
   a:hover {
-    color: color-mix(in oklab, var(--color-accent) 80%, transparent);
     text-decoration: none;
   }
 
