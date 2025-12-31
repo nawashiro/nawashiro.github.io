@@ -1,9 +1,10 @@
 import { test, expect } from "@playwright/test";
 
-test("hero and card sections use daisyUI classes", async ({ page }) => {
+test("hero highlights the site intro and feed links", async ({ page }) => {
   await page.goto("/");
 
-  await expect(page.locator("section.hero")).toBeVisible();
-  await expect(page.locator(".card").first()).toBeVisible();
-  await expect(page.locator(".btn").first()).toBeVisible();
+  await expect(page.getByTestId("hero-title")).toContainText("Development");
+  await expect(page.getByRole("link", { name: "RSS" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Atom" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "JSON" })).toBeVisible();
 });

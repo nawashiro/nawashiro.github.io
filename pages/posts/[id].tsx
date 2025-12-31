@@ -71,7 +71,6 @@ export default function Post({ id, postData }: PostProps) {
           postData.tags.map((tag) => (
             <meta property="article:tag" content={tag} key={tag} />
           ))}
-        <link rel="canonical" href={canonicalUrl} />
         <link
           rel="webmention"
           href="https://webmention.io/nawashiro.dev/webmention"

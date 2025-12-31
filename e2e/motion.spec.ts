@@ -1,9 +1,11 @@
 import { test, expect } from "@playwright/test";
 
-test("hero title uses motion-safe animation utility", async ({ page }) => {
+test("hero title animation is suppressed for reduced motion", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
 
-  await expect(
-    page.locator("[data-testid='hero-title'] span").first()
-  ).toHaveClass(/motion-safe:animate-hero-jump/);
+  const firstLetter = page.locator("[data-testid='hero-title'] span").first();
+  await expect(firstLetter).toHaveCSS("animation-name", "none");
 });

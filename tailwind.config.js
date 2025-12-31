@@ -20,30 +20,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography"), require("daisyui")],
-  daisyui: {
-    themes: [
-      {
-        nawashiro: {
-          primary: "#48731d",
-          "primary-content": "#f7f4ef",
-          secondary: "#cbbba0",
-          accent: "#4a6f8a",
-          neutral: "#2a2722",
-          "neutral-content": "#f7f4ef",
-          "base-100": "#fdfaf5",
-          "base-200": "#f5efe7",
-          "base-300": "#e8dfd4",
-          "base-content": "#2c2a25",
-          info: "#4f7cc9",
-          success: "#3e9a73",
-          warning: "#d59a2f",
-          error: "#cf5b54",
-          "--rounded-box": "1.5rem",
-          "--rounded-btn": "9999px",
-          "--rounded-badge": "9999px",
-        },
-      },
-    ],
-  },
+  plugins: [require("@tailwindcss/typography")],
 };
