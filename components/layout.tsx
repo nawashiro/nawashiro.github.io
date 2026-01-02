@@ -80,28 +80,22 @@ export default function Layout({
       <header className="sticky top-0 z-30 border-b border-accent bg-base-100/80 backdrop-blur">
         <div className="navbar mx-auto max-w-6xl px-4 py-3">
           <div className="navbar-start">
-            <Link
-              className="text-xl font-black tracking-[0.2em] text-base-content"
-              href="/"
-            >
+            <Link className="text-xl font-black text-base-content" href="/">
               {name}
             </Link>
           </div>
-          <nav className="navbar-center hidden lg:flex" aria-label="Primary">
-            <ul className="menu menu-horizontal gap-2 rounded-full bg-base-200/80 px-4 py-1 text-sm font-medium">
-              <li>
+          <nav className="navbar-end hidden lg:flex" aria-label="Primary">
+            <ul className="join">
+              <li className="btn join-item rounded-l-full">
                 <Link href="/">Home</Link>
               </li>
-              <li>
+              <li className="btn join-item">
                 <Link href="/posts/projects-index">Projects</Link>
               </li>
-              <li>
+              <li className="btn join-item">
                 <Link href="/posts/links">Links</Link>
               </li>
-              <li>
-                <Link href="/posts/support-me">Support me!</Link>
-              </li>
-              <li>
+              <li className="btn join-item rounded-r-full">
                 <a href="https://github.com/nawashiro">GitHub</a>
               </li>
             </ul>
@@ -124,9 +118,6 @@ export default function Layout({
                 </li>
                 <li>
                   <Link href="/posts/links">Links</Link>
-                </li>
-                <li>
-                  <Link href="/posts/support-me">Support me!</Link>
                 </li>
                 <li>
                   <a href="https://github.com/nawashiro">GitHub</a>

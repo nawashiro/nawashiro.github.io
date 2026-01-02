@@ -138,11 +138,11 @@ export default function Home({
             </p>
           </div>
           <div className="join">
-            <span className="btn join-item btn-success no-animation cursor-default">
-              Follow me
+            <span className="btn join-item btn-success no-animation cursor-default btn-active">
+              Follow me!
             </span>
             <a
-              className="btn join-item btn-success btn-soft"
+              className="btn join-item"
               href="/rss/feed.xml"
               target="_blank"
               rel="noopener noreferrer"
@@ -151,7 +151,7 @@ export default function Home({
               RSS
             </a>
             <a
-              className="btn join-item btn-success btn-soft"
+              className="btn join-item"
               href="/rss/atom.xml"
               target="_blank"
               rel="noopener noreferrer"
@@ -160,7 +160,7 @@ export default function Home({
               Atom
             </a>
             <a
-              className="btn join-item btn-success btn-soft"
+              className="btn join-item"
               href="/rss/feed.json"
               target="_blank"
               rel="noopener noreferrer"
