@@ -31,7 +31,7 @@ export default function Layout({
   const ogImageUrl = imageUrl
     ? imageUrl
     : `https://vercel-og-nextjs-4iakfhvyx-yineleyici.vercel.app/api/og?title=${encodeURIComponent(
-        title ? title : siteTitle
+        title ? title : siteTitle,
       )}`;
 
   const handleKofiReady = () => {
@@ -45,7 +45,7 @@ export default function Layout({
   };
 
   return (
-    <div className="min-h-screen text-base-content">
+    <div className="w-3xl mx-auto">
       <Script
         src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"
         strategy="afterInteractive"

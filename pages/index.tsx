@@ -109,7 +109,7 @@ export default function Home({
         />
       </Head>
       <section className="hero">
-        <div className="hero-content w-full flex-col items-start gap-6 rounded-3xl bg-base-100/90 p-8 shadow-soft backdrop-blur">
+        <div className="hero-content w-full flex-col items-start  rounded-3xl bg-base-100/90 p-8 shadow-soft backdrop-blur">
           <p
             className="text-3xl font-black tracking-[0.4em] text-base-content md:text-6xl"
             data-testid="hero-title"
@@ -163,75 +163,66 @@ export default function Home({
         </div>
       </section>
 
-      <section className="card mt-10 bg-base-100/85 shadow-soft">
-        <div className="card-body">
-          <h2 className="card-title text-2xl">About</h2>
-          <p>
-            ここはNawashiroのデジタルガーデンです。一般的なブログと違うのは、ページを互いにリンクしたり、ときにはインデックスしたりなど、手作業でキュレーションしているところです。
-          </p>
-          <p>
-            各ページにはときに「関連項目」や「バックリンク」が含まれており、ページ間の相互関係を知り、参照することができます。ブログに慣れていると時系列順に参照したくなりますが、ここではその衝動を抑えて、相互関係を頼りに参照してみてください。
-          </p>
-          <p>
-            注意点として、
-            <strong>デジタルガーデンでは不完全さが許容される</strong>
-            ことを挙げておきます。書き手は「すべてをすぐに正しくしなければならない」というプレッシャーから解放されますが、読み手は「インターネットに書いてあることはぜんぶ本当なんだ……！」という思い込みを捨てなければなりません。
-          </p>
-          <p>
-            しかし、ここでは前向きにとらえてください。私たちはアイデアをテストし、フィードバックを送りあって、意見を修正していくことができます。
-            <Link className="link link-hover" href="/posts/links">
-              各種SNSへのリンクを載せておきます
-            </Link>
-            。
-          </p>
-        </div>
+      <section>
+        <h2>About</h2>
+        <p>
+          ここはNawashiroのデジタルガーデンです。一般的なブログと違うのは、ページを互いにリンクしたり、ときにはインデックスしたりなど、手作業でキュレーションしているところです。
+        </p>
+        <p>
+          各ページにはときに「関連項目」や「バックリンク」が含まれており、ページ間の相互関係を知り、参照することができます。ブログに慣れていると時系列順に参照したくなりますが、ここではその衝動を抑えて、相互関係を頼りに参照してみてください。
+        </p>
+        <p>
+          注意点として、
+          <strong>デジタルガーデンでは不完全さが許容される</strong>
+          ことを挙げておきます。書き手は「すべてをすぐに正しくしなければならない」というプレッシャーから解放されますが、読み手は「インターネットに書いてあることはぜんぶ本当なんだ……！」という思い込みを捨てなければなりません。
+        </p>
+        <p>
+          しかし、ここでは前向きにとらえてください。私たちはアイデアをテストし、フィードバックを送りあって、意見を修正していくことができます。
+          <Link className="link link-hover" href="/posts/links">
+            各種SNSへのリンクを載せておきます
+          </Link>
+          。
+        </p>
       </section>
 
-      <section className="card mt-10 bg-base-100/85 shadow-soft">
-        <div className="card-body">
-          <h2 className="card-title text-2xl">Index</h2>
-          <ul className="space-y-3">
-            {indexPagesData.map(({ id, title }) => (
-              <li key={id}>
-                <Link className="link link-hover text-lg" href={`/posts/${id}`}>
-                  {title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <section>
+        <h2>Index</h2>
+        <ul className="space-y-3">
+          {indexPagesData.map(({ id, title }) => (
+            <li key={id}>
+              <Link className="link link-hover text-lg" href={`/posts/${id}`}>
+                {title}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </section>
 
-      <section className="card mt-10 bg-base-100/85 shadow-soft">
-        <div className="card-body">
-          <h2 className="card-title text-2xl">Graph</h2>
-          <p>
-            各ページの相互関係をグラフに出力しています。ノードをダブルクリックするとページを開くことができます。拡大縮小したり、ぐりぐりとノードを移動させたりして遊んでみてください。
-          </p>
-          <NetworkGraph networkData={networkData} height={"500px"} />
-        </div>
+      <section>
+        <h2>Graph</h2>
+        <p>
+          各ページの相互関係をグラフに出力しています。ノードをダブルクリックするとページを開くことができます。拡大縮小したり、ぐりぐりとノードを移動させたりして遊んでみてください。
+        </p>
+        <NetworkGraph networkData={networkData} height={"500px"} />
       </section>
 
-      <section className="card mt-10 bg-base-100/85 shadow-soft">
-        <div className="card-body">
-          <h2 className="card-title text-2xl">All Pages</h2>
-          <ul className="h-feed hfeed space-y-3">
-            {allPostsData.map(({ id, date, title }) => (
-              <li className="h-entry hentry" key={id}>
-                <Link
-                  className="link link-hover text-lg u-url p-name entry-title"
-                  href={`/posts/${id}`}
-                >
-                  {title}
-                </Link>
-                <br />
-                <p className="text-sm text-base-content/70">
-                  <Date dateString={date} />
-                </p>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <section>
+        <h2>All Pages</h2>
+        <ul className="h-feed hfeed space-y-3">
+          {allPostsData.map(({ id, date, title }) => (
+            <li className="h-entry hentry" key={id}>
+              <Link
+                className="link link-hover text-lg u-url p-name entry-title"
+                href={`/posts/${id}`}
+              >
+                {title}
+              </Link>
+              <p className="text-sm text-base-content/70">
+                <Date dateString={date} />
+              </p>
+            </li>
+          ))}
+        </ul>
       </section>
     </Layout>
   );
