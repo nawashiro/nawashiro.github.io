@@ -78,7 +78,7 @@ export default function Layout({
         {blog && <link rel="canonical" href={`${siteUrl}/posts/${blog}`} />}
       </Head>
       <header className="sticky top-0 z-30 border-b border-accent bg-base-100/80 backdrop-blur">
-        <div className="navbar mx-auto max-w-6xl px-4 py-3">
+        <div className="w-dvw md:w-full navbar md:mx-auto max-w-6xl px-4 py-3">
           <div className="navbar-start">
             <Link className="text-xl font-black text-base-content" href="/">
               {name}
@@ -103,12 +103,12 @@ export default function Layout({
           <div className="navbar-end lg:hidden">
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost gap-2">
-                <MdMenu size={22} />
-                <span className="text-xs tracking-[0.2em]">MENU</span>
+                <MdMenu size={24} />
+                <span>MENU</span>
               </label>
               <ul
                 tabIndex={0}
-                className="menu dropdown-content mt-3 w-56 rounded-box bg-base-100 p-2 shadow-soft"
+                className="menu menu-lg w-32 dropdown-content mt-3 rounded-box bg-base-200 p-2 shadow-soft border-2 border-base-300"
               >
                 <li>
                   <Link href="/">Home</Link>
@@ -127,7 +127,7 @@ export default function Layout({
           </div>
         </div>
       </header>
-      <main className="mx-auto max-w-6xl px-4 pb-24 pt-10">
+      <main className="w-dvw md:w-full md:mx-auto max-w-6xl px-4 pb-24 pt-10">
         {children}
         {blog && (
           <div className="mt-16">

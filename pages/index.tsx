@@ -110,7 +110,7 @@ export default function Home({
       </Head>
       <section className="hero">
         <div className="w-full space-y-3">
-          <p className="text-3xl font-black tracking-[0.3rem] md:text-6xl">
+          <p className="text-3xl font-black tracking-[0.2rem] md:text-6xl">
             {heroLetters.map((letter, index) => (
               <span
                 className="animate-pulse inline-block"

@@ -16,7 +16,11 @@ const normalizeThemeColor = (value: string, fallback: string) => {
 
 export const openNetworkPost = (
   postId: string,
-  openWindow?: (url: string, target?: string, features?: string) => Window | null
+  openWindow?: (
+    url: string,
+    target?: string,
+    features?: string,
+  ) => Window | null,
 ) => {
   const openFn =
     openWindow ?? (typeof window === "undefined" ? null : window.open);
@@ -28,7 +32,10 @@ export const openNetworkPost = (
   return true;
 };
 
-export default function NetworkGraph({ networkData, height }: NetworkGraphProps) {
+export default function NetworkGraph({
+  networkData,
+  height,
+}: NetworkGraphProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const networkRef = useRef<Network | null>(null);
 
@@ -74,7 +81,11 @@ export default function NetworkGraph({ networkData, height }: NetworkGraphProps)
     if (!containerRef.current) return;
 
     if (!networkRef.current) {
-      networkRef.current = new Network(containerRef.current, networkData, options);
+      networkRef.current = new Network(
+        containerRef.current,
+        networkData,
+        options,
+      );
     } else {
       networkRef.current.setData(networkData);
     }
@@ -102,9 +113,9 @@ export default function NetworkGraph({ networkData, height }: NetworkGraphProps)
 
   return (
     <div>
-      {/* Network図 を表示する領域 */}
+      {/* Network図を表示する領域 */}
       <div
-        className="rounded-box bg-base-100 shadow-soft"
+        className="rounded-xl bg-white border-2 border-base-200"
         style={{
           height: height,
           width: "100%",
