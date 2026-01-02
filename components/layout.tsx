@@ -77,7 +77,7 @@ export default function Layout({
         <meta name="twitter:image" content={ogImageUrl} />
         {blog && <link rel="canonical" href={`${siteUrl}/posts/${blog}`} />}
       </Head>
-      <header className="sticky top-0 z-30 border-b border-base-300/60 bg-base-100/80 backdrop-blur">
+      <header className="sticky top-0 z-30 border-b border-accent bg-base-100/80 backdrop-blur">
         <div className="navbar mx-auto max-w-6xl px-4 py-3">
           <div className="navbar-start">
             <Link

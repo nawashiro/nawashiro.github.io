@@ -121,8 +121,8 @@ export default function Home({
               </span>
             ))}
           </p>
-          <div className="text-base text-base-content/80">
-            <p className="space-x-2">
+          <div>
+            <p className="space-x-2 my-0">
               <span>{note}</span>
               <span>
                 <Link
@@ -133,12 +133,16 @@ export default function Home({
                 </Link>
               </span>
             </p>
-            <p>Website version {version}.</p>
+            <p className="my-0">
+              Website version <code>{version}</code>.
+            </p>
           </div>
           <div className="join">
-            <label className="btn join-item">Follow!</label>
+            <span className="btn join-item btn-success no-animation cursor-default">
+              Follow me
+            </span>
             <a
-              className="btn join-item"
+              className="btn join-item btn-success btn-soft"
               href="/rss/feed.xml"
               target="_blank"
               rel="noopener noreferrer"
@@ -147,7 +151,7 @@ export default function Home({
               RSS
             </a>
             <a
-              className="btn join-item"
+              className="btn join-item btn-success btn-soft"
               href="/rss/atom.xml"
               target="_blank"
               rel="noopener noreferrer"
@@ -156,7 +160,7 @@ export default function Home({
               Atom
             </a>
             <a
-              className="btn join-item"
+              className="btn join-item btn-success btn-soft"
               href="/rss/feed.json"
               target="_blank"
               rel="noopener noreferrer"

@@ -22,26 +22,31 @@
   a:hover {
     text-decoration: none;
   }
-
+  p {
+    @apply text-base;
+    @apply leading-[1.5];
+    @apply my-3;
+  }
   h1 {
     margin: 4rem 0 1.5rem 0;
     @apply text-3xl;
+    @apply font-black;
   }
   h2 {
     margin: 4rem 0 1.5rem 0;
-    font-size: 2rem;
+    @apply text-3xl;
   }
   h3 {
     margin: 2.5rem 0 1.5rem 0;
-    font-size: 1.75rem;
+    @apply text-2xl;
   }
   h4 {
     margin: 2.5rem 0 1rem 0;
-    font-size: 1.5rem;
+    @apply text-xl;
   }
   h5 {
     margin: 2.5rem 0 1rem 0;
-    font-size: 1.25rem;
+    @apply text-lg;
   }
   h1,
   h2,
@@ -50,6 +55,19 @@
   h5 {
     @apply font-bold;
   }
+}
+
+/* インラインコード */
+p code,
+ul li code {
+  @apply bg-base-200;
+  @apply text-base-content;
+  @apply border-2;
+  @apply border-base-300;
+  @apply text-sm;
+  @apply rounded-full;
+  @apply py-px;
+  @apply px-1;
 }
 
 /* ##### blog ##### */
@@ -98,32 +116,23 @@
 
 /* code block */
 .blog .remark-code-container {
+  @apply text-sm;
   margin: 1rem 0;
-}
-.blog .remark-code-container {
   position: relative;
 }
 .blog .remark-code-title {
+  @apply bg-base-200;
+  @apply text-base-content;
+  @apply border-base-300;
+  @apply text-sm;
   position: absolute;
-  background-color: var(--gray-600);
-  color: white;
   border-radius: 0 0 0.2rem 0.2rem;
   left: 1rem;
   padding: 2px 0.5rem;
-  font-family: var(--code-font-family);
 }
 
 .blog .remark-code-title + .remark-highlight pre {
   padding-top: calc(2.5rem + 4px);
-}
-/* インラインコード */
-.blog p code,
-.blog ul li code {
-  background-color: var(--gray-200);
-  color: var(--gray-900);
-  font-family: var(--code-font-family);
-  padding: 1px 4px;
-  border-radius: 0.2rem;
 }
 /* svg */
 .blog svg {
