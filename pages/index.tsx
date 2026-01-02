@@ -109,14 +109,11 @@ export default function Home({
         />
       </Head>
       <section className="hero">
-        <div className="hero-content w-full flex-col items-start  rounded-3xl bg-base-100/90 p-8 shadow-soft backdrop-blur">
-          <p
-            className="text-3xl font-black tracking-[0.4em] text-base-content md:text-6xl"
-            data-testid="hero-title"
-          >
+        <div className="w-full space-y-3">
+          <p className="text-3xl font-black tracking-[0.3rem] md:text-6xl">
             {heroLetters.map((letter, index) => (
               <span
-                className="motion-safe:animate-hero-jump inline-block"
+                className="animate-pulse inline-block"
                 key={`${letter}-${index}`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
@@ -124,41 +121,49 @@ export default function Home({
               </span>
             ))}
           </p>
-          <div className="space-y-3 text-base text-base-content/80">
-            <p>
-              {note}
-              <br />
-              Website version {version}.
+          <div className="text-base text-base-content/80">
+            <p className="space-x-2">
+              <span>{note}</span>
+              <span>
+                <Link
+                  href="/posts/links"
+                  className="btn btn-outline btn-sm h-auto"
+                >
+                  Recruit?
+                </Link>
+              </span>
             </p>
-            <div className="flex flex-wrap gap-2">
-              <a
-                className="btn btn-outline btn-sm"
-                href="/rss/feed.xml"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="RSS Feed"
-              >
-                RSS
-              </a>
-              <a
-                className="btn btn-outline btn-sm"
-                href="/rss/atom.xml"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Atom Feed"
-              >
-                Atom
-              </a>
-              <a
-                className="btn btn-outline btn-sm"
-                href="/rss/feed.json"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="JSON Feed"
-              >
-                JSON
-              </a>
-            </div>
+            <p>Website version {version}.</p>
+          </div>
+          <div className="join">
+            <label className="btn join-item">Follow!</label>
+            <a
+              className="btn join-item"
+              href="/rss/feed.xml"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="RSS Feed"
+            >
+              RSS
+            </a>
+            <a
+              className="btn join-item"
+              href="/rss/atom.xml"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Atom Feed"
+            >
+              Atom
+            </a>
+            <a
+              className="btn join-item"
+              href="/rss/feed.json"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="JSON Feed"
+            >
+              JSON
+            </a>
           </div>
         </div>
       </section>
