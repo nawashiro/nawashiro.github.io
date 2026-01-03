@@ -72,6 +72,20 @@ ul li code {
 
 /* ##### blog ##### */
 
+/* リスト */
+
+.blog ul li {
+  @apply list-disc;
+  @apply ml-8;
+}
+
+/* リンク */
+
+.blog a {
+  @apply text-info;
+  @apply underline;
+}
+
 /* スライド */
 
 .blog .slide {

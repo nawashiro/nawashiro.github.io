@@ -12,6 +12,7 @@ import Link from "next/link";
 import Date from "../components/date";
 import NetworkGraph from "../components/network_graph";
 import type { GetStaticProps } from "next";
+import { FaArrowRight } from "react-icons/fa";
 
 type HomeProps = {
   allPostsData: PostMeta[];
@@ -139,7 +140,7 @@ export default function Home({
           </div>
           <div className="join">
             <span className="btn join-item btn-success no-animation cursor-default btn-active">
-              Follow me!
+              Follow <FaArrowRight />
             </span>
             <a
               className="btn join-item"

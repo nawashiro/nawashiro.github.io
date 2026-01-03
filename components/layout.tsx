@@ -1,7 +1,13 @@
 import getConfig from "next/config";
 import Head from "next/head";
 import Link from "next/link";
-import { MdMenu, MdWest } from "react-icons/md";
+import {
+  FaHamburger,
+  FaHome,
+  FaTrophy,
+  FaLink,
+  FaGithub,
+} from "react-icons/fa";
 import { type ReactNode } from "react";
 import Script from "next/script";
 
@@ -45,7 +51,7 @@ export default function Layout({
   };
 
   return (
-    <div className="w-3xl mx-auto">
+    <div>
       <Script
         src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"
         strategy="afterInteractive"
@@ -77,14 +83,17 @@ export default function Layout({
         <meta name="twitter:image" content={ogImageUrl} />
         {blog && <link rel="canonical" href={`${siteUrl}/posts/${blog}`} />}
       </Head>
-      <header className="sticky top-0 z-30 border-b border-accent bg-base-100/80 backdrop-blur">
-        <div className="w-dvw md:w-full navbar md:mx-auto max-w-6xl px-4 py-3">
+      <header className="w-dvw md:w-full sticky top-0 z-30 border-b border-accent bg-base-100/80 backdrop-blur">
+        <div className="navbar md:mx-auto max-w-3xl px-4 py-3">
           <div className="navbar-start">
             <Link className="text-xl font-black text-base-content" href="/">
               {name}
             </Link>
           </div>
-          <nav className="navbar-end hidden lg:flex" aria-label="Primary">
+          <nav
+            className="navbar-end hidden lg:flex space-x-2"
+            aria-label="Primary"
+          >
             <ul className="join">
               <li className="btn join-item rounded-l-full">
                 <Link href="/">Home</Link>
@@ -92,18 +101,22 @@ export default function Layout({
               <li className="btn join-item">
                 <Link href="/posts/projects-index">Projects</Link>
               </li>
-              <li className="btn join-item">
+              <li className="btn join-item rounded-r-full">
                 <Link href="/posts/links">Links</Link>
               </li>
-              <li className="btn join-item rounded-r-full">
-                <a href="https://github.com/nawashiro">GitHub</a>
-              </li>
             </ul>
+            <a href="https://github.com/nawashiro">
+              <FaGithub
+                size={32}
+                aria-label="GitHub"
+                className="hover:animate-spin"
+              />
+            </a>
           </nav>
           <div className="navbar-end lg:hidden">
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost gap-2">
-                <MdMenu size={24} />
+                <FaHamburger size={24} />
                 <span>MENU</span>
               </label>
               <ul
@@ -127,12 +140,12 @@ export default function Layout({
           </div>
         </div>
       </header>
-      <main className="w-dvw md:w-full md:mx-auto max-w-6xl px-4 pb-24 pt-10">
+      <main className="w-dvw md:w-full md:mx-auto max-w-3xl px-4 pb-24 pt-10">
         {children}
         {blog && (
           <div className="mt-16">
             <Link className="btn btn-link gap-2 px-0" href="/">
-              <MdWest size={16} />
+              <FaHome size={16} />
               Back to Home
             </Link>
           </div>
