@@ -178,7 +178,7 @@ ul li code {
 }
 
 .blog blockquote ::before {
-  background-color: var(--gray-600);
+  @apply bg-accent;
   border-radius: 4px;
   content: "";
   height: 100%;
@@ -195,7 +195,7 @@ ul li code {
 
 /* 数式 */
 .blog .katex {
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
   max-width: 100%;
   display: inline-flex;
