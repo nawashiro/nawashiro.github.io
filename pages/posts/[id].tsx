@@ -131,8 +131,10 @@ export default function Post({ id, postData }: PostProps) {
             <h2>Back Link</h2>
             <ul>
               {postData.backLinks.map(({ id, title }) => (
-                <li key={id}>
-                  <Link href={id}>{title}</Link>
+                <li key={id} className="list-disc ml-8">
+                  <Link href={id} className="link">
+                    {title}
+                  </Link>
                 </li>
               ))}
             </ul>

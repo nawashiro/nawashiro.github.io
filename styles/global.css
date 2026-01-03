@@ -79,9 +79,19 @@ ul li code {
   @apply ml-8;
 }
 
+.blog ol li {
+  @apply list-decimal;
+  @apply ml-8;
+}
+
 /* リンク */
 
 .blog a {
+  @apply text-info;
+  @apply underline;
+}
+
+.link {
   @apply text-info;
   @apply underline;
 }
@@ -123,8 +133,8 @@ ul li code {
   display: block;
   margin: 1rem 0;
   padding: 0.5rem;
-  background-color: var(--color-base-100);
-  box-shadow: 0 3px 10px var(--gray-200);
+  background-color: white;
+  box-shadow: 0 3px 10px var(--color-gray-300);
   border-radius: 3px;
 }
 
@@ -150,8 +160,10 @@ ul li code {
 }
 /* svg */
 .blog svg {
-  background-color: var(--color-base-100);
+  background-color: white;
   border-radius: 0.3rem;
+  @apply border-2;
+  @apply border-base-200;
 }
 
 /* 引用 */
@@ -301,12 +313,23 @@ ul li code {
 /* table */
 .blog th,
 .blog td {
-  border: 1px solid var(--gray-600);
   padding: 0.5rem 1rem;
+  @apply border-base-content;
+  @apply border-2;
+}
+.blog th {
+  @apply bg-base-200;
+}
+.blog tr {
+  @apply odd:bg-base-100;
+  @apply even:bg-base-200;
 }
 .blog table {
   margin: 1rem 0;
   border-collapse: collapse;
+  @apply w-full;
+  @apply overflow-x-auto;
+  @apply block;
 }
 
 @media screen and (min-width: 768px) {
