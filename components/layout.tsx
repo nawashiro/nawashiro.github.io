@@ -141,8 +141,8 @@ export default function Layout({
         </Twemoji>
         {blog && (
           <div className="mt-16">
-            <Link className="btn btn-link gap-2 px-0" href="/">
-              <FaHome size={16} />
+            <Link className="link gap-2 text-base flex" href="/">
+              <FaHome size={24} />
               Back to Home
             </Link>
           </div>
