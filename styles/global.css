@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap");
 @import url("./prism-okaidia.css");
 @import "tailwindcss";
+
 @plugin "daisyui" {
   themes: caramellatte --default;
 }
+
 @layer base {
+
   body,
   p,
   html,
@@ -22,32 +25,39 @@
   a:hover {
     text-decoration: none;
   }
+
   p {
     @apply text-base;
     @apply leading-[1.5];
     @apply my-3;
   }
+
   h1 {
     margin: 4rem 0 1.5rem 0;
     @apply text-3xl;
     @apply font-black;
   }
+
   h2 {
     margin: 4rem 0 1.5rem 0;
     @apply text-3xl;
   }
+
   h3 {
     margin: 2.5rem 0 1.5rem 0;
     @apply text-2xl;
   }
+
   h4 {
     margin: 2.5rem 0 1rem 0;
     @apply text-xl;
   }
+
   h5 {
     margin: 2.5rem 0 1rem 0;
     @apply text-lg;
   }
+
   h1,
   h2,
   h3,
@@ -68,6 +78,28 @@ ul li code {
   @apply rounded-full;
   @apply py-px;
   @apply px-1;
+}
+
+/* 引用 */
+.quote {
+  position: relative;
+  margin: 2rem 0 2rem 0;
+  padding: 0 0 0 2.5rem;
+}
+
+.quote p {
+  color: var(--gray-600);
+}
+
+.quote ::before {
+  @apply bg-accent;
+  border-radius: 4px;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 4px;
 }
 
 /* ##### blog ##### */
@@ -127,7 +159,7 @@ ul li code {
 }
 
 /* img */
-.blog > p > img {
+.blog>p>img {
   width: 100%;
   max-width: var(--max-content-width);
   display: block;
@@ -144,6 +176,7 @@ ul li code {
   margin: 1rem 0;
   position: relative;
 }
+
 .blog .remark-code-title {
   @apply bg-base-200;
   @apply text-base-content;
@@ -155,9 +188,10 @@ ul li code {
   padding: 2px 0.5rem;
 }
 
-.blog .remark-code-title + .remark-highlight pre {
+.blog .remark-code-title+.remark-highlight pre {
   padding-top: calc(2.5rem + 4px);
 }
+
 /* svg */
 .blog svg {
   background-color: white;
@@ -201,10 +235,12 @@ ul li code {
   display: inline-flex;
   flex-shrink: 1;
 }
+
 .blog .katex::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
+
 .blog math {
   flex-shrink: 0;
   width: auto;
@@ -223,9 +259,11 @@ ul li code {
   margin: 1rem 0;
   text-decoration: none;
 }
+
 .blog .rlc-container:hover {
   text-decoration: none;
 }
+
 .blog .rlc-info {
   padding: 1rem;
   height: 8rem;
@@ -233,6 +271,7 @@ ul li code {
   display: flex;
   flex-direction: column;
 }
+
 .blog .rlc-favicon {
   width: 1rem;
   height: 1rem;
@@ -241,10 +280,12 @@ ul li code {
   margin: auto 0.25rem auto 0;
   display: block;
 }
+
 .blog .rlc-url-container {
   display: flex;
   margin-top: auto;
 }
+
 .blog .rlc-url {
   width: 100%;
   height: 1.5rem;
@@ -253,9 +294,11 @@ ul li code {
   text-overflow: ellipsis;
   color: var(--gray-600);
 }
+
 .blog .rlc-image-container {
   order: -1;
 }
+
 .blog .rlc-image-container img {
   height: auto;
   width: 100%;
@@ -263,6 +306,7 @@ ul li code {
   aspect-ratio: 1.911/1;
   object-fit: cover;
 }
+
 .blog .rlc-description {
   width: 100%;
   color: var(--gray-600);
@@ -271,6 +315,7 @@ ul li code {
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
+
 .blog .rlc-title {
   font-weight: 700;
   width: 100%;
@@ -284,17 +329,21 @@ ul li code {
 .blog .rlc-info {
   position: relative;
 }
+
 .blog :is(.rlc-title, .rlc-url-container, .rlc-url, .rlc-description) {
   z-index: 1;
   transition: color 0.3s ease;
 }
+
 .blog .rlc-container:hover :is(.rlc-title, .rlc-url, .rlc-description) {
   color: #fff;
 }
+
 .blog .rlc-container:hover .rlc-info::before {
   transform: scaleX(1);
   transform-origin: left;
 }
+
 .blog .rlc-info::before {
   position: absolute;
   top: 0;
@@ -317,13 +366,16 @@ ul li code {
   @apply border-base-content;
   @apply border-2;
 }
+
 .blog th {
   @apply bg-base-200;
 }
+
 .blog tr {
   @apply odd:bg-base-100;
   @apply even:bg-base-200;
 }
+
 .blog table {
   margin: 1rem 0;
   border-collapse: collapse;
@@ -337,13 +389,16 @@ ul li code {
     flex-direction: row;
     height: 8rem;
   }
+
   .blog .rlc-info {
     overflow: hidden;
   }
+
   .blog .rlc-image-container img {
     width: 244.6px;
     height: 100%;
   }
+
   .blog .rlc-url-container {
     margin-top: auto;
   }

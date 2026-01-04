@@ -1,22 +1,15 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import styles from "./WebMention.module.css";
+import { FaHeart } from "react-icons/fa";
 
-const REACTIONS = {
-  "in-reply-to": "💬",
-  "like-of": "❤️",
-  "repost-of": "🔄",
-  "bookmark-of": "⭐️",
-  "mention-of": "💬",
-  rsvp: "📅",
-  "follow-of": "🐜",
-};
-
-const RSVP_ICONS = {
-  yes: "✅",
-  no: "❌",
-  interested: "💡",
-  maybe: "💭",
-};
+const icon = (action: string, size: number) => {
+  switch (action) {
+    case "liked": {
+      return (
+        <FaHeart size={size} className="text-error" />
+      )
+    }
+  }
+}
 
 const ACTIONS = {
   "in-reply-to": "replied",
@@ -141,12 +134,7 @@ const renderMention = (
   const authorLabel =
     mention.author?.name || getSourceLabel(mention.url) || mention.url;
   const action = buildActionLabel(mention, context, isComment);
-  const reactionIcon =
-    REACTIONS[mention["wm-property"] as keyof typeof REACTIONS] || "💥";
-  const rsvpIcon =
-    mention.rsvp && RSVP_ICONS[mention.rsvp as keyof typeof RSVP_ICONS]
-      ? RSVP_ICONS[mention.rsvp as keyof typeof RSVP_ICONS]
-      : null;
+  const rsvpIcon = mention.rsvp;
   const rawMentionUrl =
     mention[context.preventSpoofing ? "wm-source" : "url"] || mention.url;
   const mentionUrl = safeWebmentionUrl(rawMentionUrl) || "#";
@@ -154,27 +142,27 @@ const renderMention = (
 
   return (
     <a
-      className={styles.reaction}
       rel="nofollow ugc"
       title={`${authorLabel} ${action}`}
       href={mentionUrl}
     >
-      <div className={styles.icon}>
+      <div>
         {photoUrl ? (
           <img
             src={photoUrl}
             loading="lazy"
             decoding="async"
             alt={authorLabel}
+            className="size-10 rounded-full"
           />
         ) : (
           <img
-            className={styles.missing}
             src="data:image/webp;base64,UklGRkoCAABXRUJQVlA4TD4CAAAvP8APAIV0WduUOLr/m/iqY6SokDJSMD5xYX23SQizRsVdZmIj/f6goYUbiOj/BED7MOPReuBNT3vBesSzIex+SeqMFFkjebFmzH3S7POxDSJ1yaCbCmMnS2R46cRMPyQLw4GBK4esdK60pYwsZakecUCl5zsHv/5cPH08nx9/7i6rEEVCg2hR8VSd30PxMZpVoJZQO6Dixgg6X5oKFCmlVHIDmmMFShWumAXgCuyqVN8hHff/k+9fj8+ei7BVjpxBmZCUJv+6DhWGZwWvs+UoLHFCKsPYpfJtIcEXBTopEEsKwedZUv4ku1FZErKULLyQwFGgnmTs2vBD5qu44xwnG9uyjgrFOd+KRVlXyQfwQlauydaU6AVI7OjKXLUEqNtxJBmQegNDZgV7lxxqYMOMrDyC1NdAGbdiH9Ij0skjG+oTyfO0lmjdgvoH8iIgreuBMRYLSH+R3sAztXgL+XfS7E2bmfo6gnS0TrpnzHT7kL+skj7PgHuBwv/zpN8LDLQg7zfJZLBubMKnyeh6ZGyfDEfc2LYpnlUtG7JqsSHq1WoASbUS4KVaLwB8be5mfsGMDwBcm5VxbuxWxx3nkFanB6lYqsqSkOGkKicoDvXsneR7BkKU7DtaEuT7+pxBGVwx+9gVyqf2pVA9sC2CsmjZ1RJqEJHS4Tj/pCcS0JoyBYOsB91Xjh3OFfQPQhvCAYyeLJlaOoFp0XNNuD0BC8exr8uPx7D1JWkwFdZIXmD3MOPReuDNzHjBesSzIbQD"
             alt={authorLabel}
+            className="size-10 rounded-full"
           />
         )}
-        {reactionIcon}
+        {icon(action, 24)}
       </div>
       {rsvpIcon && <sub>{rsvpIcon}</sub>}
     </a>
@@ -278,11 +266,12 @@ const WebMention = ({
   );
 
   return (
-    <div ref={containerRef} id={id} className={styles.container}>
+    <div ref={containerRef} id={id}>
       {uniqueComments.length > 0 && !commentsAreReactions && (
         <>
-          <h2>Responses</h2>
-          <ul className={styles.comments}>
+          <h2>へんじ</h2>
+          <h3>おたより</h3>
+          <ul>
             {uniqueComments.map((comment) => {
               const sourceLabel = getSourceLabel(comment.url);
               const authorName = comment.author?.name || sourceLabel;
@@ -295,11 +284,16 @@ const WebMention = ({
 
               return (
                 <li key={comment.url}>
-                  {renderMention(comment, { preventSpoofing, wordcount }, true)}
-                  <a className="source" rel="nofollow ugc" href={commentUrl}>
-                    {authorName}
-                  </a>
-                  <span className={styles.text}>{content}</span>
+                  <blockquote className="quote">
+                    <a rel="nofollow ugc" href={commentUrl}>
+                      <p>{content}</p>
+                      <div className="flex leading-10 gap-2">
+                        <span>by</span>
+                        {renderMention(comment, { preventSpoofing, wordcount }, true)}
+                        <span>{authorName}</span>
+                      </div>
+                    </a>
+                  </blockquote>
                 </li>
               );
             })}
@@ -308,8 +302,8 @@ const WebMention = ({
       )}
       {uniqueReactions.length > 0 && (
         <>
-          <h2>Reactions</h2>
-          <ul className={styles.reacts}>
+          <h2>あいづち</h2>
+          <ul>
             {uniqueReactions.map((reaction) => (
               <li key={reaction.url}>
                 {renderMention(reaction, { preventSpoofing, wordcount })}
