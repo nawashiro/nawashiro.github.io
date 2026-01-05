@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { FaHeart, FaCalendarAlt, FaUserCheck } from "react-icons/fa";
-import { MdAccountCircle } from "react-icons/md";
+import { FaHeart, FaCalendarAlt, FaUserCheck, FaCheck, FaLightbulb, FaQuestion } from "react-icons/fa";
+import { MdAccountCircle, MdClose } from "react-icons/md";
 import { FaRetweet, FaBookmark } from "react-icons/fa6";
 
 const icon = (action: string, classes: string = "") => {
@@ -35,6 +35,23 @@ const icon = (action: string, classes: string = "") => {
       return (
         <FaUserCheck className={`text-success size-8 ${classes}`} />
       )
+    }
+  }
+}
+
+const rsvpIcon = (rsvp: string, classes: string = "") => {
+  switch (rsvp) {
+    case "no": {
+      return <MdClose className={classes} />
+    }
+    case "interested": {
+      return <FaLightbulb className={classes} />
+    }
+    case "maybe": {
+      return <FaQuestion className={classes} />
+    }
+    case "yes": {
+      return <FaCheck className={classes} />
     }
   }
 }
@@ -162,7 +179,7 @@ const renderMention = (
   const authorLabel =
     mention.author?.name || getSourceLabel(mention.url) || mention.url;
   const action = buildActionLabel(mention, context, isComment);
-  const rsvpIcon = mention.rsvp;
+  const rsvp = mention.rsvp;
   const rawMentionUrl =
     mention[context.preventSpoofing ? "wm-source" : "url"] || mention.url;
   const mentionUrl = safeWebmentionUrl(rawMentionUrl) || "#";
@@ -173,6 +190,7 @@ const renderMention = (
       rel="nofollow ugc"
       title={`${authorLabel} ${action}`}
       href={mentionUrl}
+      className="flex gap-1"
     >
       <div className="indicator">
         {photoUrl ? (
@@ -188,7 +206,7 @@ const renderMention = (
         )}
         {icon(action, "indicator-item")}
       </div>
-      {rsvpIcon && <sub>{rsvpIcon}</sub>}
+      {rsvp && rsvpIcon(rsvp, "size-10 py-2")}
     </a>
   );
 };
@@ -305,7 +323,7 @@ const WebMention = ({
 
               return (
                 <li key={comment.url} className="quote">
-                  <blockquote >
+                  <blockquote>
                     <p>{content}</p>
                     <div className="flex leading-10 gap-2">
                       <span>by</span>

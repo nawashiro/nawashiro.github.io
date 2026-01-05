@@ -136,13 +136,13 @@ export default function Layout({
         </div>
       </header>
       <main className="w-dvw md:w-full md:mx-auto max-w-3xl px-4 pb-24 pt-10">
-        <Twemoji options={{ className: "size-[1.3em] inline mx-1" }}>
+        <Twemoji options={{ className: "twemoji" }}>
           {children}
         </Twemoji>
         {blog && (
           <div className="mt-16">
-            <Link className="btn btn-link gap-2 px-0" href="/">
-              <FaHome size={16} />
+            <Link className="link text-base flex gap-2 px-0" href="/">
+              <FaHome className="size-6" />
               Back to Home
             </Link>
           </div>

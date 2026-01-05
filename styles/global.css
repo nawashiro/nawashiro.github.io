@@ -64,6 +64,7 @@
   h4,
   h5 {
     @apply font-bold;
+    @apply leading-[1.5];
   }
 }
 
@@ -154,7 +155,6 @@ ul li code {
   }
 }
 
-/* img */
 .blog>p>img {
   width: 100%;
   max-width: var(--max-content-width);
@@ -164,6 +164,17 @@ ul li code {
   background-color: white;
   box-shadow: 0 3px 10px var(--color-gray-300);
   border-radius: 3px;
+}
+
+.twemoji {
+  width: 1.5em !important;
+  display: inline !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  vertical-align: text-bottom !important;
 }
 
 /* code block */
