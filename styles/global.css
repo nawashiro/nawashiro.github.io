@@ -81,17 +81,13 @@ ul li code {
 }
 
 /* 引用 */
-.quote {
+.quote blockquote {
   position: relative;
   margin: 2rem 0 2rem 0;
   padding: 0 0 0 2.5rem;
 }
 
-.quote p {
-  color: var(--gray-600);
-}
-
-.quote ::before {
+.quote blockquote::before {
   @apply bg-accent;
   border-radius: 4px;
   content: "";
@@ -205,10 +201,6 @@ ul li code {
   position: relative;
   margin: 2rem 0 2rem 0;
   padding: 0 0 0 2.5rem;
-}
-
-.blog blockquote p {
-  color: var(--gray-600);
 }
 
 .blog blockquote ::before {

@@ -1,11 +1,39 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { FaHeart } from "react-icons/fa";
+import { FaHeart, FaCalendarAlt, FaUserCheck } from "react-icons/fa";
+import { MdAccountCircle } from "react-icons/md";
+import { FaRetweet, FaBookmark } from "react-icons/fa6";
 
-const icon = (action: string, size: number) => {
+const icon = (action: string, classes: string = "") => {
   switch (action) {
     case "liked": {
       return (
-        <FaHeart size={size} className="text-error" />
+        <span className="relative">
+          <FaHeart className={`text-error size-8 ${classes}`} />
+          <FaHeart className={`text-error size-8 hover:animate-ping ${classes}`} />
+        </span>
+      )
+    }
+    case "reposted": {
+      return (
+        <span className="relative">
+          <FaRetweet className={`text-base-100 size-10 ${classes}`} />
+          <FaRetweet className={`text-info size-8 ${classes}`} />
+        </span>
+      )
+    }
+    case "bookmarked": {
+      return (
+        <FaBookmark className={`text-success size-8 ${classes}`} />
+      )
+    }
+    case "RSVPed": {
+      return (
+        <FaCalendarAlt className={`text-success size-8 ${classes}`} />
+      )
+    }
+    case "followed": {
+      return (
+        <FaUserCheck className={`text-success size-8 ${classes}`} />
       )
     }
   }
@@ -146,23 +174,19 @@ const renderMention = (
       title={`${authorLabel} ${action}`}
       href={mentionUrl}
     >
-      <div>
+      <div className="indicator">
         {photoUrl ? (
           <img
             src={photoUrl}
             loading="lazy"
             decoding="async"
             alt={authorLabel}
-            className="size-10 rounded-full"
+            className="size-10 rounded-full hover:animate-spin"
           />
         ) : (
-          <img
-            src="data:image/webp;base64,UklGRkoCAABXRUJQVlA4TD4CAAAvP8APAIV0WduUOLr/m/iqY6SokDJSMD5xYX23SQizRsVdZmIj/f6goYUbiOj/BED7MOPReuBNT3vBesSzIex+SeqMFFkjebFmzH3S7POxDSJ1yaCbCmMnS2R46cRMPyQLw4GBK4esdK60pYwsZakecUCl5zsHv/5cPH08nx9/7i6rEEVCg2hR8VSd30PxMZpVoJZQO6Dixgg6X5oKFCmlVHIDmmMFShWumAXgCuyqVN8hHff/k+9fj8+ei7BVjpxBmZCUJv+6DhWGZwWvs+UoLHFCKsPYpfJtIcEXBTopEEsKwedZUv4ku1FZErKULLyQwFGgnmTs2vBD5qu44xwnG9uyjgrFOd+KRVlXyQfwQlauydaU6AVI7OjKXLUEqNtxJBmQegNDZgV7lxxqYMOMrDyC1NdAGbdiH9Ij0skjG+oTyfO0lmjdgvoH8iIgreuBMRYLSH+R3sAztXgL+XfS7E2bmfo6gnS0TrpnzHT7kL+skj7PgHuBwv/zpN8LDLQg7zfJZLBubMKnyeh6ZGyfDEfc2LYpnlUtG7JqsSHq1WoASbUS4KVaLwB8be5mfsGMDwBcm5VxbuxWxx3nkFanB6lYqsqSkOGkKicoDvXsneR7BkKU7DtaEuT7+pxBGVwx+9gVyqf2pVA9sC2CsmjZ1RJqEJHS4Tj/pCcS0JoyBYOsB91Xjh3OFfQPQhvCAYyeLJlaOoFp0XNNuD0BC8exr8uPx7D1JWkwFdZIXmD3MOPReuDNzHjBesSzIbQD"
-            alt={authorLabel}
-            className="size-10 rounded-full"
-          />
+          <MdAccountCircle className="size-10 hover:animate-spin" />
         )}
-        {icon(action, 24)}
+        {icon(action, "indicator-item")}
       </div>
       {rsvpIcon && <sub>{rsvpIcon}</sub>}
     </a>
@@ -278,21 +302,16 @@ const WebMention = ({
               const content = comment.content?.text
                 ? truncateText(comment.content.text, wordcount)
                 : "(mention)";
-              const rawCommentUrl =
-                comment[preventSpoofing ? "wm-source" : "url"] || comment.url;
-              const commentUrl = safeWebmentionUrl(rawCommentUrl) || "#";
 
               return (
-                <li key={comment.url}>
-                  <blockquote className="quote">
-                    <a rel="nofollow ugc" href={commentUrl}>
-                      <p>{content}</p>
-                      <div className="flex leading-10 gap-2">
-                        <span>by</span>
-                        {renderMention(comment, { preventSpoofing, wordcount }, true)}
-                        <span>{authorName}</span>
-                      </div>
-                    </a>
+                <li key={comment.url} className="quote">
+                  <blockquote >
+                    <p>{content}</p>
+                    <div className="flex leading-10 gap-2">
+                      <span>by</span>
+                      {renderMention(comment, { preventSpoofing, wordcount }, true)}
+                      <span>{authorName}</span>
+                    </div>
                   </blockquote>
                 </li>
               );
@@ -302,8 +321,8 @@ const WebMention = ({
       )}
       {uniqueReactions.length > 0 && (
         <>
-          <h2>あいづち</h2>
-          <ul>
+          <h3>あいづち</h3>
+          <ul className="flex gap-4">
             {uniqueReactions.map((reaction) => (
               <li key={reaction.url}>
                 {renderMention(reaction, { preventSpoofing, wordcount })}
