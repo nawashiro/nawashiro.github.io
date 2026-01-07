@@ -5,6 +5,7 @@ import { FaHamburger, FaHome, FaGithub } from "react-icons/fa";
 import { type ReactNode } from "react";
 import Script from "next/script";
 import Twemoji from "react-twemoji";
+import { useEffect } from "react";
 
 const name = "NAWASHIRO";
 export const siteTitle = "NAWASHIRO";
@@ -32,8 +33,8 @@ export default function Layout({
   const ogImageUrl = imageUrl
     ? imageUrl
     : `https://vercel-og-nextjs-4iakfhvyx-yineleyici.vercel.app/api/og?title=${encodeURIComponent(
-        title ? title : siteTitle,
-      )}`;
+      title ? title : siteTitle,
+    )}`;
 
   const handleKofiReady = () => {
     if (!window.kofiWidgetOverlay) return;
@@ -44,6 +45,16 @@ export default function Layout({
       "floating-chat.donateButton.text-color": "#fff",
     });
   };
+
+  if (typeof (window) !== "undefined") {
+    useEffect(() => {
+      const svgPanZoom = require("svg-pan-zoom");
+      svgPanZoom(".panzoom svg", {
+        controlIconsEnabled: true,
+        contain: true,
+      });
+    }, [window.location.href]);
+  }
 
   return (
     <div>

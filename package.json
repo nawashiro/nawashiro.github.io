@@ -40,8 +40,7 @@
     "remark-rehype": "^11.0.0",
     "remark-toc": "^9.0.0",
     "svg-pan-zoom": "^3.6.2",
-    "unified": "^11.0.3",
-    "vis-network": "^9.1.9"
+    "unified": "^11.0.3"
   },
   "homepage": "/",
   "devDependencies": {

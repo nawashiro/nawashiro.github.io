@@ -312,7 +312,6 @@ const WebMention = ({
       {uniqueComments.length > 0 && !commentsAreReactions && (
         <>
           <h2>へんじ</h2>
-          <h3>おたより</h3>
           <ul>
             {uniqueComments.map((comment) => {
               const sourceLabel = getSourceLabel(comment.url);
@@ -339,8 +338,7 @@ const WebMention = ({
       )}
       {uniqueReactions.length > 0 && (
         <>
-          <h3>あいづち</h3>
-          <ul className="flex gap-4">
+          <ul className="mt-16 flex gap-4">
             {uniqueReactions.map((reaction) => (
               <li key={reaction.url}>
                 {renderMention(reaction, { preventSpoofing, wordcount })}

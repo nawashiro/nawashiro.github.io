@@ -103,6 +103,7 @@ ul li code {
 
 .panzoom svg {
   @apply size-full;
+  @apply max-h-128;
   @apply bg-white;
   border-radius: 0.3rem;
   @apply border-2;

@@ -12,7 +12,6 @@ import Date from "../components/date";
 import type { GetStaticProps } from "next";
 import { FaArrowRight } from "react-icons/fa";
 import { Graphviz } from "@hpcc-js/wasm-graphviz";
-import { useEffect } from "react";
 
 type HomeProps = {
   allPostsData: PostMeta[];
@@ -64,17 +63,6 @@ export default function Home({
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
   const description =
     "エンジニア・プログラマーNawashiroの個人サイト。プロジェクト、デジタルガーデン、技術記事など。";
-
-
-  if (typeof (window) !== "undefined") {
-    useEffect(() => {
-      const svgPanZoom = require("svg-pan-zoom");
-      svgPanZoom(".panzoom svg", {
-        controlIconsEnabled: true,
-        contain: true,
-      });
-    }, [window.location.href]);
-  }
 
   return (
     <Layout>
@@ -239,7 +227,7 @@ export default function Home({
       <section>
         <h2>Graph</h2>
         <p>
-          各ページの相互関係をグラフに出力しています。ノードをダブルクリックするとページを開くことができます。拡大縮小したり、ぐりぐりと移動させたりして遊んでみてください。
+          各ページの相互関係をグラフに出力しています。ノードをクリックするとページを開くことができます。拡大縮小したり、ぐりぐりと移動させたりして遊んでみてください。
         </p>
         <div
           dangerouslySetInnerHTML={{ __html: graphSvg }}
