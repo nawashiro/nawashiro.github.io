@@ -99,6 +99,16 @@ ul li code {
   width: 4px;
 }
 
+/* svg pan zoom */
+
+.panzoom svg {
+  @apply size-full;
+  @apply bg-white;
+  border-radius: 0.3rem;
+  @apply border-2;
+  @apply border-base-200;
+}
+
 /* ##### blog ##### */
 
 /* リスト */

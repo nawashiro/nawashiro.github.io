@@ -5,18 +5,18 @@ import {
   getSortedPostsData,
   getIndexPagesData,
   getVersion,
-  type NetworkData,
   type PostMeta,
 } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
-import NetworkGraph from "../components/network_graph";
 import type { GetStaticProps } from "next";
 import { FaArrowRight } from "react-icons/fa";
+import { Graphviz } from "@hpcc-js/wasm-graphviz";
+import { useEffect } from "react";
 
 type HomeProps = {
   allPostsData: PostMeta[];
-  networkData: NetworkData;
+  graphSvg: string;
   indexPagesData: PostMeta[];
   version: string;
 };
@@ -26,10 +26,27 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const networkData = getPostNetworkData();
   const indexPagesData = getIndexPagesData();
   const version = getVersion();
+
+  let dot =
+    'digraph site_graph{graph[layout="fdp"];node[shape="plain",style="rounded,filled",fillcolor="#c8deff",penwidth=1.2,fontname="Helvetica",fontsize=11,fontcolor="#24292F"];';
+
+  networkData.nodes.map((node) => {
+    dot += `"${node.id}"[URL="${process.env.NEXT_PUBLIC_SITE_URL}/posts/${node.id}",label="${node.label}",target="_top"];`;
+  });
+
+  networkData.edges.map((edge) => {
+    dot += `"${edge.from}"->"${edge.to}";`;
+  });
+
+  dot += "}";
+
+  const graphviz = await Graphviz.load();
+  const graphSvg = graphviz.dot(dot);
+
   return {
     props: {
       allPostsData,
-      networkData,
+      graphSvg,
       indexPagesData,
       version,
     },
@@ -38,7 +55,7 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 
 export default function Home({
   allPostsData,
-  networkData,
+  graphSvg,
   indexPagesData,
   version,
 }: HomeProps) {
@@ -47,6 +64,17 @@ export default function Home({
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
   const description =
     "エンジニア・プログラマーNawashiroの個人サイト。プロジェクト、デジタルガーデン、技術記事など。";
+
+
+  if (typeof (window) !== "undefined") {
+    useEffect(() => {
+      const svgPanZoom = require("svg-pan-zoom");
+      svgPanZoom(".panzoom svg", {
+        controlIconsEnabled: true,
+        contain: true,
+      });
+    }, [window.location.href]);
+  }
 
   return (
     <Layout>
@@ -211,9 +239,12 @@ export default function Home({
       <section>
         <h2>Graph</h2>
         <p>
-          各ページの相互関係をグラフに出力しています。ノードをダブルクリックするとページを開くことができます。拡大縮小したり、ぐりぐりとノードを移動させたりして遊んでみてください。
+          各ページの相互関係をグラフに出力しています。ノードをダブルクリックするとページを開くことができます。拡大縮小したり、ぐりぐりと移動させたりして遊んでみてください。
         </p>
-        <NetworkGraph networkData={networkData} height={"500px"} />
+        <div
+          dangerouslySetInnerHTML={{ __html: graphSvg }}
+          className="panzoom"
+        />
       </section>
 
       <section>
