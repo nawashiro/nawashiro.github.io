@@ -100,14 +100,14 @@ export default function Layout({
             className="navbar-end hidden lg:flex space-x-2"
             aria-label="Primary"
           >
-            <ul className="join">
-              <li className="btn join-item rounded-l-full">
+            <ul className="menu menu-horizontal bg-base-200 rounded-box">
+              <li>
                 <Link href="/">Home</Link>
               </li>
-              <li className="btn join-item">
+              <li>
                 <Link href="/posts/projects-index">Projects</Link>
               </li>
-              <li className="btn join-item rounded-r-full">
+              <li>
                 <Link href="/posts/links">Links</Link>
               </li>
             </ul>
