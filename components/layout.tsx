@@ -1,11 +1,11 @@
 import getConfig from "next/config";
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { FaHamburger, FaHome, FaGithub } from "react-icons/fa";
-import { type ReactNode } from "react";
+import { type ReactNode, useEffect } from "react";
 import Script from "next/script";
 import Twemoji from "react-twemoji";
-import { useEffect } from "react";
 
 const name = "NAWASHIRO";
 export const siteTitle = "NAWASHIRO";
@@ -35,6 +35,7 @@ export default function Layout({
     : `https://vercel-og-nextjs-4iakfhvyx-yineleyici.vercel.app/api/og?title=${encodeURIComponent(
       title ? title : siteTitle,
     )}`;
+  const router = useRouter();
 
   const handleKofiReady = () => {
     if (!window.kofiWidgetOverlay) return;
@@ -46,15 +47,14 @@ export default function Layout({
     });
   };
 
-  if (typeof (window) !== "undefined") {
-    useEffect(() => {
-      const svgPanZoom = require("svg-pan-zoom");
-      svgPanZoom(".panzoom svg", {
-        controlIconsEnabled: true,
-        contain: true,
-      });
-    }, [window.location.href]);
-  }
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const svgPanZoom = require("svg-pan-zoom");
+    svgPanZoom(".panzoom svg", {
+      controlIconsEnabled: true,
+      contain: true,
+    });
+  }, [router.asPath]);
 
   return (
     <div>
