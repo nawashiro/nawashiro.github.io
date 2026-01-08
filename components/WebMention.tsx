@@ -312,40 +312,35 @@ const WebMention = ({
       {uniqueComments.length > 0 && !commentsAreReactions && (
         <>
           <h2>へんじ</h2>
-          <ul>
-            {uniqueComments.map((comment) => {
-              const sourceLabel = getSourceLabel(comment.url);
-              const authorName = comment.author?.name || sourceLabel;
-              const content = comment.content?.text
-                ? truncateText(comment.content.text, wordcount)
-                : "(mention)";
-
-              return (
-                <li key={comment.url} className="quote">
-                  <blockquote>
-                    <p>{content}</p>
-                    <div className="flex leading-10 gap-2">
-                      <span>by</span>
-                      {renderMention(comment, { preventSpoofing, wordcount }, true)}
-                      <span>{authorName}</span>
-                    </div>
-                  </blockquote>
-                </li>
-              );
-            })}
-          </ul>
+          {uniqueComments.map((comment) => {
+            const sourceLabel = getSourceLabel(comment.url);
+            const authorName = comment.author?.name || sourceLabel;
+            const content = comment.content?.text
+              ? truncateText(comment.content.text, wordcount)
+              : "(mention)";
+            return (
+              <div key={comment.url} className="quote">
+                <blockquote>
+                  <p>{content}</p>
+                  <div className="flex leading-10 gap-2">
+                    <span>by</span>
+                    {renderMention(comment, { preventSpoofing, wordcount }, true)}
+                    <span>{authorName}</span>
+                  </div>
+                </blockquote>
+              </div>
+            );
+          })}
         </>
       )}
       {uniqueReactions.length > 0 && (
-        <>
-          <ul className="mt-16 flex gap-4">
-            {uniqueReactions.map((reaction) => (
-              <li key={reaction.url}>
-                {renderMention(reaction, { preventSpoofing, wordcount })}
-              </li>
-            ))}
-          </ul>
-        </>
+        <div className="mt-16 gap-4 flex flex-row flex-wrap">
+          {uniqueReactions.map((reaction) => (
+            <div key={reaction.url} >
+              {renderMention(reaction, { preventSpoofing, wordcount })}
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );
