@@ -7,6 +7,8 @@
 
 # testing
 /coverage
+/test-results/
+/playwright-report/
 
 # next.js
 /.next/
@@ -17,6 +19,7 @@
 
 # misc
 .DS_Store
+tsconfig.tsbuildinfo
 
 # debug
 npm-debug.log*
@@ -41,3 +44,5 @@ feed.xml
 sitemap.xml
 sitemap-*.xml
 robots.txt
+
+core
