@@ -6,6 +6,7 @@ export default defineConfig({
   expect: {
     timeout: 5_000,
   },
+  reporter: "list",
   use: {
     baseURL: "http://localhost:3000",
     trace: "on-first-retry",
@@ -18,7 +19,7 @@ export default defineConfig({
   ],
   workers: 1,
   webServer: {
-    command: "npm run dev -- --port 3000",
+    command: "npm run build && npm run start -- -p 3000",
     url: "http://localhost:3000",
     reuseExistingServer: !process.env.CI,
     timeout: 180_000,

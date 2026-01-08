@@ -1,96 +1,140 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap");
 @import url("./prism-okaidia.css");
+@import "tailwindcss";
 
-:root {
-  --theme-green: #48731d;
-  --sea-800: #0017c1;
-  --blue-1000: #00118f;
-  --blue-500: #4979f5;
-  --gray-100: #e6e6e6;
-  --gray-200: #cccccc;
-  --gray-536: #767676;
-  --gray-600: #666666;
-  --gray-900: #1a1a1a;
-  --content-max-widh: 1120px;
-  --code-font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono";
-  --max-content-width: calc(767px - 2rem);
+@plugin "daisyui" {
+  themes: caramellatte --default;
 }
 
-body,
-p,
-html,
-textarea,
-input,
-label {
-  color: var(--gray-900);
-  padding: 0;
-  margin: 0;
-  font-family: "Noto Sans JP", sans-serif;
-  font-weight: 400;
-  line-height: 1.5;
-  font-size: 16px;
-  overflow-wrap: anywhere;
+@layer base {
+
+  body,
+  p,
+  html,
+  textarea,
+  input,
+  label {
+    font-family: "Noto Sans JP", sans-serif;
+    overflow-wrap: anywhere;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  p {
+    @apply text-base;
+    @apply leading-[1.5];
+    @apply my-3;
+  }
+
+  h1 {
+    margin: 4rem 0 1.5rem 0;
+    @apply text-3xl;
+    @apply font-black;
+  }
+
+  h2 {
+    margin: 4rem 0 1.5rem 0;
+    @apply text-3xl;
+  }
+
+  h3 {
+    margin: 2.5rem 0 1.5rem 0;
+    @apply text-2xl;
+  }
+
+  h4 {
+    margin: 2.5rem 0 1rem 0;
+    @apply text-xl;
+  }
+
+  h5 {
+    margin: 2.5rem 0 1rem 0;
+    @apply text-lg;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-bold;
+    @apply leading-[1.5];
+  }
 }
 
-p {
-  margin: 1rem 0 1rem 0;
+/* インラインコード */
+p code,
+ul li code {
+  @apply bg-base-200;
+  @apply text-base-content;
+  @apply border-2;
+  @apply border-base-300;
+  @apply text-sm;
+  @apply rounded-full;
+  @apply py-px;
+  @apply px-1;
 }
 
-body {
-  background-color: var(--gray-100);
+/* 引用 */
+.quote blockquote {
+  position: relative;
+  margin: 2rem 0 2rem 0;
+  padding: 0 0 0 2.5rem;
 }
 
-* {
-  box-sizing: border-box;
+.quote blockquote::before {
+  @apply bg-accent;
+  border-radius: 4px;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 4px;
 }
 
-a {
-  color: var(--blue-1000);
-  text-decoration: underline;
-}
+/* svg pan zoom */
 
-a:hover {
-  color: var(--blue-500);
-  text-decoration: none;
-}
-
-h1,
-h2 {
-  margin: 4rem 0 1.5rem 0;
-}
-h3 {
-  margin: 2.5rem 0 1.5rem 0;
-}
-h4,
-h5 {
-  margin: 2.5rem 0 1rem 0;
-}
-
-h1 {
-  font-size: 2.25rem;
-}
-h2 {
-  font-size: 2rem;
-}
-h3 {
-  font-size: 1.75rem;
-}
-h4 {
-  font-size: 1.5rem;
-}
-h5 {
-  font-size: 1.25rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-weight: 500;
+.panzoom svg {
+  @apply size-full;
+  @apply max-h-128;
+  @apply bg-white;
+  border-radius: 0.3rem;
+  @apply border-2;
+  @apply border-base-200;
 }
 
 /* ##### blog ##### */
+
+/* リスト */
+
+.blog ul li {
+  @apply list-disc;
+  @apply ml-8;
+}
+
+.blog ol li {
+  @apply list-decimal;
+  @apply ml-8;
+}
+
+/* リンク */
+
+.blog a {
+  @apply text-info;
+  @apply underline;
+}
+
+.link {
+  @apply text-info;
+  @apply underline;
+}
 
 /* スライド */
 
@@ -122,51 +166,56 @@ h5 {
   }
 }
 
-/* img */
-.blog > p > img {
+.blog>p>img {
   width: 100%;
   max-width: var(--max-content-width);
   display: block;
   margin: 1rem 0;
   padding: 0.5rem;
-  background-color: #fff;
-  box-shadow: 0 3px 10px var(--gray-200);
+  background-color: white;
+  box-shadow: 0 3px 10px var(--color-gray-300);
   border-radius: 3px;
+}
+
+.twemoji {
+  width: 1.5em !important;
+  display: inline !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  vertical-align: text-bottom !important;
 }
 
 /* code block */
 .blog .remark-code-container {
+  @apply text-sm;
   margin: 1rem 0;
-}
-.blog .remark-code-container {
   position: relative;
 }
+
 .blog .remark-code-title {
+  @apply bg-base-200;
+  @apply text-base-content;
+  @apply border-base-300;
+  @apply text-sm;
   position: absolute;
-  background-color: var(--gray-600);
-  color: white;
   border-radius: 0 0 0.2rem 0.2rem;
   left: 1rem;
   padding: 2px 0.5rem;
-  font-family: var(--code-font-family);
 }
 
-.blog .remark-code-title + .remark-highlight pre {
+.blog .remark-code-title+.remark-highlight pre {
   padding-top: calc(2.5rem + 4px);
 }
-/* インラインコード */
-.blog p code,
-.blog ul li code {
-  background-color: var(--gray-200);
-  color: var(--gray-900);
-  font-family: var(--code-font-family);
-  padding: 1px 4px;
-  border-radius: 0.2rem;
-}
+
 /* svg */
 .blog svg {
   background-color: white;
   border-radius: 0.3rem;
+  @apply border-2;
+  @apply border-base-200;
 }
 
 /* 引用 */
@@ -176,12 +225,8 @@ h5 {
   padding: 0 0 0 2.5rem;
 }
 
-.blog blockquote p {
-  color: var(--gray-600);
-}
-
 .blog blockquote ::before {
-  background-color: var(--gray-600);
+  @apply bg-accent;
   border-radius: 4px;
   content: "";
   height: 100%;
@@ -198,16 +243,18 @@ h5 {
 
 /* 数式 */
 .blog .katex {
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
   max-width: 100%;
   display: inline-flex;
   flex-shrink: 1;
 }
+
 .blog .katex::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
+
 .blog math {
   flex-shrink: 0;
   width: auto;
@@ -216,7 +263,7 @@ h5 {
 /* リンクカード */
 .blog .rlc-container {
   color: var(--gray-900);
-  background-color: white;
+  background-color: var(--color-base-100);
   border-radius: 0.5rem;
   width: 100%;
   max-width: var(--max-content-width);
@@ -226,9 +273,11 @@ h5 {
   margin: 1rem 0;
   text-decoration: none;
 }
+
 .blog .rlc-container:hover {
   text-decoration: none;
 }
+
 .blog .rlc-info {
   padding: 1rem;
   height: 8rem;
@@ -236,6 +285,7 @@ h5 {
   display: flex;
   flex-direction: column;
 }
+
 .blog .rlc-favicon {
   width: 1rem;
   height: 1rem;
@@ -244,10 +294,12 @@ h5 {
   margin: auto 0.25rem auto 0;
   display: block;
 }
+
 .blog .rlc-url-container {
   display: flex;
   margin-top: auto;
 }
+
 .blog .rlc-url {
   width: 100%;
   height: 1.5rem;
@@ -256,9 +308,11 @@ h5 {
   text-overflow: ellipsis;
   color: var(--gray-600);
 }
+
 .blog .rlc-image-container {
   order: -1;
 }
+
 .blog .rlc-image-container img {
   height: auto;
   width: 100%;
@@ -266,6 +320,7 @@ h5 {
   aspect-ratio: 1.911/1;
   object-fit: cover;
 }
+
 .blog .rlc-description {
   width: 100%;
   color: var(--gray-600);
@@ -274,6 +329,7 @@ h5 {
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
+
 .blog .rlc-title {
   font-weight: 700;
   width: 100%;
@@ -287,17 +343,21 @@ h5 {
 .blog .rlc-info {
   position: relative;
 }
+
 .blog :is(.rlc-title, .rlc-url-container, .rlc-url, .rlc-description) {
   z-index: 1;
   transition: color 0.3s ease;
 }
+
 .blog .rlc-container:hover :is(.rlc-title, .rlc-url, .rlc-description) {
   color: #fff;
 }
+
 .blog .rlc-container:hover .rlc-info::before {
   transform: scaleX(1);
   transform-origin: left;
 }
+
 .blog .rlc-info::before {
   position: absolute;
   top: 0;
@@ -316,12 +376,26 @@ h5 {
 /* table */
 .blog th,
 .blog td {
-  border: 1px solid var(--gray-600);
   padding: 0.5rem 1rem;
+  @apply border-base-content;
+  @apply border-2;
 }
+
+.blog th {
+  @apply bg-base-200;
+}
+
+.blog tr {
+  @apply odd:bg-base-100;
+  @apply even:bg-base-200;
+}
+
 .blog table {
   margin: 1rem 0;
   border-collapse: collapse;
+  @apply w-full;
+  @apply overflow-x-auto;
+  @apply block;
 }
 
 @media screen and (min-width: 768px) {
@@ -329,13 +403,16 @@ h5 {
     flex-direction: row;
     height: 8rem;
   }
+
   .blog .rlc-info {
     overflow: hidden;
   }
+
   .blog .rlc-image-container img {
     width: 244.6px;
     height: 100%;
   }
+
   .blog .rlc-url-container {
     margin-top: auto;
   }

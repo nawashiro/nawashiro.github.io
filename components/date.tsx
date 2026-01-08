@@ -9,7 +9,7 @@ export default function Date({ dateString }: DateProps) {
   const date = parseISO(dateString);
   return (
     <time dateTime={dateString} className={cx("dt-published", "published")}>
-      {format(date, "yyyy-MM-dd")}
+      {format(date, "yyyy年M月d日")}
     </time>
   );
 }

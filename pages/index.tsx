@@ -1,25 +1,21 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
-import utilStyles from "../styles/utils.module.css";
 import {
   getPostNetworkData,
   getSortedPostsData,
   getIndexPagesData,
   getVersion,
-  type NetworkData,
   type PostMeta,
 } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
-import indexStyle from "../styles/index.module.css";
-import NetworkGraph from "../components/network_graph";
-import cx from "classnames";
 import type { GetStaticProps } from "next";
-import Image from "next/image";
+import { FaArrowRight } from "react-icons/fa";
+import { Graphviz } from "@hpcc-js/wasm-graphviz";
 
 type HomeProps = {
   allPostsData: PostMeta[];
-  networkData: NetworkData;
+  graphSvg: string;
   indexPagesData: PostMeta[];
   version: string;
 };
@@ -29,10 +25,27 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const networkData = getPostNetworkData();
   const indexPagesData = getIndexPagesData();
   const version = getVersion();
+
+  let dot =
+    'digraph site_graph{graph[layout="fdp"];node[shape="plain",style="rounded,filled",fillcolor="#c8deff",penwidth=1.2,fontname="Helvetica",fontsize=11,fontcolor="#24292F"];';
+
+  networkData.nodes.map((node) => {
+    dot += `"${node.id}"[URL="${process.env.NEXT_PUBLIC_SITE_URL}/posts/${node.id}",label="${node.label}",target="_top"];`;
+  });
+
+  networkData.edges.map((edge) => {
+    dot += `"${edge.from}"->"${edge.to}";`;
+  });
+
+  dot += "}";
+
+  const graphviz = await Graphviz.load();
+  const graphSvg = graphviz.dot(dot);
+
   return {
     props: {
       allPostsData,
-      networkData,
+      graphSvg,
       indexPagesData,
       version,
     },
@@ -41,11 +54,12 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 
 export default function Home({
   allPostsData,
-  networkData,
+  graphSvg,
   indexPagesData,
   version,
 }: HomeProps) {
   const note = "I am a freelance programmer. looking for a job.";
+  const heroLetters = "Development".split("");
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
   const description =
     "エンジニア・プログラマーNawashiroの個人サイト。プロジェクト、デジタルガーデン、技術記事など。";
@@ -111,28 +125,41 @@ export default function Home({
           href="/rss/feed.json"
         />
       </Head>
-      <section className={indexStyle.hero}>
-        <p className={indexStyle.heroA}>
-          <span>D</span>
-          <span>e</span>
-          <span>v</span>
-          <span>e</span>
-          <span>l</span>
-          <span>o</span>
-          <span>p</span>
-          <span>m</span>
-          <span>e</span>
-          <span>n</span>
-          <span>t</span>
-        </p>
-        <div className={indexStyle.herotext}>
-          <p>
-            {note}
-            <br />
-            Website version {version}.
+      <section className="hero">
+        <div className="w-full space-y-3">
+          <p className="text-3xl font-black text-success tracking-[0.2rem] md:text-6xl">
+            {heroLetters.map((letter, index) => (
+              <span
+                className="animate-pulse inline-block"
+                key={`${letter}-${index}`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {letter}
+              </span>
+            ))}
           </p>
-          <div className={indexStyle.feedLinks}>
+          <div>
+            <p className="space-x-2 my-0">
+              <span>{note}</span>
+              <span>
+                <Link
+                  href="/posts/links"
+                  className="btn btn-outline btn-sm h-auto"
+                >
+                  Recruit?
+                </Link>
+              </span>
+            </p>
+            <p className="my-0">
+              Website version <code>{version}</code>.
+            </p>
+          </div>
+          <div className="join">
+            <span className="btn join-item btn-success no-animation cursor-default btn-active">
+              Follow <FaArrowRight />
+            </span>
             <a
+              className="btn join-item"
               href="/rss/feed.xml"
               target="_blank"
               rel="noopener noreferrer"
@@ -141,6 +168,7 @@ export default function Home({
               RSS
             </a>
             <a
+              className="btn join-item"
               href="/rss/atom.xml"
               target="_blank"
               rel="noopener noreferrer"
@@ -149,6 +177,7 @@ export default function Home({
               Atom
             </a>
             <a
+              className="btn join-item"
               href="/rss/feed.json"
               target="_blank"
               rel="noopener noreferrer"
@@ -161,38 +190,7 @@ export default function Home({
       </section>
 
       <section>
-        <div className={indexStyle.card}>
-          <div className={indexStyle.imgWrap}>
-            <Image
-              src="/images/code.webp"
-              alt="ハッカソンのために書いたコード"
-              width={640}
-              height={360}
-              style={{ width: "100%", height: "auto" }}
-            />
-          </div>
-          <div className={indexStyle.innerCard}>
-            <div>
-              <p>
-                エンジニア集会ハッカソンにて
-                <a href="https://nostr.com/">Nostrプロトコル</a>
-                のWebクライアント「NosHagaki」を開発しました。ユーザーにバーチャルな住所を割り当てることにより、時間がかかるやり取りを実現しています。
-              </p>
-              <div>
-                <a
-                  className={indexStyle.cardLink}
-                  href="https://nos-hagaki.vercel.app/"
-                >
-                  NosHagakiを開く
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2 className={indexStyle.h2}>About</h2>
+        <h2>About</h2>
         <p>
           ここはNawashiroのデジタルガーデンです。一般的なブログと違うのは、ページを互いにリンクしたり、ときにはインデックスしたりなど、手作業でキュレーションしているところです。
         </p>
@@ -206,24 +204,19 @@ export default function Home({
         </p>
         <p>
           しかし、ここでは前向きにとらえてください。私たちはアイデアをテストし、フィードバックを送りあって、意見を修正していくことができます。
-          <Link href="/posts/links">各種SNSへのリンクを載せておきます</Link>。
+          <Link className="link link-hover" href="/posts/links">
+            各種SNSへのリンクを載せておきます
+          </Link>
+          。
         </p>
       </section>
 
       <section>
-        <h2 className={indexStyle.h2}>Graph</h2>
-        <p>
-          各ページの相互関係をグラフに出力しています。ノードをダブルクリックするとページを開くことができます。拡大縮小したり、ぐりぐりとノードを移動させたりして遊んでみてください。
-        </p>
-        <NetworkGraph networkData={networkData} height={"500px"} />
-      </section>
-
-      <section>
-        <h2 className={indexStyle.h2}>Index</h2>
-        <ul className={utilStyles.list}>
+        <h2>Index</h2>
+        <ul className="space-y-3">
           {indexPagesData.map(({ id, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link className={utilStyles.link} href={`/posts/${id}`}>
+            <li key={id}>
+              <Link className="link link-hover text-lg" href={`/posts/${id}`}>
                 {title}
               </Link>
             </li>
@@ -232,26 +225,28 @@ export default function Home({
       </section>
 
       <section>
-        <h2 className={indexStyle.h2}>All Pages</h2>
-        <ul className={cx(utilStyles.list, "h-feed", "hfeed")}>
+        <h2>Graph</h2>
+        <p>
+          各ページの相互関係をグラフに出力しています。ノードをクリックするとページを開くことができます。拡大縮小したり、ぐりぐりと移動させたりして遊んでみてください。
+        </p>
+        <div
+          dangerouslySetInnerHTML={{ __html: graphSvg }}
+          className="panzoom"
+        />
+      </section>
+
+      <section>
+        <h2>All Pages</h2>
+        <ul className="h-feed hfeed space-y-3">
           {allPostsData.map(({ id, date, title }) => (
-            <li
-              className={cx(utilStyles.listItem, "h-entry", "hentry")}
-              key={id}
-            >
+            <li className="h-entry hentry" key={id}>
               <Link
-                className={cx(
-                  utilStyles.link,
-                  "u-url",
-                  "p-name",
-                  "entry-title"
-                )}
+                className="link link-hover text-lg u-url p-name entry-title"
                 href={`/posts/${id}`}
               >
                 {title}
               </Link>
-              <br />
-              <p className={utilStyles.lightText}>
+              <p className="text-sm text-base-content/70">
                 <Date dateString={date} />
               </p>
             </li>
