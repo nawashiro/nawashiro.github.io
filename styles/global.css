@@ -262,31 +262,38 @@ ul li code {
 
 /* リンクカード */
 .blog .rlc-container {
-  color: var(--gray-900);
-  background-color: var(--color-base-100);
-  border-radius: 0.5rem;
-  width: 100%;
-  max-width: var(--max-content-width);
-  overflow: hidden;
+  @apply card;
+  @apply bg-white;
+  @apply shadow-sm;
+  @apply overflow-hidden;
+  @apply no-underline;
+  @apply min-h-[136px];
+}
+
+/* rlc-info */
+
+.blog .rlc-container .rlc-info {
+  @apply order-2;
+  @apply card-body;
+}
+
+.blog .rlc-container .rlc-info .rlc-title {
+  @apply card-title;
+  @apply text-base;
+}
+
+.blog .rlc-container .rlc-info .rlc-description {
+  @apply line-clamp-2;
+  @apply md:line-clamp-1;
+  @apply min-h-[24px];
+}
+
+.blog .rlc-container .rlc-info .rlc-url-container {
   display: flex;
-  flex-direction: column;
-  margin: 1rem 0;
-  text-decoration: none;
+  margin-top: auto;
 }
 
-.blog .rlc-container:hover {
-  text-decoration: none;
-}
-
-.blog .rlc-info {
-  padding: 1rem;
-  height: 8rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.blog .rlc-favicon {
+.blog .rlc-container .rlc-info .rlc-url-container .rlc-favicon {
   width: 1rem;
   height: 1rem;
   margin: 0;
@@ -295,43 +302,7 @@ ul li code {
   display: block;
 }
 
-.blog .rlc-url-container {
-  display: flex;
-  margin-top: auto;
-}
-
-.blog .rlc-url {
-  width: 100%;
-  height: 1.5rem;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  color: var(--gray-600);
-}
-
-.blog .rlc-image-container {
-  order: -1;
-}
-
-.blog .rlc-image-container img {
-  height: auto;
-  width: 100%;
-  margin: 0;
-  aspect-ratio: 1.911/1;
-  object-fit: cover;
-}
-
-.blog .rlc-description {
-  width: 100%;
-  color: var(--gray-600);
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-}
-
-.blog .rlc-title {
-  font-weight: 700;
+.blog .rlc-container .rlc-info .rlc-url-container .rlc-url {
   width: 100%;
   height: 1.5rem;
   overflow: hidden;
@@ -339,38 +310,20 @@ ul li code {
   text-overflow: ellipsis;
 }
 
-/* リンクカード hover アニメーション */
-.blog .rlc-info {
-  position: relative;
+/* rlc-image-container */
+
+.blog .rlc-container .rlc-image-container {
+  @apply flex;
+  @apply items-center;
+  @apply justify-center;
+  @apply order-1;
+  @apply aspect-[1.911/1];
 }
 
-.blog :is(.rlc-title, .rlc-url-container, .rlc-url, .rlc-description) {
-  z-index: 1;
-  transition: color 0.3s ease;
-}
-
-.blog .rlc-container:hover :is(.rlc-title, .rlc-url, .rlc-description) {
-  color: #fff;
-}
-
-.blog .rlc-container:hover .rlc-info::before {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-.blog .rlc-info::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: var(--gray-900);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: all 0.5s ease;
-  transition-property: transform;
+.blog .rlc-container .rlc-image-container img {
+  @apply w-full;
+  @apply h-full;
+  @apply object-cover;
 }
 
 /* table */
