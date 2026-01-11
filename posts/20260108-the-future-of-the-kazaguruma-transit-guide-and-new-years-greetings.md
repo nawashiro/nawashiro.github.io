@@ -70,6 +70,10 @@ https://github.com/code4chiyoda/chiyoda_city_main_facilities
 
 改めまして、明けましておめでとうございます。
 
+---
+
+ここまで読んでくれてありがとう。よければでいいのだが、フィードバックがほしい。 [Bluesky](https://bsky.app/profile/nawashiro.dev/post/3mc4hj7nu5v2x) や [Fediverse](https://gamelinks007.net/@nawashiro/115874063198547762) から返信するとウェブサイト内にも反映される。健闘を祈る。
+
 ## 関連項目
 
 - [風ぐるま乗換案内をつくった](20250428-kazaguruma-transit.md)
