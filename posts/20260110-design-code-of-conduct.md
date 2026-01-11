@@ -228,4 +228,8 @@ https://github.com/nawashiro/9aa3-license/blob/main/9aa3-0.1.md
 - [GitHub](https://github.com/nawashiro/9aa3-license/blob/main/9aa3-0.1.md) に上げてみた。
 - あとは QR コードつきの画像素材でも作っておけば、何かには使えそう。
 
+---
+
+ここまで読んでくれてありがとう。よければでいいのだが、フィードバックがほしい。 [Bluesky](https://bsky.app/profile/nawashiro.dev/post/3mc4hjycwox2e) や [Fediverse](https://gamelinks007.net/@nawashiro/115874064806698390) から返信するとウェブサイト内にも反映される。健闘を祈る。
+
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
