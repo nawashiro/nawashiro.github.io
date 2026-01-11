@@ -111,3 +111,7 @@ OpenSats にも応募しなければなりません。たいへん。
 ---
 
 ここまで読んでくれてありがとう。よければでいいのだが、フィードバックがほしい。 [Bluesky](https://bsky.app/profile/nawashiro.dev/post/3m7jgahb2zf2n) や [Fediverse](https://gamelinks007.net/@nawashiro/115687074337463084) から返信するとウェブサイト内にも反映される。健闘を祈る。
+
+## 関連項目
+
+- [風ぐるま乗換案内をつくった](20250428-kazaguruma-transit.md)
