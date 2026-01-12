@@ -2,7 +2,7 @@
 title: "社会契約と成人: おばあちゃんが語る"
 date: "2026-01-12T11:15:48+09:00"
 ---
-<img class="u-featured" src="https://emoji-route.deno.dev/png/%F0%9F%93%9C" alt="glass" style="display:none"/>
+<img class="u-featured" src="https://emoji-route.deno.dev/png/%F0%9F%93%9C" alt="契約が書いてありそうなスクロール" style="display:none"/>
 
 ![契約が書いてありそうなスクロール](https://emoji-route.deno.dev/png/%F0%9F%93%9C)
 
