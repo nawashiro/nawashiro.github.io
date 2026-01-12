@@ -1,6 +1,6 @@
 ---
 title: "社会契約と成人: おばあちゃんが語る"
-date: 2026-01-12T11:15:48+09:00
+date: "2026-01-12T11:15:48+09:00"
 ---
 <img class="u-featured" src="https://emoji-route.deno.dev/png/%F0%9F%93%9C" alt="glass" style="display:none"/>
 
