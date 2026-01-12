@@ -1,6 +1,6 @@
 ---
-title: 旧来型ソーシャルウェブの経験的仮定
-date: 2026-01-12T16:04:57+09:00
+title: "旧来型ソーシャルウェブの経験的仮定"
+date: "2026-01-12T16:04:57+09:00"
 ---
 <p class="e-bridgy-mastodon-content e-bridgy-bluesky-content" style="display:none;" >
 個人は、自己認識と対他人の認識に属性を求める。
