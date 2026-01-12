@@ -1,12 +1,13 @@
 ---
 title: "📱ソーシャルメディア - インデックス"
-date: "2024-12-09"
+date: "2026-01-12T16:07:26+09:00"
 ---
 
 ソーシャルメディアに関する記事をまとめています。
 
 ## 雑記
 
+- [旧来型ソーシャルウェブの経験的仮定](20260112-empirical-assumptions-of-the-traditional-social-web.md)
 - [理想のソーシャルメディア](240613-ideal-social-media.md)
 - [SNSはなぜ人を過激化させるのか - 読書メモ](240810-social-media-prism.md)
 - [禅なBluesky](241124-zen-bluesky.md)
