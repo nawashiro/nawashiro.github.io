@@ -111,3 +111,16 @@ date: "2024-12-17"
 ## 感想
 
 かなり「エレガント」な SF 小説。読む前は色々心配してたけど、読み始めて全部霧散した。観察をし、仮説を立て…という科学しぐさをたくさん楽しめる。いろんな人がいろんな仮説を立てて力説してくれる。とても楽しい。あと、中国の暗い歴史とそれによる深い絶望の話もあった。後書読むと「問題意識を喚起させるつもりは無い」とわかるけど、初見の時はフィクションかと思うくらいショッキングだったので、そういうのが苦手な人は第二部から読んだ方がいいかも。
+
+<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/4jJcfPa">
+  <figure class="px-5 py-5">
+    <img
+      src="https://m.media-amazon.com/images/I/81g1np2nIYL._SY425_.jpg"
+      alt="Book"
+      class="rounded-xl md:max-h-48" />
+  </figure>
+  <div class="card-body">
+    <p class="card-title line-clamp-1">三体 (ハヤカワ文庫SF)</p>
+    <p>Amazon PR</p>
+  </div>
+</a>

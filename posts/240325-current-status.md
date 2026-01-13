@@ -80,19 +80,6 @@ obsidian-book-search-plugin はデータソースに Google Books を使う。�
   </div>
 </a>
 
-<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/49yZ7Hk">
-  <figure class="px-5 py-5">
-    <img
-      src="https://m.media-amazon.com/images/I/41Da3cXRJjL._SY425_.jpg"
-      alt="Book"
-      class="rounded-xl md:max-h-48" />
-  </figure>
-  <div class="card-body">
-    <p class="card-title line-clamp-1">日本の名随筆 (別巻16) 星座</p>
-    <p>Amazon PR</p>
-  </div>
-</a>
-
 ### シムシティと災害
 
 「地震超怖い。何とかならないの？」
@@ -105,11 +92,33 @@ obsidian-book-search-plugin はデータソースに Google Books を使う。�
 
 思えば、東京の歴史は水害と共にあった。[『家康、江戸を建てる』祥伝社文庫](https://www.shodensha.co.jp/ieyasu/) を読むと、かつて沼地だった江戸を、荒川の治水工事でなんとかするという話が出てくる。ずっと闘ってきたのだ。そしてこれからも。
 
-ttps://amzn.to/3Z7VKSW
-
 そういえば、[『岩波データサイエンス Vol．6』](https://www.iwanami.co.jp/book/b287514.html) に『リアルなシムシティの夢』という話が収録されていた気がする。シミュレーターとしてのシムシティ活用の話で、昨今で言うところのデジタルツインのようなものを言っていたのではなかったか。
 
-ttps://amzn.to/4qRbUfA
+<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/3Z7VKSW">
+  <figure class="px-5 py-5">
+    <img
+      src="https://m.media-amazon.com/images/I/91ygOKJv2hL._SY425_.jpg"
+      alt="Book"
+      class="rounded-xl md:max-h-48" />
+  </figure>
+  <div class="card-body">
+    <p class="card-title line-clamp-1">家康、江戸を建てる (祥伝社文庫)</p>
+    <p>Amazon PR</p>
+  </div>
+</a>
+
+<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/4qRbUfA">
+  <figure class="px-5 py-5">
+    <img
+      src="https://m.media-amazon.com/images/I/71rM9VXFWjL._SY425_.jpg"
+      alt="Book"
+      class="rounded-xl md:max-h-48" />
+  </figure>
+  <div class="card-body">
+    <p class="card-title line-clamp-1">岩波データサイエンス Vol.6</p>
+    <p>Amazon PR</p>
+  </div>
+</a>
 
 ### ベツレヘムの星
 
@@ -126,6 +135,19 @@ ttps://amzn.to/4qRbUfA
 そういえば、『きよしこの夜』だが、「み母の胸に」派と「まぶねの中に」派がいるらしい。私が学校で習ったのは後者である。まぶねとはまぐさ箱、ようするに馬の餌箱のことで、馬小屋で生まれたことを示している。
 
 検索してみると、[このYahoo!知恵袋](https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1337789933) がでてきた。出典が明記されていないので孫引きは控えるが、面白い。
+
+<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/49yZ7Hk">
+  <figure class="px-5 py-5">
+    <img
+      src="https://m.media-amazon.com/images/I/41Da3cXRJjL._SY425_.jpg"
+      alt="Book"
+      class="rounded-xl md:max-h-48" />
+  </figure>
+  <div class="card-body">
+    <p class="card-title line-clamp-1">日本の名随筆 (別巻16) 星座</p>
+    <p>Amazon PR</p>
+  </div>
+</a>
 
 ### Hajko
 
