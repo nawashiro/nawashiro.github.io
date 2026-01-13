@@ -67,21 +67,31 @@ obsidian-book-search-plugin はデータソースに Google Books を使う。�
 
 『日本の名随筆 (別巻 16) 星座』では、天の川から水が溢れ出して水害が起きているさまを想像させる、などと解説がなされていたはずである。
 
-<a class="rlc-container" href="https://amzn.to/4pUVSk1">
-  <div class="rlc-info">
-    <div class="rlc-title">思い出す事など 他七篇 (岩波文庫 緑 11-6)</div>
-    <div class="rlc-description">Amazon PR</div>
-    <div class="rlc-url-container">
-      <img class="rlc-favicon" src="https://www.google.com/s2/favicons?domain=amzn.to" alt="Amazon favicon" width="16" height="16">
-      <span class="rlc-url">amzn.to</span>
-    </div>
+<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/4qKPsEI">
+  <figure class="px-5 py-5">
+    <img
+      src=""
+      alt="Book"
+      class="rounded-xl md:max-h-48" />
+  </figure>
+  <div class="card-body">
+    <p class="card-title line-clamp-1">思い出す事など 他七篇 (岩波文庫 緑 11-6)</p>
+    <p>Amazon PR</p>
   </div>
-  <div class="rlc-image-container">
-      <img class="rlc-image" src="https://m.media-amazon.com/images/I/41dfysyFviL._SY445_SX342_PQ99_.jpg" >
-    </div>
 </a>
 
-https://amzn.to/4qKPsEI
+<a class="card  md:card-side my-4 bg-white shadow-sm">
+  <figure class="px-5 py-5">
+    <img
+      src="https://m.media-amazon.com/images/I/41dfysyFviL._SY445_SX342_PQ99_.jpg"
+      alt="Book"
+      class="rounded-xl md:max-h-48" />
+  </figure>
+  <div class="card-body">
+    <p class="card-title line-clamp-1">思い出す事など 他七篇 (岩波文庫 緑 11-6)</p>
+    <p>Amazon PR</p>
+  </div>
+</a>
 
 ### シムシティと災害
 
@@ -95,11 +105,11 @@ https://amzn.to/4qKPsEI
 
 思えば、東京の歴史は水害と共にあった。[『家康、江戸を建てる』祥伝社文庫](https://www.shodensha.co.jp/ieyasu/) を読むと、かつて沼地だった江戸を、荒川の治水工事でなんとかするという話が出てくる。ずっと闘ってきたのだ。そしてこれからも。
 
-https://amzn.to/3Z7VKSW
+ttps://amzn.to/3Z7VKSW
 
 そういえば、[『岩波データサイエンス Vol．6』](https://www.iwanami.co.jp/book/b287514.html) に『リアルなシムシティの夢』という話が収録されていた気がする。シミュレーターとしてのシムシティ活用の話で、昨今で言うところのデジタルツインのようなものを言っていたのではなかったか。
 
-https://amzn.to/4qRbUfA
+ttps://amzn.to/4qRbUfA
 
 ### ベツレヘムの星
 
