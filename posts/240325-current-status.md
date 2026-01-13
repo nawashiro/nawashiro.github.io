@@ -59,8 +59,6 @@ obsidian-book-search-plugin はデータソースに Google Books を使う。�
 
 夏目漱石の [『思い出すことなど』青空文庫（底本：ちくま文庫）](https://www.aozora.gr.jp/cards/000148/files/792_14937.html) を読んでいる。というのも、[『日本の名随筆 (別巻 16) 星座』作品社](https://sakuhinsha.com/essay/8366.html) で引用されていた俳句が気になったからである。たしか『天の川』飯島晴子 に出てきたのだったか……
 
-https://amzn.to/4pUVSk1
-
 そのまま引用する。
 
 > 病んで夢む天の川より出水かな
@@ -68,6 +66,20 @@ https://amzn.to/4pUVSk1
 あまり良い状況を反映した句ではない。この句が登場する章では、東京地方での水害と病気の悪化が描かれる。
 
 『日本の名随筆 (別巻 16) 星座』では、天の川から水が溢れ出して水害が起きているさまを想像させる、などと解説がなされていたはずである。
+
+<a class="rlc-container" href="https://amzn.to/4pUVSk1">
+  <div class="rlc-info">
+    <div class="rlc-title">思い出す事など 他七篇 (岩波文庫 緑 11-6)</div>
+    <div class="rlc-description">Amazon PR</div>
+    <div class="rlc-url-container">
+      <img class="rlc-favicon" src="https://www.google.com/s2/favicons?domain=amzn.to" alt="Amazon favicon" width="16" height="16">
+      <span class="rlc-url">amzn.to</span>
+    </div>
+  </div>
+  <div class="rlc-image-container">
+      <img class="rlc-image" src="https://m.media-amazon.com/images/I/41dfysyFviL._SY445_SX342_PQ99_.jpg" >
+    </div>
+</a>
 
 https://amzn.to/4qKPsEI
 
