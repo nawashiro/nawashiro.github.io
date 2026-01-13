@@ -67,10 +67,10 @@ obsidian-book-search-plugin はデータソースに Google Books を使う。�
 
 『日本の名随筆 (別巻 16) 星座』では、天の川から水が溢れ出して水害が起きているさまを想像させる、などと解説がなされていたはずである。
 
-<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/4qKPsEI">
+<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/4jDBqST">
   <figure class="px-5 py-5">
     <img
-      src=""
+      src="https://m.media-amazon.com/images/I/81kH0f2MbkL._SY425_.jpg"
       alt="Book"
       class="rounded-xl md:max-h-48" />
   </figure>
@@ -80,15 +80,15 @@ obsidian-book-search-plugin はデータソースに Google Books を使う。�
   </div>
 </a>
 
-<a class="card  md:card-side my-4 bg-white shadow-sm">
+<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/49yZ7Hk">
   <figure class="px-5 py-5">
     <img
-      src="https://m.media-amazon.com/images/I/41dfysyFviL._SY445_SX342_PQ99_.jpg"
+      src="https://m.media-amazon.com/images/I/41Da3cXRJjL._SY425_.jpg"
       alt="Book"
       class="rounded-xl md:max-h-48" />
   </figure>
   <div class="card-body">
-    <p class="card-title line-clamp-1">思い出す事など 他七篇 (岩波文庫 緑 11-6)</p>
+    <p class="card-title line-clamp-1">日本の名随筆 (別巻16) 星座</p>
     <p>Amazon PR</p>
   </div>
 </a>
