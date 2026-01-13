@@ -47,3 +47,16 @@ date: "2024-12-17"
 円城塔『エピローグ』では脳の中で兵器と美女は近いところにあると言われていたけど、そんな兵器の魅力に憑かれてしまった人が出てくる。旅立ってしまった人との付き合いも描かれている。意識すると消えてしまうけど、実は居るよ、というのは私に合った考え方の気がする。そして、劉慈欣らしい、ロマンチックなよい読後感。
 
 ところでこれ、全世界の情報科学文明を滅ぼしかねないけど、核と同じで抑止力として使われるのかな。そこらへんは描かれていない。直近に観た映画が『オッペンハイマー』だったからちょっと気になった。
+
+<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/4bsn6dV">
+  <figure class="px-5 py-5">
+    <img
+      src="https://m.media-amazon.com/images/I/81lv8ZrREcL._SY425_.jpg"
+      alt="Book"
+      class="rounded-xl md:max-h-48" />
+  </figure>
+  <div class="card-body">
+    <p class="card-title line-clamp-1">三体０【ゼロ】　球状閃電 (ハヤカワ文庫SF) </p>
+    <p>Amazon PR</p>
+  </div>
+</a>

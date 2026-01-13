@@ -37,3 +37,16 @@ date: "2024-12-17"
 ## 感想
 
 長い物語だった。化学の戦争、物理学の戦争、数学の戦争に連ねて言うのであれば、量子力学の戦争、宇宙社会学の戦争、物理法則の戦争、数学基礎理論の戦争…って感じだろうか。物理法則で展開される焦土作戦が感じさせる絶望といったらない。そして、やはり外せないのはラブロマンス。読み始めた頃「劉慈欣の書くラブロマンス好きかも知れない」と言ったのは間違いじゃなかった。星と宇宙をプレゼントする恋愛ってなんだよ。そして読後感も素晴らしい。新宇宙の発足とそこで安らかに生活できることを願って。
+
+<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/49hJx4e">
+  <figure class="px-5 py-5">
+    <img
+      src="https://m.media-amazon.com/images/I/81zrQHvoWQS._SY425_.jpg"
+      alt="Book"
+      class="rounded-xl md:max-h-48" />
+  </figure>
+  <div class="card-body">
+    <p class="card-title line-clamp-1">三体III 死神永生 下</p>
+    <p>Amazon PR</p>
+  </div>
+</a>

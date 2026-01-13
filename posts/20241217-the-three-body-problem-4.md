@@ -77,3 +77,16 @@ date: "2024-12-17"
 1. 程心は、雲天明に星を贈られる。しかし気づいた頃には遅く、程心が進める階梯計画のために脳だけになって宇宙へ送られてしまう。
 2. 三体世界の攻撃に、程心は報復ボタンを押せずにおり、地球は三体世界に支配されてしまうが、四次元状態になっていた宇宙艦により報復が実行される。
 3. 報復による攻撃によって三体世界は滅び、また地球も滅びると思われた。智子や雲天明から「安全通知」と「物語」の情報を得て、地球を滅びから回避させる試みが始まる。
+
+<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/49SqEVB">
+  <figure class="px-5 py-5">
+    <img
+      src="https://m.media-amazon.com/images/I/81ATPl9QRHL._SY425_.jpg"
+      alt="Book"
+      class="rounded-xl md:max-h-48" />
+  </figure>
+  <div class="card-body">
+    <p class="card-title line-clamp-1">三体3　死神永生　上 (ハヤカワ文庫SF)</p>
+    <p>Amazon PR</p>
+  </div>
+</a>

@@ -30,3 +30,16 @@ date: "2024-12-17"
 ## 感想
 
 ヒャーッ！って感じ。1 ほどのスピード感は無いものの、前に出されたヒントが生かされたり、大史が出てきたり、とてもうれしい。これでまだ続きがあるってマジ？
+
+<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/49RR1ek">
+  <figure class="px-5 py-5">
+    <img
+      src="https://m.media-amazon.com/images/I/81X-x06KAgL._SY425_.jpg"
+      alt="Book"
+      class="rounded-xl md:max-h-48" />
+  </figure>
+  <div class="card-body">
+    <p class="card-title line-clamp-1">三体2 黒暗森林 下 (ハヤカワ文庫SF)</p>
+    <p>Amazon PR</p>
+  </div>
+</a>
