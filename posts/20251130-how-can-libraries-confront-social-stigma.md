@@ -28,6 +28,19 @@ date: "2025-11-30T20:07:06+09:00"
 
 [^1]: 障害年金をもらう前にお世話になったことがあります。セカンドハーベスト・ジャパンのみなさま、その節は本当にありがとうございました。
 
+<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/49u8fgA">
+  <figure class="px-5 py-5">
+    <img
+      src="https://m.media-amazon.com/images/I/81ctl2EZFRL._SY342_.jpg"
+      alt="Book"
+      class="rounded-xl md:max-h-48" />
+  </figure>
+  <div class="card-body">
+    <p class="card-title line-clamp-1">拝啓 市長さま、こんな図書館をつくりましょう</p>
+    <p>Amazon PR</p>
+  </div>
+</a>
+
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon) [](https://brid.gy/publish/github)
 
 ---

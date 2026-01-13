@@ -26,6 +26,19 @@ date: "2025-11-30T14:58:30+09:00"
 
 [地域包括支援センター - Google Search](https://www.google.com/search?q=地域包括支援センター)
 
+<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/3Ni2aMY">
+  <figure class="px-5 py-5">
+    <img
+      src="https://m.media-amazon.com/images/I/810m47OeI6L._SY342_.jpg"
+      alt="Book"
+      class="rounded-xl md:max-h-48" />
+  </figure>
+  <div class="card-body">
+    <p class="card-title line-clamp-1">親不孝介護　距離を取るからうまくいく</p>
+    <p>Amazon PR</p>
+  </div>
+</a>
+
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon) [](https://brid.gy/publish/github) <a class="u-in-reply-to" href="https://github.com/nawashiro/nawashiro.github.io"></a>
 
 ---
