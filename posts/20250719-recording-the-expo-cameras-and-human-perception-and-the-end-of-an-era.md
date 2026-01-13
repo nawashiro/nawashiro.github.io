@@ -59,6 +59,32 @@ Kodak EKTAR H35 を購入した。
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon) [](https://brid.gy/publish/github) <a class="u-in-reply-to" href="https://github.com/nawashiro/nawashiro.github.io"></a>
 
+<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/49PzVhc">
+  <figure class="px-5 py-5">
+    <img
+      src="https://m.media-amazon.com/images/I/71QoTmyqHQL._AC_SY679_.jpg"
+      alt="Book"
+      class="rounded-xl md:max-h-48" />
+  </figure>
+  <div class="card-body">
+    <p class="card-title line-clamp-1">学研 大人の科学マガジン BEST SELECTION02 二眼レフカメラ Q750681</p>
+    <p>Amazon PR</p>
+  </div>
+</a>
+
+<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/4pVhtZD">
+  <figure class="px-5 py-5">
+    <img
+      src="https://m.media-amazon.com/images/I/71Rj4BITQ3L._AC_SX522_.jpg"
+      alt="Book"
+      class="rounded-xl md:max-h-48" />
+  </figure>
+  <div class="card-body">
+    <p class="card-title line-clamp-1">#</p>
+    <p>Amazon PR</p>
+  </div>
+</a>
+
 ---
 
 ここまで読んでくれてありがとう。よければでいいのだが、フィードバックがほしい。 [Bluesky](https://bsky.app/profile/nawashiro.dev/post/3lucidypnts22) や [Mastodon](https://gamelinks007.net/@nawashiro/114878829258549313) 、[Github](https://github.com/nawashiro/nawashiro.github.io/issues/173#issue-3677517524) から返信するとウェブサイト内にも反映される。健闘を祈る。
