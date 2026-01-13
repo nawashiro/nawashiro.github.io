@@ -80,7 +80,7 @@ Kodak EKTAR H35 を購入した。
       class="rounded-xl md:max-h-48" />
   </figure>
   <div class="card-body">
-    <p class="card-title line-clamp-1">#</p>
+    <p class="card-title line-clamp-1">コダック(Kodak) 【国内正規品】 フィルムカメラ EKTAR H35 ハーフフレーム サンド</p>
     <p>Amazon PR</p>
   </div>
 </a>
