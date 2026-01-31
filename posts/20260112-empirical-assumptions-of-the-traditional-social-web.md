@@ -25,7 +25,6 @@ date: "2026-01-12T16:04:57+09:00"
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
 
-
 ---
 
 ここまで読んでくれてありがとう。よければでいいのだが、フィードバックがほしい。 [Bluesky](https://bsky.app/profile/nawashiro.dev/post/3mc7j5pqp6v2x) や [Fediverse](https://gamelinks007.net/@nawashiro/115880934010291589) から返信するとウェブサイト内にも反映される。健闘を祈る。
