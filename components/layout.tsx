@@ -33,15 +33,15 @@ export default function Layout({
   const ogImageUrl = imageUrl
     ? imageUrl
     : `https://vercel-og-nextjs-4iakfhvyx-yineleyici.vercel.app/api/og?title=${encodeURIComponent(
-      title ? title : siteTitle,
-    )}`;
+        title ? title : siteTitle,
+      )}`;
   const router = useRouter();
 
   const handleKofiReady = () => {
     if (!window.kofiWidgetOverlay) return;
     window.kofiWidgetOverlay.draw("nawashiro", {
       type: "floating-chat",
-      "floating-chat.donateButton.text": "Support me",
+      "floating-chat.donateButton.text": "チップをくれ",
       "floating-chat.donateButton.background-color": "#48731d",
       "floating-chat.donateButton.text-color": "#fff",
     });
@@ -147,9 +147,7 @@ export default function Layout({
         </div>
       </header>
       <main className="w-dvw md:w-full md:mx-auto max-w-3xl px-4 pb-24 pt-10">
-        <Twemoji options={{ className: "twemoji" }}>
-          {children}
-        </Twemoji>
+        <Twemoji options={{ className: "twemoji" }}>{children}</Twemoji>
         {blog && (
           <div className="mt-16">
             <Link className="link text-base flex gap-2 px-0" href="/">
