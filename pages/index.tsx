@@ -12,6 +12,7 @@ import Date from "../components/date";
 import type { GetStaticProps } from "next";
 import { FaArrowRight } from "react-icons/fa";
 import { Graphviz } from "@hpcc-js/wasm-graphviz";
+import SectionLayout from "../components/sectionLayout";
 
 type HomeProps = {
   allPostsData: PostMeta[];
@@ -125,134 +126,159 @@ export default function Home({
           href="/rss/feed.json"
         />
       </Head>
-      <section className="hero">
-        <div className="w-full space-y-3">
-          <p className="text-3xl font-black text-success tracking-[0.2rem] md:text-6xl">
-            {heroLetters.map((letter, index) => (
-              <span
-                className="animate-pulse inline-block"
-                key={`${letter}-${index}`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {letter}
-              </span>
-            ))}
-          </p>
-          <div>
-            <p className="space-x-2 my-0">
-              <span>{note}</span>
-              <span>
-                <Link
-                  href="/posts/links"
-                  className="btn btn-outline btn-sm h-auto"
+      <SectionLayout className="pb-20">
+        <section className="hero">
+          <div className="w-full space-y-3">
+            <p className="text-3xl font-black text-success tracking-[0.2rem] md:text-6xl">
+              {heroLetters.map((letter, index) => (
+                <span
+                  className="animate-pulse inline-block"
+                  key={`${letter}-${index}`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  Recruit?
-                </Link>
-              </span>
+                  {letter}
+                </span>
+              ))}
             </p>
-            <p className="my-0">
-              Website version <code>{version}</code>.
-            </p>
-          </div>
-          <div className="join">
-            <span className="btn join-item btn-success no-animation cursor-default btn-active">
-              Follow <FaArrowRight />
-            </span>
-            <a
-              className="btn join-item"
-              href="/rss/feed.xml"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="RSS Feed"
-            >
-              RSS
-            </a>
-            <a
-              className="btn join-item"
-              href="/rss/atom.xml"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Atom Feed"
-            >
-              Atom
-            </a>
-            <a
-              className="btn join-item"
-              href="/rss/feed.json"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="JSON Feed"
-            >
-              JSON
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2>About</h2>
-        <p>
-          ここはNawashiroのデジタルガーデンです。一般的なブログと違うのは、ページを互いにリンクしたり、ときにはインデックスしたりなど、手作業でキュレーションしているところです。
-        </p>
-        <p>
-          各ページにはときに「関連項目」や「バックリンク」が含まれており、ページ間の相互関係を知り、参照することができます。ブログに慣れていると時系列順に参照したくなりますが、ここではその衝動を抑えて、相互関係を頼りに参照してみてください。
-        </p>
-        <p>
-          注意点として、
-          <strong>デジタルガーデンでは不完全さが許容される</strong>
-          ことを挙げておきます。書き手は「すべてをすぐに正しくしなければならない」というプレッシャーから解放されますが、読み手は「インターネットに書いてあることはぜんぶ本当なんだ……！」という思い込みを捨てなければなりません。
-        </p>
-        <p>
-          しかし、ここでは前向きにとらえてください。私たちはアイデアをテストし、フィードバックを送りあって、意見を修正していくことができます。
-          <Link className="link link-hover" href="/posts/links">
-            各種SNSへのリンクを載せておきます
-          </Link>
-          。
-        </p>
-      </section>
-
-      <section>
-        <h2>Index</h2>
-        <ul className="space-y-3">
-          {indexPagesData.map(({ id, title }) => (
-            <li key={id}>
-              <Link className="link link-hover text-lg" href={`/posts/${id}`}>
-                {title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section>
-        <h2>Graph</h2>
-        <p>
-          各ページの相互関係をグラフに出力しています。ノードをクリックするとページを開くことができます。拡大縮小したり、ぐりぐりと移動させたりして遊んでみてください。
-        </p>
-        <div
-          dangerouslySetInnerHTML={{ __html: graphSvg }}
-          className="panzoom"
-        />
-      </section>
-
-      <section>
-        <h2>All Pages</h2>
-        <ul className="h-feed hfeed space-y-3">
-          {allPostsData.map(({ id, date, title }) => (
-            <li className="h-entry hentry" key={id}>
-              <Link
-                className="link link-hover text-lg u-url p-name entry-title"
-                href={`/posts/${id}`}
-              >
-                {title}
-              </Link>
-              <p className="text-sm text-base-content/70">
-                <Date dateString={date} />
+            <div>
+              <p className="space-x-2 my-0">
+                <span>{note}</span>
+                <span>
+                  <Link
+                    href="/posts/links"
+                    className="btn btn-outline btn-sm h-auto"
+                  >
+                    Recruit?
+                  </Link>
+                </span>
               </p>
-            </li>
-          ))}
-        </ul>
-      </section>
+              <p className="my-0">
+                Website version <code>{version}</code>.
+              </p>
+            </div>
+            <div className="join">
+              <span className="btn join-item btn-success no-animation cursor-default btn-active">
+                Follow <FaArrowRight />
+              </span>
+              <a
+                className="btn join-item"
+                href="/rss/feed.xml"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="RSS Feed"
+              >
+                RSS
+              </a>
+              <a
+                className="btn join-item"
+                href="/rss/atom.xml"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Atom Feed"
+              >
+                Atom
+              </a>
+              <a
+                className="btn join-item"
+                href="/rss/feed.json"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="JSON Feed"
+              >
+                JSON
+              </a>
+            </div>
+          </div>
+        </section>
+      </SectionLayout>
+      <SectionLayout className="bg-accent text-accent-content pb-12">
+        <section>
+          <h2>About</h2>
+          <p>ここはNawashiroのデジタルガーデンです。</p>
+          <p>
+            「関連項目」や「バックリンク」を頼りにサイトを探索してみてください
+            <img
+              src="https://emoji-route.deno.dev/gif/👀"
+              alt="👀"
+              className="twemoji"
+            />
+          </p>
+          <h3>注意</h3>
+          <p>だいたいは個人的なメモで、不完全なもの。悪い例 👇 </p>
+
+          <div className="chat chat-start">
+            <div className="chat-image avatar">
+              <div className="w-10 rounded-full">
+                <img alt="😰" src="https://emoji-route.deno.dev/gif/😰" />
+              </div>
+            </div>
+            <div className="chat-bubble">
+              すべてをすぐに正しくしなければならない
+            </div>
+          </div>
+          <div className="chat chat-end">
+            <div className="chat-image avatar">
+              <div className="w-10 rounded-full">
+                <img alt="🤩" src="https://emoji-route.deno.dev/gif/🤩" />
+              </div>
+            </div>
+            <div className="chat-bubble">
+              インターネットに書いてあることはぜんぶ本当なんだ！
+            </div>
+          </div>
+          <p>
+            信頼できる情報源を見たり、
+            <Link className="underline" href="/posts/links">
+              連絡してみたり
+            </Link>
+            してください。
+          </p>
+        </section>
+      </SectionLayout>
+      <SectionLayout>
+        <section>
+          <h2>Index</h2>
+          <ul className="space-y-3">
+            {indexPagesData.map(({ id, title }) => (
+              <li key={id}>
+                <Link className="link link-hover text-lg" href={`/posts/${id}`}>
+                  {title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section>
+          <h2>Graph</h2>
+          <p>
+            各ページの相互関係をグラフに出力しています。ノードをクリックするとページを開くことができます。拡大縮小したり、ぐりぐりと移動させたりして遊んでみてください。
+          </p>
+          <div
+            dangerouslySetInnerHTML={{ __html: graphSvg }}
+            className="panzoom"
+          />
+        </section>
+
+        <section>
+          <h2>All Pages</h2>
+          <ul className="h-feed hfeed space-y-3">
+            {allPostsData.map(({ id, date, title }) => (
+              <li className="h-entry hentry" key={id}>
+                <Link
+                  className="link link-hover text-lg u-url p-name entry-title"
+                  href={`/posts/${id}`}
+                >
+                  {title}
+                </Link>
+                <p className="text-sm text-base">
+                  <Date dateString={date} />
+                </p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </SectionLayout>
     </Layout>
   );
 }

@@ -1,7 +1,15 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { FaHeart, FaCalendarAlt, FaUserCheck, FaCheck, FaLightbulb, FaQuestion } from "react-icons/fa";
+import {
+  FaHeart,
+  FaCalendarAlt,
+  FaUserCheck,
+  FaCheck,
+  FaLightbulb,
+  FaQuestion,
+} from "react-icons/fa";
 import { MdAccountCircle, MdClose } from "react-icons/md";
 import { FaRetweet, FaBookmark } from "react-icons/fa6";
+import webmentionStyle from "../styles/webmention.module.css";
 
 const icon = (action: string, classes: string = "") => {
   switch (action) {
@@ -9,9 +17,11 @@ const icon = (action: string, classes: string = "") => {
       return (
         <span className="relative">
           <FaHeart className={`text-error size-8 ${classes}`} />
-          <FaHeart className={`text-error size-8 hover:animate-ping ${classes}`} />
+          <FaHeart
+            className={`text-error size-8 hover:animate-ping ${classes}`}
+          />
         </span>
-      )
+      );
     }
     case "reposted": {
       return (
@@ -19,42 +29,36 @@ const icon = (action: string, classes: string = "") => {
           <FaRetweet className={`text-base-100 size-10 ${classes}`} />
           <FaRetweet className={`text-info size-8 ${classes}`} />
         </span>
-      )
+      );
     }
     case "bookmarked": {
-      return (
-        <FaBookmark className={`text-success size-8 ${classes}`} />
-      )
+      return <FaBookmark className={`text-success size-8 ${classes}`} />;
     }
     case "RSVPed": {
-      return (
-        <FaCalendarAlt className={`text-success size-8 ${classes}`} />
-      )
+      return <FaCalendarAlt className={`text-success size-8 ${classes}`} />;
     }
     case "followed": {
-      return (
-        <FaUserCheck className={`text-success size-8 ${classes}`} />
-      )
+      return <FaUserCheck className={`text-success size-8 ${classes}`} />;
     }
   }
-}
+};
 
 const rsvpIcon = (rsvp: string, classes: string = "") => {
   switch (rsvp) {
     case "no": {
-      return <MdClose className={classes} />
+      return <MdClose className={classes} />;
     }
     case "interested": {
-      return <FaLightbulb className={classes} />
+      return <FaLightbulb className={classes} />;
     }
     case "maybe": {
-      return <FaQuestion className={classes} />
+      return <FaQuestion className={classes} />;
     }
     case "yes": {
-      return <FaCheck className={classes} />
+      return <FaCheck className={classes} />;
     }
   }
-}
+};
 
 const ACTIONS = {
   "in-reply-to": "replied",
@@ -161,10 +165,10 @@ const getSourceLabel = (url: string) => {
 const buildActionLabel = (
   mention: WebMentionEntry,
   context: RenderContext,
-  isComment: boolean
+  isComment: boolean,
 ) => {
-  let action = ACTIONS[mention["wm-property"] as keyof typeof ACTIONS] ||
-    "reacted";
+  let action =
+    ACTIONS[mention["wm-property"] as keyof typeof ACTIONS] || "reacted";
   if (!isComment && mention.content?.text) {
     action += ": " + truncateText(mention.content.text, context.wordcount);
   }
@@ -174,7 +178,7 @@ const buildActionLabel = (
 const renderMention = (
   mention: WebMentionEntry,
   context: RenderContext,
-  isComment = false
+  isComment = false,
 ) => {
   const authorLabel =
     mention.author?.name || getSourceLabel(mention.url) || mention.url;
@@ -298,20 +302,17 @@ const WebMention = ({
     wordcount,
   ]);
 
-  const uniqueComments = useMemo(
-    () => removeDuplicates(comments),
-    [comments]
-  );
+  const uniqueComments = useMemo(() => removeDuplicates(comments), [comments]);
   const uniqueReactions = useMemo(
     () => removeDuplicates(reactions),
-    [reactions]
+    [reactions],
   );
 
   return (
     <div ref={containerRef} id={id}>
       {uniqueComments.length > 0 && !commentsAreReactions && (
         <>
-          <h2>へんじ</h2>
+          <h2>✍️へんじ</h2>
           {uniqueComments.map((comment) => {
             const sourceLabel = getSourceLabel(comment.url);
             const authorName = comment.author?.name || sourceLabel;
@@ -319,12 +320,16 @@ const WebMention = ({
               ? truncateText(comment.content.text, wordcount)
               : "(mention)";
             return (
-              <div key={comment.url} className="quote">
+              <div key={comment.url} className={webmentionStyle.quote}>
                 <blockquote>
                   <p>{content}</p>
                   <div className="flex leading-10 gap-2">
                     <span>by</span>
-                    {renderMention(comment, { preventSpoofing, wordcount }, true)}
+                    {renderMention(
+                      comment,
+                      { preventSpoofing, wordcount },
+                      true,
+                    )}
                     <span>{authorName}</span>
                   </div>
                 </blockquote>
@@ -336,7 +341,7 @@ const WebMention = ({
       {uniqueReactions.length > 0 && (
         <div className="mt-16 gap-4 flex flex-row flex-wrap">
           {uniqueReactions.map((reaction) => (
-            <div key={reaction.url} >
+            <div key={reaction.url}>
               {renderMention(reaction, { preventSpoofing, wordcount })}
             </div>
           ))}
