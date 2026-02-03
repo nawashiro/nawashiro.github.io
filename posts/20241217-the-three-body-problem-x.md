@@ -2,6 +2,7 @@
 title: "三体X 観想之宙 - 読書メモ"
 date: "2024-12-17"
 ---
+
 - 著者: 宝樹
 - 出版社: 早川書房
 - 出版年月日: 2022 年 07 月 20 日
@@ -44,15 +45,17 @@ date: "2024-12-17"
 
 俗っぽすぎて劉慈欣風では全くないけれど（ネットで生まれたファンアートなので当然だ）、わりと楽しめた。第一部の AA による告白は、劉慈欣的なロマンチックさがあってお気に入り。程心に関する掘り下げもあって解像度が上がった。また、第三部も、いままで謎だった歌い手を掘り下げてて楽しかった。文句があるとすれば終章。程心を第一部であれだけ掘り下げたのに、そんな反応なんだ…って思った。人によっては気に入らないところもあるかもしれないけれど、『三体』ファン必見の二次創作だという点は揺らがないのでオススメ。
 
-<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/49x7Ny6">
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/49x7Ny6">
+
   <figure class="px-5 py-5">
     <img
       src="https://m.media-amazon.com/images/I/81rJiT0I2fL._SY425_.jpg"
       alt="Book"
-      class="rounded-xl md:max-h-48" />
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
   </figure>
   <div class="card-body">
-    <p class="card-title line-clamp-1">三体X 観想之宙</p>
-    <p>Amazon PR</p>
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">三体X 観想之宙</span>
+    
   </div>
 </a>

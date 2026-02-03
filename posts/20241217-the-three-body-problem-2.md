@@ -2,6 +2,7 @@
 title: "三体2 黒暗森林 上 - 読書メモ"
 date: "2024-12-17"
 ---
+
 - 著者: 劉慈欣
 - 出版社: 早川書房
 - 出版年月日: 2020 年 06 月 18 日
@@ -60,15 +61,17 @@ date: "2024-12-17"
 
 余談だけど、黒柳徹子の自伝『窓際のトットちゃん』も行動に対する説得力が強いと母から聞いたよ。いつか楽しんでみたい。映画にもなってるみたいだね。私の中で、物語は自分のペースで進めたいから書籍のようなテキストデータで楽しみたいという意見と、物語に費やせる時間資源は希少だから強制的に進行できる映画やオーディブルのような視聴覚資料を使いたいという意見があるよ。ただ、私は私がつらくなる表現は避けたいと（おそらく日本の多数派よりも）感じていて、耳には瞼が無いと言うように視聴覚資料ではそれが難しく、解釈さえしなければ意味の無い図柄に還るテキストデータではそれがしやすい。なので、単純に資源の都合で視聴覚資料を採用しようとは言えない事情があるよ。
 
-<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/4pGP6OD">
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/4pGP6OD">
+
   <figure class="px-5 py-5">
     <img
       src="https://m.media-amazon.com/images/I/71NUFQfa1pL._SY425_.jpg"
       alt="Book"
-      class="rounded-xl md:max-h-48" />
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
   </figure>
   <div class="card-body">
-    <p class="card-title line-clamp-1">三体Ⅱ 黒暗森林 上</p>
-    <p>Amazon PR</p>
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">三体Ⅱ 黒暗森林 上</span>
+    
   </div>
 </a>

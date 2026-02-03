@@ -2,6 +2,7 @@
 title: "介護では、親孝行が薬になるとは限らない - 読書メモ"
 date: "2025-11-30T14:58:30+09:00"
 ---
+
 <img class="u-featured" src="http://books.google.com/books/content?id=tvqSEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" style="display:none"/>
 
 ## 書籍情報
@@ -26,16 +27,18 @@ date: "2025-11-30T14:58:30+09:00"
 
 [地域包括支援センター - Google Search](https://www.google.com/search?q=地域包括支援センター)
 
-<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/3Ni2aMY">
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/3Ni2aMY">
+
   <figure class="px-5 py-5">
     <img
       src="https://m.media-amazon.com/images/I/810m47OeI6L._SY342_.jpg"
       alt="Book"
-      class="rounded-xl md:max-h-48" />
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
   </figure>
   <div class="card-body">
-    <p class="card-title line-clamp-1">親不孝介護　距離を取るからうまくいく</p>
-    <p>Amazon PR</p>
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">親不孝介護　距離を取るからうまくいく</span>
+    
   </div>
 </a>
 

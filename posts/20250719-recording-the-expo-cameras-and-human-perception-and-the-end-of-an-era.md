@@ -59,29 +59,31 @@ Kodak EKTAR H35 を購入した。
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon) [](https://brid.gy/publish/github) <a class="u-in-reply-to" href="https://github.com/nawashiro/nawashiro.github.io"></a>
 
-<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/49PzVhc">
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/49PzVhc">
   <figure class="px-5 py-5">
     <img
       src="https://m.media-amazon.com/images/I/71QoTmyqHQL._AC_SY679_.jpg"
       alt="Book"
-      class="rounded-xl md:max-h-48" />
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
   </figure>
   <div class="card-body">
-    <p class="card-title line-clamp-1">学研 大人の科学マガジン BEST SELECTION02 二眼レフカメラ Q750681</p>
-    <p>Amazon PR</p>
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">学研 大人の科学マガジン BEST SELECTION02 二眼レフカメラ Q750681</span>
   </div>
 </a>
 
-<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/4pVhtZD">
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/4pVhtZD">
+
   <figure class="px-5 py-5">
     <img
       src="https://m.media-amazon.com/images/I/71Rj4BITQ3L._AC_SX522_.jpg"
       alt="Book"
-      class="rounded-xl md:max-h-48" />
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
   </figure>
   <div class="card-body">
-    <p class="card-title line-clamp-1">コダック(Kodak) 【国内正規品】 フィルムカメラ EKTAR H35 ハーフフレーム サンド</p>
-    <p>Amazon PR</p>
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">コダック(Kodak) 【国内正規品】 フィルムカメラ EKTAR H35 ハーフフレーム サンド</span>
+    
   </div>
 </a>
 

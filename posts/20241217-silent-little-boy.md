@@ -34,6 +34,19 @@ date: "2024-12-17"
 
 これは、人間宣言がなされたために苦しむ日本人をアメリカ風に描いたものではないか。
 
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/4c7D5OX">
+  <figure class="px-5 py-5">
+    <img
+      src="https://m.media-amazon.com/images/I/81E+UxWU74L._SY385_.jpg"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">まず牛を球とします。</span>
+  </div>
+</a>
+
 ## 関連項目
 
 - [NHK広島は原爆のなかいかに死んだか - 読書メモ](240806-book-esperanto-nuke.md)
