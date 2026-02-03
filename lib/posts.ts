@@ -85,7 +85,7 @@ function getPostBasicData(fileName: string) {
 }
 
 export function getSortedPostsData(): PostMeta[] {
-  const fileNames = fs.readdirSync(postsDirectory);
+  const fileNames = fs.readdirSync(postsDirectory).filter((fileName) => fileName.endsWith('.md'));
   const allPostsData = fileNames.map((fileName) => {
     const { id, matterResult } = getPostBasicData(fileName);
     return {
@@ -98,7 +98,7 @@ export function getSortedPostsData(): PostMeta[] {
 }
 
 export function getPostNetworkData(): NetworkData {
-  const fileNames = fs.readdirSync(postsDirectory);
+  const fileNames = fs.readdirSync(postsDirectory).filter((fileName) => fileName.endsWith('.md'));
   const postsMap = new Map<string, { node: NetworkNode; links: string[] }>();
 
   // 最初にすべてのポストデータを取得
@@ -154,7 +154,7 @@ function detectGroupId(fileName: string, fileContents: string) {
 export function getIndexPagesData(): PostMeta[] {
   const fileNames = fs
     .readdirSync(postsDirectory)
-    .filter((fileName) => /-index.md$/.test(fileName));
+    .filter((fileName) => fileName.endsWith('.md') && /-index.md$/.test(fileName));
 
   const indexPosts = fileNames.map((fileName) => {
     const { id, matterResult } = getPostBasicData(fileName);
@@ -168,7 +168,7 @@ export function getIndexPagesData(): PostMeta[] {
 }
 
 export function getAllPostIds() {
-  const fileNames = fs.readdirSync(postsDirectory);
+  const fileNames = fs.readdirSync(postsDirectory).filter((fileName) => fileName.endsWith('.md'));
 
   // Returns an array that looks like this:
   // [
@@ -254,6 +254,7 @@ export async function getPostData(id: string): Promise<PostData> {
   // バックリンクの取得
   const backLinks = fs
     .readdirSync(postsDirectory)
+    .filter((fileName) => fileName.endsWith('.md'))
     .map((fileName) => getPostBasicData(fileName))
     .filter(({ fileContents }) =>
       fileContents.match(new RegExp(`\\[.+?\\]\\(${id}\\.md\\)`)),
