@@ -2,6 +2,7 @@
 title: "三体3 死神永生 上 - 読書メモ"
 date: "2024-12-17"
 ---
+
 - 著者: 劉慈欣
 - 出版社: 早川書房
 - 出版年月日: 2021 年 05 月 25 日
@@ -78,15 +79,16 @@ date: "2024-12-17"
 2. 三体世界の攻撃に、程心は報復ボタンを押せずにおり、地球は三体世界に支配されてしまうが、四次元状態になっていた宇宙艦により報復が実行される。
 3. 報復による攻撃によって三体世界は滅び、また地球も滅びると思われた。智子や雲天明から「安全通知」と「物語」の情報を得て、地球を滅びから回避させる試みが始まる。
 
-<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/49SqEVB">
-  <figure class="px-5 py-5">
-    <img
-      src="https://m.media-amazon.com/images/I/81ATPl9QRHL._SY425_.jpg"
-      alt="Book"
-      class="rounded-xl md:max-h-48" />
-  </figure>
-  <div class="card-body">
-    <p class="card-title line-clamp-1">三体3　死神永生　上 (ハヤカワ文庫SF)</p>
-    <p>Amazon PR</p>
+   <a class="card md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/49SqEVB">
+   <figure class="px-5 py-5">
+     <img
+       src="https://m.media-amazon.com/images/I/81ATPl9QRHL._SY425_.jpg"
+       alt="Book"
+       class="rounded-xl max-h-48 max-w-48 object-contain" />
+   </figure>
+   <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+     <span class="card-title line-clamp-1">三体3　死神永生　上 (ハヤカワ文庫SF)</span>
+
   </div>
 </a>

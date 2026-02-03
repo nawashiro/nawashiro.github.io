@@ -67,16 +67,18 @@ obsidian-book-search-plugin はデータソースに Google Books を使う。�
 
 『日本の名随筆 (別巻 16) 星座』では、天の川から水が溢れ出して水害が起きているさまを想像させる、などと解説がなされていたはずである。
 
-<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/4jDBqST">
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/4jDBqST">
+
   <figure class="px-5 py-5">
     <img
       src="https://m.media-amazon.com/images/I/81kH0f2MbkL._SY425_.jpg"
       alt="Book"
-      class="rounded-xl md:max-h-48" />
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
   </figure>
   <div class="card-body">
-    <p class="card-title line-clamp-1">思い出す事など 他七篇 (岩波文庫 緑 11-6)</p>
-    <p>Amazon PR</p>
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">思い出す事など 他七篇 (岩波文庫 緑 11-6)</span>
+    
   </div>
 </a>
 
@@ -94,29 +96,33 @@ obsidian-book-search-plugin はデータソースに Google Books を使う。�
 
 そういえば、[『岩波データサイエンス Vol．6』](https://www.iwanami.co.jp/book/b287514.html) に『リアルなシムシティの夢』という話が収録されていた気がする。シミュレーターとしてのシムシティ活用の話で、昨今で言うところのデジタルツインのようなものを言っていたのではなかったか。
 
-<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/3Z7VKSW">
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/3Z7VKSW">
+
   <figure class="px-5 py-5">
     <img
       src="https://m.media-amazon.com/images/I/91ygOKJv2hL._SY425_.jpg"
       alt="Book"
-      class="rounded-xl md:max-h-48" />
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
   </figure>
   <div class="card-body">
-    <p class="card-title line-clamp-1">家康、江戸を建てる (祥伝社文庫)</p>
-    <p>Amazon PR</p>
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">家康、江戸を建てる (祥伝社文庫)</span>
+    
   </div>
 </a>
 
-<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/4qRbUfA">
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/4qRbUfA">
+
   <figure class="px-5 py-5">
     <img
       src="https://m.media-amazon.com/images/I/71rM9VXFWjL._SY425_.jpg"
       alt="Book"
-      class="rounded-xl md:max-h-48" />
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
   </figure>
   <div class="card-body">
-    <p class="card-title line-clamp-1">岩波データサイエンス Vol.6</p>
-    <p>Amazon PR</p>
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">岩波データサイエンス Vol.6</span>
+    
   </div>
 </a>
 
@@ -136,16 +142,18 @@ obsidian-book-search-plugin はデータソースに Google Books を使う。�
 
 検索してみると、[このYahoo!知恵袋](https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1337789933) がでてきた。出典が明記されていないので孫引きは控えるが、面白い。
 
-<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/49yZ7Hk">
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/49yZ7Hk">
+
   <figure class="px-5 py-5">
     <img
       src="https://m.media-amazon.com/images/I/41Da3cXRJjL._SY425_.jpg"
       alt="Book"
-      class="rounded-xl md:max-h-48" />
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
   </figure>
   <div class="card-body">
-    <p class="card-title line-clamp-1">日本の名随筆 (別巻16) 星座</p>
-    <p>Amazon PR</p>
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">日本の名随筆 (別巻16) 星座</span>
+    
   </div>
 </a>
 

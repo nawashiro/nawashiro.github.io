@@ -2,6 +2,7 @@
 title: "三体 - 読書メモ"
 date: "2024-12-17"
 ---
+
 - 著者: 劉慈欣
 - 出版社: 早川書房
 - 出版年月日: 2019 年 07 月 21 日
@@ -50,6 +51,7 @@ date: "2024-12-17"
 
 1. 三体で、太陽の運行は三体問題と符合することがわかる。三体問題は三つの同じ質量と体積の惑星がどのような運動をするか予測できるか、と言う問題である。レベル 2 に移行する。
 2. <ruby>魏成<rp>(</rp><rt>ウェイ・チョン</rt><rp>)</rp></ruby>が、三体問題の研究をやめるよう脅迫される。また、申玉菲から続けるよう脅迫される。申玉菲は殺害される。<ruby>潘寒<rp>(</rp><rt>ファン・ハン</rt><rp>)</rp></ruby>が第一の容疑者。
+
 ### 17~18
 
 1. 三体で、三千万の兵を使用してコンピュータ陣形をつくり三体問題を計算する。太陽は三連星となり、無重力状態となって文明は崩壊する。一定のレベルに到達したため、オフ会へ誘われる。
@@ -112,15 +114,17 @@ date: "2024-12-17"
 
 かなり「エレガント」な SF 小説。読む前は色々心配してたけど、読み始めて全部霧散した。観察をし、仮説を立て…という科学しぐさをたくさん楽しめる。いろんな人がいろんな仮説を立てて力説してくれる。とても楽しい。あと、中国の暗い歴史とそれによる深い絶望の話もあった。後書読むと「問題意識を喚起させるつもりは無い」とわかるけど、初見の時はフィクションかと思うくらいショッキングだったので、そういうのが苦手な人は第二部から読んだ方がいいかも。
 
-<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/4jJcfPa">
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/4jJcfPa">
+
   <figure class="px-5 py-5">
     <img
       src="https://m.media-amazon.com/images/I/81g1np2nIYL._SY425_.jpg"
       alt="Book"
-      class="rounded-xl md:max-h-48" />
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
   </figure>
   <div class="card-body">
-    <p class="card-title line-clamp-1">三体 (ハヤカワ文庫SF)</p>
-    <p>Amazon PR</p>
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">三体 (ハヤカワ文庫SF)</span>
+    
   </div>
 </a>

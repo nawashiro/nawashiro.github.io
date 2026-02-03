@@ -2,6 +2,7 @@
 title: "社会的「烙印」に図書館はいかに立ち向かうのか"
 date: "2025-11-30T20:07:06+09:00"
 ---
+
 <img class="u-featured" src="http://books.google.com/books/content?id=S-zsjwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api" style="display:none"/>
 
 <p class="e-bridgy-mastodon-content e-bridgy-bluesky-content" style="display:none">収入、性別、障害、人種、出身地……社会的「烙印」に図書館はいかに立ち向かうのか。</p>
@@ -28,16 +29,18 @@ date: "2025-11-30T20:07:06+09:00"
 
 [^1]: 障害年金をもらう前にお世話になったことがあります。セカンドハーベスト・ジャパンのみなさま、その節は本当にありがとうございました。
 
-<a class="card  md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/49u8fgA">
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/49u8fgA">
+
   <figure class="px-5 py-5">
     <img
       src="https://m.media-amazon.com/images/I/81ctl2EZFRL._SY342_.jpg"
       alt="Book"
-      class="rounded-xl md:max-h-48" />
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
   </figure>
   <div class="card-body">
-    <p class="card-title line-clamp-1">拝啓 市長さま、こんな図書館をつくりましょう</p>
-    <p>Amazon PR</p>
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">拝啓 市長さま、こんな図書館をつくりましょう</span>
+    
   </div>
 </a>
 
