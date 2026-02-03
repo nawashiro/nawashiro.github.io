@@ -6,6 +6,7 @@ import { FaHamburger, FaHome, FaGithub } from "react-icons/fa";
 import { type ReactNode, useEffect } from "react";
 import Script from "next/script";
 import Twemoji from "react-twemoji";
+import SectionLayout from "./sectionLayout";
 
 const name = "NAWASHIRO";
 export const siteTitle = "NAWASHIRO";
@@ -146,15 +147,18 @@ export default function Layout({
           </div>
         </div>
       </header>
-      <main className="w-dvw md:w-full md:mx-auto max-w-3xl px-4 pb-24 pt-10">
+      <main>
         <Twemoji options={{ className: "twemoji" }}>{children}</Twemoji>
         {blog && (
-          <div className="mt-16">
-            <Link className="link text-base flex gap-2 px-0" href="/">
+          <SectionLayout className="bg-accent pb-24">
+            <Link
+              className="underline text-accent-content text-base flex gap-2 px-0"
+              href="/"
+            >
               <FaHome className="size-6" />
               Back to Home
             </Link>
-          </div>
+          </SectionLayout>
         )}
       </main>
     </div>

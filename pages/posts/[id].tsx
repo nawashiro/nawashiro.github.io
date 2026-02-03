@@ -1,5 +1,12 @@
 import Layout from "../../components/layout";
-import { getAllPostIds, getPostData, getPostNetworkData, NetworkEdge, NetworkNode, type PostData } from "../../lib/posts";
+import {
+  getAllPostIds,
+  getPostData,
+  getPostNetworkData,
+  NetworkEdge,
+  NetworkNode,
+  type PostData,
+} from "../../lib/posts";
 import Head from "next/head";
 import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
@@ -9,6 +16,7 @@ import WebMention from "../../components/WebMention";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import { Graphviz } from "@hpcc-js/wasm-graphviz";
 import { NODE_BASE_RESOLVE_OPTIONS } from "next/dist/build/webpack-config";
+import SectionLayout from "../../components/sectionLayout";
 
 type PostParams = {
   id: string;
@@ -35,34 +43,46 @@ export const getStaticProps: GetStaticProps<PostProps, PostParams> = async ({
 
   const localEdges: NetworkEdge[] = [];
 
-  const calcLocalEdge = (id: string, edges: NetworkEdge[], countDown: number) => {
+  const calcLocalEdge = (
+    id: string,
+    edges: NetworkEdge[],
+    countDown: number,
+  ) => {
     if (countDown <= 0) return;
 
     edges.map((edge) => {
-
       if (edge.from == id) {
         const fromEdge: NetworkEdge = { from: edge.from, to: edge.to };
 
-        if (typeof (fromEdge) !== "undefined") {
-          if (!localEdges.find((localEdge) => localEdge.from == fromEdge.from && localEdge.to == fromEdge.to)) {
+        if (typeof fromEdge !== "undefined") {
+          if (
+            !localEdges.find(
+              (localEdge) =>
+                localEdge.from == fromEdge.from && localEdge.to == fromEdge.to,
+            )
+          ) {
             localEdges.push(fromEdge);
             calcLocalEdge(edge.to, edges, countDown - 1);
           }
-        };
+        }
       }
 
       if (edge.to == id) {
         const toEdge: NetworkEdge = { from: edge.from, to: edge.to };
 
-        if (typeof (toEdge) !== "undefined") {
-          if (!localEdges.find((edge) => edge.to == toEdge.to && edge.from == toEdge.from)) {
+        if (typeof toEdge !== "undefined") {
+          if (
+            !localEdges.find(
+              (edge) => edge.to == toEdge.to && edge.from == toEdge.from,
+            )
+          ) {
             localEdges.push(toEdge);
             calcLocalEdge(edge.from, edges, countDown - 1);
           }
         }
       }
-    })
-  }
+    });
+  };
 
   calcLocalEdge(id, networkData.edges, 2);
 
@@ -70,9 +90,9 @@ export const getStaticProps: GetStaticProps<PostProps, PostParams> = async ({
 
   networkData.nodes.map((node) => {
     if (localEdges.find((edge) => edge.from == node.id || edge.to == node.id)) {
-      if (typeof (node) !== "undefined") localNodes.push(node);
+      if (typeof node !== "undefined") localNodes.push(node);
     }
-  })
+  });
 
   let dot =
     'digraph site_graph{graph[layout="fdp"];node[shape="plain",style="rounded,filled",fillcolor="#b4e4ff",penwidth=1.2,fontname="Helvetica",fontsize=11,fontcolor="#24292F"];';
@@ -90,12 +110,11 @@ export const getStaticProps: GetStaticProps<PostProps, PostParams> = async ({
   const graphviz = await Graphviz.load();
   const graphSvg = graphviz.dot(dot);
 
-
   return {
     props: {
       id,
       postData,
-      graphSvg
+      graphSvg,
     },
   };
 };
@@ -167,37 +186,50 @@ export default function Post({ id, postData, graphSvg }: PostProps) {
           }}
         ></script>
       </Head>
-      <article className="h-entry">
-        <h1 className="p-name">{postData.title}</h1>
-        <div className={cx(utilStyles.lightBlogText, utilStyles.lightText)}>
-          <Date dateString={postData.date} />
-        </div>
-        <a
-          className={cx("p-author", "h-card")}
-          href={siteUrl}
-          style={{ display: "none" }}
-        >
-          Nawashiro
-        </a>
-        <div
-          className={cx(
-            "blog",
-            "e-content",
-            "prose",
-            "prose-stone",
-            "max-w-none",
-          )}
-          dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
-        />
 
-        <hr className="mt-16"/>
+      <SectionLayout>
+        <article className="h-entry">
+          <h1 className="p-name">{postData.title}</h1>
+          <div className={cx(utilStyles.lightBlogText, utilStyles.lightText)}>
+            <Date dateString={postData.date} />
+          </div>
+          <a
+            className={cx("p-author", "h-card")}
+            href={siteUrl}
+            style={{ display: "none" }}
+          >
+            Nawashiro
+          </a>
+          <div
+            className={cx(
+              "blog",
+              "e-content",
+              "prose",
+              "prose-stone",
+              "max-w-none",
+            )}
+            dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
+          />
+        </article>
+      </SectionLayout>
 
+      <SectionLayout className="mt-16 bg-accent text-accent-content">
         <WebMention
           {...(isDevelopment && {
             pageUrl:
               "https://nawashiro.dev/posts/20250213-3-create-stained-glass",
           })}
         />
+
+        <h2>☕コーヒーをおごる</h2>
+        <p>やあ…そこのきみ…すまないが、コーヒーを一杯おごってくれないか…</p>
+        <iframe
+          id="kofiframe"
+          src="https://ko-fi.com/nawashiro/?hidefeed=true&widget=true&embed=true&preview=true"
+          height="712"
+          title="nawashiroにコーヒーをおごる"
+          className="rounded-sm mx-auto mt-10"
+        ></iframe>
 
         {postData.backLinks.length > 0 && (
           <>
@@ -214,13 +246,12 @@ export default function Post({ id, postData, graphSvg }: PostProps) {
           </>
         )}
 
-        <h2>ネットワーク</h2>
+        <h2>🔗ネットワーク</h2>
         <div
           dangerouslySetInnerHTML={{ __html: graphSvg }}
           className="panzoom"
         />
-
-      </article>
+      </SectionLayout>
     </Layout>
   );
 }

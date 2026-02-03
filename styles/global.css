@@ -7,7 +7,6 @@
 }
 
 @layer base {
-
   body,
   p,
   html,
@@ -166,7 +165,7 @@ ul li code {
   }
 }
 
-.blog>p>img {
+.blog > p > img {
   width: 100%;
   max-width: var(--max-content-width);
   display: block;
@@ -179,8 +178,10 @@ ul li code {
 
 .twemoji {
   width: 1.5em !important;
+  height: 1.5em !important;
   display: inline !important;
-  margin: 0 !important;
+  margin-left: 0.1em !important;
+  margin-right: 0.1em !important;
   padding: 0 !important;
   background-color: transparent !important;
   box-shadow: none !important;
@@ -206,7 +207,7 @@ ul li code {
   padding: 2px 0.5rem;
 }
 
-.blog .remark-code-title+.remark-highlight pre {
+.blog .remark-code-title + .remark-highlight pre {
   padding-top: calc(2.5rem + 4px);
 }
 
