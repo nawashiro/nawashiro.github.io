@@ -39,6 +39,7 @@ date: "2025-07-06"
 - [ヴィジョンズ - 読書メモ](20241217-visions.md)
 - [ぼくらは都市を愛していた - 読書メモ](20241217-we-loved-the-city.md)
 - [去年、本能寺で - 読書メモ](20250706-last-year-at-honnoji-temple.md)
+- [すべてがＦになる - 読書メモ](20260226-the-perfect-insider.md)
 
 ### いわゆる小説
 
