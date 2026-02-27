@@ -7,6 +7,7 @@ date: "2025-06-25"
 
 ## 参考にしてね
 
+- [なわしろの救急外来入門](20260227-introduction-to-nawashiro-s-emergency-department.md)
 - [障害年金をもらおう！](20250625-get-disability-pension.md)
 - [利用規約をバザール式で作って、いい感じに使いたい](20260110-design-code-of-conduct.md)
 
