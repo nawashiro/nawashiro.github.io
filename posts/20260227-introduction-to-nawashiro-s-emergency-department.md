@@ -2,6 +2,9 @@
 title: "なわしろの救急外来入門"
 date: "2026-02-27T17:11:31+09:00"
 ---
+
+[](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
+
 <p class="e-bridgy-mastodon-content e-bridgy-bluesky-content" style="display:none">パニクるな！なわしろの救急外来入門</p>
 
 ![救急車](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Japanese_Ambulance.jpg/330px-Japanese_Ambulance.jpg)
