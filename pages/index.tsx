@@ -80,6 +80,7 @@ export default function Home({
         github.com/nawashiro
       </a>
       <link rel="pgpkey" href="/openpgp_publickey.asc" />
+      <link rel="authorization_endpoint" href="https://indielogin.com/auth">
       <div className="h-card" style={{ display: "none" }}>
         <a className="p-name u-url" href={siteUrl}>
           Nawashiro
