@@ -13,6 +13,7 @@ date: "2025-06-25"
 
 ## その他
 
+- [和訳 Claudeの憲法](20260306-claude-s-constitution.md)
 - [夜警 - 夢メモ](20250726-de-nachtwacht.md)
 - [ハングルと都市](241124-hangul-and-cities.md)
 - [民明書房発刊に際して](241020-mimmei-syobo.md)
