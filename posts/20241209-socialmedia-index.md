@@ -7,6 +7,7 @@ date: "2026-01-12T16:07:26+09:00"
 
 ## 雑記
 
+- [ウェブを公共圏として再設計できるか](20260315-can-the-web-be-redesigned-as-a-public-sphere.md)
 - [旧来型ソーシャルウェブの経験的仮定](20260112-empirical-assumptions-of-the-traditional-social-web.md)
 - [理想のソーシャルメディア](240613-ideal-social-media.md)
 - [SNSはなぜ人を過激化させるのか - 読書メモ](240810-social-media-prism.md)
