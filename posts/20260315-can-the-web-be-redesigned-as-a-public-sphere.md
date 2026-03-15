@@ -13,11 +13,11 @@ date: "2026-03-15T15:57:41+09:00"
 > 
 > この文書は [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) のもと再配布可能です。
 
->[!NOTE]
+> [!NOTE]
 >
->[ユルゲン・ハーバーマス](https://ja.wikipedia.org/wiki/%E3%83%A6%E3%83%AB%E3%82%B2%E3%83%B3%E3%83%BB%E3%83%8F%E3%83%BC%E3%83%90%E3%83%BC%E3%83%9E%E3%82%B9) さま、ご冥福をお祈りいたします。
->
->2026 年 3 月 15 日 Nawashiro
+> [ユルゲン・ハーバーマス](https://ja.wikipedia.org/wiki/%E3%83%A6%E3%83%AB%E3%82%B2%E3%83%B3%E3%83%BB%E3%83%8F%E3%83%BC%E3%83%90%E3%83%BC%E3%83%9E%E3%82%B9) さま、ご冥福をお祈りいたします。
+> 
+> 2026 年 3 月 15 日 Nawashiro
 
 ## TOC
 
