@@ -121,7 +121,7 @@ date: "2026-03-15T15:57:41+09:00"
 - 会話に社会ネットワークを使わない。
 - 会話に熟議のための支援機能を使う。
 
-## キーワード
+### キーワード
 
 [pol.is](https://en.wikipedia.org/wiki/Pol.is) [ウィキサーベイ](https://en.wikipedia.org/wiki/Wiki_survey) [次元削減](https://ja.wikipedia.org/wiki/%E6%AC%A1%E5%85%83%E5%89%8A%E6%B8%9B) [計算民主主義](https://compdemocracy.org/) [デジタル民主主義](20250706-audrey-tan-on-digital-democracy.md) [Maven](https://wired.jp/article/maven-social-network-that-eliminates-followers-and-stress/) [最小基準共進化](https://doi.org/10.1145/3071178.3071186)
 
