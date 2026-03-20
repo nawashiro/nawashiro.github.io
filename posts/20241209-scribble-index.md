@@ -13,6 +13,7 @@ date: "2025-06-25"
 
 ## その他
 
+- [屈原にギャルゲー（有島武郎がヒロイン）をプレゼントしよう！](20260316-let-s-give-qu-yuan-a-dating-sim-game-with-takeo-arishima-as-the-heroine.md)
 - [和訳 Claudeの憲法](20260306-claude-s-constitution.md)
 - [夜警 - 夢メモ](20250726-de-nachtwacht.md)
 - [ハングルと都市](241124-hangul-and-cities.md)
