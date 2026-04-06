@@ -7,6 +7,7 @@ date: "2025-05-07"
 
 ## ノウハウ
 
+- [Linux でファイルをいじると Google Drive と同期されるやつ](20260406-syncing-google-drive-on-linux.md)
 - [分散型SNS、NostrとATProtocolのちがい](20260320-differences-between-decentralized-social-networking-services-nostr-and-atprotocol.md)
 - [ADHD自己管理術：戦略と戦術](20251221-notes-on-managing-adhd.md)
 	- 著者のかたに翻訳の許可をいただきました。
