@@ -1,5 +1,5 @@
 ---
-title: "【Linuxデスクトップ元年】hyperlandでかっこいいデスクトップをやる"
+title: "【Linuxデスクトップ元年】hyprlandでかっこいいデスクトップをやる"
 date: "2026-04-23T16:24:33+09:00"
 ---
 
@@ -170,44 +170,6 @@ Wiki のサンプルをコピーする。
 スタイル
 
 ```css:~/.config/waybar/style.css
-{
-    "layer": "top",
-    "position": "top",
-    "height": 36,
-    "spacing": 10,
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
-    "modules-center": ["clock"],
-    "modules-right": ["custom/weather", "pulseaudio", "tray"],
-
-    "hyprland/workspaces": {
-        "format": "{name}",
-        "disable-scroll": true,
-        "all-outputs": true
-    },
-    "hyprland/window": {
-        "format": "{}",
-        "max-length": 20
-    },
-    "clock": {
-        "format": "{:%Y-%m-%d %H:%M}",
-        "tooltip-format": "<tt>{calendar}</tt>"
-    },
-    "custom/weather": {
-        "format": "{}",
-        "exec": "curl -s 'wttr.in/Chiyoda?format=1'",
-        "interval": 3600
-    },
-    "pulseaudio": {
-        "format": "🔊  {volume}%",
-        "format-muted": "Mute",
-        "on-click": "pavucontrol"
-    },
-    "tray": {
-        "spacing": 8
-    }
-}
-seduce5468@fedora:~$ ^C
-seduce5468@fedora:~$ cat ~/.config/waybar/style.css
 * {
   font-family: "sans-serif";
   font-size: 14px;
