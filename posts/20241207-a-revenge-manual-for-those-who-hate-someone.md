@@ -1,7 +1,20 @@
 ---
-title: "いやな目にあったら読む本 - 読書メモ"
-date: "2024-12-07"
+title: いやな目にあったら読む本 - 読書メモ
+date: 2024-12-07
 ---
+
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/XbGh8d">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/bookfan_bk-4005008054_i_20250720092604"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">大きらいなやつがいる君のためのリベンジマニュアル/豊島ミホ</span>
+  </div>
+</a>
 
 こんにちは。だいきらいなやつに復讐したいと思いませんか？突然何を言っているんだという話ですが、そんな人にぴったりの本があります。ぜひ読んでみてください。
 

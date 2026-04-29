@@ -1,7 +1,21 @@
 ---
-title: "認知症は謎の恐ろしい病気ではない - 読書メモ"
-date: "2024-12-08"
+title: 認知症は謎の恐ろしい病気ではない - 読書メモ
+date: 2024-12-08
 ---
+
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/J8HBmZr">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/39way-2nd_39way2025349faf6448_i_20260107131821"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">認知症でも心は豊かに生きている</span>
+  </div>
+</a>
+
 
 認知症に対して漠然とした不安を抱いていました。家族や私自身が、生きたまま、誰かの世話を必要としながらも、その相互作用的本質が失われてしまうのではないかという不安です。しかし、この本はそういった無知だからこその過剰な忌避を和らげてくれます。
 

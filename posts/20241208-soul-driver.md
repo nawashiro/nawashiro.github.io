@@ -1,7 +1,20 @@
 ---
-title: "魂をふるわせるマシン - 読書メモ"
-date: "2024-12-08"
+title: 魂をふるわせるマシン - 読書メモ
+date: 2024-12-08
 ---
+
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/rU_qmB">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/bookfan_bk-4150306346_i_20250607153328"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">魂の駆動体/神林長平</span>
+  </div>
+</a>
 
 とある方がバイブルにしていると聞いて、前から読んでみたかった本です。ちょっと気が引けてしまうタイトルかもしれませんが、要するに「クルマと猫のはなし」なので身構えることはありません。あ、でも、クルマが好きな気持ちをちょっと知るつもりで読んだほうがいいかも。
 
