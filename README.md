@@ -45,7 +45,7 @@ npm run dev
 npm run build
 ```
 
-- `npm run build` 中に RSS/Atom/JSON が `public/rss/` に生成されます。`next build` を実行し、`out/` に静的ファイルを出力します（`output: "export"`）。
+- `npm run build` 中に RSS/Atom/JSON が `public/rss/` に生成されます。`next build` を実行し、`out/` に静的ファイルを出力します。
 
 ## コード品質
 

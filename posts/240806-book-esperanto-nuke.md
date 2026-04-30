@@ -2,6 +2,18 @@
 title: "NHK広島は原爆のなかいかに死んだか - 読書メモ"
 date: "2024-08-06"
 ---
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/JiX4E6">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/bookoffonline2_0012210825_i_20260412123155"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">幻の声 NHK広島8月6日 岩波新書236/白井久夫【著】</span>
+  </div>
+</a>
 
 お久しぶりです。あるいは、初めましてでしょうか。今回から、別のサイトでも掲載しているので。
 
@@ -125,16 +137,3 @@ Gazetaroj kaj eldonejoj estis tre senfortaj. Tiuj kiuj rezistis kaj malsukcesis.
 死んだときはともかく、生き残ったとき、私はあがき伝える方になれるだろうか。
 
 Kiam mi mortos, ĉiuokaze. Kiam mi postvivos, ĉu mi povos esti homo, kiu povas paroli?
-
-<a class="card md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/4kngpfS">
-  <figure class="px-5 py-5">
-    <img
-      src="https://m.media-amazon.com/images/I/31vduFRy0ZL._SY385_.jpg"
-      alt="Book"
-      class="rounded-xl max-h-48 max-w-48 object-contain" />
-  </figure>
-  <div class="card-body">
-    <span class="badge badge-primary">広告</span>
-    <span class="card-title line-clamp-1">幻の声: NHK広島8月6日 (岩波新書 新赤版 236)</span>
-  </div>
-</a>

@@ -67,9 +67,7 @@ https://www.tsuyama-ct.ac.jp/ippan/H26hokoku/kadoya2.pdf
 
 https://esperanto.masto.host/@TMangnall/111178966128281578
 
-> Lasta jaro mi legis la tutan Serion de la Fondaĵo verkita de Isaac Asimov,
-komencante de Robotoj al Fondaĵo kaj Tero.
-> 
+> Lasta jaro mi legis la tutan Serion de la Fondaĵo verkita de Isaac Asimov, komencante de Robotoj al Fondaĵo kaj Tero.
 
 Lasta jaro / mi legis / la tutan Serion de la Fondaĵo / verkita de Isaac Asimov,
 
@@ -140,11 +138,9 @@ https://esperanto.masto.host/@danjac/111186270017663094
 
 > Pri kiu nacio lingvo Esperanto memorigas al vi?
 > 
-> 
 > Por mi tio dependas de la parolanto, sed ĝenerale ĝi sonas al mi preskaŭ kiel la rumana: latinida lingvo kun kelkaj nelatinidaj vortoj miksita iom kun la greka.
 > 
 > Kvazaŭ Esperanto estus la nacia lingvo de iu fikcia lando, kiu situas ie en Balkanoj.
-> 
 
 Pri kiu nacio lingvo / Esperanto memorigas al vi?
 
@@ -216,7 +212,6 @@ Ni havis grandan amuzon.
 https://esperanto.masto.host/@esperantoparis/111213296838546060
 
 > Sabate 28a de oktobro, 7a ptm, surloke: Esperanto-kafejo
-> 
 > 
 > La Kafejo-esperanto okazas la duan sabaton de ĉiu monato (krom escepto😁), ĉiufoje en malsama kafejo-restoracio. Venu, trinku, manĝu kaj babilu en agrabla etoso. Ĉiuj estas bonvenaj.
 > 
