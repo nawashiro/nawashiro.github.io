@@ -1,6 +1,6 @@
 ---
-title: いやな目にあったら読む本 - 読書メモ
-date: 2024-12-07
+title: "いやな目にあったら読む本 - 読書メモ"
+date: "2024-12-07"
 ---
 
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/XbGh8d">

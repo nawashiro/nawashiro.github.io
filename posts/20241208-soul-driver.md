@@ -1,6 +1,6 @@
 ---
-title: 魂をふるわせるマシン - 読書メモ
-date: 2024-12-08
+title: "魂をふるわせるマシン - 読書メモ"
+date: "2024-12-08"
 ---
 
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/rU_qmB">

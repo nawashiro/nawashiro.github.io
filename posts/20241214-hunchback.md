@@ -1,6 +1,6 @@
 ---
-title: ハンチバック
-date: 2024-12-14
+title: "ハンチバック"
+date: "2024-12-14"
 ---
 
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/4_d_p5">
