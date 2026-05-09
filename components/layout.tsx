@@ -1,7 +1,6 @@
 import getConfig from "next/config";
 import Head from "next/head";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { FaHamburger, FaHome, FaGithub } from "react-icons/fa";
 import { type ReactNode, useEffect } from "react";
 import Script from "next/script";
@@ -11,6 +10,15 @@ import SectionLayout from "./sectionLayout";
 const name = "NAWASHIRO";
 export const siteTitle = "NAWASHIRO";
 const { publicRuntimeConfig } = getConfig();
+const kofiFrameTitle = "Ko-fi support widget";
+
+function setKofiFrameTitles() {
+  document
+    .querySelectorAll<HTMLIFrameElement>('iframe[id^="kofi-wo-container"]')
+    .forEach((frame) => {
+      frame.title = kofiFrameTitle;
+    });
+}
 
 export default function Layout({
   children,
@@ -36,7 +44,6 @@ export default function Layout({
     : `https://vercel-og-nextjs-4iakfhvyx-yineleyici.vercel.app/api/og?title=${encodeURIComponent(
         title ? title : siteTitle,
       )}`;
-  const router = useRouter();
 
   const handleKofiReady = () => {
     if (!window.kofiWidgetOverlay) return;
@@ -46,16 +53,21 @@ export default function Layout({
       "floating-chat.donateButton.background-color": "#48731d",
       "floating-chat.donateButton.text-color": "#fff",
     });
+    window.setTimeout(setKofiFrameTitles, 0);
+    window.setTimeout(setKofiFrameTitles, 1000);
   };
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const svgPanZoom = require("svg-pan-zoom");
-    svgPanZoom(".panzoom svg", {
-      controlIconsEnabled: true,
-      contain: true,
+    const observer = new MutationObserver(setKofiFrameTitles);
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
     });
-  }, [router.asPath]);
+    setKofiFrameTitles();
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div>
@@ -112,10 +124,10 @@ export default function Layout({
                 <Link href="/posts/links">Links</Link>
               </li>
             </ul>
-            <a href="https://github.com/nawashiro">
+            <a href="https://github.com/nawashiro" aria-label="GitHub profile">
               <FaGithub
                 size={32}
-                aria-label="GitHub"
+                aria-hidden="true"
                 className="hover:animate-spin"
               />
             </a>
