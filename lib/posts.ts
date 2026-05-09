@@ -32,23 +32,6 @@ export type PostMeta = PostFrontMatter & {
   id: string;
 };
 
-export type NetworkNode = {
-  id: string;
-  label: string;
-  group: string;
-  value: number;
-};
-
-export type NetworkEdge = {
-  from: string;
-  to: string;
-};
-
-export type NetworkData = {
-  nodes: NetworkNode[];
-  edges: NetworkEdge[];
-};
-
 export type BackLink = {
   title: string;
   id: string;
@@ -95,60 +78,6 @@ export function getSortedPostsData(): PostMeta[] {
   });
 
   return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
-}
-
-export function getPostNetworkData(): NetworkData {
-  const fileNames = fs.readdirSync(postsDirectory).filter((fileName) => fileName.endsWith('.md'));
-  const postsMap = new Map<string, { node: NetworkNode; links: string[] }>();
-
-  // 最初にすべてのポストデータを取得
-  fileNames.forEach((fileName) => {
-    const { id, fileContents, matterResult } = getPostBasicData(fileName);
-    const groupId = detectGroupId(fileName, fileContents);
-
-    postsMap.set(id, {
-      node: {
-        id,
-        label: String(matterResult.data.title),
-        group: groupId,
-        value: 0,
-      },
-      links: [...fileContents.matchAll(/\[.+?\]\(([a-z0-9\-]+)\.md\)/g)].map(
-        (matchText) => matchText[1],
-      ),
-    });
-  });
-
-  // エッジの構築とノードの値の更新
-  const edges: NetworkEdge[] = [];
-  postsMap.forEach((post, id) => {
-    post.links.forEach((link) => {
-      edges.push({ from: id, to: link });
-      // 両方のノードの値を更新
-      const sourceNode = postsMap.get(id);
-      if (sourceNode) {
-        sourceNode.node.value += 1;
-      }
-      const targetNode = postsMap.get(link);
-      if (targetNode) {
-        targetNode.node.value += 1;
-      }
-    });
-  });
-
-  return {
-    nodes: Array.from(postsMap.values()).map((post) => post.node),
-    edges,
-  };
-}
-
-// detectGroupIdのスペルミスを修正
-function detectGroupId(fileName: string, fileContents: string) {
-  if (fileName.match("index")) return "index";
-  if (fileContents.match(/(?<!https?:\/\/.+)\.js/i)) return "javascript";
-  if (fileContents.match(/(?<!https?:\/\/.+)sns/i)) return "sns";
-  if (fileContents.match(/(?<!https?:\/\/.+)isbn/i)) return "book";
-  return "none";
 }
 
 export function getIndexPagesData(): PostMeta[] {

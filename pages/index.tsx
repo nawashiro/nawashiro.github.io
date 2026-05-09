@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import {
-  getPostNetworkData,
   getSortedPostsData,
   getIndexPagesData,
   getVersion,
@@ -11,42 +10,22 @@ import Link from "next/link";
 import Date from "../components/date";
 import type { GetStaticProps } from "next";
 import { FaArrowRight } from "react-icons/fa";
-import { Graphviz } from "@hpcc-js/wasm-graphviz";
 import SectionLayout from "../components/sectionLayout";
 
 type HomeProps = {
   allPostsData: PostMeta[];
-  graphSvg: string;
   indexPagesData: PostMeta[];
   version: string;
 };
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const allPostsData = getSortedPostsData();
-  const networkData = getPostNetworkData();
   const indexPagesData = getIndexPagesData();
   const version = getVersion();
-
-  let dot =
-    'digraph site_graph{graph[layout="fdp"];node[shape="plain",style="rounded,filled",fillcolor="#c8deff",penwidth=1.2,fontname="Helvetica",fontsize=11,fontcolor="#24292F"];';
-
-  networkData.nodes.map((node) => {
-    dot += `"${node.id}"[URL="${process.env.NEXT_PUBLIC_SITE_URL}/posts/${node.id}",label="${node.label}",target="_top"];`;
-  });
-
-  networkData.edges.map((edge) => {
-    dot += `"${edge.from}"->"${edge.to}";`;
-  });
-
-  dot += "}";
-
-  const graphviz = await Graphviz.load();
-  const graphSvg = graphviz.dot(dot);
 
   return {
     props: {
       allPostsData,
-      graphSvg,
       indexPagesData,
       version,
     },
@@ -55,12 +34,10 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 
 export default function Home({
   allPostsData,
-  graphSvg,
   indexPagesData,
   version,
 }: HomeProps) {
   const note = "I am a freelance programmer. looking for a job.";
-  const heroLetters = "Development".split("");
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
   const description =
     "エンジニア・プログラマーNawashiroの個人サイト。プロジェクト、デジタルガーデン、技術記事など。";
@@ -129,17 +106,12 @@ export default function Home({
       <SectionLayout className="pb-20">
         <section className="hero">
           <div className="w-full space-y-3">
-            <p className="text-3xl font-black text-success tracking-[0.2rem] md:text-6xl">
-              {heroLetters.map((letter, index) => (
-                <span
-                  className="animate-pulse inline-block"
-                  key={`${letter}-${index}`}
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  {letter}
-                </span>
-              ))}
-            </p>
+            <h1
+              className="my-0 text-3xl font-black text-success tracking-[0.2rem] md:text-6xl"
+              data-testid="hero-title"
+            >
+              NAWASHIRO
+            </h1>
             <div>
               <p className="space-x-2 my-0">
                 <span>{note}</span>
@@ -247,17 +219,6 @@ export default function Home({
               </li>
             ))}
           </ul>
-        </section>
-
-        <section>
-          <h2>Graph</h2>
-          <p>
-            各ページの相互関係をグラフに出力しています。ノードをクリックするとページを開くことができます。拡大縮小したり、ぐりぐりと移動させたりして遊んでみてください。
-          </p>
-          <div
-            dangerouslySetInnerHTML={{ __html: graphSvg }}
-            className="panzoom"
-          />
         </section>
 
         <section>

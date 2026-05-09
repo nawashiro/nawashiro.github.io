@@ -60,8 +60,8 @@ npm run test
 ## ディレクトリ構成
 
 - `pages/`：Next.js ページ。`posts/[id].tsx` で記事を描画
-- `components/`：再利用 UI（`layout`, `WebMention`, `network_graph` など）
-- `lib/`：Markdown 変換、フィード生成、ネットワークデータ生成
+- `components/`：再利用 UI（`layout`, `WebMention` など）
+- `lib/`：Markdown 変換、フィード生成
 - `posts/`：Markdown 原稿（`YYYYMMDD-title.md`）
 - `public/`：静的アセット、生成された feed/sitemap
 - `styles/`：グローバル CSS と各種 CSS Modules
