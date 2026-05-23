@@ -1,6 +1,11 @@
 ---
-title: "Brid.gyでウェブサイトを共有してみる"
-date: "2025-07-09"
+title: Brid.gyでウェブサイトを共有してみる
+date: 2025-07-09
+---
+
+- categories:
+	- [🔧技術](categories-develops.md)
+
 ---
 
 [Brid.gy](https://brid.gy/about) というサービスがある。個人サイトをソーシャルメディアに接続する道具だ。

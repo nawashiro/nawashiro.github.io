@@ -3,6 +3,13 @@ title: "Obsidianでツェッテルカステンをつけてみた"
 date: "2024-06-01"
 ---
 
+- categories:
+	- [📝覚え書き](categories-notes.md)
+- tags:
+	- [📝メモの技法](tags-note-taking-techniques.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/pWxuL4">
   <figure class="px-5 py-5">
     <img

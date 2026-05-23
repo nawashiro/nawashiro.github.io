@@ -1,6 +1,8 @@
 ---
-title: "屈原にギャルゲー（有島武郎がヒロイン）をプレゼントしよう！"
-date: "2026-03-20T11:20:52+09:00"
+title: 屈原にギャルゲー（有島武郎がヒロイン）をプレゼントしよう！
+date: 2026-03-20T11:20:52+09:00
+categories:
+  - "[[categories-any-opinions]]"
 ---
 
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/7pfAxc">

@@ -3,6 +3,13 @@ title: "三体 - 感想まとめ"
 date: "2025-02-12"
 ---
 
+- categories:
+	- [📚読書メモ](categories-books.md)
+- tags
+	- [🥇ベスト](tags-rating-1.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/3vaGRW">
   <figure class="px-5 py-5">
     <img

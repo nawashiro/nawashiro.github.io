@@ -1,6 +1,12 @@
 ---
-title: "デジタルガーデンの整備を進めた話"
-date: "2024-12-10"
+title: デジタルガーデンの整備を進めた話
+date: 2024-12-10
+---
+
+- categories:
+	- [🔧技術](categories-develops.md)
+	- [🏆プロジェクト](categories-projects.md)
+
 ---
 
 ここでデジタルガーデンの整備を始めました。デジタルガーデンとはなんでしょうか？

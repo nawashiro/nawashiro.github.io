@@ -3,6 +3,13 @@ title: "ハッカソン成果物発表 - Udon Zettelkasten System の紹介"
 date: "2024-09-11"
 ---
 
+- categories:
+	- [🔧技術](categories-develops.md)
+- topics:
+	- [エンジニア集会 × PNG ハッカソン「Udon Zettelkasten System」](20240908-engineer-meeting-png-hackathon-udon-zettelkasten-system.md)
+
+---
+
 このテキストは、PNG ミュージアム × エンジニア集会ハッカソンの発表スライドをテキスト形式でまとめたものです。
 
 ![Udon Zettelkasten System 外観](https://i.imgur.com/oPKVgVN.png)
@@ -51,7 +58,7 @@ date: "2024-09-11"
 - **Booth ストア開設！**
   - Udon Zettelkasten System は **アセットとして販売予定** です（記事作成時点で販売開始しました！）。
 
-https://nawashiro.booth.pm/items/6082934
+[【アイデアや知識を整理】Udon Zettelkasten System - Purr-so Shop - BOOTH](https://nawashiro.booth.pm/items/6082934)
 
 ## お礼
 
@@ -66,4 +73,4 @@ https://nawashiro.booth.pm/items/6082934
 
 **ぜひ、こちらのワールドで遊んでみてください！**
 
-https://vrchat.com/home/world/wrld_b6c40f25-1670-4e73-849e-d8b5f4794951
+[VRChat](https://vrchat.com/home/world/wrld_b6c40f25-1670-4e73-849e-d8b5f4794951)

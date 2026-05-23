@@ -1,6 +1,8 @@
 ---
-title: "ADHD自己管理術：戦略と戦術"
-date: "2025-12-21T09:09:46+09:00"
+title: ADHD自己管理術：戦略と戦術
+date: 2025-12-21T09:09:46+09:00
+categories:
+  - "[[categories-any-opinions]]"
 ---
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)

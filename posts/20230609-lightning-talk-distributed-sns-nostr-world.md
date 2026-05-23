@@ -3,6 +3,13 @@ title: "ライトニングトーク「分散型 SNS Nostr の世界」"
 date: "2023-06-09"
 ---
 
+- categories:
+	- [📊ライトニングトーク](categories-lightning-talks.md)
+- tags:
+	- [🏷️ソーシャルメディア](tags-social-media.md)
+
+---
+
 VR コミュニティ「エンジニア作業飲み集会」にてライトニングトークに参加しました。
 
 今回は分散型 SNS である Nostr について取り上げました。

@@ -3,6 +3,13 @@ title: "NosHagaki大改造計画"
 date: "2024-12-18"
 ---
 
+- categories:
+	- [🏆プロジェクト](categories-projects.md)
+- topics:
+	- [エンジニア集会ハッカソン「NosHagaki」](20240325-engineer-meeting-hackathon-nos-hagaki.md)
+
+---
+
 nos-hagaki を大改造しようというのだ。具体的には二つのプランがある。
 
 ひとつは、まともに動くようにしようという話。現状、公式の Redis がなんかいつの間にか吹っ飛んでることが多いので Redis への依存を無くす。話は単純で、多少作法は変わるが、今まで Redis にやらせていたことを Postgresql にやらせるのだ。

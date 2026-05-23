@@ -3,6 +3,11 @@ title: "風ぐるま乗換案内で行政課題解決賞をもらったはなし
 date: "2025-12-09T10:47:21+09:00"
 ---
 
+- categories:
+	- [🔧技術](categories-develops.md)
+
+---
+
 これは [Nostr アドベントカレンダー 2025](https://adventar.org/calendars/12046) の 9 日目の記事です。
 
 <img class="u-featured" src="https://imgur.com/c2qhVNo.png" alt="風ぐるま乗換案内のスクリーンショット" style="display:none"/>

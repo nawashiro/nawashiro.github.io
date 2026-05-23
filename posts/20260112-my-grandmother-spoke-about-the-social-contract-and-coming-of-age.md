@@ -1,6 +1,8 @@
 ---
 title: "社会契約と成人: おばあちゃんが語る"
-date: "2026-01-12T11:15:48+09:00"
+date: 2026-01-12T11:15:48+09:00
+categories:
+  - "[[categories-any-opinions]]"
 ---
 <img class="u-featured" src="https://emoji-route.deno.dev/png/%F0%9F%93%9C" alt="契約が書いてありそうなスクロール" style="display:none"/>
 

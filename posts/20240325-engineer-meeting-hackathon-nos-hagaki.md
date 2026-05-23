@@ -1,6 +1,13 @@
 ---
-title: "エンジニア集会ハッカソン「NosHagaki」"
-date: "2024-03-25"
+title: エンジニア集会ハッカソン「NosHagaki」
+date: 2024-03-25
+categories: "[[categories-lightning-talks]]"
+---
+
+- categories:
+	- [📊ライトニングトーク](categories-lightning-talks.md)
+	- [🏆プロジェクト](categories-projects.md)
+
 ---
 
 VR コミュニティ「エンジニア作業飲み集会」のハッカソンにて、NosHagaki という SNS のクライアントを開発しました。

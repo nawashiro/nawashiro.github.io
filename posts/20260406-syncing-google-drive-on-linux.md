@@ -1,6 +1,12 @@
 ---
-title: "Linux でファイルをいじると Google Drive と同期されるやつ"
-date: "2026-04-06T16:50:47+09:00"
+title: Linux でファイルをいじると Google Drive と同期されるやつ
+date: 2026-04-06T16:50:47+09:00
+---
+
+- categories:
+	- [🔧技術](categories-develops.md)
+	- [🗄️アーカイブ](categories-archives.md)
+
 ---
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)

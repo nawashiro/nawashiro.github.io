@@ -3,6 +3,12 @@ title: "ツンデレで学ぶダイクストラ法"
 date: "2026-01-31T16:06:59+09:00"
 ---
 
+- categories:
+	- [💰Support me!](categories-support-me.md)
+	- [🔧技術](categories-develops.md)
+
+---
+
 この記事はわりと修正し、有料で販売を始めました。
 
 価格: 500 円

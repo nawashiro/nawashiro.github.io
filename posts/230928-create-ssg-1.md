@@ -1,6 +1,11 @@
 ---
-title: "GitHub Pages & Next.jsで個人サイト作ってつまづいたところ"
-date: "2023-09-27 02:44"
+title: GitHub Pages & Next.jsで個人サイト作ってつまづいたところ
+date: 2023-09-27 02:44
+---
+
+- categories:
+	- [🔧技術](categories-develops.md)
+
 ---
 
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/Zr3a5S">

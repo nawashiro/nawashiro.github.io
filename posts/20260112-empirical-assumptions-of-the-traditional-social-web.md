@@ -1,6 +1,8 @@
 ---
-title: "旧来型ソーシャルウェブの経験的仮定"
-date: "2026-01-12T16:04:57+09:00"
+title: 旧来型ソーシャルウェブの経験的仮定
+date: 2026-01-12T16:04:57+09:00
+categories:
+  - "[[categories-any-opinions]]"
 ---
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/s7nnDQU">
   <figure class="px-5 py-5">

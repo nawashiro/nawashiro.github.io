@@ -1,6 +1,8 @@
 ---
-title: "ウェブを公共圏として再設計できるか"
-date: "2026-03-15T15:57:41+09:00"
+title: ウェブを公共圏として再設計できるか
+date: 2026-03-15T15:57:41+09:00
+categories:
+  - "[[categories-any-opinions]]"
 ---
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)

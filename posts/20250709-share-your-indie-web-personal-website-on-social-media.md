@@ -1,6 +1,11 @@
 ---
-title: "インディーウェブな個人サイトをSNSで共有する"
-date: "2025-07-09"
+title: インディーウェブな個人サイトをSNSで共有する
+date: 2025-07-09
+---
+
+- categories:
+	- [🔧技術](categories-develops.md)
+
 ---
 
 [Brid.gyでウェブサイトを共有してみる](20250709-share-your-website-with-brid-gy.md)

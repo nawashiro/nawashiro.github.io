@@ -1,6 +1,11 @@
 ---
-title: "そろそろシェーダーをはじめる"
-date: "2025-02-13"
+title: そろそろシェーダーをはじめる
+date: 2025-02-13
+---
+
+- categories:
+	- [🔧技術](categories-develops.md)
+
 ---
 
 これは [7 日間でマスターする Unity シェーダ入門](https://nn-hokuson.hatenablog.com/entry/2018/02/15/140037) や [【Unity , shader】原神の海を再現したい](https://qiita.com/uynet/items/f8b087d47f5cf316eb7e) を読んで、なるべく基礎からシェーダーを書く方法を学んでいくシリーズだ。数式とはなかなか仲良くなれないが、なんとか頑張っていく。

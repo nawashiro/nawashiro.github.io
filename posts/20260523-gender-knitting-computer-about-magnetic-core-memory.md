@@ -1,6 +1,8 @@
 ---
-title: "メモリを編んだ女性たちについて調べる - 磁気コアメモリ"
-date: "2026-05-23T11:12:41+09:00"
+title: メモリを編んだ女性たちについて調べる - 磁気コアメモリ
+date: 2026-05-23T11:12:41+09:00
+categories:
+  - "[[categories-any-opinions]]"
 ---
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)

@@ -1,6 +1,11 @@
 ---
-title: "分散型SNS、NostrとATProtocolのちがい"
-date: "2026-03-20T17:31:05+09:00"
+title: 分散型SNS、NostrとATProtocolのちがい
+date: 2026-03-20T17:31:05+09:00
+---
+
+- categories:
+	- [🔧技術](categories-develops.md)
+
 ---
 
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/aq6rfb">

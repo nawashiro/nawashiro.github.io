@@ -3,6 +3,12 @@ title: "ソフィ・カルとともに死を見つめる"
 date: "2025-01-27"
 ---
 
+- categories:
+	- [🎞️写真ブログ](categories-photo-blogs.md)
+	- 
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/KwyPQ4">
   <figure class="px-5 py-5">
     <img

@@ -3,6 +3,12 @@ title: "現代倫理学入門 - 読書メモ"
 date: "2024-12-17"
 ---
 
+- categories:
+	- [📚読書メモ](categories-books.md)
+	- [🥇ベスト](tags-rating-1.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/7nRJq2">
   <figure class="px-5 py-5">
     <img
