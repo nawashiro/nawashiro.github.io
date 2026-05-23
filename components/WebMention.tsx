@@ -10,6 +10,7 @@ import {
 import { MdAccountCircle, MdClose } from "react-icons/md";
 import { FaRetweet, FaBookmark } from "react-icons/fa6";
 import webmentionStyle from "../styles/webmention.module.css";
+import Twemoji from "react-twemoji";
 
 const icon = (action: string, classes: string = "") => {
   switch (action) {
@@ -310,7 +311,7 @@ const WebMention = ({
 
   return (
     <div ref={containerRef} id={id}>
-      {uniqueComments.length > 0 && !commentsAreReactions && (
+      <Twemoji options={{ className: "twemoji" }}>      {uniqueComments.length > 0 && !commentsAreReactions && (
         <>
           <h2>✍️へんじ</h2>
           {uniqueComments.map((comment) => {
@@ -338,15 +339,16 @@ const WebMention = ({
           })}
         </>
       )}
-      {uniqueReactions.length > 0 && (
-        <div className="mt-16 gap-4 flex flex-row flex-wrap">
-          {uniqueReactions.map((reaction) => (
-            <div key={reaction.url}>
-              {renderMention(reaction, { preventSpoofing, wordcount })}
-            </div>
-          ))}
-        </div>
-      )}
+        {uniqueReactions.length > 0 && (
+          <div className="mt-16 gap-4 flex flex-row flex-wrap">
+            {uniqueReactions.map((reaction) => (
+              <div key={reaction.url}>
+                {renderMention(reaction, { preventSpoofing, wordcount })}
+              </div>
+            ))}
+          </div>
+        )}
+      </Twemoji>
     </div>
   );
 };

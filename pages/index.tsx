@@ -205,7 +205,7 @@ export default function Home({
       </SectionLayout>
       <SectionLayout>
         <section>
-          <h2>Index</h2>
+          <h2>Categories</h2>
           <ul className="space-y-3">
             {indexPagesData.map(({ id, title }) => (
               <li key={id}>
