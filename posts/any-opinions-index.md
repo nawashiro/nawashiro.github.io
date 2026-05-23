@@ -5,6 +5,7 @@ date: "2026-01-12T11:00:42+09:00"
 
 任意の、いろいろな思考。採用すべきかよくわからないものを含む。
 
+- [メモリを編んだ女性たちについて調べる - 磁気コアメモリ](20260523-gender-knitting-computer-about-magnetic-core-memory.md)
 - [屈原にギャルゲー（有島武郎がヒロイン）をプレゼントしよう！](20260316-let-s-give-qu-yuan-a-dating-sim-game-with-takeo-arishima-as-the-heroine.md)
 	- 理想の独裁者とはなにか、という思考。
 - [ウェブを公共圏として再設計できるか](20260315-can-the-web-be-redesigned-as-a-public-sphere.md)
