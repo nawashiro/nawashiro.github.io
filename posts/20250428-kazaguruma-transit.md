@@ -3,8 +3,8 @@ title: "風ぐるま乗換案内をつくった"
 date: "2025-04-28"
 ---
 
-- categories:
-	- [🏆Projects](categories-projects.md)
+- tags:
+	- [🏷️プロジェクト](tags-projects.md)
 
 ---
 

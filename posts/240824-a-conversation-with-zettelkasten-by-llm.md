@@ -6,7 +6,7 @@ date: "2024-08-24"
 - categories:
 	- [📝覚え書き](categories-notes.md)
 - tags:
-	- [📝メモの技法](tags-note-taking-techniques.md)
+	- [🏷️メモの技法](tags-note-taking-techniques.md)
 - topics:
 	- [エンジニア集会 × PNG ハッカソン「Udon Zettelkasten System」](20240908-engineer-meeting-png-hackathon-udon-zettelkasten-system.md)
 

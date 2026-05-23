@@ -2,6 +2,12 @@
 title: "風ぐるま乗換案内のこれからと、年始の挨拶"
 date: "2026-01-11T10:56:37+09:00"
 ---
+
+- topics:
+	- [風ぐるま乗換案内をつくった](20250428-kazaguruma-transit.md)
+
+---
+
 <p class="e-bridgy-mastodon-content e-bridgy-bluesky-content">新年のご挨拶です。</p>
 
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/CMJWS8">
@@ -86,9 +92,5 @@ https://github.com/code4chiyoda/chiyoda_city_main_facilities
 ---
 
 ここまで読んでくれてありがとう。よければでいいのだが、フィードバックがほしい。 [Bluesky](https://bsky.app/profile/nawashiro.dev/post/3mc4hj7nu5v2x) や [Fediverse](https://gamelinks007.net/@nawashiro/115874063198547762) から返信するとウェブサイト内にも反映される。健闘を祈る。
-
-## 関連項目
-
-- [風ぐるま乗換案内をつくった](20250428-kazaguruma-transit.md)
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)

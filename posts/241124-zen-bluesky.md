@@ -3,6 +3,13 @@ title: "禅なBluesky"
 date: "2024-11-24"
 ---
 
+- categories:
+	- [🗄️アーカイブ](categories-archives.md)
+- tags:
+	- [🏷️ソーシャルメディア](tags-social-media.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/sZY7ud">
   <figure class="px-5 py-5">
     <img

@@ -3,6 +3,13 @@ title: "回復する人間 - 読書メモ"
 date: "2025-07-06"
 ---
 
+- categories:
+	- [💬読書メモ（短い）](categories-books-short.md)
+- tags:
+	- [🏷️フィクション](tags-fictions.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/BGNmme">
   <figure class="px-5 py-5">
     <img

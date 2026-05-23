@@ -3,6 +3,14 @@ title: "認知症は謎の恐ろしい病気ではない - 読書メモ"
 date: "2024-12-08"
 ---
 
+- categories:
+	- [📚読書メモ（長い）](categories-books-long.md)
+- tags:
+	- [🏷️人生](tags-life.md)
+	- [🏷️医療](tags-medical-care.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/J8HBmZr">
   <figure class="px-5 py-5">
     <img

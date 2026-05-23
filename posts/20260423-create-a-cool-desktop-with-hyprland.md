@@ -1,10 +1,12 @@
 ---
-title: 【Linuxデスクトップ元年】hyprlandでかっこいいデスクトップをやる
-date: 2026-04-23T16:24:33+09:00
+title: "【Linuxデスクトップ元年】hyprlandでかっこいいデスクトップをやる"
+date: "2026-04-23T16:24:33+09:00"
 ---
 
 - categories:
-	- [🔧技術](categories-develops.md)
+	- [🗄️アーカイブ](categories-archives.md)
+- tags:
+	- [🏷️ハウツー](tags-how-to.md)
 
 ---
 

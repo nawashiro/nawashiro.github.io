@@ -1,10 +1,10 @@
 ---
-title: "💰Support me!"
+title: "Support me!"
 date: "2024-08-17"
 ---
 
 - categories:
-	- [🗂️カテゴリ](categories.md)
+	- [📌ブックマーク](categories-bookmarks.md)
 
 ---
 

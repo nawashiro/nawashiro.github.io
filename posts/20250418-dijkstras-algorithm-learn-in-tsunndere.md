@@ -4,8 +4,9 @@ date: "2026-01-31T16:06:59+09:00"
 ---
 
 - categories:
-	- [💰Support me!](categories-support-me.md)
 	- [🔧技術](categories-develops.md)
+- topics:
+	- [Support me!](support-me.md)
 
 ---
 

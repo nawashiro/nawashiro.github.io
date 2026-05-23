@@ -1,8 +1,15 @@
 ---
-title: ADHD自己管理術：戦略と戦術
-date: 2025-12-21T09:09:46+09:00
-categories:
-  - "[[categories-any-opinions]]"
+title: "ADHD自己管理術：戦略と戦術"
+date: "2025-12-21T09:09:46+09:00"
+---
+
+- categories:
+	- [📌ブックマーク](categories-bookmarks.md)
+- tags:
+	- [🏷️ハウツー](tags-how-to.md)
+- topics:
+	- [発達障害の定義](20241214-developmental-disabilities.md)
+
 ---
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)

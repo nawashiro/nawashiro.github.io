@@ -1,10 +1,9 @@
 ---
-title: Brid.gyでウェブサイトを共有してみる
-date: 2025-07-09
+title: "Brid.gyでウェブサイトを共有してみる"
+date: "2025-07-09"
 ---
-
-- categories:
-	- [🔧技術](categories-develops.md)
+- topics:
+	- [インディーウェブな個人サイトをSNSで共有する](20250709-share-your-indie-web-personal-website-on-social-media.md)
 
 ---
 

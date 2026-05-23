@@ -4,8 +4,10 @@ date: "2024-12-17"
 ---
 
 - categories:
-	- [📚読書メモ](categories-books.md)
-	- [🥇ベスト](tags-rating-1.md)
+	- [📚読書メモ（長い）](categories-books-long.md)
+- tags:
+	- [🏷️🥇ベスト](tags-rating-1.md)
+	- [🏷️哲学](tags-philosophies.md)
 
 ---
 

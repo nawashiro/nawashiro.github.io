@@ -1,10 +1,10 @@
 ---
-title: 🏆プロジェクト
-date: 2025-04-28
+title: "🏷️プロジェクト"
+date: "2025-04-28"
 ---
 
 - categories:
-	- [🗂️カテゴリ](categories.md)
+	- [🏷️タグ](tags.md)
 
 ---
 

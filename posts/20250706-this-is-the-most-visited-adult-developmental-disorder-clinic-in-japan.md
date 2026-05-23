@@ -2,6 +2,16 @@
 title: "ここは、日本でいちばん患者が訪れる大人の発達障害診療科 - 読書メモ"
 date: "2025-07-06"
 ---
+
+- categories:
+	- [💬読書メモ（短い）](categories-books-short.md)
+- tags:
+	- [🏷️医療](tags-medical-care.md)
+- topics:
+	- [発達障害の定義](20241214-developmental-disabilities.md)
+
+---
+
 <img class="u-featured" src="http://books.google.com/books/content?id=LIytEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" style="display:none"/>
 
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/XtAkBT">

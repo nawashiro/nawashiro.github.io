@@ -1,8 +1,6 @@
 ---
-title: ライトニングトーク「Bluesky / ATProtocol をながめる」
-date: 2023-11-11
-categories:
-  - "[[categories-lightning-talks]]"
+title: "ライトニングトーク「Bluesky / ATProtocol をながめる」"
+date: "2023-11-11"
 ---
 
 - categories:

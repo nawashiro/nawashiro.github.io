@@ -4,9 +4,10 @@ date: "2025-02-12"
 ---
 
 - categories:
-	- [📚読書メモ](categories-books.md)
+	- [📚読書メモ（長い）](categories-books-long.md)
 - tags
-	- [🥇ベスト](tags-rating-1.md)
+	- [🏷️🥈わりとベスト](tags-rating-2.md)
+	- [🏷️SF](tags-sci-fi.md)
 
 ---
 

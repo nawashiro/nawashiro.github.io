@@ -3,6 +3,13 @@ title: "3・11後を生きるきみたちへ - 読書メモ"
 date: "2024-12-28"
 ---
 
+- categories:
+	- [💬読書メモ（短い）](categories-books-short.md)
+- tags:
+	- [🏷️社会問題](tags-social-issues.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/X24b9A">
   <figure class="px-5 py-5">
     <img

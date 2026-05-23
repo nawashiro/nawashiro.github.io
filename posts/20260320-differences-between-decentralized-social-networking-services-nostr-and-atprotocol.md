@@ -1,10 +1,12 @@
 ---
-title: 分散型SNS、NostrとATProtocolのちがい
-date: 2026-03-20T17:31:05+09:00
+title: "分散型SNS、NostrとATProtocolのちがい"
+date: "2026-03-20T17:31:05+09:00"
 ---
 
 - categories:
 	- [🔧技術](categories-develops.md)
+- tags:
+	- [🏷️ソーシャルメディア](tags-social-media.md)
 
 ---
 

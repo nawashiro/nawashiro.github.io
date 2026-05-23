@@ -5,7 +5,8 @@ date: "2024-09-08"
 
 - categories:
 	- [📊ライトニングトーク](categories-lightning-talks.md)
-	- [🏆プロジェクト](categories-projects.md)
+- tags:
+	- [🏷️プロジェクト](tags-projects.md)
 
 ---
 

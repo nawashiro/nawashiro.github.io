@@ -3,6 +3,13 @@ title: "すべてがＦになる - 読書メモ"
 date: "2026-02-26T18:26:35+09:00"
 ---
 
+- categories:
+	- [💬読書メモ（短い）](categories-books-short.md)
+- tags:
+	- [🏷️SF](tags-sci-fi.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/aaYTrL">
   <figure class="px-5 py-5">
     <img

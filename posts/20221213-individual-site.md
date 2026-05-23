@@ -1,10 +1,10 @@
 ---
-title: 個人サイト
-date: 2022-12-13
+title: "個人サイト"
+date: "2022-12-13"
 ---
 
-- categories:
-	- [🏆プロジェクト](categories-projects.md)
+- tags:
+	- [🏷️プロジェクト](tags-projects.md)
 
 ---
 

@@ -22,8 +22,3 @@ date: "2024-12-14"
 
 - [国連障害者の権利条約 関連資料 - 日本障害者リハビリテーション協会 2003年](https://www.jsrpd.jp/wp-content/uploads/2019/12/2003houkoku.pdf)
 - [障害者の権利に関する条約 - 外務省 2014年01月30日](https://www.mofa.go.jp/mofaj/fp/hr_ha/page22_000899.html)
-
-
-## 関連項目
-
-- [ハンチバック](20241214-hunchback.md)

@@ -1,14 +1,17 @@
 ---
-title: インディーウェブな個人サイトをSNSで共有する
-date: 2025-07-09
+title: "インディーウェブな個人サイトをSNSで共有する"
+date: "2025-07-09"
 ---
 
 - categories:
 	- [🔧技術](categories-develops.md)
+- tags:
+	- [🏷️ソーシャルメディア](tags-social-media.md)
+	- [🏷️ハウツー](tags-how-to.md)
+- topics:
+	- [Brid.gyでウェブサイトを共有してみる](20250709-share-your-website-with-brid-gy.md)
 
 ---
-
-[Brid.gyでウェブサイトを共有してみる](20250709-share-your-website-with-brid-gy.md)
 
 どうやら実験は成功のようだ。各種 SNS での共有を自動的に行えるようになった。ほんとはセルフホストしたほうがいいのだが、今回はとにかく手軽に始める方法を使った。
 

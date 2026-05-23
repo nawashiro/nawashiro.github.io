@@ -4,7 +4,7 @@ date: "2024-12-18"
 ---
 
 - categories:
-	- [🏆プロジェクト](categories-projects.md)
+	- [📝覚え書き](categories-notes.md)
 - topics:
 	- [エンジニア集会ハッカソン「NosHagaki」](20240325-engineer-meeting-hackathon-nos-hagaki.md)
 

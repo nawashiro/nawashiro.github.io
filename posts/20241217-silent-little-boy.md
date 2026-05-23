@@ -3,6 +3,15 @@ title: "沈黙のリトルボーイ - 読書メモ"
 date: "2024-12-17"
 ---
 
+- categories:
+	- [📚読書メモ（長い）](categories-books-long.md)
+- tags:
+	- [🏷️SF](tags-sci-fi.md)
+- topics:
+	- [NHK広島は原爆のなかいかに死んだか - 読書メモ](240806-book-esperanto-nuke.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/fAcxYJ">
   <figure class="px-5 py-5">
     <img
@@ -46,7 +55,3 @@ date: "2024-12-17"
 テッドは神の摂理の一部のつもりでマンハッタン計画に関わった。しかし、リトルボーイは炸裂しなかった。テッドは核分裂は神のなす技だと考えていた。だから戦時中に炸裂してくれれば、それは神の摂理の一部として納得することができた。しかし、戦後に炸裂したらただの殺戮者だ。自分のなしたことが神の摂理の一部ではないことを知ってしまった。だから、苦しむ。
 
 これは、人間宣言がなされたために苦しむ日本人をアメリカ風に描いたものではないか。
-
-## 関連項目
-
-- [NHK広島は原爆のなかいかに死んだか - 読書メモ](240806-book-esperanto-nuke.md)

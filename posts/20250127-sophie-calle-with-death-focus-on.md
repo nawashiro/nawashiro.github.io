@@ -5,7 +5,8 @@ date: "2025-01-27"
 
 - categories:
 	- [🎞️写真ブログ](categories-photo-blogs.md)
-	- 
+- tags:
+	- [🏷️人生](tags-life.md)
 
 ---
 

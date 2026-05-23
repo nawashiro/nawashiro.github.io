@@ -1,8 +1,16 @@
 ---
-title: 害を受けたとき読む教訓
-date: 2024-12-30
-categories:
-  - "[[categories-any-opinions]]"
+title: "害を受けたとき読む教訓"
+date: "2024-12-30"
+---
+
+- categories:
+	- [😶‍🌫️いろいろな考え](categories-any-opinions.md)
+- tags:
+	- [🏷️ハウツー](tags-how-to.md)
+	- [🏷️人生](tags-life.md)
+- topics:
+	- [いやな目にあったら読む本 - 読書メモ](20241207-a-revenge-manual-for-those-who-hate-someone.md)
+
 ---
 
 これを読んでいる未来の私へ。これは教訓だ。何度も読むがいい。肝に銘じろ。

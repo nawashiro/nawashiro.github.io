@@ -4,9 +4,9 @@ date: "2025-01-05"
 ---
 
 - categories:
-	- [📚読書メモ](categories-books.md)
+	- [📚読書メモ（長い）](categories-books-long.md)
 - tags:
-	- [📝メモの技法](tags-note-taking-techniques.md)
+	- [🏷️メモの技法](tags-note-taking-techniques.md)
 
 ---
 

@@ -3,6 +3,15 @@ title: "障害年金をもらおう！"
 date: "2025-06-25"
 ---
 
+- categories:
+	- [📝覚え書き](categories-notes.md)
+- tags:
+	- [🏷️ハウツー](tags-how-to.md)
+- topics:
+	- [障害者の定義](20241214-disabled-people.md)
+
+---
+
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
 
 <p class="e-bridgy-mastodon-content e-bridgy-bluesky-content" style="display:none">障害年金をもらった。タイムリーな話題かもしれない。もしあなたが何らかの障害を持っていたら是非参考にしてほしい。そうでなくとも、誰もが障害者になりうる。</p>

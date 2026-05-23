@@ -1,12 +1,12 @@
 ---
-title: エンジニア集会ハッカソン「NosHagaki」
-date: 2024-03-25
-categories: "[[categories-lightning-talks]]"
+title: "エンジニア集会ハッカソン「NosHagaki」"
+date: "2024-03-25"
 ---
 
 - categories:
 	- [📊ライトニングトーク](categories-lightning-talks.md)
-	- [🏆プロジェクト](categories-projects.md)
+- tags
+	- [🏷️プロジェクト](tags-projects.md)
 
 ---
 

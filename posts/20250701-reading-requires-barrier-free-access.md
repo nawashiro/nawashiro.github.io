@@ -3,6 +3,16 @@ title: "読書にはバリアフリーが必要だ - 読書メモ"
 date: "2025-07-01"
 ---
 
+- categories:
+	- [📚読書メモ（長い）](categories-books-long.md)
+- tags:
+	- [🏷️社会問題](tags-social-issues.md)
+	- [🏷️ハウツー](tags-how-to.md)
+- topics:
+	- [読書バリアフリー法](20241214-barrier-free-reading-raw.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/ceTLrtW">
   <figure class="px-5 py-5">
     <img

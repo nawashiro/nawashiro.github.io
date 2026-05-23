@@ -2,6 +2,11 @@
 title: "利用規約をバザール式で作って、いい感じに使いたい"
 date: "2026-01-11T10:50:35+09:00"
 ---
+- tags:
+	- [🏷️落書き](tags-scribbles.md)
+
+---
+
 ## 要約
 
 <p class="e-bridgy-mastodon-content e-bridgy-bluesky-content">自作コンテンツの転載やデータセットへの利用を禁じる利用規約を作ってみた。AIとか嫌いな人は使えばいいかも。QRコードつきの画像素材でも作っておけば何かには使えそう。</p>

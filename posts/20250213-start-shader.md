@@ -1,10 +1,12 @@
 ---
-title: そろそろシェーダーをはじめる
-date: 2025-02-13
+title: "そろそろシェーダーをはじめる"
+date: "2025-02-13"
 ---
 
 - categories:
 	- [🔧技術](categories-develops.md)
+- tags:
+	- [🏷️ハウツー](tags-how-to.md)
 
 ---
 

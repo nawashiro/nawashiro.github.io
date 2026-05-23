@@ -3,6 +3,14 @@ title: "責任は脳と脳の間にある - 読書メモ"
 date: "2024-08-07"
 ---
 
+- categories:
+	- [📚読書メモ（長い）](categories-books-long.md)
+- tags:
+	- [🏷️哲学](tags-philosophies.md)
+	- [🏷️🥇ベスト](tags-rating-1.md)
+
+---
+
 
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/ixdJ5j">
   <figure class="px-5 py-5">

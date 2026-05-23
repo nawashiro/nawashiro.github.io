@@ -1,7 +1,6 @@
 ---
-title: 分散 SNS 集会『「Nostr and ATProto」by Shreyan Jain を読む』
-date: 2024-07-08
-categories: "[[categories-lightning-talks]]"
+title: "分散 SNS 集会『「Nostr and ATProto」by Shreyan Jain を読む』"
+date: "2024-07-08"
 ---
 
 - categories:

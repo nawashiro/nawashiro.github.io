@@ -4,8 +4,9 @@ date: "2023-07-22"
 ---
 
 - categories:
-	- [🏆プロジェクト](categories-projects.md)
 	- [📊ライトニングトーク](categories-lightning-talks.md)
+- topics:
+	- [分散SNS集会の紹介](240421-introducing-the-gathering-of-distributed-social-network.md)
 
 ---
 

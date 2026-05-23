@@ -1,8 +1,13 @@
 ---
-title: メモリを編んだ女性たちについて調べる - 磁気コアメモリ
-date: 2026-05-23T11:12:41+09:00
-categories:
-  - "[[categories-any-opinions]]"
+title: "メモリを編んだ女性たちについて調べる - 磁気コアメモリ"
+date: "2026-05-23T11:12:41+09:00"
+---
+
+- categories:
+	- [😶‍🌫️いろいろな考え](categories-any-opinions.md)
+- tags:
+	- [🏷️社会問題](tags-social-issues.md)
+
 ---
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)

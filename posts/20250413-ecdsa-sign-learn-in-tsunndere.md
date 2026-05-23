@@ -1,10 +1,9 @@
 ---
-title: ツンデレで学ぶECDSA署名
-date: 2025-11-30T11:05:31+09:00
+title: "ツンデレで学ぶECDSA署名"
+date: "2025-11-30T11:05:31+09:00"
 ---
 
 - categories:
-	- [🔧技術](categories-develops.md)
 	- [📃下書き](categories-drafts.md)
 
 ---

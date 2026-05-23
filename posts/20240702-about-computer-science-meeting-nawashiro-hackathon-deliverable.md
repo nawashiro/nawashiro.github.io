@@ -1,7 +1,13 @@
 ---
-title: コンピュータサイエンス集会「Nawashiro のハッカソン成果物について」
-date: 2024-07-02
-categories: "[[categories-lightning-talks]]"
+title: "コンピュータサイエンス集会「Nawashiro のハッカソン成果物について」"
+date: "2024-07-02"
+---
+
+- categories:
+	- [📊ライトニングトーク](categories-lightning-talks.md)
+- topics:
+	- [エンジニア集会ハッカソン「NosHagaki」](20240325-engineer-meeting-hackathon-nos-hagaki.md)
+
 ---
 
 VR コミュニティ「コンピュータサイエンス集会」で、NosHagaki 制作の顛末について発表しました。

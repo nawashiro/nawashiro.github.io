@@ -3,6 +3,13 @@ title: "メタバース進化論 - 読書メモ"
 date: "2024-12-17"
 ---
 
+- categories:
+	- [💬読書メモ（短い）](categories-books-short.md)
+- tags:
+	- [🏷️ソーシャルメディア](tags-social-media.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/5ypqd4">
   <figure class="px-5 py-5">
     <img

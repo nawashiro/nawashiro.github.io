@@ -3,6 +3,13 @@ title: "介護では、親孝行が薬になるとは限らない - 読書メモ
 date: "2025-11-30T14:58:30+09:00"
 ---
 
+- categories:
+	- [📚読書メモ（長い）](categories-books-long.md)
+- tags:
+	- [🏷️人生](tags-life.md)
+
+---
+
 <img class="u-featured" src="http://books.google.com/books/content?id=tvqSEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" style="display:none"/>
 
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/-WvtpJ">

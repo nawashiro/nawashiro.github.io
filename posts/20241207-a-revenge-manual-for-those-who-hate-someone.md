@@ -3,6 +3,15 @@ title: "いやな目にあったら読む本 - 読書メモ"
 date: "2024-12-07"
 ---
 
+- categories:
+	- [📚読書メモ（長い）](categories-books-long.md)
+- tags:
+	- [🏷️人生](tags-life.md)
+- topics:
+	- [害を受けたとき読む教訓](20241230-lessons-to-read-when-you-are-harmed.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/XbGh8d">
   <figure class="px-5 py-5">
     <img

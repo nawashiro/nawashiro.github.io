@@ -1,6 +1,6 @@
 ---
-title: Misskey クライアント
-date: 2023-09-11
+title: "Misskey クライアント"
+date: "2023-09-11"
 ---
 
 - categories:

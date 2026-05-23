@@ -5,7 +5,7 @@ date: "2024-03-25"
 - categories:
 	- [📝覚え書き](categories-notes.md)
 - tags:
-	- [📝メモの技法](tags-note-taking-techniques.md)
+	- [🏷️メモの技法](tags-note-taking-techniques.md)
 
 ---
 

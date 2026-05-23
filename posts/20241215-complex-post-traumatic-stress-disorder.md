@@ -3,6 +3,16 @@ title: "複雑性PTSD"
 date: "2024-12-15"
 ---
 
+- categories:
+	- [📚読書メモ（長い）](categories-books-long.md)
+- tags:
+	- [🏷️社会問題](tags-social-issues.md)
+- topics:
+	- [発達障害の定義](20241214-developmental-disabilities.md)
+	- [障害者の定義](20241214-disabled-people.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/SVokTV">
   <figure class="px-5 py-5">
     <img
@@ -29,7 +39,3 @@ date: "2024-12-15"
 > 宮内庁は 1 日、秋篠宮家の長女眞子さま（29）と小室圭さん（29）の結婚発表の中で、眞子さまが複雑性 PTSD（心的外傷後ストレス障害）と診断されていたことを明らかにした。
 > 
 > [『眞子さま、「複雑性PTSD」と診断　宮内庁が発表』2021年10月1日 16時36分 朝日新聞デジタル](https://www.asahi.com/articles/ASPB15FXZPB1UTIL02F.html)
-
-## 関連項目
-
-- [障害者の定義](20241214-disabled-people.md)
