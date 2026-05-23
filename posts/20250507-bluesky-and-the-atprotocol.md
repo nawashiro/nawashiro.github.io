@@ -3,6 +3,13 @@ title: "Blueskyってなんだ？ATProtocolのアーキテクチャ入門"
 date: "2025-05-07"
 ---
 
+- categories:
+	- [🔧技術](categories-develops.md)
+- tags:
+	- [🏷️ソーシャルメディア](tags-social-media.md)
+
+---
+
 https://www.nicovideo.jp/watch/sm44956545
 
 ## TOC

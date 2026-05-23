@@ -3,6 +3,13 @@ title: "屈原にギャルゲー（有島武郎がヒロイン）をプレゼン
 date: "2026-03-20T11:20:52+09:00"
 ---
 
+- categories:
+	- [😶‍🌫️いろいろな考え](categories-any-opinions.md)
+- tags:
+	- [🏷️落書き](tags-scribbles.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/7pfAxc">
   <figure class="px-5 py-5">
     <img

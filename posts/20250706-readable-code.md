@@ -3,6 +3,13 @@ title: "リーダブルコード - 読書メモ"
 date: "2025-07-06"
 ---
 
+- categories:
+	- [💬読書メモ（短い）](categories-books-short.md)
+- tags:
+	- [🏷️ハウツー](tags-how-to.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/-ut3X3">
   <figure class="px-5 py-5">
     <img

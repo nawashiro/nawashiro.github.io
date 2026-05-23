@@ -3,6 +3,13 @@ title: "ウェブを公共圏として再設計できるか"
 date: "2026-03-15T15:57:41+09:00"
 ---
 
+- categories:
+	- [😶‍🌫️いろいろな考え](categories-any-opinions.md)
+- tags:
+	- [🏷️社会問題](tags-social-issues.md)
+
+---
+
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
 
 > [!NOTE]
@@ -127,7 +134,7 @@ date: "2026-03-15T15:57:41+09:00"
 
 ---
 
-風ぐるま## 4-2. 分散型 SNS が面白い理由
+## 4-2. 分散型 SNS が面白い理由
 
 公共圏には、**信頼できる脱出**が必要。
 

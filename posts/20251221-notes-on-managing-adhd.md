@@ -3,6 +3,15 @@ title: "ADHD自己管理術：戦略と戦術"
 date: "2025-12-21T09:09:46+09:00"
 ---
 
+- categories:
+	- [📌ブックマーク](categories-bookmarks.md)
+- tags:
+	- [🏷️ハウツー](tags-how-to.md)
+- topics:
+	- [発達障害の定義](20241214-developmental-disabilities.md)
+
+---
+
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
 
 <img class="u-featured" src="https://imgur.com/eQc4Vo2.jpeg" alt="要約のポンチ絵。第1層：薬物療法はすべての基盤。第2層：To-Doリストを外部脳として使う。一日のうち最もエネルギーのある時間（朝など）にタスクを組み込む。第3層：To-Doリストを常に視界に。プロジェクトとの接触を保つ。スマホの通知などの割り込みはやめて定期確認に。" style="display:none"/>

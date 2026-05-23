@@ -3,6 +3,15 @@ title: "ハンチバック"
 date: "2024-12-14"
 ---
 
+- categories:
+	- [📚読書メモ（長い）](categories-books-long.md)
+- tags:
+	- [🏷️社会問題](tags-social-issues.md)
+- topics:
+	- [障害者の定義](20241214-disabled-people.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/4_d_p5">
   <figure class="px-5 py-5">
     <img

@@ -2,6 +2,14 @@
 title: "哲学対話ってなんだ？ - 読書メモ"
 date: "2025-06-27"
 ---
+
+- categories:
+	- [📚読書メモ（長い）](categories-books-long.md)
+- tags:
+	- [🏷️哲学](tags-philosophies.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="#">
   <figure class="px-5 py-5">
     <img

@@ -3,6 +3,13 @@ title: "分散 SNS 集会『「Nostr and ATProto」by Shreyan Jain を読む』"
 date: "2024-07-08"
 ---
 
+- categories:
+	- [📊ライトニングトーク](categories-lightning-talks.md)
+- tags:
+	- [🏷️ソーシャルメディア](tags-social-media.md)
+
+---
+
 私が主催する「分散 SNS 集会」で、分散型の SNS プロトコルである Nostr と ATProto について包括的に比較した Shreyan Jain 氏のブログ記事 [「Nostr and ATProto」](https://shreyanjain.net/2024/07/05/nostr-and-atproto.html) をみんなで読む催しをしました。
 
 記事では Nostr と ATProto の共通の祖先、アプローチのちがい、これからの分散型 SNS について語られていました。

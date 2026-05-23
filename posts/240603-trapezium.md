@@ -3,6 +3,13 @@ title: "映画『トラペジウム』を観て"
 date: "2024-06-03"
 ---
 
+- categories:
+	- [📚読書メモ（長い）](categories-books-long.md)
+- tags:
+	- [🏷️フィクション](tags-fictions.md)
+
+---
+
 
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/jBBM6T">
   <figure class="px-5 py-5">

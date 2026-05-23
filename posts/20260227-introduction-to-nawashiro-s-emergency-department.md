@@ -3,6 +3,13 @@ title: "なわしろの救急外来入門"
 date: "2026-02-27T17:11:31+09:00"
 ---
 
+- categories:
+	- [📝覚え書き](categories-notes.md)
+- tags:
+	- [🏷️ハウツー](tags-how-to.md)
+
+---
+
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
 
 <p class="e-bridgy-mastodon-content e-bridgy-bluesky-content" style="display:none">パニクるな！なわしろの救急外来入門</p>

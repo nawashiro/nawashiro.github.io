@@ -3,6 +3,16 @@ title: "理想のソーシャルメディア"
 date: "2024-06-13"
 ---
 
+- categories:
+	- [😶‍🌫️いろいろな考え](categories-any-opinions.md)
+- tags:
+	- [🏷️社会問題](tags-social-issues.md)
+	- [🏷️ソーシャルメディア](tags-social-media.md)
+- topics:
+	- [分散SNS集会の紹介](240421-introducing-the-gathering-of-distributed-social-network.md)
+
+---
+
 こんにちは。突然ですが、「理想のソーシャルメディア」と聞いてどんなものを思い浮かべますか？
 
 きっと、みなさんはソーシャルメディアと聞いて Twitter や Facebook を思い浮かべるでしょう。いままでソーシャルメディアといえば、大きな世界を小さな箱に詰め込んだ混沌でした。

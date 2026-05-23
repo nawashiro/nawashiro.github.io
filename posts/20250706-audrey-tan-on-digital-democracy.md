@@ -2,6 +2,17 @@
 title: "デジタルでおおまかな合意をめざす民主主義 - 読書メモ"
 date: "2025-07-07"
 ---
+
+- categories:
+	- [📚読書メモ（長い）](categories-books-long.md)
+- tags:
+	- [🏷️社会問題](tags-social-issues.md)
+	- [🏷️ハウツー](tags-how-to.md)
+- topics:
+	- [ウェブを公共圏として再設計できるか](20260315-can-the-web-be-redesigned-as-a-public-sphere.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/6SkeBg">
   <figure class="px-5 py-5">
     <img

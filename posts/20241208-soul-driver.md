@@ -3,6 +3,14 @@ title: "魂をふるわせるマシン - 読書メモ"
 date: "2024-12-08"
 ---
 
+- categories:
+	- [📚読書メモ（長い）](categories-books-long.md)
+- tags:
+	- [🏷️SF](tags-sci-fi.md)
+	- [🏷️🥈わりとベスト](tags-rating-2.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/rU_qmB">
   <figure class="px-5 py-5">
     <img

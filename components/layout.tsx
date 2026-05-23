@@ -118,7 +118,7 @@ export default function Layout({
                 <Link href="/">Home</Link>
               </li>
               <li>
-                <Link href="/posts/projects-index">Projects</Link>
+                <Link href="/posts/tags-projects">Projects</Link>
               </li>
               <li>
                 <Link href="/posts/links">Links</Link>
@@ -146,7 +146,7 @@ export default function Layout({
                   <Link href="/">Home</Link>
                 </li>
                 <li>
-                  <Link href="/posts/projects-index">Projects</Link>
+                  <Link href="/posts/tags-projects">Projects</Link>
                 </li>
                 <li>
                   <Link href="/posts/links">Links</Link>

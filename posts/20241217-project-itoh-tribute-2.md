@@ -3,6 +3,13 @@ title: "伊藤計劃トリビュート 2 - 読書メモ"
 date: "2024-12-17"
 ---
 
+- categories:
+	- [💬読書メモ（短い）](categories-books-short.md)
+- tags:
+	- [🏷️SF](tags-sci-fi.md)
+
+---
+
 - 著者: 早川書房編集部
 - 出版社: 早川書房
 - 出版年月日: 2017 年 01 月 24 日

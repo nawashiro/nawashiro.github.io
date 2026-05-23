@@ -180,9 +180,7 @@ export default function Home({
 
           <div className="chat chat-start">
             <div className="chat-image avatar">
-              <div className="w-10 rounded-full">
-                <img alt="😰" src="https://emoji-route.deno.dev/gif/😰" />
-              </div>
+                😰
             </div>
             <div className="chat-bubble">
               すべてをすぐに正しくしなければならない
@@ -190,9 +188,7 @@ export default function Home({
           </div>
           <div className="chat chat-end">
             <div className="chat-image avatar">
-              <div className="w-10 rounded-full">
-                <img alt="🤩" src="https://emoji-route.deno.dev/gif/🤩" />
-              </div>
+                🤩
             </div>
             <div className="chat-bubble">
               インターネットに書いてあることはぜんぶ本当なんだ！
@@ -209,7 +205,7 @@ export default function Home({
       </SectionLayout>
       <SectionLayout>
         <section>
-          <h2>Index</h2>
+          <h2>Categories</h2>
           <ul className="space-y-3">
             {indexPagesData.map(({ id, title }) => (
               <li key={id}>

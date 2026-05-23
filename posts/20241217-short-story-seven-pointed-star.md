@@ -2,6 +2,14 @@
 title: "短篇七芒星 - 読書メモ"
 date: "2024-12-17"
 ---
+
+- categories:
+	- [💬読書メモ（短い）](categories-books-short.md)
+- tags:
+	- [🏷️フィクション](tags-fictions.md)
+
+---
+
 - 著者: 舞城王太郎
 - 出版社: 講談社
 - 出版年月日: 2022 年 06 月 30 日

@@ -3,6 +3,13 @@ title: "心の病になった人とその家族が最初に読む本 - 読書メ
 date: "2025-07-06"
 ---
 
+- categories:
+	- [💬読書メモ（短い）](categories-books-short.md)
+- tags:
+	- [🏷️医療](tags-medical-care.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/rpGJP2">
   <figure class="px-5 py-5">
     <img

@@ -3,6 +3,13 @@ title: "ライトニングトーク「Bluesky / ATProtocol をながめる」"
 date: "2023-11-11"
 ---
 
+- categories:
+	- [📊ライトニングトーク](categories-lightning-talks.md)
+- tags:
+	- [🏷️ソーシャルメディア](tags-social-media.md)
+
+---
+
 VR コミュニティ「エンジニア作業飲み集会」と「分散 SNS 集会」でライトニングトークを行いました。
 
 今回は分散 SNS の試みの一つである Bluesky / ATProtocol について取り上げました。

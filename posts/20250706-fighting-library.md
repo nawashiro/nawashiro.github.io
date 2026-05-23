@@ -3,6 +3,15 @@ title: "闘う図書館 - 読書メモ"
 date: "2025-07-06"
 ---
 
+- categories:
+	- [💬読書メモ（短い）](categories-books-short.md)
+- tags:
+	- [🏷️社会問題](tags-social-issues.md)
+- topics:
+	- [社会的「烙印」に図書館はいかに立ち向かうのか](20251130-how-can-libraries-confront-social-stigma.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/fUwBCn">
   <figure class="px-5 py-5">
     <img

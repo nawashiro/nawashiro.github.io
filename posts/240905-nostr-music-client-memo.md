@@ -2,6 +2,15 @@
 title: "Nostrの音楽アプリをぼんやり構想してみる"
 date: "2024-09-05"
 ---
+
+- categories:
+	- [🔧技術](categories-develops.md)
+- tags:
+	- [🏷️ソーシャルメディア](tags-social-media.md)
+	- [🏷️ハウツー](tags-how-to.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/aq6rfb">
   <figure class="px-5 py-5">
     <img

@@ -2,6 +2,14 @@
 title: "プロジェクト・ヘイル・メアリー - 読書メモ"
 date: "2024-12-17"
 ---
+
+- categories:
+	- [💬読書メモ（短い）](categories-books-short.md)
+- tags:
+	- [🏷️SF](tags-sci-fi.md)
+
+---
+
 - 著者: アンディ ウィアー
 - 出版社: 早川書房
 - 出版年月日: 2021 年 12 月 16 日

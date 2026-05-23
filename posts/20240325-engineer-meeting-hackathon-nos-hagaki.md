@@ -3,6 +3,13 @@ title: "エンジニア集会ハッカソン「NosHagaki」"
 date: "2024-03-25"
 ---
 
+- categories:
+	- [📊ライトニングトーク](categories-lightning-talks.md)
+- tags
+	- [🏷️プロジェクト](tags-projects.md)
+
+---
+
 VR コミュニティ「エンジニア作業飲み集会」のハッカソンにて、NosHagaki という SNS のクライアントを開発しました。
 
 分散 SNS の試みの一つに「[Nostr プロトコル](https://nostr.com/)」があります。これはクライアント・サーバー間の通信に関するプロトコルで、主に SNS を実現するために使用されます。強力な障害耐性が特徴です。

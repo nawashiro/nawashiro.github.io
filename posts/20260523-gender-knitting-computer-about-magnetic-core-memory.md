@@ -3,6 +3,13 @@ title: "メモリを編んだ女性たちについて調べる - 磁気コアメ
 date: "2026-05-23T11:12:41+09:00"
 ---
 
+- categories:
+	- [😶‍🌫️いろいろな考え](categories-any-opinions.md)
+- tags:
+	- [🏷️社会問題](tags-social-issues.md)
+
+---
+
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
 
 細い電線を編んで布を作る。1 円玉の厚みより小さいビーズを編み込む。ビーズをフェライトコアと言う。フェライトコア 1 個あたり 1 セントかかる [^1]。1 万個編むと 1 個のメモリができる。100 ドルかかる。

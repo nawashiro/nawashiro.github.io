@@ -2,6 +2,14 @@
 title: "メタバースさよならアトムの時代 - 読書メモ"
 date: "2024-12-17"
 ---
+
+- categories:
+	- [💬読書メモ（短い）](categories-books-short.md)
+- topics:
+	- [メタバース進化論 - 読書メモ](20241217-metaverse-evolution.md)
+
+---
+
 - 著者: 加藤直人
 - 出版社: 集英社
 - 出版年月日: 2022 年 04 月 05 日

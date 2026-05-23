@@ -3,6 +3,11 @@ title: "WCAG 2.0 達成基準 1.4.1 を理解する"
 date: "2024-12-23"
 ---
 
+- categories:
+	- [🔧技術](categories-develops.md)
+
+---
+
 なるべく自分の言葉でメモして、自分のものにしようと考えました。なので、正確な情報を得たい方は原典を参照してください。
 
 出典: [WCAG 2.0 解説書 色の使用: 達成基準 1.4.1 を理解する](https://waic.jp/translations/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html)

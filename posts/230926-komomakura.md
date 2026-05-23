@@ -3,6 +3,11 @@ title: "薦枕"
 date: "2023-09-24 22:50"
 ---
 
+- tags:
+	- [🏷️落書き](tags-scribbles.md)
+
+---
+
 <ruby>薦枕<rp>(</rp><rt>こもまくら</rt><rp>)</rp></ruby>。最近では<ruby>誰贄人<rp>(</rp><rt>たがにへびと</rt><rp>)</rp></ruby>とすることもあります。
 
 ## テキスト

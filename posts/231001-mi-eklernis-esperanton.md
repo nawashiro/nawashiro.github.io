@@ -2,6 +2,16 @@
 title: "Mi eklernis Esperanton - alfabeto"
 date: "2023-10-01 21:44"
 ---
+
+- categories:
+	- [📝覚え書き](categories-notes.md)
+- tags:
+	- [🏷️ハウツー](tags-how-to.md)
+- topics:
+	- [Trejnado pri Esperanta legado](231005-trejnado-pri-esperanta-legado.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/GziW8SV">
   <figure class="px-5 py-5">
     <img

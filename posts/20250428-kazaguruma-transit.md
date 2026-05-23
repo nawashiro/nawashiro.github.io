@@ -3,6 +3,11 @@ title: "風ぐるま乗換案内をつくった"
 date: "2025-04-28"
 ---
 
+- tags:
+	- [🏷️プロジェクト](tags-projects.md)
+
+---
+
 https://kazaguruma-transit.nawashiro.dev/
 
 ![風ぐるま乗換案内](https://imgur.com/63thtgK.jpg)

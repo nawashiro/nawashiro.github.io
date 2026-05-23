@@ -83,7 +83,7 @@ export function getSortedPostsData(): PostMeta[] {
 export function getIndexPagesData(): PostMeta[] {
   const fileNames = fs
     .readdirSync(postsDirectory)
-    .filter((fileName) => fileName.endsWith('.md') && /-index.md$/.test(fileName));
+    .filter((fileName) => fileName.endsWith('.md') && /categories-.+\.md$/.test(fileName));
 
   const indexPosts = fileNames.map((fileName) => {
     const { id, matterResult } = getPostBasicData(fileName);

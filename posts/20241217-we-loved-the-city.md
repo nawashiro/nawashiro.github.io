@@ -3,6 +3,15 @@ title: "ぼくらは都市を愛していた - 読書メモ"
 date: "2024-12-17"
 ---
 
+- categories:
+	- [💬読書メモ（短い）](categories-books-short.md)
+- tags:
+	- [🏷️SF](tags-sci-fi.md)
+- topics:
+	- [ハングルと都市](241124-hangul-and-cities.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/j8QRyy">
   <figure class="px-5 py-5">
     <img

@@ -3,6 +3,15 @@ title: "社会的「烙印」に図書館はいかに立ち向かうのか"
 date: "2025-11-30T20:07:06+09:00"
 ---
 
+- categories:
+	- [📚読書メモ（長い）](categories-books-long.md)
+- tags:
+	- [🏷️社会問題](tags-social-issues.md)
+	- [🏷️ハウツー](tags-how-to.md)
+	- [🏷️🥈わりとベスト](tags-rating-2.md)
+
+---
+
 <img class="u-featured" src="http://books.google.com/books/content?id=S-zsjwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api" style="display:none"/>
 
 <p class="e-bridgy-mastodon-content e-bridgy-bluesky-content" style="display:none">収入、性別、障害、人種、出身地……社会的「烙印」に図書館はいかに立ち向かうのか。</p>

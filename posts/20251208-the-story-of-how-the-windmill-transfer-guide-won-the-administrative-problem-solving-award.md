@@ -3,6 +3,16 @@ title: "風ぐるま乗換案内で行政課題解決賞をもらったはなし
 date: "2025-12-09T10:47:21+09:00"
 ---
 
+- categories:
+	- [🔧技術](categories-develops.md)
+- tags:
+	- [🏷️ハウツー](tags-how-to.md)
+	- [🏷️🥇ベスト](tags-rating-1.md)
+- topics:
+	- [風ぐるま乗換案内をつくった](20250428-kazaguruma-transit.md)
+
+---
+
 これは [Nostr アドベントカレンダー 2025](https://adventar.org/calendars/12046) の 9 日目の記事です。
 
 <img class="u-featured" src="https://imgur.com/c2qhVNo.png" alt="風ぐるま乗換案内のスクリーンショット" style="display:none"/>
@@ -111,7 +121,3 @@ OpenSats にも応募しなければなりません。たいへん。
 ---
 
 ここまで読んでくれてありがとう。よければでいいのだが、フィードバックがほしい。 [Bluesky](https://bsky.app/profile/nawashiro.dev/post/3m7jgahb2zf2n) や [Fediverse](https://gamelinks007.net/@nawashiro/115687074337463084) から返信するとウェブサイト内にも反映される。健闘を祈る。
-
-## 関連項目
-
-- [風ぐるま乗換案内をつくった](20250428-kazaguruma-transit.md)

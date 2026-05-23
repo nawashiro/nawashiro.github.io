@@ -1,6 +1,11 @@
 ---
-title: "Links"
+title: "リンク"
 date: "2025-01-27"
+---
+
+- categories:
+	- [📌ブックマーク](categories-bookmarks.md)
+
 ---
 
 私の各種 SNS へのリンクを紹介します。
@@ -15,61 +20,55 @@ Fingerprint: `4692 96D2 95A6 04C2 630D EC1F 4141 6DA6 C645 A862`
 
 各種アカウントの真正性の確認を行えます。
 
-https://keybase.io/nawashiro
+[nawashiro \| Keybase](https://keybase.io/nawashiro)
 
 ## Ko-fi
 
 制作物の販売・支援の受付をしています。なるべくここから買ってください！いちばん手数料が低いので……
 
-https://ko-fi.com/nawashiro
+[Buy Nawashiro a Coffee](https://ko-fi.com/nawashiro)
 
 ## Booth
 
 制作物の販売・支援の受付をしています。
 
-https://nawashiro.booth.pm/
-
-## Gumroad
-
-制作物の販売・支援の受付をしています。
-
-https://nawashiro.gumroad.com/
+[Purr-so Shop - BOOTH](https://nawashiro.booth.pm/)
 
 ## Misskey
 
 分散 SNS 集会の告知に使用している ActivityPub プロトコル対応 SNS のアカウントです。
 
-https://misskey.io/@continue5645
+[分散SNS集会@VRChat (@continue5645) \| Misskey.io](https://misskey.io/@continue5645)
 
 ## 読書メーター
 
 読んだ本をまとめています。たまに感想も書きます。
 
-https://bookmeter.com/users/1240014
+[d酒う - 読書メーター](https://bookmeter.com/users/1240014)
 
 ## X
 
 主に使用している X アカウントです。分散 SNS 集会の告知も行っています。
 
-https://twitter.com/yineleyici
+[X](https://twitter.com/yineleyici)
 
 ## Mastodon
 
 主に使用している ActivityPub プロトコル対応 SNS のアカウントです。
 
-https://gamelinks007.net/@nawashiro
+[Creatodon - Creatodon](https://gamelinks007.net/@nawashiro)
 
 ## Bluesky
 
 主に使用している AT Protocol 対応 SNS のアカウントです。分散 SNS 集会の告知も行っています。
 
-https://bsky.app/profile/did:plc:oszui3uk43smfv7nihtli3pq
+[@nawashiro.dev on Bluesky](https://bsky.app/profile/did:plc:oszui3uk43smfv7nihtli3pq)
 
 ## Nostr
 
 もし Nostr クライアントをお持ちでないなら、こちらから私の投稿を見ることができます。
 
-https://nawashiro.npub.pro/
+[Nawashiro](https://nawashiro.npub.pro/)
 
 以下は Nostr クライアントをお持ちの方向けの情報です。
 
@@ -87,8 +86,8 @@ nostr:nprofile1qy88wumn8ghj7mn0wvhxcmmv9uq32amnwvaz7tmjv4kxz7fwv3sk6atn9e5k7tcpr
 
 ## Qiita
 
-https://qiita.com/yineleyici
+[yineleyiciのマイページ - Qiita](https://qiita.com/yineleyici)
 
 ## VRChat
 
-https://vrchat.com/home/user/usr_17e3ef43-2bc7-4dea-b811-12aa6f163f44
+[Nawashiro VRChat](https://vrchat.com/home/user/usr_17e3ef43-2bc7-4dea-b811-12aa6f163f44)

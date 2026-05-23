@@ -137,22 +137,6 @@ export default function Post({ id, postData }: PostProps) {
       </SectionLayout>
 
       <SectionLayout className="mt-16 bg-accent text-accent-content">
-        <WebMention
-          {...(isDevelopment && {
-            pageUrl:
-              "https://nawashiro.dev/posts/20250213-3-create-stained-glass",
-          })}
-        />
-
-        <h2>☕コーヒーをおごる</h2>
-        <p>やあ…そこのきみ…すまないが、コーヒーを一杯おごってくれないか…</p>
-        <iframe
-          id="kofiframe"
-          src="https://ko-fi.com/nawashiro/?hidefeed=true&widget=true&embed=true&preview=true"
-          height="712"
-          title="nawashiroにコーヒーをおごる"
-          className="rounded-sm mx-auto mt-10"
-        ></iframe>
 
         {postData.backLinks.length > 0 && (
           <>
@@ -168,6 +152,23 @@ export default function Post({ id, postData }: PostProps) {
             </ul>
           </>
         )}
+
+        <WebMention
+          {...(isDevelopment && {
+            pageUrl:
+              "https://nawashiro.dev/posts/20250213-3-create-stained-glass",
+          })}
+        />
+
+        <h2>☕コーヒーをおごる</h2>
+        <p>Nawashiroは現在、労働災害で負った障害により、通常の仕事に就くことができません。貯金を切り崩して生活しています。継続的な支援があれば、活動を続けることができるかもしれません。支援をお願いします。</p>
+        <iframe
+          id="kofiframe"
+          src="https://ko-fi.com/nawashiro/?hidefeed=true&widget=true&embed=true&preview=true"
+          height="712"
+          title="nawashiroにコーヒーをおごる"
+          className="rounded-sm mx-auto mt-10"
+        ></iframe>
 
       </SectionLayout>
     </Layout>

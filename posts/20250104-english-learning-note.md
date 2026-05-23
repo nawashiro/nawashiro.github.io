@@ -3,6 +3,13 @@ title: "英語が身につく ちいさなノート術 - 読書メモ"
 date: "2025-01-04"
 ---
 
+- categories:
+	- [📚読書メモ（長い）](categories-books-long.md)
+- tags:
+	- [🏷️メモの技法](tags-note-taking-techniques.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/MVqj2P">
   <figure class="px-5 py-5">
     <img

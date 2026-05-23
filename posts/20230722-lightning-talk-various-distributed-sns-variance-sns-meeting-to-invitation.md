@@ -3,6 +3,13 @@ title: "ライトニングトーク「いろいろな分散型 SNS / 分散 SNS 
 date: "2023-07-22"
 ---
 
+- categories:
+	- [📊ライトニングトーク](categories-lightning-talks.md)
+- topics:
+	- [分散SNS集会の紹介](240421-introducing-the-gathering-of-distributed-social-network.md)
+
+---
+
 VR コミュニティ「エンジニア作業飲み集会」にてライトニングトークに参加しました。
 
 今回はいくつかの分散型 SNS の試みについて取り上げました。

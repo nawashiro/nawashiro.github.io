@@ -3,6 +3,14 @@ title: "SNSはなぜ人を過激化させるのか - 読書メモ"
 date: "2024-08-07"
 ---
 
+- categories:
+	- [📚読書メモ（長い）](categories-books-long.md)
+- tags:
+	- [🏷️社会問題](tags-social-issues.md)
+	- [🏷️ソーシャルメディア](tags-social-media.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/s7nnDQU">
   <figure class="px-5 py-5">
     <img

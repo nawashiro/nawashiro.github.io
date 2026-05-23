@@ -1,6 +1,12 @@
 ---
-title: "エヴァンゲリオンの夢 使徒進化論の幻影 - 読書メモ"
-date: "2024-12-17"
+title: "エヴァンゲリオンの夢"
+date: "2026-05-24T00:17:30+09:00"
+---
+- categories:
+	- [💬読書メモ（短い）](categories-books-short.md)
+- tags:
+	- [🏷️フィクション](tags-fictions.md)
+
 ---
 
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/zFN8JJ">

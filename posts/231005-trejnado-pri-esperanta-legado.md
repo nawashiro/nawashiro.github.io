@@ -3,6 +3,13 @@ title: "Trejnado pri Esperanta legado"
 date: "2023-10-05"
 ---
 
+- categories:
+	- [📝覚え書き](categories-notes.md)
+- tags:
+	- [🏷️ハウツー](tags-how-to.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/GziW8SV">
   <figure class="px-5 py-5">
     <img

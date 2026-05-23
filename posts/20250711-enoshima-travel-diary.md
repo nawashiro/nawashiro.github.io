@@ -3,6 +3,13 @@ title: "海。コーラとサイダー、そしてコーヒー"
 date: "2025-07-11T17:36:32+09:00"
 ---
 
+- categories:
+	- [🎞️写真ブログ](categories-photo-blogs.md)
+- tags:
+	- [🏷️🥈わりとベスト](tags-rating-2.md)
+
+---
+
 江ノ島へ行った。
 
 ![コーラと江ノ島サイダー](https://imgur.com/ZrgACn3.jpg)
