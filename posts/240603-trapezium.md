@@ -3,6 +3,20 @@ title: "映画『トラペジウム』を観て"
 date: "2024-06-03"
 ---
 
+
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/jBBM6T">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/esdigital_10984937_i_20241106210009"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">トラペジウム《通常版》 【DVD】</span>
+  </div>
+</a>
+
 _人間は、その人格を尊重し、それを手段としてではなく、常に目的として扱うべき存在である。_
 
 > 【トラペジウム】

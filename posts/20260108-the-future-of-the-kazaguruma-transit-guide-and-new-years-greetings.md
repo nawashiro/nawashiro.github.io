@@ -4,6 +4,19 @@ date: "2026-01-11T10:56:37+09:00"
 ---
 <p class="e-bridgy-mastodon-content e-bridgy-bluesky-content">新年のご挨拶です。</p>
 
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/CMJWS8">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/vanda_sme-secl-759_i_20260213185225"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">Diggyism ／ Diggy-MO’ (CD)</span>
+  </div>
+</a>
+
 > [!NOTE]
 >
 > 風ぐるま乗換案内の、都知事杯事務局による実装支援のなかで交わした報告・挨拶の抜粋（一部タイポを修正）です。

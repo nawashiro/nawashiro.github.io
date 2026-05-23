@@ -7,6 +7,19 @@ date: "2025-11-30T20:07:06+09:00"
 
 <p class="e-bridgy-mastodon-content e-bridgy-bluesky-content" style="display:none">収入、性別、障害、人種、出身地……社会的「烙印」に図書館はいかに立ち向かうのか。</p>
 
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/dYTF2F">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/tower_5999285_i_20230902233709"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">拝啓市長さま、こんな図書館をつくりましょう - アントネッラ・アンニョリ（著）みすず書房</span>
+  </div>
+</a>
+
 - title: 拝啓市長さま、こんな図書館をつくりましょう
 - author:
   - アントネッラ・アンニョリ
@@ -28,21 +41,6 @@ date: "2025-11-30T20:07:06+09:00"
 誤解なくわかり合うところに学習の動機がある。図書館は市民の大学だ。分断の時代にあって、図書館の役割はこれから一層、重要になっていく。
 
 [^1]: 障害年金をもらう前にお世話になったことがあります。セカンドハーベスト・ジャパンのみなさま、その節は本当にありがとうございました。
-
-<a class="card md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/49u8fgA">
-
-  <figure class="px-5 py-5">
-    <img
-      src="https://m.media-amazon.com/images/I/81ctl2EZFRL._SY342_.jpg"
-      alt="Book"
-      class="rounded-xl max-h-48 max-w-48 object-contain" />
-  </figure>
-  <div class="card-body">
-    <span class="badge badge-primary">広告</span>
-    <span class="card-title line-clamp-1">拝啓 市長さま、こんな図書館をつくりましょう</span>
-    
-  </div>
-</a>
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon) [](https://brid.gy/publish/github)
 

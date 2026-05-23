@@ -3,6 +3,19 @@ title: "沈黙のリトルボーイ - 読書メモ"
 date: "2024-12-17"
 ---
 
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/fAcxYJ">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/bookoffonline_0019869851_i_20260410141423"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">まず牛を球とします。/柞刈湯葉(著者)　</span>
+  </div>
+</a>
+
 「まず牛を球とします。」に収録。
 
 ## まず牛を球とします。
@@ -33,19 +46,6 @@ date: "2024-12-17"
 テッドは神の摂理の一部のつもりでマンハッタン計画に関わった。しかし、リトルボーイは炸裂しなかった。テッドは核分裂は神のなす技だと考えていた。だから戦時中に炸裂してくれれば、それは神の摂理の一部として納得することができた。しかし、戦後に炸裂したらただの殺戮者だ。自分のなしたことが神の摂理の一部ではないことを知ってしまった。だから、苦しむ。
 
 これは、人間宣言がなされたために苦しむ日本人をアメリカ風に描いたものではないか。
-
-<a class="card md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/4c7D5OX">
-  <figure class="px-5 py-5">
-    <img
-      src="https://m.media-amazon.com/images/I/81E+UxWU74L._SY385_.jpg"
-      alt="Book"
-      class="rounded-xl max-h-48 max-w-48 object-contain" />
-  </figure>
-  <div class="card-body">
-    <span class="badge badge-primary">広告</span>
-    <span class="card-title line-clamp-1">まず牛を球とします。</span>
-  </div>
-</a>
 
 ## 関連項目
 

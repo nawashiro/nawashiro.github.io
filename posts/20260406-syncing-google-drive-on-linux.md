@@ -5,6 +5,23 @@ date: "2026-04-06T16:50:47+09:00"
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
 
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/XrR6hC9">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/booksdream-store1_1-241001981652_i_20260523101213"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">伽藍とバザール - エリック・スティーブン・レイモンド（著）</span>
+  </div>
+</a>
+
+> [!WARNING]
+> 
+> 筆者は現在この環境を使用しておらず、質問にお答えすることができません。
+
 > [!NOTE]
 > 
 > 2026 年 4 月 6 日: スクリプトに軽微な変更を加えました。ちょっと様子見中です。

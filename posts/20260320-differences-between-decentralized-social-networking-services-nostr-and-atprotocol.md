@@ -3,6 +3,19 @@ title: "分散型SNS、NostrとATProtocolのちがい"
 date: "2026-03-20T17:31:05+09:00"
 ---
 
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/aq6rfb">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/bookoffonline_0020085139_i_20251115160130"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">Software Design(2023年7月号) 技術評論社</span>
+  </div>
+</a>
+
 > [!NOTE]
 > 
 > [shreyan - Nostr and ATProto](https://shreyanjain.net/2024/07/05/nostr-and-atproto.html) を参考に書いています。英語が読める人はこっちを開いたほうが早いです。

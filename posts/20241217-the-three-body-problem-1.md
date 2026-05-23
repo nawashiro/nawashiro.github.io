@@ -3,6 +3,19 @@ title: "三体 - 読書メモ"
 date: "2024-12-17"
 ---
 
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/3vaGRW">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/bookfan_bk-4150124345_i_20260427143808"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">三体/劉慈欣/大森望/光吉さくら</span>
+  </div>
+</a>
+
 - 著者: 劉慈欣
 - 出版社: 早川書房
 - 出版年月日: 2019 年 07 月 21 日
@@ -113,18 +126,3 @@ date: "2024-12-17"
 1. 葉は地球外から高度な文明を招き入れるため、地球外からの警告メッセージに返信する。
 2. 三体人は惑星外生命探査を行なっていたが、返信に気づき、警告を返すものも現れる。しかし、戦争が始まる。コンピュータ陽子で基礎研究を妨害する。
 3. 史は落ち込む二人を勇気づけ、3 人は戦う決意を新たにする。
-
-<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/uD2gQoz">
-
-  <figure class="px-5 py-5">
-    <img
-      src="https://item-shopping.c.yimg.jp/i/n/bookfan_bk-4150124345_i_20260427143808"
-      alt="Book"
-      class="rounded-xl max-h-48 max-w-48 object-contain" />
-  </figure>
-  <div class="card-body">
-    <span class="badge badge-primary">広告</span>
-    <span class="card-title line-clamp-1">三体/劉慈欣/大森望/光吉さくら</span>
-    
-  </div>
-</a>

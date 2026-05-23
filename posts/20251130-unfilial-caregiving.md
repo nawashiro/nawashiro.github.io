@@ -5,6 +5,19 @@ date: "2025-11-30T14:58:30+09:00"
 
 <img class="u-featured" src="http://books.google.com/books/content?id=tvqSEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" style="display:none"/>
 
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/-WvtpJ">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/bookfan_bk-4296108840_i_20260131151701"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">親不孝介護　距離を取るからうまくいく</span>
+  </div>
+</a>
+
 ## 書籍情報
 
 - title: 親不孝介護
@@ -26,21 +39,6 @@ date: "2025-11-30T14:58:30+09:00"
 彼ないし彼女は、もう親という役割を終えた人なのだ。不安のあるなしにかかわらず、まずは電話でプロに聞いてみよう。「地域包括支援センター 親の住所」で検索して、電話をかけてみてくれ。私も祖母について聞いてみる。
 
 [地域包括支援センター - Google Search](https://www.google.com/search?q=地域包括支援センター)
-
-<a class="card md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/3Ni2aMY">
-
-  <figure class="px-5 py-5">
-    <img
-      src="https://m.media-amazon.com/images/I/810m47OeI6L._SY342_.jpg"
-      alt="Book"
-      class="rounded-xl max-h-48 max-w-48 object-contain" />
-  </figure>
-  <div class="card-body">
-    <span class="badge badge-primary">広告</span>
-    <span class="card-title line-clamp-1">親不孝介護　距離を取るからうまくいく</span>
-    
-  </div>
-</a>
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon) [](https://brid.gy/publish/github) <a class="u-in-reply-to" href="https://github.com/nawashiro/nawashiro.github.io"></a>
 

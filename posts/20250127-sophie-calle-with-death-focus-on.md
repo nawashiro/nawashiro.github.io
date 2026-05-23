@@ -3,6 +3,19 @@ title: "ソフィ・カルとともに死を見つめる"
 date: "2025-01-27"
 ---
 
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/KwyPQ4">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/honyaclubbook_9784861529771_i_20241207060343"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">不在　ソフィ・カル/ソフィ・カル</span>
+  </div>
+</a>
+
 [三菱一号館美術館の『不在』展](https://mimt.jp/ex/ls2024/sophie-calle/) を見てきました。
 
 ![三菱一号館美術館の階段を上から眺めた風景。グレーの手すりと、縦長の窓。](https://i.imgur.com/RLejeT7.jpeg)

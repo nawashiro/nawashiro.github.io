@@ -3,6 +3,19 @@ title: "Obsidianでツェッテルカステンをつけてみた"
 date: "2024-06-01"
 ---
 
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/pWxuL4">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/honyaclubbook_9784297137199_i_20230928061951"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">Ｏｂｓｉｄｉａｎで“育てる”最強ノート術　あらゆる情報をつなげて整理しよう/増井敏克</span>
+  </div>
+</a>
+
 ## ツェッテルカステンってなに？
 
 どうやらツェッテルカステンというものがあるらしいぞ、という話を聞いたので私も真似をしようと思ったのです。
