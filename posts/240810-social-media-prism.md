@@ -3,6 +3,19 @@ title: "SNSはなぜ人を過激化させるのか - 読書メモ"
 date: "2024-08-07"
 ---
 
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/s7nnDQU">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/tower_5456962_i_20230310031940"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">ソーシャルメディア・プリズム - クリス・ベイル（著）みすず書房</span>
+  </div>
+</a>
+
 こんにちは。今回は計算社会科学のお話です。と言ってみたところでなにそれ？って感じでしょうね。
 
 SNS の分析などの、計算機で社会を扱う学問が計算社会科学です。社会科学、心理学、計算機科学などの学際的な分野として知られています。

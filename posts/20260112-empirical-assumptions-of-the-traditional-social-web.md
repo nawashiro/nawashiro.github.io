@@ -2,11 +2,18 @@
 title: "旧来型ソーシャルウェブの経験的仮定"
 date: "2026-01-12T16:04:57+09:00"
 ---
-<p class="e-bridgy-mastodon-content e-bridgy-bluesky-content" style="display:none;" >
-個人は、自己認識と対他人の認識に属性を求める。
-属性の認識は、似ている属性との同化か、似ていない属性との差別化により強化される。
-同化と差別化は注意を消費するが、個人における注意は有限である。
-</p>
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/s7nnDQU">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/tower_5456962_i_20230310031940"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">ソーシャルメディア・プリズム - クリス・ベイル（著）みすず書房</span>
+  </div>
+</a>
 
 - 個人は、自己認識と対他人の認識に属性を求める。
 - 属性の認識は、似ている属性との同化か、似ていない属性との差別化により強化される。

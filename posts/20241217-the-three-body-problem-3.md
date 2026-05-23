@@ -2,6 +2,19 @@
 title: "三体2 黒暗森林 下 - 読書メモ"
 date: "2024-12-17"
 ---
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/WJj_5j">
+
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/39way-2nd_39way202598a5ba3c44_i_20260107164908"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">三体II 黒暗森林 下</span>    
+  </div>
+</a>
 
 - 著者: 劉慈欣
 - 出版社: 早川書房
@@ -31,18 +44,3 @@ date: "2024-12-17"
 ## 感想
 
 ヒャーッ！って感じ。1 ほどのスピード感は無いものの、前に出されたヒントが生かされたり、大史が出てきたり、とてもうれしい。これでまだ続きがあるってマジ？
-
-<a class="card md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/49RR1ek">
-
-  <figure class="px-5 py-5">
-    <img
-      src="https://m.media-amazon.com/images/I/81X-x06KAgL._SY425_.jpg"
-      alt="Book"
-      class="rounded-xl max-h-48 max-w-48 object-contain" />
-  </figure>
-  <div class="card-body">
-    <span class="badge badge-primary">広告</span>
-    <span class="card-title line-clamp-1">三体2 黒暗森林 下 (ハヤカワ文庫SF)</span>
-    
-  </div>
-</a>

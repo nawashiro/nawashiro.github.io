@@ -3,6 +3,20 @@ title: "責任は脳と脳の間にある - 読書メモ"
 date: "2024-08-07"
 ---
 
+
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/ixdJ5j">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/honyaclubbook_9784314011211"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">〈わたし〉はどこにあるのか/マイケル・Ｓ．ガザニガ</span>
+  </div>
+</a>
+
 こんにちは。今回は脳科学のお話です。ネタバレありなので注意してください。
 
 ## “わたし”はどこにあるのか - マイケル・S. ガザニガ

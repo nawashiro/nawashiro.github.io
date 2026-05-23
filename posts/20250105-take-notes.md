@@ -2,6 +2,20 @@
 title: "TAKE NOTES! - 読書メモ"
 date: "2025-01-05"
 ---
+
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/K--iB6">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/bookfan_bk-4296000411_i_20260225165911"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">TAKE NOTES! メモで、あなただけのアウトプットが自然にできるようになる/ズンク・アーレンス/二木夢子</span>
+  </div>
+</a>
+
 - 著者: ズンク・アーレンス
 - 訳者: 二木夢子
 - 出版社: 日経 BP

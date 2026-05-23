@@ -2,6 +2,20 @@
 title: "すべてがＦになる - 読書メモ"
 date: "2026-02-26T18:26:35+09:00"
 ---
+
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/aaYTrL">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/bookfan_bk-4062639246_i_20260311150421"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">すべてがFになる - 森博嗣（著）講談社</span>
+  </div>
+</a>
+
 - title: すべてがＦになる
 - author: 森博嗣
 - publisher: 講談社

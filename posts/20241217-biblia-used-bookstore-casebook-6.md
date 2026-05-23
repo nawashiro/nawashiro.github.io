@@ -2,6 +2,20 @@
 title: "ビブリア古書堂の事件手帖6 〜栞子さんと巡るさだめ〜 - 読書メモ"
 date: "2024-12-17"
 ---
+
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/mhGntv">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/ebookjapan_b00160504224_i_20260508044606"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">ビブリア古書堂の事件手帖6 〜栞子さんと巡るさだめ〜 電子書籍版 / 著者:三上延</span>
+  </div>
+</a>
+
 - 著者: 三上延
 - 出版社: KADOKAWA
 - 出版年月日: 2014 年 12 月 25 日

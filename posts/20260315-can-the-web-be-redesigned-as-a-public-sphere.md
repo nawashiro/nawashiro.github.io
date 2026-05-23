@@ -127,7 +127,7 @@ date: "2026-03-15T15:57:41+09:00"
 
 ---
 
-## 4-2. 分散型 SNS が面白い理由
+風ぐるま## 4-2. 分散型 SNS が面白い理由
 
 公共圏には、**信頼できる脱出**が必要。
 
@@ -184,3 +184,71 @@ date: "2026-03-15T15:57:41+09:00"
 
 - [ユルゲン・ハーバーマス『公共性の新たな構造転換と熟議的政治』](https://ja.wikipedia.org/wiki/%E7%89%B9%E5%88%A5:%E6%96%87%E7%8C%AE%E8%B3%87%E6%96%99?isbn=9783518587904)
 - マリアネッラ・スクラーヴィ（2013）「市民参加」の定義
+
+## 広告
+
+
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/_CZ9PA">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/ebookjapan_b00166001874_i_20250610005808"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">中央公論2025年7月号 - 中央公論新社</span>
+  </div>
+</a>
+
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/s7nnDQU">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/tower_5456962_i_20230310031940"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">ソーシャルメディア・プリズム - クリス・ベイル（著）みすず書房</span>
+  </div>
+</a>
+
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/dYTF2F">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/tower_5999285_i_20230902233709"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">拝啓市長さま、こんな図書館をつくりましょう - アントネッラ・アンニョリ（著）みすず書房</span>
+  </div>
+</a>
+
+<a class="card md:card-side my-4 bg-white shadow-sm" href="#">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/kinokuniya_9784823410321_i_20251202013950"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">ゼロからはじめる哲学対話 - 河野 哲也（著）ひつじ書房</span>
+  </div>
+</a>
+
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/6SkeBg">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/bookfan_bk-4140886706_i_20240817161017"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">オードリー・タンが語るデジタル民主主義 - オードリー・タン（述）NHK出版</span>
+  </div>
+</a>

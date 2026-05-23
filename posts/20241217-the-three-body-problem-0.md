@@ -3,6 +3,19 @@ title: "三体0 球状閃電 - 読書メモ"
 date: "2024-12-17"
 ---
 
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/6BREi8">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/kinokuniya_9784152101945_i_20251022030336"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">三体０　球状閃電</span>
+  </div>
+</a>
+
 - 著者: 劉慈欣
 - 出版社: 早川書房
 - 出版年月日: 2022 年 12 月 21 日
@@ -48,18 +61,3 @@ date: "2024-12-17"
 円城塔『エピローグ』では脳の中で兵器と美女は近いところにあると言われていたけど、そんな兵器の魅力に憑かれてしまった人が出てくる。旅立ってしまった人との付き合いも描かれている。意識すると消えてしまうけど、実は居るよ、というのは私に合った考え方の気がする。そして、劉慈欣らしい、ロマンチックなよい読後感。
 
 ところでこれ、全世界の情報科学文明を滅ぼしかねないけど、核と同じで抑止力として使われるのかな。そこらへんは描かれていない。直近に観た映画が『オッペンハイマー』だったからちょっと気になった。
-
-<a class="card md:card-side my-4 bg-white shadow-sm" href="https://amzn.to/4bsn6dV">
-
-  <figure class="px-5 py-5">
-    <img
-      src="https://m.media-amazon.com/images/I/81lv8ZrREcL._SY425_.jpg"
-      alt="Book"
-      class="rounded-xl max-h-48 max-w-48 object-contain" />
-  </figure>
-  <div class="card-body">
-    <span class="badge badge-primary">広告</span>
-    <span class="card-title line-clamp-1">三体０【ゼロ】　球状閃電 (ハヤカワ文庫SF) </span>
-    
-  </div>
-</a>

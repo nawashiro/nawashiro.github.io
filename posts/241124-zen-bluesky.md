@@ -3,6 +3,19 @@ title: "禅なBluesky"
 date: "2024-11-24"
 ---
 
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/sZY7ud">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/netoff_0011610905"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">禅マインドビギナーズ・マインド／鈴木俊隆</span>
+  </div>
+</a>
+
 私は Ucho-ten のベータテスターを始ました。Ucho-ten には禅モードがあり、とてもよいです。
 
 Ucho-ten は Bluesky のクライアントです。Bluesky はオープンソースでありオープンプロトコルである特性上、「公式」や「サードパーティ」と呼ぶのがはばかられるので、ここでは単に「クライアント」としておきます。Bluesky 社のクライアントは「リファレンスクライアント」とでも呼んでおきましょうか。

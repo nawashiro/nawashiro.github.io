@@ -2,6 +2,18 @@
 title: "哲学対話ってなんだ？ - 読書メモ"
 date: "2025-06-27"
 ---
+<a class="card md:card-side my-4 bg-white shadow-sm" href="#">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/kinokuniya_9784823410321_i_20251202013950"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">ゼロからはじめる哲学対話 - 河野 哲也（著）ひつじ書房</span>
+  </div>
+</a>
 
 ユルゲン・ハーバーマス（1929）という人物がいる。
 

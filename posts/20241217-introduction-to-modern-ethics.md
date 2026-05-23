@@ -2,6 +2,20 @@
 title: "現代倫理学入門 - 読書メモ"
 date: "2024-12-17"
 ---
+
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/7nRJq2">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/ebookjapan_b00162762557_i_20260206064116"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">現代倫理学入門 電子書籍版 / 加藤尚武</span>
+  </div>
+</a>
+
 - 著者: 加藤尚武
 - 出版社: 講談社
 - 出版年月日: 1997 年 02 月 07 日

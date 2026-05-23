@@ -3,6 +3,19 @@ title: "読書バリアフリー法"
 date: "2024-12-14"
 ---
 
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/ceTLrtW">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/honyaclubbook_9784761930400_i_20241211061524"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">学校の「読書バリアフリー」はじめの一歩/野口武悟</span>
+  </div>
+</a>
+
 [「視覚障害者等の読書環境の整備の推進に関する法律」2019 年 6 月に制定、施行](https://laws.e-gov.go.jp/law/501AC0100000049)
 
 アクセシブルな書籍・電子書籍（視覚障害者等が自ら読める方式でつくられた書籍・電子書籍）の「借りる権利」に加え「買う自由」をも担保することを目的としている。

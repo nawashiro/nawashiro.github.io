@@ -7,6 +7,23 @@ date: "2026-04-23T16:24:33+09:00"
 
 <img class="u-featured" src="https://i.imgur.com/y4swkSc.png" alt="End-4氏のhyprlandカスタムを導入した画面" style="display:none"/>
 
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/Hd2LWB">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/gs-joy_20241205014128-02335us_i_20241205161927"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">それがぼくには楽しかったから - リーナス・トーバルズ</span>
+  </div>
+</a>
+
+> [!WARNING]
+> 
+> 筆者は現在この環境を使用しておらず、質問にお答えすることができません。
+
 <p class="e-bridgy-mastodon-content e-bridgy-bluesky-content">Linuxデスクトップ（正確にはウィンドウ管理）にHyprlandを使うとなんだかすごくかっこよくなる。</p>
 
 これは End-4 氏のカスタムを導入したもの。

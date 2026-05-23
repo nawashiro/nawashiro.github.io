@@ -2,6 +2,20 @@
 title: "読書のハンディキャップに対してできる取り組み一覧"
 date: "2024-12-14"
 ---
+
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/ceTLrtW">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/honyaclubbook_9784761930400_i_20241211061524"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">学校の「読書バリアフリー」はじめの一歩/野口武悟</span>
+  </div>
+</a>
+
 - リフロー型電子書籍。外国では教科書に対して義務付けれていることもある。
 - オーディオブック。
 - テキストデータ提供。

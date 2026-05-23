@@ -2,6 +2,20 @@
 title: "エヴァンゲリオンの夢 使徒進化論の幻影 - 読書メモ"
 date: "2024-12-17"
 ---
+
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/zFN8JJ">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/netoff_0000783245"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">エヴァンゲリオンの夢／大滝啓裕</span>
+  </div>
+</a>
+
 - 著者: 大瀧啓裕
 - 出版社: 東京創元社
 - 出版年月日: 2000 年 08 月 10 日

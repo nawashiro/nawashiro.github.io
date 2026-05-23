@@ -3,6 +3,19 @@ title: "読書にはバリアフリーが必要だ - 読書メモ"
 date: "2025-07-01"
 ---
 
+<a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/ceTLrtW">
+  <figure class="px-5 py-5">
+    <img
+      src="https://item-shopping.c.yimg.jp/i/n/honyaclubbook_9784761930400_i_20241211061524"
+      alt="Book"
+      class="rounded-xl max-h-48 max-w-48 object-contain" />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-primary">広告</span>
+    <span class="card-title line-clamp-1">学校の「読書バリアフリー」はじめの一歩/野口武悟</span>
+  </div>
+</a>
+
 『ハンチバック』がまだ読めていない。この物語は私とは遠い話ではない。実は親戚に当事者がいたりする。
 
 「読書文化のマチズモ」と語る。本来、情報を得る手段は数多くあるはずだ。しかし、それが許されない現状がある。
