@@ -20,7 +20,7 @@ date: "2025-12-21T09:09:46+09:00"
 
 オリジナルはこちらをご覧ください: [Notes on Managing ADHD](https://borretti.me/article/notes-on-managing-adhd)
 
-<p class="e-bridgy-mastodon-content e-bridgy-bluesky-content">この記事は Fernando Borretti さんによる『Notes on Managing ADHD』の機械翻訳（PLaMo）です。薬物療法から生活の知恵まで幅広くサポートしています。</p>
+この記事は Fernando Borretti さんによる『Notes on Managing ADHD』の機械翻訳（PLaMo）です。薬物療法から生活の知恵まで幅広くサポートしています。
 
 翻訳・転載に許可をくださった Borretti さんにお礼申し上げます。ありがとうございます🙇
 
