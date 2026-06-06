@@ -215,7 +215,7 @@ function generateExcerpt(content: string, maxLength = 200) {
 }
 
 export async function generateRssFeed() {
-  const posts = getSortedPostsData().slice(0, 10);
+  const posts = getSortedPostsData().slice(0, 50);
   const siteURL = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
   const date = new Date();
 
