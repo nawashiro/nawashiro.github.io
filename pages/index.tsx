@@ -56,7 +56,7 @@ export default function Home({
       >
         github.com/nawashiro
       </a>
-      <link rel="pgpkey" href="/openpgp_publickey.asc" style={{ display: "none" }} />
+      <link rel="pgpkey" href={`${siteUrl}/openpgp_publickey.asc`} style={{ display: "none" }} />
       <div className="h-card" style={{ display: "none" }}>
         <a className="p-name u-url" href={siteUrl}>
           Nawashiro
