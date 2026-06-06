@@ -88,19 +88,19 @@ export default function Home({
           rel="alternate"
           type="application/rss+xml"
           title="RSS 2.0"
-          href="/rss/feed.xml"
+          href={`${siteUrl}/rss/feed.xml`}
         />
         <link
           rel="alternate"
           type="application/atom+xml"
           title="Atom 1.0"
-          href="/rss/atom.xml"
+          href={`${siteUrl}/rss/atom.xml`}
         />
         <link
           rel="alternate"
           type="application/json"
           title="JSON Feed"
-          href="/rss/feed.json"
+          href={`${siteUrl}/rss/feed.json`}
         />
       </Head>
       <SectionLayout className="pb-20">
@@ -134,7 +134,7 @@ export default function Home({
               </span>
               <a
                 className="btn join-item"
-                href="/rss/feed.xml"
+                href={`${siteUrl}/rss/feed.xml`}
                 target="_blank"
                 rel="noopener noreferrer"
                 title="RSS Feed"
@@ -143,7 +143,7 @@ export default function Home({
               </a>
               <a
                 className="btn join-item"
-                href="/rss/atom.xml"
+                href={`${siteUrl}/rss/atom.xml`}
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Atom Feed"
@@ -152,7 +152,7 @@ export default function Home({
               </a>
               <a
                 className="btn join-item"
-                href="/rss/feed.json"
+                href={`${siteUrl}/rss/feed.json`}
                 target="_blank"
                 rel="noopener noreferrer"
                 title="JSON Feed"
