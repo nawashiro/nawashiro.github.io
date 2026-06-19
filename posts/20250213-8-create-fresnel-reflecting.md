@@ -79,7 +79,7 @@ $$\text{fresnel}=1$$
 
 $$y=\text{base}+\left(1-\text{base}\right)\cdot\left(1-x\right)^5\cdot\text{fresnel}$$
 
-![フレネル方程式のグラフ。xが増えるたびyは急速に 0 へ近づいていく。](https://i.imgur.com/GUBFyIH.png)
+![フレネル方程式のグラフ。xが増えるたびyは急速に 0 へ近づいていく。](20250213-8-GUBFyIH.webp)
 
 `_F0` はベースの反射率、`_Fresnel` は反射の強さ。
 

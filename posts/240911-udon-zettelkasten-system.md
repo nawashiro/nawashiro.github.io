@@ -12,7 +12,7 @@ date: "2024-09-11"
 
 このテキストは、PNG ミュージアム × エンジニア集会ハッカソンの発表スライドをテキスト形式でまとめたものです。
 
-![Udon Zettelkasten System 外観](https://i.imgur.com/oPKVgVN.png)
+![Udon Zettelkasten System 外観](240911-oPKVgVN.webp)
 
 ## 刑事ドラマでよく見る「アレ」
 

@@ -14,4 +14,4 @@ date: "2022-12-13"
 
 初期は HTML ベタ打ちでしたが、現在は Next.js にて構築されています。
 
-![nawashiro website screenshot](/images/nawashiro-website-screenshot.webp)
+![nawashiro website screenshot](nawashiro-website-screenshot.webp)

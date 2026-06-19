@@ -33,7 +33,7 @@ $$\text{worldNormal} \cdot \text{viewDir} = |\text{worldNormal}| \cdot |\text{vi
 
 コサイン関数に従うので、このような曲線を描く。
 
-![コサインカーブ。x=0、y=1を頂点とした山のかたち。](https://i.imgur.com/t0zWFQi.png)
+![コサインカーブ。x=0、y=1を頂点とした山のかたち。](20250213-1-t0zWFQi.webp)
 
 ## 実装
 

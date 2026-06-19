@@ -12,7 +12,7 @@ date: "2026-02-12T17:35:20+09:00"
 
 <img class="u-featured" src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Hitachi_Jidosha_Kotsu_1555_Kazaguruma_Poncho_HX.jpg" alt="千代田区地域福祉交通「風ぐるま」" style="display:none"/>
 
-![千代田区地域福祉交通「風ぐるま」](https://upload.wikimedia.org/wikipedia/commons/f/f6/Hitachi_Jidosha_Kotsu_1555_Kazaguruma_Poncho_HX.jpg)
+![千代田区地域福祉交通「風ぐるま」](20260212-Hitachi_Jidosha_Kotsu_1555_Kazaguruma_Poncho_HX.webp)
 
 <p class="e-bridgy-mastodon-content e-bridgy-bluesky-content">驚き屋構文というのが流行っていたので私も書いてもらった。
 Gemini が一番上手かったです。ところでオープンソースの極みってなに？

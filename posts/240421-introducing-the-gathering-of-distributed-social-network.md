@@ -65,7 +65,7 @@ https://youtu.be/S_fErE9IAng
 
 ## 分散 SNS がなにかはわかったよ。ところで、分散 SNS 集会では何をしているの？
 
-![Imgur](https://imgur.com/2HCEo37.png)
+![一周年記念写真](240421-introducing-the-gathering-of-distributed-social-network.webp)
 
 やることは二つあります。
 

@@ -14,7 +14,7 @@ date: "2026-02-27T17:11:31+09:00"
 
 <p class="e-bridgy-mastodon-content e-bridgy-bluesky-content" style="display:none">パニクるな！なわしろの救急外来入門</p>
 
-![救急車](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Japanese_Ambulance.jpg/330px-Japanese_Ambulance.jpg)
+![救急車](20260227-Japanese_Ambulance.webp)
 
 image: <a href="https://commons.wikimedia.org/wiki/File:Japanese_Ambulance.jpg">Crimage7777</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
 
