@@ -46,3 +46,5 @@ sitemap-*.xml
 robots.txt
 
 core
+
+/attachments

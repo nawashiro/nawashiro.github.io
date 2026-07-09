@@ -26,7 +26,7 @@ $$\text{rand}(x) = \text{dec}\left(\sin(x\cdot12.9898)\cdot43758.5453\right)$$
 
 [^1]: はじめ、$\text{dec}(x)$ 関数を書き間違える凡ミスをしていた。この図は、そのときのものなので、注意してほしい。
 
-![ランダムに打たれた点](https://i.imgur.com/TlBgHGz.png)
+![ランダムに打たれた点](20250213-7-TlBgHGz.webp)
 
 実装はこうなる。乱数の入力が先ほどの数式と少し異なる点に注意してほしい。
 
@@ -80,7 +80,7 @@ float noise(fixed2 st)
 
 $$3x^2-2x^3 \quad \text{where} \quad 0 < x < 1$$
 
-![左右にたわんだ斜めに伸びる曲線](https://i.imgur.com/gMkfl1c.png)
+![左右にたわんだ斜めに伸びる曲線](20250213-7-gMkfl1c.webp)
 
 これをコードに落とし込むために、式変形をする。
 
