@@ -29,3 +29,5 @@ date: "2026-07-09T10:49:11+09:00"
 というか、著者のかた [コーヒーファクトリー](https://coffeefactory.jp/) の人だったんですね。行ったことがあります。ごちそうさまでした。
 
 [サンクチュアリ出版](https://www.sanctuarybooks.jp/) の本は読みやすくて、まさに一年生にぴったり。ほかにも読んでみたい。
+
+[](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
