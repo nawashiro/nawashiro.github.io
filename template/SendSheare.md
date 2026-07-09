@@ -32,7 +32,7 @@ async function share(){
 			return `\nfail:\n${bskyResult.error}\n${mstdnResult.error}`
 		}
 		
-		return `\n---\n\nここまで読んでくれてありがとう。よければでいいのだが、フィードバックがほしい。 [Bluesky](${bskyResult.url}) や [Fediverse](${mstdnResult.url}) から返信するとウェブサイト内にも反映される。健闘を祈る。`;
+		return `\n---\n\n[Bluesky](${bskyResult.url}) か [Fediverse](${mstdnResult.url}) から返信して会話に参加してください。`;
 	} catch (e) {
 		return `\nfail: ${e}`;
 	}
