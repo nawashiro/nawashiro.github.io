@@ -67,4 +67,4 @@ _Sophie Calle_ (1953) は、フランスの芸術家です。[Wikipedia](https:/
 
 何も入っていない額縁を見て、何を思うのか。それがテーマのようです。
 
-![三菱一号館美術館の階段を上から眺めた風景。展示室から出るところ。球状のランプと、上部が丸い窓がついた出口。](20250127-sophie-calle-with-death-focus-on-AWunJcQ.jpeg)
+![三菱一号館美術館の階段を上から眺めた風景。展示室から出るところ。球状のランプと、上部が丸い窓がついた出口。](20250127-sophie-calle-with-death-focus-on-AWunJcQ.webp)

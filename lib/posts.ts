@@ -18,6 +18,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeRaw from "rehype-raw";
 
 const postsDirectory = path.join(process.cwd(), "posts");
+const postImageOrigin = "https://img.nawashiro.dev/attachments/";
 
 type PostFrontMatter = {
   title: string;
@@ -50,6 +51,28 @@ export const shouldEnableExternalFetch = () => {
   if (process.env.NEXT_PUBLIC_DISABLE_EXTERNAL_FETCH === "1") return false;
   return true;
 };
+
+function isLocalPostImageUrl(url: string) {
+  return !/^(?:[a-z]+:|\/\/|#|\/)/i.test(url);
+}
+
+function normalizePostImageUrl(url: string) {
+  if (!isLocalPostImageUrl(url)) return url;
+  return new URL(url, postImageOrigin).toString();
+}
+
+function addPostImagePrefix(content: string) {
+  const markdownImagePattern = /!\[([^\]]*)\]\(([^)\s]+)(\s+"[^"]*")?\)/g;
+  const htmlImagePattern = /(<img\b[^>]*\bsrc=["'])([^"']+)(["'][^>]*>)/gi;
+
+  return content
+    .replace(markdownImagePattern, (_match, alt, url, title = "") => {
+      return `![${alt}](${normalizePostImageUrl(url)}${title})`;
+    })
+    .replace(htmlImagePattern, (_match, prefix, url, suffix) => {
+      return `${prefix}${normalizePostImageUrl(url)}${suffix}`;
+    });
+}
 
 // 共通の関数を抽出
 function getPostBasicData(fileName: string) {
@@ -127,6 +150,7 @@ export function getVersion() {
 }
 
 export async function renderMarkdown(content: string): Promise<string> {
+  const normalizedContent = addPostImagePrefix(content);
   const processor = unified()
     .use(remarkToc, {
       maxDepth: 3,
@@ -149,7 +173,9 @@ export async function renderMarkdown(content: string): Promise<string> {
     processor.use(remarkLinkCard);
   }
 
-  return processor.process(content).then((processed) => processed.toString());
+  return processor
+    .process(normalizedContent)
+    .then((processed) => processed.toString());
 }
 
 export function resolveOgImageUrl(
@@ -176,7 +202,7 @@ export async function getPostData(id: string): Promise<PostData> {
   const imageMatch = matterResult.content.match(/!\[.*?\]\((.*?)\)/);
   const rawImageUrl = imageMatch ? imageMatch[1] : null;
   const imageUrl = resolveOgImageUrl(
-    rawImageUrl,
+    rawImageUrl ? normalizePostImageUrl(rawImageUrl) : null,
     process.env.NEXT_PUBLIC_SITE_URL || "",
   );
 
