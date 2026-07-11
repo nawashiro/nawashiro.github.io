@@ -60,7 +60,15 @@ jobs:
 
       # out/ を生成（README どおり output: "export" 前提）
       - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        run: ${{ steps.detect-package-manager.outputs.manager }} run build
+        env:
+          NEXT_PUBLIC_SITE_URL: https://nawashiro.dev
+
+      - name: Verify sitemap output
+        run: |
+          test -s out/sitemap.xml
+          test -s out/sitemap-0.xml
+          test -s out/robots.txt
 
       # Cloudflare Pages へデプロイ
       - name: Deploy to Cloudflare Pages
