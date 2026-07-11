@@ -9,8 +9,8 @@ module.exports = {
         allow: "/",
       },
     ],
-    additionalSitemaps: ["https://nawashiro.dev/sitemap.xml"],
   },
   exclude: ["/404"],
-  outDir: "./public",
+  // `next build` with `output: "export"` writes the deployable site to `out/`.
+  outDir: "./out",
 };
