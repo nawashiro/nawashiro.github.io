@@ -27,8 +27,7 @@ const icon = (action: string, classes: string = "") => {
     case "reposted": {
       return (
         <span className="relative">
-          <FaRetweet className={`text-base-100 size-10 ${classes}`} />
-          <FaRetweet className={`text-info size-8 ${classes}`} />
+          <FaRetweet className={`size-8 text-info drop-shadow-[0_0_2px_theme(colors.base-100)] ${classes}`} />
         </span>
       );
     }
