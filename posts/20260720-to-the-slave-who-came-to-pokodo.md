@@ -37,3 +37,7 @@ date: "2026-07-20T13:58:46+09:00"
 人に聞けば宿を教えてもらえる。日を浴びて飯を食えばもう少し歩ける。その繰り返しだ。
 
 ソイツを見つけて「ない」としたら、酒くらいはくれてやる。それまで死ぬなよ。
+
+---
+
+[Bluesky](https://bsky.app/profile/nawashiro.dev/post/3mr2ss65fzz2j) か [Fediverse](https://gamelinks007.net/@nawashiro/116951217202957954) から返信して会話に参加してください。
