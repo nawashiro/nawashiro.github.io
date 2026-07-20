@@ -48,3 +48,5 @@ robots.txt
 core
 
 /attachments
+
+/00-ignore
