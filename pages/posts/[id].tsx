@@ -56,9 +56,8 @@ export default function Post({ id, postData }: PostProps) {
   const isDevelopment = process.env.NODE_ENV === "development";
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
   const canonicalUrl = `${siteUrl}/posts/${id}`;
-  const webmentionPageUrl = `${
-    isDevelopment ? productionSiteUrl : siteUrl
-  }/posts/${id}`;
+  const webmentionPageUrl = `${isDevelopment ? productionSiteUrl : siteUrl
+    }/posts/${id}`;
   const publishedDate = postData.date;
 
   // 記事の先頭から説明文を抽出（HTMLタグを除去して最初の120文字）
@@ -80,7 +79,12 @@ export default function Post({ id, postData }: PostProps) {
         {postData.tags &&
           postData.tags.map((tag) => (
             <meta property="article:tag" content={tag} key={tag} />
-          ))}
+          ))
+        }
+        <link
+          rel="site.standard.document"
+          href="at://did:plc:oszui3uk43smfv7nihtli3pq/site.standard.document/rkey"
+        />
         <link
           rel="webmention"
           href="https://webmention.io/nawashiro.dev/webmention"
