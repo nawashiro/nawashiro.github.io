@@ -12,7 +12,7 @@ import Link from "next/link";
 import WebMention from "../../components/WebMention";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import SectionLayout from "../../components/sectionLayout";
-import mapping from "../../lib/data/standard-site.json";
+import rawMapping from "../../lib/data/standard-site.json";
 
 type PostParams = {
   id: string;
@@ -66,6 +66,12 @@ export default function Post({ id, postData }: PostProps) {
     ? postData.contentHtml.replace(/<[^>]*>/g, "").substring(0, 120) + "..."
     : `${postData.title} - Nawashiroのブログ記事`;
 
+  // standard-site対応
+  const mapping = rawMapping as {
+    did: string;
+    publicationRkey: string | null;
+    documents: Record<string, string>;
+  }
   const publicationUri = mapping.publicationRkey
     ? `at://${mapping.did}/site.standard.publication/${mapping.publicationRkey}`
     : undefined;

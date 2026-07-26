@@ -166,8 +166,8 @@ async function main() {
   const identifier = process.env.ATP_IDENTIFIER;
   const password = process.env.ATP_APP_PASSWORD;
   if (!identifier || !password) {
-    console.error("ATP_IDENTIFIERとATP_APP_PASSWORDを設定してください");
-    process.exit(1);
+    console.error("ATP_IDENTIFIERとATP_APP_PASSWORDが未設定のためsyncをスキップします");
+    return;
   }
 
   // 1. 接続
