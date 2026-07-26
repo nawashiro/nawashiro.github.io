@@ -1,7 +1,7 @@
 // ATProtoのStandard-siteに基づいた出版ロジック。
 // natsukium氏実装の真似。@atproto/apiを使うと依存が爆増するためDIY。
 
-import { readdirSync, readFileSync, writeFileSync } from "fs";
+import { readdirSync, readFileSync, write, writeFileSync } from "fs";
 import matter from "gray-matter";
 const MAPPING_PATH = "lib/data/standard-site.json";
 
@@ -264,6 +264,11 @@ async function main() {
   // 6. 最終保存
   saveMapping(mapping);
   console.log("standard.site sync complete");
+
+  writeFileSync(
+    `public/.well-known/${publicationCollection}`,
+    publicationUri
+  )
 }
 
 main();

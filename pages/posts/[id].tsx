@@ -12,6 +12,7 @@ import Link from "next/link";
 import WebMention from "../../components/WebMention";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import SectionLayout from "../../components/sectionLayout";
+import mapping from "../../lib/data/standard-site.json";
 
 type PostParams = {
   id: string;
@@ -65,6 +66,14 @@ export default function Post({ id, postData }: PostProps) {
     ? postData.contentHtml.replace(/<[^>]*>/g, "").substring(0, 120) + "..."
     : `${postData.title} - Nawashiroのブログ記事`;
 
+  const publicationUri = mapping.publicationRkey
+    ? `at://${mapping.did}/site.standard.publication/${mapping.publicationRkey}`
+    : undefined;
+  const documentRkey = mapping.documents[`/posts/${id}`];
+  const documentUri = documentRkey
+    ? `at://${mapping.did}/site.standard.document/${documentRkey}`
+    : undefined;
+
   return (
     <Layout
       title={postData.title}
@@ -81,10 +90,14 @@ export default function Post({ id, postData }: PostProps) {
             <meta property="article:tag" content={tag} key={tag} />
           ))
         }
-        <link
-          rel="site.standard.document"
-          href="at://did:plc:oszui3uk43smfv7nihtli3pq/site.standard.document/rkey"
-        />
+        {
+          publicationUri &&
+          <link rel="site.standard.publication" href={publicationUri} />
+        }
+        {
+          documentUri &&
+          <link rel="site.standard.document" href={documentUri} />
+        }
         <link
           rel="webmention"
           href="https://webmention.io/nawashiro.dev/webmention"
