@@ -263,7 +263,7 @@ async function main() {
 
   // 6. 最終保存
   saveMapping(mapping);
-  console.log("standar.site sync complete");
+  console.log("standard.site sync complete");
 }
 
 main();
