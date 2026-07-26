@@ -12,6 +12,7 @@ import Link from "next/link";
 import WebMention from "../../components/WebMention";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import SectionLayout from "../../components/sectionLayout";
+import rawMapping from "../../lib/data/standard-site.json";
 
 type PostParams = {
   id: string;
@@ -56,15 +57,28 @@ export default function Post({ id, postData }: PostProps) {
   const isDevelopment = process.env.NODE_ENV === "development";
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
   const canonicalUrl = `${siteUrl}/posts/${id}`;
-  const webmentionPageUrl = `${
-    isDevelopment ? productionSiteUrl : siteUrl
-  }/posts/${id}`;
+  const webmentionPageUrl = `${isDevelopment ? productionSiteUrl : siteUrl
+    }/posts/${id}`;
   const publishedDate = postData.date;
 
   // 記事の先頭から説明文を抽出（HTMLタグを除去して最初の120文字）
   const description = postData.contentHtml
     ? postData.contentHtml.replace(/<[^>]*>/g, "").substring(0, 120) + "..."
     : `${postData.title} - Nawashiroのブログ記事`;
+
+  // standard-site対応
+  const mapping = rawMapping as {
+    did: string;
+    publicationRkey: string | null;
+    documents: Record<string, string>;
+  }
+  const publicationUri = mapping.publicationRkey
+    ? `at://${mapping.did}/site.standard.publication/${mapping.publicationRkey}`
+    : undefined;
+  const documentRkey = mapping.documents[`/posts/${id}`];
+  const documentUri = documentRkey
+    ? `at://${mapping.did}/site.standard.document/${documentRkey}`
+    : undefined;
 
   return (
     <Layout
@@ -80,7 +94,16 @@ export default function Post({ id, postData }: PostProps) {
         {postData.tags &&
           postData.tags.map((tag) => (
             <meta property="article:tag" content={tag} key={tag} />
-          ))}
+          ))
+        }
+        {
+          publicationUri &&
+          <link rel="site.standard.publication" href={publicationUri} />
+        }
+        {
+          documentUri &&
+          <link rel="site.standard.document" href={documentUri} />
+        }
         <link
           rel="webmention"
           href="https://webmention.io/nawashiro.dev/webmention"
