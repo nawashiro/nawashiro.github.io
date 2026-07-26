@@ -99,3 +99,48 @@ async function restoreExistingRkey(did: string, pds: string): Promise<Mapping> {
   return mapping;
 }
 
+// === 3. 差分比較と冪等な書き込み ===
+
+
+// レコード取得
+async function getRecord(did: string, pds: string, collection: string, rkey: string): Promise<Record<string, unknown>> {
+  const params = new URLSearchParams({ repo: did, collection, rkey });
+  const res = await fetch(`${pds}/xrpc/com.atproto.repo.listRecords?${params}`);
+
+  if (!res.ok) throw new Error("ERROR: レコード取得失敗 [lib/sync-standard-site.ts / function listAllRecords]");
+
+  const data = await res.json();
+  return data.record;
+}
+
+// JSON文字列正規化（natsukium氏実装そのまま）
+function canonical(value: unknown): string {
+  if (Array.isArray(value)) {
+    return `[${value.map(canonical).join(",")}]`;
+  }
+  if (value && typeof value === "object") {
+    return `{${Object.keys(value as Record<string, string>)
+      .toSorted()
+      .map((k) => `${JSON.stringify(k)}:${canonical((value as Record<string, string>)[k])}`)
+      .join(",")}}`;
+  }
+  return JSON.stringify(value);
+}
+
+// 変更がない記事はレコードに書き込まない。
+async function upsert(did: string, pds: string, collection: string, rkey: string, jwt: string, record: Record<string, unknown>) {
+  const existing = await getRecord(did, pds, collection, rkey);
+
+  if (existing && canonical(existing) === canonical(record)) {
+    return false; // 変更なし（なにもしない）
+  }
+
+  // 変更あり（putRecord）
+  await fetch(`${pds}/xrpc/com.atproto.repo.putRecord`, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${jwt}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ repo: did, collection, rkey, record })
+  })
+
+  return true;
+}
