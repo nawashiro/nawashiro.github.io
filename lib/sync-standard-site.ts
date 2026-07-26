@@ -58,7 +58,7 @@ async function listAllRecords(did: string, pds: string, collection: string): Pro
 
     const res = await fetch(`${pds}/xrpc/com.atproto.repo.listRecords?${params}`);
 
-    if (!res.ok) throw new Error("ERROR: レコード取得失敗 [lib/sync-standard-site.ts / function listAllRecords]");
+    if (!res.ok) throw new Error("ERROR: listAllRecords失敗 [lib/sync-standard-site.ts | function listAllRecords]");
 
     const data = await res.json();
     records.push(...data.records);
@@ -109,7 +109,7 @@ async function getRecord(did: string, pds: string, collection: string, rkey: str
 
   if (res.status === 400) return null;
 
-  if (!res.ok) throw new Error(`ERROR: getRecord失敗 ${res.status}`);
+  if (!res.ok) throw new Error(`ERROR: getRecord失敗 ${res.status} [lib/sync-standard-site.ts | function getRecord]`);
 
   const data = await res.json();
   return data.record;
