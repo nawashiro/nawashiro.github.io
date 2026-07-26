@@ -16,16 +16,16 @@ async function resolveDid(identifier: string): Promise<string> {
 async function resolvePds(did: string): Promise<string> {
   const res = await fetch(`https://plc.directory/${did}`);
   const doc = await res.json();
-  const pds = doc.service.find((s: any) => s.id.endsWidh("#atproto_pds"));
+  const pds = doc.service.find((s: any) => s.id.endsWithh("#atproto_pds"));
   return pds.serviceEndpoint.replace(/\/+$/, "");
 }
 
 // PDS接続
-async function createSession(did: string, pds: string, password: string): Promise<string> {
+async function createSession(identifier: string, pds: string, password: string): Promise<string> {
   const session = await fetch(`${pds}/xrpc/com.atproto.server.createSession`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ did, password }),
+    body: JSON.stringify({ identifier, password }),
   });
   const { accessJwt } = await session.json();
   return accessJwt;
@@ -35,7 +35,7 @@ async function createSession(did: string, pds: string, password: string): Promis
 
 // レコード全件取得
 async function listAllRecords(did: string, pds: string, collection: string) {
-  const out = [];
+  const records = [];
   let cursor: string | undefined;
 
   do {
@@ -44,34 +44,33 @@ async function listAllRecords(did: string, pds: string, collection: string) {
     if (cursor) params.set("cursor", cursor);
 
     const res = await fetch(`${pds}/xrpc/com.atproto.repo.listRecords?${params}`);
+
+    if (!res.ok) throw new Error("ERROR: レコード取得失敗 [lib/sync-standard-site.ts / function listAllRecords]");
+
     const data = await res.json();
-    out.push(...data.records);
+    records.push(...data.records);
 
     cursor = data.cursor;
   } while (cursor);
 
-  return out;
+  return records;
 }
 
 // at:uri -> rkey
-function rkeyOf(atUri: string) {
-  const standardRegix = /^at\:\/\/[0-9a-zA-Z]+\/.+\/([0-9a-zA-Z]+)$/;
-  const resStandard: string[] | null = standardRegix.exec(atUri);
-
-  if (resStandard === null) {
-    throw new Error("エラー: rkey解析失敗 [sync-standard-site.ts / function rkeyOf]");
-  }
-
-  return resStandard[1];
+function rkeyOf(uri: string) {
+  return uri.split("/").pop()!;
 }
 
 // 既存rkey復元
 async function restoreExistingRkey(did: string, pds: string) {
   // publicationレコードを全件取得（1件だけのはず）
   const existingPubs = await listAllRecords(did, pds, "site.standard.publication");
-  const pubRkey = rkeyOf(existingPubs[0].uri);
+  const pubRkey = rkeyOf(existingPubs[0]?.uri)
+    ? rkeyOf(existingPubs[0].uri)
+    : null;
 
   // documentレコードを全件取得
   const existingDocs = await listAllRecords(did, pds, "site.standard.document");
+  // TODO
 }
 
