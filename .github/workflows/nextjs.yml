@@ -63,6 +63,8 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
         env:
           NEXT_PUBLIC_SITE_URL: https://nawashiro.dev
+          ATP_IDENTIFIER: ${{ secrets.ATP_IDENTIFIER }}
+          ATP_APP_PASSWORD: ${{ secrets.ATP_APP_PASSWORD }}
 
       - name: Verify sitemap output
         run: |
