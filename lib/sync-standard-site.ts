@@ -16,7 +16,7 @@ async function resolveDid(identifier: string): Promise<string> {
 async function resolvePds(did: string): Promise<string> {
   const res = await fetch(`https://plc.directory/${did}`);
   const doc = await res.json();
-  const pds = doc.service.find((s: any) => s.id.endsWithh("#atproto_pds"));
+  const pds = doc.service.find((s: any) => s.id.endsWith("#atproto_pds"));
   return pds.serviceEndpoint.replace(/\/+$/, "");
 }
 
@@ -33,8 +33,14 @@ async function createSession(identifier: string, pds: string, password: string):
 
 // === 2. listRecordsから既存rkeyを復元 ===
 
+// リスト用レコード型定義。
+// https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/listRecords.json 43-45, 55-57 を参照のこと。
+// cidは使わない。
+// Recordの中身はすべてstringとobjectの対応。
+type ListedRecord = { uri: string; value: Record<string, unknown> }
+
 // レコード全件取得
-async function listAllRecords(did: string, pds: string, collection: string) {
+async function listAllRecords(did: string, pds: string, collection: string): Promise<ListedRecord[]> {
   const records = [];
   let cursor: string | undefined;
 
@@ -65,9 +71,7 @@ function rkeyOf(uri: string) {
 async function restoreExistingRkey(did: string, pds: string) {
   // publicationレコードを全件取得（1件だけのはず）
   const existingPubs = await listAllRecords(did, pds, "site.standard.publication");
-  const pubRkey = rkeyOf(existingPubs[0]?.uri)
-    ? rkeyOf(existingPubs[0].uri)
-    : null;
+  const pubRkey = existingPubs[0]?.uri ? rkeyOf(existingPubs[0].uri) : null;
 
   // documentレコードを全件取得
   const existingDocs = await listAllRecords(did, pds, "site.standard.document");
