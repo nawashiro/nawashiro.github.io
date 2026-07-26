@@ -1,6 +1,10 @@
 // ATProtoのStandard-siteに基づいた出版ロジック。
 // natsukium氏実装の真似。@atproto/apiを使うと依存が爆増するためDIY。
 
+import { readdirSync, readFileSync, writeFileSync } from "fs";
+import matter from "gray-matter";
+const MAPPING_PATH = "lib/data/standard-site.json";
+
 // === 1. PDSとの接続・認証 ===
 
 // DID解決。
@@ -144,4 +148,117 @@ async function upsert(did: string, pds: string, collection: string, rkey: string
   })
 
   return true;
+}
+
+// === 4. メインループ ===
+
+// 永続化
+function saveMapping(mapping: Mapping) {
+  writeFileSync(MAPPING_PATH, JSON.stringify(mapping, null, 2) + "\n");
+}
+
+// メインループ
+async function main() {
+  const publicationCollection = "site.standard.publication";
+  const documentCollection = "site.standard.document";
+
+  // 環境変数から認証情報取得
+  const identifier = process.env.ATP_IDENTIFIER;
+  const password = process.env.ATP_APP_PASSWORD;
+  if (!identifier || !password) {
+    console.error("ATP_IDENTIFIERとATP_APP_PASSWORDを設定してください");
+    process.exit(1);
+  }
+
+  // 1. 接続
+  const did = await resolveDid(identifier);
+  const pds = await resolvePds(did);
+  const jwt = await createSession(identifier, pds, password);
+
+  // 2. 既存rkey復元
+  const mapping = await restoreExistingRkey(did, pds);
+
+  // 3. publicationをupset
+  const publicationRecord = {
+    $type: "site.standard.publication",
+    name: "Nawashiro",
+    url: "https://nawashiro.dev",
+    description: "Nawashiroの個人サイト",
+  };
+
+  if (mapping.publicationRkey) {
+    // 既存→差分があれば更新
+    await upsert(did, pds, publicationCollection, mapping.publicationRkey, jwt, publicationRecord);
+  } else {
+    // 新規→createRecord
+    // 関数に切り出そうと思えばできそうだけど、永続化と場所が離れると忘れそうで怖い。なので毎回書く。
+    const created = await fetch(`${pds}/xrpc/com.atproto.repo.createRecord`, {
+      method: "POST",
+      headers: { Authorization: `Bearer ${jwt}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ repo: did, collection: documentCollection, record: publicationRecord }),
+    });
+    const data = await created.json();
+    mapping.publicationRkey = rkeyOf(data.uri);
+    saveMapping(mapping); // === 即座に永続化する！！！ ===
+  }
+  const publicationUri = `at://${did}/${publicationCollection}/${mapping.publicationRkey}`;
+
+  // 4. 全記事を走査
+  const published = new Set<string>();
+  const postFiles = readdirSync("posts").filter(f => f.endsWith(".md"));
+
+  for (const file of postFiles) {
+    const slug = file.replace(/\.md$/, "");
+
+    // frontmatterパース
+    const raw = readFileSync(`posts/${file}`, "utf8");
+    const fm = matter(raw).data; // { title, date, description?, tags? }
+
+    published.add(slug);
+
+    const documentRecord = {
+      $type: documentCollection,
+      site: publicationUri,
+      title: fm.title,
+      path: `/posts/${slug}`,
+      publishedAt: new Date(fm.date).toISOString(),
+      ...(fm.description ? { description: fm.description } : {}),
+      ...(fm.tags?.length ? { tags: fm.tags } : {}),
+    }
+
+    const existingRkey = mapping.documents[`/posts/${slug}`];
+
+    if (existingRkey) {
+      // 既存→差分があれば更新
+      await upsert(did, pds, documentCollection, existingRkey, jwt, documentRecord);
+    } else {
+      // 新規→createRecord
+      // 関数に切り出そうと思えば（略）
+      const created = await fetch(`${pds}/xrpc/com.atproto.repo.createRecord`, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${jwt}`, "Content-Type": "application/json" },
+        body: JSON.stringify({ repo: did, collection: documentCollection, record: documentRecord }),
+      });
+      const data = await created.json();
+      mapping.documents[`/posts/${slug}`] = rkeyOf(data.uri);
+      saveMapping(mapping); // === 即座に永続化する！！！ ===
+    }
+  }
+
+  // 5. 消えた記事のレコードを削除
+  for (const path of Object.keys(mapping.documents)) {
+    if (!published.has(path.replace("/posts/", ""))) {
+      await fetch(`${pds}/xrpc/com.atproto.repo.deleteRecord`, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${jwt}`, "Content-Type": "application/json" },
+        body: JSON.stringify({ repo: did, collection: documentCollection, rkey: mapping.documents[path] }),
+      });
+      delete mapping.documents[path];
+      saveMapping(mapping);
+    }
+  }
+
+  // 6. 最終保存
+  saveMapping(mapping);
+  console.log("standar.site sync conplete");
 }
