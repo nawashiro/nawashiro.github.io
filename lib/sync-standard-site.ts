@@ -103,11 +103,13 @@ async function restoreExistingRkey(did: string, pds: string): Promise<Mapping> {
 
 
 // レコード取得
-async function getRecord(did: string, pds: string, collection: string, rkey: string): Promise<Record<string, unknown>> {
+async function getRecord(did: string, pds: string, collection: string, rkey: string): Promise<Record<string, unknown> | null> {
   const params = new URLSearchParams({ repo: did, collection, rkey });
-  const res = await fetch(`${pds}/xrpc/com.atproto.repo.listRecords?${params}`);
+  const res = await fetch(`${pds}/xrpc/com.atproto.repo.getRecords?${params}`);
 
-  if (!res.ok) throw new Error("ERROR: レコード取得失敗 [lib/sync-standard-site.ts / function listAllRecords]");
+  if (res.status === 400) return null;
+
+  if (!res.ok) throw new Error(`ERROR: getRecord失敗 ${res.status}`);
 
   const data = await res.json();
   return data.record;
