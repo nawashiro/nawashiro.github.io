@@ -39,6 +39,9 @@ async function createSession(identifier: string, pds: string, password: string):
 // Recordの中身はすべてstringとobjectの対応。
 type ListedRecord = { uri: string; value: Record<string, unknown> }
 
+// PathとRkeyの対応。2の返却値。
+type PathToRkey = Record<string, string>
+
 // レコード全件取得
 async function listAllRecords(did: string, pds: string, collection: string): Promise<ListedRecord[]> {
   const records = [];
@@ -68,13 +71,21 @@ function rkeyOf(uri: string) {
 }
 
 // 既存rkey復元
-async function restoreExistingRkey(did: string, pds: string) {
+async function restoreExistingRkey(did: string, pds: string): Promise<PathToRkey> {
   // publicationレコードを全件取得（1件だけのはず）
   const existingPubs = await listAllRecords(did, pds, "site.standard.publication");
   const pubRkey = existingPubs[0]?.uri ? rkeyOf(existingPubs[0].uri) : null;
 
   // documentレコードを全件取得
   const existingDocs = await listAllRecords(did, pds, "site.standard.document");
-  // TODO
+  const pathToRkey: PathToRkey = {};
+
+  for (const { uri, value } of existingDocs) {
+    if (typeof value.path === "string") {
+      pathToRkey[value.path] = rkeyOf(uri);
+    }
+  }
+
+  return pathToRkey;
 }
 
