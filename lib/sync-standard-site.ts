@@ -39,8 +39,12 @@ async function createSession(identifier: string, pds: string, password: string):
 // Recordの中身はすべてstringとobjectの対応。
 type ListedRecord = { uri: string; value: Record<string, unknown> }
 
-// PathとRkeyの対応。2の返却値。
-type PathToRkey = Record<string, string>
+// 2の期待する返却値。
+type Mapping = {
+  did: string;
+  publicationRkey: string | null;
+  documents: Record<string, string>;
+}
 
 // レコード全件取得
 async function listAllRecords(did: string, pds: string, collection: string): Promise<ListedRecord[]> {
@@ -71,14 +75,14 @@ function rkeyOf(uri: string) {
 }
 
 // 既存rkey復元
-async function restoreExistingRkey(did: string, pds: string): Promise<PathToRkey> {
+async function restoreExistingRkey(did: string, pds: string): Promise<Mapping> {
   // publicationレコードを全件取得（1件だけのはず）
   const existingPubs = await listAllRecords(did, pds, "site.standard.publication");
   const pubRkey = existingPubs[0]?.uri ? rkeyOf(existingPubs[0].uri) : null;
 
   // documentレコードを全件取得
   const existingDocs = await listAllRecords(did, pds, "site.standard.document");
-  const pathToRkey: PathToRkey = {};
+  const pathToRkey: Record<string, string> = {};
 
   for (const { uri, value } of existingDocs) {
     if (typeof value.path === "string") {
@@ -86,6 +90,12 @@ async function restoreExistingRkey(did: string, pds: string): Promise<PathToRkey
     }
   }
 
-  return pathToRkey;
+  const mapping: Mapping = {
+    did,
+    publicationRkey: pubRkey,
+    documents: pathToRkey,
+  };
+
+  return mapping;
 }
 
