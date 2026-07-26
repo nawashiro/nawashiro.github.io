@@ -178,7 +178,7 @@ async function main() {
   // 2. 既存rkey復元
   const mapping = await restoreExistingRkey(did, pds);
 
-  // 3. publicationをupset
+  // 3. publicationをupsert
   const publicationRecord = {
     $type: "site.standard.publication",
     name: "Nawashiro",
@@ -195,8 +195,9 @@ async function main() {
     const created = await fetch(`${pds}/xrpc/com.atproto.repo.createRecord`, {
       method: "POST",
       headers: { Authorization: `Bearer ${jwt}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ repo: did, collection: documentCollection, record: publicationRecord }),
+      body: JSON.stringify({ repo: did, collection: publicationCollection, record: publicationRecord }),
     });
+    if (!created.ok) throw new Error(`ERROR: createRecord失敗 ${created.status} [lib/sync-standard-site.ts | function main]`)
     const data = await created.json();
     mapping.publicationRkey = rkeyOf(data.uri);
     saveMapping(mapping); // === 即座に永続化する！！！ ===
@@ -239,6 +240,7 @@ async function main() {
         headers: { Authorization: `Bearer ${jwt}`, "Content-Type": "application/json" },
         body: JSON.stringify({ repo: did, collection: documentCollection, record: documentRecord }),
       });
+      if (!created.ok) throw new Error(`ERROR: createdRecord失敗 ${created.status} [lib/sync-standard-site.ts | function main]`)
       const data = await created.json();
       mapping.documents[`/posts/${slug}`] = rkeyOf(data.uri);
       saveMapping(mapping); // === 即座に永続化する！！！ ===
@@ -248,11 +250,12 @@ async function main() {
   // 5. 消えた記事のレコードを削除
   for (const path of Object.keys(mapping.documents)) {
     if (!published.has(path.replace("/posts/", ""))) {
-      await fetch(`${pds}/xrpc/com.atproto.repo.deleteRecord`, {
+      const deleted = await fetch(`${pds}/xrpc/com.atproto.repo.deleteRecord`, {
         method: "POST",
         headers: { Authorization: `Bearer ${jwt}`, "Content-Type": "application/json" },
         body: JSON.stringify({ repo: did, collection: documentCollection, rkey: mapping.documents[path] }),
       });
+      if (!deleted.ok) throw new Error(`ERROR: deleteRecord失敗 ${deleted.status} [lib/sync-standard-site.ts | function main]`)
       delete mapping.documents[path];
       saveMapping(mapping);
     }
@@ -260,5 +263,7 @@ async function main() {
 
   // 6. 最終保存
   saveMapping(mapping);
-  console.log("standar.site sync conplete");
+  console.log("standar.site sync complete");
 }
+
+main();
