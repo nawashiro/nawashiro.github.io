@@ -101,18 +101,17 @@ async function restoreExistingRkey(did: string, pds: string): Promise<Mapping> {
 
 // === 3. 差分比較と冪等な書き込み ===
 
-
 // レコード取得
 async function getRecord(did: string, pds: string, collection: string, rkey: string): Promise<Record<string, unknown> | null> {
   const params = new URLSearchParams({ repo: did, collection, rkey });
-  const res = await fetch(`${pds}/xrpc/com.atproto.repo.getRecords?${params}`);
+  const res = await fetch(`${pds}/xrpc/com.atproto.repo.getRecord?${params}`);
 
   if (res.status === 400) return null;
 
   if (!res.ok) throw new Error(`ERROR: getRecord失敗 ${res.status} [lib/sync-standard-site.ts | function getRecord]`);
 
   const data = await res.json();
-  return data.record;
+  return data.value;
 }
 
 // JSON文字列正規化（natsukium氏実装そのまま）
