@@ -168,19 +168,14 @@ export default function Home({
           <h2>About</h2>
           <p>ここはNawashiroのデジタルガーデンです。</p>
           <p>
-            「関連項目」や「バックリンク」を頼りにサイトを探索してみてください
-            <img
-              src="https://emoji-route.deno.dev/gif/👀"
-              alt="👀"
-              className="twemoji"
-            />
+            「関連項目」や「バックリンク」を頼りにサイトを探索してみてください 👀
           </p>
           <h3>注意</h3>
           <p>だいたいは個人的なメモで、不完全なもの。悪い例 👇 </p>
 
           <div className="chat chat-start">
             <div className="chat-image avatar">
-                😰
+              😰
             </div>
             <div className="chat-bubble">
               すべてをすぐに正しくしなければならない
@@ -188,7 +183,7 @@ export default function Home({
           </div>
           <div className="chat chat-end">
             <div className="chat-image avatar">
-                🤩
+              🤩
             </div>
             <div className="chat-bubble">
               インターネットに書いてあることはぜんぶ本当なんだ！
