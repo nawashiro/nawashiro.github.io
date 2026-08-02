@@ -1,10 +1,13 @@
 ---
 title: "EXPOの記録、カメラと人の認知、そして時代の終わり"
-date: "2025-07-19T16:00:43+09:00"
+date: "2026-08-02T09:35:59+09:00"
 ---
 
 - categories:
 	- [🎞️写真ブログ](categories-photo-blogs.md)
+- updates:
+	- 2026-08-02
+	- 2025-07-19
 
 ---
 
@@ -63,6 +66,14 @@ Kodak EKTAR H35 を購入した。
 ![砂色の Kodak EKTAR H35](20250719-wbEsgAd.webp)
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon) [](https://brid.gy/publish/github) <a class="u-in-reply-to" href="https://github.com/nawashiro/nawashiro.github.io"></a>
+
+## 動画
+
+<iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/h_dpUu4dFGg?si=ZYaeiAD2NjbalA_u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+https://www.nicovideo.jp/watch/sm46616660
+
+## 広告
 
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/HgbL_9">
   <figure class="px-5 py-5">

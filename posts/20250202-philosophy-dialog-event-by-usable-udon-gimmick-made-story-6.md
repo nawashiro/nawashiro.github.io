@@ -2,6 +2,12 @@
 title: "哲学対話イベントで使える Udon ギミックを作った話 #6 - キャリー付き乗算"
 date: "2025-02-02"
 ---
+- categories:
+	- [🔧技術](categories-develops.md)
+- tags:
+	- [🏷️VRChat](tags-vrchat.md)
+
+---
 
 力学モデルの UdonSharp 実装において、マルチスレッドを実現するために Audio Filter を使用しましたが、そのために既存のライブラリが使用できず、乱数を自ら実装する必要がありました。
 

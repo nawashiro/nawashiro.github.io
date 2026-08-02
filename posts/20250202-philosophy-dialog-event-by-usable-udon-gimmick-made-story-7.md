@@ -2,6 +2,12 @@
 title: "哲学対話イベントで使える Udon ギミックを作った話 #7 - グリッド処理と近傍探索"
 date: "2025-02-02"
 ---
+- categories:
+	- [🔧技術](categories-develops.md)
+- tags:
+	- [🏷️VRChat](tags-vrchat.md)
+
+---
 
 力学モデルの UdonSharp 実装においていくつかの案を試みましたが、失敗したものもあります。今回は、失敗した試みを紹介します。
 
