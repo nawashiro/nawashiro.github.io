@@ -2,10 +2,7 @@
 title: "哲学対話イベントで使える Udon ギミックを作った話 #1 - コンセプト"
 date: "2026-08-02T09:05:39+09:00"
 ---
-- categories:
-	- [🔧技術](categories-develops.md)
-- tags:
-	- [🏷️VRChat](tags-vrchat.md)
+
 - updates:
 	- 2026-08-02
 	- 2025-02-02

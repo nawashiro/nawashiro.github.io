@@ -2,10 +2,7 @@
 title: "哲学対話イベントで使える Udon ギミックを作った話 #4 - マルチスレッド"
 date: "2026-08-02T09:24:03+09:00"
 ---
-- categories:
-	- [🔧技術](categories-develops.md)
-- tags:
-	- [🏷️VRChat](tags-vrchat.md)
+
 - updates:
 	- 2026-08-02
 	- 2025-02-02
@@ -144,3 +141,5 @@ private void OnAudioFilterRead(float[] _, int __)
 ## 次回予告
 
 次回は軽量化の続きを、特に斥力のランダムスキップと疑似乱数について扱います。
+
+[](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
