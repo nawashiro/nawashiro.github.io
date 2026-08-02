@@ -1,6 +1,11 @@
 ---
 title: "哲学対話イベントで使える Udon ギミックを作った話 #1 - コンセプト"
-date: "2025-02-02"
+date: 2026-08-02T09:05:39+09:00
+---
+- updates:
+	- 2026-08-02
+	- 2025-02-02
+
 ---
 
 私は最近、VRChat 上で開催する哲学対話イベントで活用できるツールを開発しました。それは力学モデルを使用したメモツールで、哲学対話の場に新たな可能性をもたらすかな、もたらせたらいいなというものです。このシリーズでは、そのツールのコンセプトと開発経緯について扱います。
@@ -8,6 +13,12 @@ date: "2025-02-02"
 [Boothストア](https://nawashiro.booth.pm/items/6082934)
 
 [サンプルワールド](https://vrchat.com/home/launch?worldId=wrld_b6c40f25-1670-4e73-849e-d8b5f4794951)
+
+## 動画
+
+<iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/UnDaGdG5DK8?si=3B1U6Upy86fK8tPF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe width="312" height="176" src="https://ext.nicovideo.jp/thumb/sm44670256" scrolling="no" style="border:solid 1px #ccc;" frameborder="0"><a href="https://www.nicovideo.jp/watch/sm44670256">【解説】VRChat用ギミック作ってみた 1 コンセプト</a></iframe>
 
 ## 哲学対話とは何か？
 
