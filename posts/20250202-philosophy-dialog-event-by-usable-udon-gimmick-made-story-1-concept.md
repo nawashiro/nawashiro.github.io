@@ -18,7 +18,7 @@ date: "2026-08-02T09:05:39+09:00"
 
 <iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/UnDaGdG5DK8?si=3B1U6Upy86fK8tPF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<script type="application/javascript" src="https://embed.nicovideo.jp/watch/sm44670256/script?w=320&h=180"></script><noscript><a href="https://www.nicovideo.jp/watch/sm44670256">【解説】VRChat用ギミック作ってみた 1 コンセプト</a></noscript>
+https://www.nicovideo.jp/watch/sm44670256
 
 ## 哲学対話とは何か？
 
