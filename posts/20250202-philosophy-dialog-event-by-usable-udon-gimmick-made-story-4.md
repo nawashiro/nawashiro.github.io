@@ -143,3 +143,7 @@ private void OnAudioFilterRead(float[] _, int __)
 次回は軽量化の続きを、特に斥力のランダムスキップと疑似乱数について扱います。
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
+
+---
+
+[Bluesky](https://bsky.app/profile/nawashiro.dev/post/3ms2xu2cecc2r) か [Fediverse](https://gamelinks007.net/@nawashiro/117023625506585929) から返信して会話に参加してください。
