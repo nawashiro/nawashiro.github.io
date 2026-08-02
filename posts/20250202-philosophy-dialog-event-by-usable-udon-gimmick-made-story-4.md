@@ -1,10 +1,26 @@
 ---
 title: "哲学対話イベントで使える Udon ギミックを作った話 #4 - マルチスレッド"
-date: "2025-02-02"
+date: "2026-08-02T09:24:03+09:00"
 ---
+- categories:
+	- [🔧技術](categories-develops.md)
+- tags:
+	- [🏷️VRChat](tags-vrchat.md)
+- updates:
+	- 2026-08-02
+	- 2025-02-02
+
+---
+
+## 動画
+
+<iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/hRD1JdD_238?si=sak1zyCGwAIc5wwr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+https://www.nicovideo.jp/watch/sm46616660
+
 ## UdonSharp のマルチスレッド処理
 
-長時間かかる処理を実行する際、軽量化のために別スレッドで処理を行いたいと考えました。しかし、UdonSharp は基本的にシングルスレッドで動作するため、マルチスレッド処理を直接的に実装することはできません。そこで、**AudioFilter**を利用して別スレッドを動かす方法を採用しました。音声の処理は画面の描画とは別のスレッドで実行されるため、この仕組みを活用することが可能です。
+長時間かかる処理を実行する際、軽量化のために別スレッドで処理を行いたいと考えました。しかし、UdonSharp は基本的にシングルスレッドで動作するため、マルチスレッド処理を直接的に実装することはできません。そこで、**AudioFilter**を利用して別スレッドを動かす方法を採用しました。音声の処理は画面の描画とは別のスレッドで実行されます。
 
 この方法については、[【VRChat】Udonでマルチスレッド処理を行う - ku6draVR](https://www.ku6dra.stream/blog/multithreading-in-udon) を参考にしました。以下の説明はこのサイトからの引用が多く含まれています。詳しく知りたい方や実装を試みる方は、原典を参照されることをお勧めします。
 

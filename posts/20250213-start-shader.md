@@ -7,6 +7,7 @@ date: "2025-02-13"
 	- [🔧技術](categories-develops.md)
 - tags:
 	- [🏷️ハウツー](tags-how-to.md)
+	- [🏷️VRChat](tags-vrchat.md)
 
 ---
 
