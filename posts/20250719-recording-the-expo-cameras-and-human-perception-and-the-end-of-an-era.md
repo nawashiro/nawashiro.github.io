@@ -71,7 +71,7 @@ Kodak EKTAR H35 を購入した。
 
 <iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/h_dpUu4dFGg?si=ZYaeiAD2NjbalA_u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-https://www.nicovideo.jp/watch/sm46616660
+https://www.nicovideo.jp/watch/sm45224084?ref=garage_share_other
 
 ## 広告
 
