@@ -1,10 +1,13 @@
 ---
-title: "WCAG 2.0 達成基準 1.4.1 を理解する"
+title: "なわしろの WCAG 2.0 達成基準 1.4.1 入門"
 date: "2024-12-23"
 ---
 
 - categories:
 	- [🔧技術](categories-develops.md)
+- tags:
+	- [🏷️なわしろのWWW入門](tags-nawashiro-s-introduction-to-the-world-wide-web.md)
+	- [🏷️ワールドワイドウェブ](tags-www.md)
 
 ---
 

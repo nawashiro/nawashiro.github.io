@@ -3,7 +3,7 @@ title: "🏷️🥈わりとベスト"
 date: "2026-05-23T23:46:08+09:00"
 ---
 - categories:
-	- [🏷️タグ](tags.md)
+	- [🏷️タグ](categories-tags.md)
 
 ---
 

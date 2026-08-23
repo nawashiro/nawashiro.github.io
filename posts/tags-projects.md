@@ -4,7 +4,9 @@ date: "2025-04-28"
 ---
 
 - categories:
-	- [🏷️タグ](tags.md)
+	- [🏷️タグ](categories-tags.md)
+- topics
+	- [🔧技術](categories-develops.md)
 
 ---
 

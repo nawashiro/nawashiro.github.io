@@ -7,6 +7,7 @@ date: "2024-12-17"
 	- [💬読書メモ（短い）](categories-books-short.md)
 - tags:
 	- [🏷️SF](tags-sci-fi.md)
+	- [🏷️ワールドワイドウェブ](tags-www.md)
 
 ---
 

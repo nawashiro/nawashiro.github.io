@@ -1,7 +1,18 @@
 ---
-title: "個人サイトに動的ogを作ってつまづいたところ"
+title: "なわしろの動的 Open Graph 入門"
 date: "2023-09-29 15:32"
 ---
+
+- categories:
+	- [🔧技術](categories-develops.md)
+- tags:
+	- [🏷️なわしろのWWW入門](tags-nawashiro-s-introduction-to-the-world-wide-web.md)
+	- [🏷️ワールドワイドウェブ](tags-www.md)
+- topics:
+	- [なわしろの GitHub Pages & Next.js 個人サイト入門](230928-create-ssg-1.md)
+
+---
+
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/Zr3a5S">
   <figure class="px-5 py-5">
     <img

@@ -6,6 +6,7 @@ date: "2026-08-02T16:55:04+09:00"
 	- [😶‍🌫️いろいろな考え](categories-any-opinions.md)
 - tags:
 	- [🏷️社会問題](tags-social-issues.md)
+	- [🏷️ソーシャルメディア](tags-social-media.md)
 - topics:
 	- [旧来型ソーシャルウェブの経験的仮定](20260112-empirical-assumptions-of-the-traditional-social-web.md)
 

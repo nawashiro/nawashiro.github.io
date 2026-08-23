@@ -1,5 +1,5 @@
 ---
-title: "そろそろシェーダーをはじめる"
+title: "なわしろのシェーダー入門"
 date: "2025-02-13"
 ---
 
@@ -8,6 +8,7 @@ date: "2025-02-13"
 - tags:
 	- [🏷️ハウツー](tags-how-to.md)
 	- [🏷️VRChat](tags-vrchat.md)
+	- [🏷️なわしろのWWW入門](tags-nawashiro-s-introduction-to-the-world-wide-web.md)
 
 ---
 

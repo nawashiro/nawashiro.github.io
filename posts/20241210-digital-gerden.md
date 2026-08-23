@@ -8,6 +8,7 @@ date: "2024-12-10"
 - tags:
 	- [🏷️メモの技法](tags-note-taking-techniques.md)
 	- [🏷️ハウツー](tags-how-to.md)
+	- [🏷️ワールドワイドウェブ](tags-www.md)
 - topics:
 	- [Obsidianでツェッテルカステンをつけてみた](240601-zettelkasten-obsidian.md)
 
