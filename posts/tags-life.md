@@ -3,7 +3,7 @@ title: "🏷️人生"
 date: "2026-05-23T23:24:59+09:00"
 ---
 - categories:
-	- [🏷️タグ](tags.md)
+	- [🏷️タグ](categories-tags.md)
 
 ---
 

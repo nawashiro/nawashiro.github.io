@@ -4,7 +4,7 @@ date: "2025-01-05"
 ---
 
 - categories:
-	- [🏷️タグ](tags.md)
+	- [🏷️タグ](categories-tags.md)
 
 ---
 

@@ -4,7 +4,10 @@ date: "2026-05-23T23:17:52+09:00"
 ---
 
 - categories:
-	- [🏷️タグ](tags.md)
+	- [🏷️タグ](categories-tags.md)
+- topics
+	- [💬読書メモ（短い）](categories-books-short.md)
+	- [📚読書メモ（長い）](categories-books-long.md)
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "害を受けたとき読む教訓"
+title: "なわしろの被害を受けたときの緊急対応入門"
 date: "2026-07-20T19:37:03+09:00"
 ---
 
@@ -8,6 +8,7 @@ date: "2026-07-20T19:37:03+09:00"
 - tags:
 	- [🏷️ハウツー](tags-how-to.md)
 	- [🏷️人生](tags-life.md)
+	- [🏷️なわしろのWWW入門](tags-nawashiro-s-introduction-to-the-world-wide-web.md)
 - topics:
 	- [いやな目にあったら読む本 - 読書メモ](20241207-a-revenge-manual-for-those-who-hate-someone.md)
 - updates:

@@ -1,5 +1,5 @@
 ---
-title: "障害年金をもらおう！"
+title: "なわしろの障害年金入門"
 date: "2025-06-25"
 ---
 
@@ -7,6 +7,7 @@ date: "2025-06-25"
 	- [📝覚え書き](categories-notes.md)
 - tags:
 	- [🏷️ハウツー](tags-how-to.md)
+	- [🏷️なわしろのWWW入門](tags-nawashiro-s-introduction-to-the-world-wide-web.md)
 - topics:
 	- [障害者の定義](20241214-disabled-people.md)
 

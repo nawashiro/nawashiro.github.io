@@ -1,10 +1,12 @@
 ---
-title: "GitHub Pages & Next.jsで個人サイト作ってつまづいたところ"
+title: "なわしろの GitHub Pages & Next.js 個人サイト入門"
 date: "2023-09-27 02:44"
 ---
 
 - categories:
 	- [🔧技術](categories-develops.md)
+- tags:
+	- [🏷️なわしろのWWW入門](tags-nawashiro-s-introduction-to-the-world-wide-web.md)
 
 ---
 

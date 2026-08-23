@@ -4,7 +4,9 @@ date: "2025-06-25"
 ---
 
 - categories:
-	- [🏷️タグ](tags.md)
+	- [🏷️タグ](categories-tags.md)
+- topics
+	- [📝覚え書き](categories-notes.md)
 
 ---
 

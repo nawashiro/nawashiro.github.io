@@ -5,6 +5,8 @@ date: "2024-03-11"
 
 - categories:
 	- [🔧技術](categories-develops.md)
+- tags:
+	- [🏷️ソーシャルメディア](tags-social-media.md)
 - topics:
 	- [エンジニア集会ハッカソン「NosHagaki」](20240325-engineer-meeting-hackathon-nos-hagaki.md)
 

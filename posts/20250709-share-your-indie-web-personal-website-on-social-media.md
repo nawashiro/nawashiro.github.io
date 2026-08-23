@@ -8,6 +8,7 @@ date: "2025-07-09"
 - tags:
 	- [🏷️ソーシャルメディア](tags-social-media.md)
 	- [🏷️ハウツー](tags-how-to.md)
+	- [🏷️ワールドワイドウェブ](tags-www.md)
 - topics:
 	- [Brid.gyでウェブサイトを共有してみる](20250709-share-your-website-with-brid-gy.md)
 

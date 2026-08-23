@@ -7,6 +7,7 @@ date: "2025-05-07"
 	- [🔧技術](categories-develops.md)
 - tags:
 	- [🏷️ソーシャルメディア](tags-social-media.md)
+	- [🏷️ワールドワイドウェブ](tags-www.md)
 
 ---
 

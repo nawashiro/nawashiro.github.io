@@ -1,12 +1,10 @@
 ---
-title: "🏷️ハウツー"
-date: "2026-05-23T22:03:34+09:00"
+title: "🏷️ワールドワイドウェブ"
+date: "2026-08-23T18:27:39+09:00"
 ---
 - categories:
 	- [🏷️タグ](categories-tags.md)
-- topics
+- topics:
 	- [🔧技術](categories-develops.md)
 
 ---
-
-なにかのやりかたです。
