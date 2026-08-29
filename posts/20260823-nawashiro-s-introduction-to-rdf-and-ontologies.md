@@ -1,6 +1,6 @@
 ---
-title: "なわしろのRDFとオントロジー入門"
-date: "2026-08-23T18:21:45+09:00"
+title: なわしろのRDFとオントロジー入門
+date: 2026-08-23T18:21:45+09:00
 ---
 - categories:
 	- [🔧技術](categories-develops.md)
@@ -141,4 +141,8 @@ SPARQL クエリにおける「グラフパターン」の概念は、リレー�
 
 ### 問題
 
-セマンティック・ウェブの技術階層図（Layer Cake）において、XML、RDF、OWL、そして Logic/Proof の各層はどのように依存し合っていますか？下位層が上位層に提供するものと、層を上がるごとに増していく「セマンティクス（意味）」の深さについて自身の言葉でまとめてください
+セマンティック・ウェブの技術階層図（Layer Cake）において、XML、RDF、OWL、そして Logic/Proof の各層はどのように依存し合っていますか？下位層が上位層に提供するものと、層を上がるごとに増していく「セマンティクス（意味）」の深さについて自身の言葉でまとめてください。
+
+---
+
+[Bluesky](https://bsky.app/profile/nawashiro.dev/post/3mtqqnpuqyk2w) か [Fediverse](https://gamelinks007.net/@nawashiro/117144748975721645) から返信して会話に参加してください。
