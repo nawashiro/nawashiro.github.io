@@ -3,6 +3,8 @@ title: "風ぐるま乗換案内のこれからと、年始の挨拶"
 date: "2026-01-11T10:56:37+09:00"
 ---
 
+- categories:
+	- [📨公開書簡](categories-mentions.md)
 - topics:
 	- [風ぐるま乗換案内をつくった](20250428-kazaguruma-transit.md)
 
