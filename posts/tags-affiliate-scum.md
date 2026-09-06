@@ -1,0 +1,8 @@
+---
+title: "🏷️アフィカス"
+date: "2026-09-06T11:15:09+09:00"
+---
+- categories:
+	- [🏷️タグ](categories-tags.md)
+
+---
