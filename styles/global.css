@@ -226,6 +226,28 @@ ul li code {
   width: 4px;
 }
 
+/* アラート */
+.blog .alert {
+  margin: 1rem 0;
+}
+
+.blog .alert-content {
+  width: 100%;
+}
+
+.blog .alert-title {
+  margin: 0;
+  font-weight: 700;
+}
+
+.blog .alert-body > :first-child {
+  margin-top: 0.75rem;
+}
+
+.blog .alert-body > :last-child {
+  margin-bottom: 0;
+}
+
 /* 罫線 */
 .blog hr {
   margin: 4rem 0 4rem 0;
