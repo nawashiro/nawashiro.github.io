@@ -1,4 +1,889 @@
 {
-  "version": 1,
-  "mentions": []
+  "mentions": [
+    {
+      "author": {
+        "name": "Nawashiro",
+        "photo": "https://avatars.webmention.io/cdn.bsky.app/0a80c4896b3c88dcb59d0f83dd865bb7739d0ee464a4e05710fa627adc629669.jpg",
+        "type": "card",
+        "url": "https://bsky.app/profile/nawashiro.dev"
+      },
+      "content": {
+        "text": "テスト～"
+      },
+      "in-reply-to": "https://nawashiro.dev/posts/20250213-3-create-stained-glass",
+      "published": "2025-03-01T18:09:32+00:00",
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3ljdjdnadcc2b",
+      "wm-id": 1888706,
+      "wm-private": false,
+      "wm-property": "in-reply-to",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-03-01T18:09:52Z",
+      "wm-source": "https://brid.gy/comment/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3ljdj5oebc222/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3ljdjdnadcc2b",
+      "wm-target": "https://nawashiro.dev/posts/20250213-3-create-stained-glass"
+    },
+    {
+      "author": {
+        "name": "❖????????????⬜❖",
+        "photo": "https://avatars.webmention.io/cdn.bsky.app/e7bc4cad2c79852d265193d44d9ef30712e59f5f6d357fb161bbb7a6c2219c32.jpg",
+        "type": "card",
+        "url": "https://bsky.app/profile/vrc1.bsky.social"
+      },
+      "like-of": "https://nawashiro.dev/posts/20250213-3-create-stained-glass",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3ljdj5oebc222#liked_by_did:plc:nzoy4fepgzljhhlsokvttmxx",
+      "wm-id": 1888908,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-03-02T01:50:27Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3ljdj5oebc222/did%253Aplc%253Anzoy4fepgzljhhlsokvttmxx",
+      "wm-target": "https://nawashiro.dev/posts/20250213-3-create-stained-glass"
+    },
+    {
+      "author": {
+        "name": "Nawashiro",
+        "photo": "https://avatars.webmention.io/cdn.bsky.app/0a80c4896b3c88dcb59d0f83dd865bb7739d0ee464a4e05710fa627adc629669.jpg",
+        "type": "card",
+        "url": "https://bsky.app/profile/nawashiro.dev"
+      },
+      "like-of": "https://nawashiro.dev/posts/20250213-3-create-stained-glass",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3ljdj5oebc222#liked_by_did:plc:oszui3uk43smfv7nihtli3pq",
+      "wm-id": 1889798,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-03-04T10:06:04Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3ljdj5oebc222/did%253Aplc%253Aoszui3uk43smfv7nihtli3pq",
+      "wm-target": "https://nawashiro.dev/posts/20250213-3-create-stained-glass"
+    },
+    {
+      "author": {
+        "name": "Marko Bajlovic",
+        "photo": "https://avatars.webmention.io/cdn.bsky.app/091f7506cfd380e2c53f20bed4547eb7a9bbdcfe1206b9c6eda96d7b0e438c38.jpg",
+        "type": "card",
+        "url": "https://bsky.app/profile/marko.tech"
+      },
+      "like-of": "https://nawashiro.dev/posts/20250413-ecdsa-sign-learn-in-tsunndere",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3lmowcyvxos23#liked_by_did:plc:qwfrxx4xe4sxjjx3hdkohkqn",
+      "wm-id": 1905835,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-04-20T02:19:38Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3lmowcyvxos23/did%253Aplc%253Aqwfrxx4xe4sxjjx3hdkohkqn",
+      "wm-target": "https://nawashiro.dev/posts/20250413-ecdsa-sign-learn-in-tsunndere"
+    },
+    {
+      "author": {
+        "name": "ゆーた@フレンズ",
+        "photo": "https://avatars.webmention.io/cdn.bsky.app/ba698e3fa2e51f9c3f24ed1a0664de18e528749d15b0f1838d8e6ba8cb187af9.jpg",
+        "type": "card",
+        "url": "https://bsky.app/profile/yuta-game-music.bsky.social"
+      },
+      "published": null,
+      "repost-of": "https://nawashiro.dev/posts/20250418-dijkstras-algorithm-learn-in-tsunndere",
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3lnfnt5b7rs2n#reposted_by_did:plc:ck2ha64ilhxoz3niiimkvtee",
+      "wm-id": 1906392,
+      "wm-private": false,
+      "wm-property": "repost-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-04-22T14:18:54Z",
+      "wm-source": "https://brid.gy/repost/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3lnfnt5b7rs2n/did%253Aplc%253Ack2ha64ilhxoz3niiimkvtee",
+      "wm-target": "https://nawashiro.dev/posts/20250418-dijkstras-algorithm-learn-in-tsunndere"
+    },
+    {
+      "author": {
+        "name": "とたんやね",
+        "photo": "https://avatars.webmention.io/cdn.bsky.app/67ffd445f0d36e1afc65cd5635bb8103c281c1f59448ac6c82aabb638d80cf69.jpg",
+        "type": "card",
+        "url": "https://bsky.app/profile/totan-yane.bsky.social"
+      },
+      "like-of": "https://nawashiro.dev/posts/20250418-dijkstras-algorithm-learn-in-tsunndere",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3lnfnt5b7rs2n#liked_by_did:plc:pjmlgzqtz53uas7ttqt3yoju",
+      "wm-id": 1906544,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-04-23T16:19:08Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3lnfnt5b7rs2n/did%253Aplc%253Apjmlgzqtz53uas7ttqt3yoju",
+      "wm-target": "https://nawashiro.dev/posts/20250418-dijkstras-algorithm-learn-in-tsunndere"
+    },
+    {
+      "author": {
+        "name": "あさだ",
+        "photo": "https://avatars.webmention.io/cdn.bsky.app/0b3c4533b344595fe6d9b777781592166b757f6f2ff3bda88acf87a651652b18.jpg",
+        "type": "card",
+        "url": "https://bsky.app/profile/asadaame5121.bsky.social"
+      },
+      "content": {
+        "text": "面白そうですね。気になります。"
+      },
+      "in-reply-to": "https://nawashiro.dev/posts/20250706-audrey-tan-on-digital-democracy",
+      "published": "2025-07-07T03:59:32+00:00",
+      "type": "entry",
+      "url": "https://bsky.app/profile/asadaame5121.bsky.social/post/3ltdvjkv3tk2l",
+      "wm-id": 1923248,
+      "wm-private": false,
+      "wm-property": "in-reply-to",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-07-07T18:04:55Z",
+      "wm-source": "https://brid.gy/comment/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3ltdtdqfa3i2v/at%253A%252F%252Fdid%253Aplc%253Aql5sv4umsrxadcsgtz3m5mq6%252Fapp.bsky.feed.post%252F3ltdvjkv3tk2l",
+      "wm-target": "https://nawashiro.dev/posts/20250706-audrey-tan-on-digital-democracy"
+    },
+    {
+      "author": {
+        "name": "あさだ",
+        "photo": "https://avatars.webmention.io/cdn.bsky.app/0b3c4533b344595fe6d9b777781592166b757f6f2ff3bda88acf87a651652b18.jpg",
+        "type": "card",
+        "url": "https://bsky.app/profile/asadaame5121.bsky.social"
+      },
+      "like-of": "https://nawashiro.dev/posts/20250706-audrey-tan-on-digital-democracy",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3ltdtdqfa3i2v#liked_by_did:plc:ql5sv4umsrxadcsgtz3m5mq6",
+      "wm-id": 1923249,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-07-07T18:04:56Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3ltdtdqfa3i2v/did%253Aplc%253Aql5sv4umsrxadcsgtz3m5mq6",
+      "wm-target": "https://nawashiro.dev/posts/20250706-audrey-tan-on-digital-democracy"
+    },
+    {
+      "author": {
+        "name": "Nawashiro",
+        "photo": "https://avatars.webmention.io/media.gamelinks007.net/63fb7f8d1252356fa12bebf3399e13e48a037182a49d2cc0f897e9ab31d3d27a.png",
+        "type": "card",
+        "url": "https://gamelinks007.net/@nawashiro"
+      },
+      "content": {
+        "html": "<p><span class=\"h-card\"><a href=\"https://fedibird.com/@nawashiro\" class=\"u-url\">@<span>nawashiro@fedibird.com</span></a></span> 届いていますよ</p>",
+        "text": "@nawashiro@fedibird.com 届いていますよ"
+      },
+      "in-reply-to": "https://nawashiro.dev/posts/20250213-3-create-stained-glass",
+      "published": "2025-07-09T06:36:18+00:00",
+      "type": "entry",
+      "url": "https://gamelinks007.net/@nawashiro/114821888627768309",
+      "wm-id": 1923567,
+      "wm-private": false,
+      "wm-property": "in-reply-to",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-07-09T07:32:49Z",
+      "wm-source": "https://brid.gy/comment/mastodon/@nawashiro@gamelinks007.net/114821879290357675/114821888627768309",
+      "wm-target": "https://nawashiro.dev/posts/20250213-3-create-stained-glass"
+    },
+    {
+      "author": {
+        "name": "寺町ヌイ????",
+        "photo": "https://avatars.webmention.io/cdn.bsky.app/7290d72b02e754424f3aaf3d9490dbcac8e338a0172466e440c2000c5982a84e.jpg",
+        "type": "card",
+        "url": "https://bsky.app/profile/moja.blue"
+      },
+      "like-of": "https://nawashiro.dev/posts/20241210-digital-gerden",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3lelqx5v6bs2g#liked_by_did:plc:aajyn6qzw67cnmwf7zxzbjdy",
+      "wm-id": 1923568,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-07-09T07:55:35Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3lelqx5v6bs2g/did%253Aplc%253Aaajyn6qzw67cnmwf7zxzbjdy",
+      "wm-target": "https://nawashiro.dev/posts/20241210-digital-gerden"
+    },
+    {
+      "author": {
+        "name": "あさだ",
+        "photo": "https://avatars.webmention.io/cdn.bsky.app/0b3c4533b344595fe6d9b777781592166b757f6f2ff3bda88acf87a651652b18.jpg",
+        "type": "card",
+        "url": "https://bsky.app/profile/asadaame5121.bsky.social"
+      },
+      "content": {
+        "text": "Templaterで投稿はスマートですね！わたしも今、自サイトにbridgy組み込んでるところです。"
+      },
+      "in-reply-to": "https://nawashiro.dev/posts/20250709-share-your-indie-web-personal-website-on-social-media",
+      "published": "2025-07-10T11:22:26+00:00",
+      "type": "entry",
+      "url": "https://bsky.app/profile/asadaame5121.bsky.social/post/3ltm7och2us2n",
+      "wm-id": 1923715,
+      "wm-private": false,
+      "wm-property": "in-reply-to",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-07-10T11:45:32Z",
+      "wm-source": "https://brid.gy/comment/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3ltjovv6x7z2s/at%253A%252F%252Fdid%253Aplc%253Aql5sv4umsrxadcsgtz3m5mq6%252Fapp.bsky.feed.post%252F3ltm7och2us2n",
+      "wm-target": "https://nawashiro.dev/posts/20250709-share-your-indie-web-personal-website-on-social-media"
+    },
+    {
+      "author": {
+        "name": "S.H.@Haloはいいぞ",
+        "photo": "https://avatars.webmention.io/media.gamelinks007.net/7c16b7f52d544f3b3c4be4c0e823aa16f18ec77b635a705b5006e00555d8fe46.png",
+        "type": "card",
+        "url": "https://gamelinks007.net/@S_H_"
+      },
+      "like-of": "https://nawashiro.dev/posts/20250711-enoshima-travel-diary",
+      "published": null,
+      "type": "entry",
+      "url": "https://gamelinks007.net/@nawashiro/114833890120186212#favorited-by-1",
+      "wm-id": 1923862,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-07-11T10:50:58Z",
+      "wm-source": "https://brid.gy/like/mastodon/@nawashiro@gamelinks007.net/114833890120186212/1",
+      "wm-target": "https://nawashiro.dev/posts/20250711-enoshima-travel-diary"
+    },
+    {
+      "author": {
+        "name": "ちいち????????",
+        "photo": "https://avatars.webmention.io/cdn.bsky.app/88f602cbb9d0e6abb4511f66b8656da4dbd65c9ad67ff44d6aa94918c79d6045.jpg",
+        "type": "card",
+        "url": "https://bsky.app/profile/tiitii.bsky.social"
+      },
+      "like-of": "https://nawashiro.dev/posts/20250711-enoshima-travel-diary",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3ltojmqdan22q#liked_by_did:plc:k5tdbhbmxgylg5qllofqn5p7",
+      "wm-id": 1924117,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-07-12T08:53:50Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3ltojmqdan22q/did%253Aplc%253Ak5tdbhbmxgylg5qllofqn5p7",
+      "wm-target": "https://nawashiro.dev/posts/20250711-enoshima-travel-diary"
+    },
+    {
+      "author": {
+        "name": "",
+        "photo": "",
+        "type": "card",
+        "url": ""
+      },
+      "mention-of": "https://nawashiro.dev/posts/240613-ideal-social-media",
+      "published": null,
+      "type": "entry",
+      "url": "https://asadaame5121.net/clippingshare",
+      "wm-id": 1925303,
+      "wm-private": false,
+      "wm-property": "mention-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-07-19T06:12:42Z",
+      "wm-source": "https://asadaame5121.net/clippingshare",
+      "wm-target": "https://nawashiro.dev/posts/240613-ideal-social-media"
+    },
+    {
+      "author": {
+        "name": "寺町ヌイ????",
+        "photo": "https://avatars.webmention.io/cdn.bsky.app/160069970c1670554ed1c16ae1d85e5833979cad8ca84d0473c0e84609a07c6e.jpg",
+        "type": "card",
+        "url": "https://bsky.app/profile/moja.blue"
+      },
+      "like-of": "https://nawashiro.dev/posts/20250719-recording-the-expo-cameras-and-human-perception-and-the-end-of-an-era",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3lucidypnts22#liked_by_did:plc:aajyn6qzw67cnmwf7zxzbjdy",
+      "wm-id": 1925317,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-07-19T08:34:51Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3lucidypnts22/did%253Aplc%253Aaajyn6qzw67cnmwf7zxzbjdy",
+      "wm-target": "https://nawashiro.dev/posts/20250719-recording-the-expo-cameras-and-human-perception-and-the-end-of-an-era"
+    },
+    {
+      "author": {
+        "name": "あさだ",
+        "photo": "https://avatars.webmention.io/cdn.bsky.app/0b3c4533b344595fe6d9b777781592166b757f6f2ff3bda88acf87a651652b18.jpg",
+        "type": "card",
+        "url": "https://bsky.app/profile/asadaame5121.bsky.social"
+      },
+      "like-of": "https://nawashiro.dev/posts/20250719-recording-the-expo-cameras-and-human-perception-and-the-end-of-an-era",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3lucidypnts22#liked_by_did:plc:ql5sv4umsrxadcsgtz3m5mq6",
+      "wm-id": 1925321,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-07-19T09:04:03Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3lucidypnts22/did%253Aplc%253Aql5sv4umsrxadcsgtz3m5mq6",
+      "wm-target": "https://nawashiro.dev/posts/20250719-recording-the-expo-cameras-and-human-perception-and-the-end-of-an-era"
+    },
+    {
+      "author": {
+        "name": "ひとへり よぽど とりびある",
+        "photo": "https://avatars.webmention.io/media.gamelinks007.net/39a3b1abd425c4368d397cfd4ff3c18fb3a92f4d84d178fbdcc8b4e509177293.png",
+        "type": "card",
+        "url": "https://mk.yopo.work/@amaiyo"
+      },
+      "like-of": "https://nawashiro.dev/posts/20250719-recording-the-expo-cameras-and-human-perception-and-the-end-of-an-era",
+      "published": null,
+      "type": "entry",
+      "url": "https://gamelinks007.net/@nawashiro/115637590664334944#favorited-by-108266263450980535",
+      "wm-id": 1956277,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-11-30T08:46:44Z",
+      "wm-source": "https://brid.gy/like/mastodon/@nawashiro@gamelinks007.net/115637590664334944/108266263450980535",
+      "wm-target": "https://nawashiro.dev/posts/20250719-recording-the-expo-cameras-and-human-perception-and-the-end-of-an-era"
+    },
+    {
+      "author": {
+        "name": "A. N. Other",
+        "photo": "https://avatars.webmention.io/media.gamelinks007.net/92646c2cda06a38246af35b17312c044d71cfbb706bf44ebf22337eec90af56c.png",
+        "type": "card",
+        "url": "https://fedibird.com/@another"
+      },
+      "like-of": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award",
+      "published": null,
+      "type": "entry",
+      "url": "https://gamelinks007.net/@nawashiro/115687074337463084#favorited-by-90612",
+      "wm-id": 1958447,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-12-09T08:22:52Z",
+      "wm-source": "https://brid.gy/like/mastodon/@nawashiro@gamelinks007.net/115687074337463084/90612",
+      "wm-target": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award"
+    },
+    {
+      "author": {
+        "name": "溝口SA生成AI",
+        "photo": "https://avatars.webmention.io/media.gamelinks007.net/0593cb6b4b7d3ce8244b5025301b60071bf1e4f0994ad181b7c9c4ea93413f80.png",
+        "type": "card",
+        "url": "https://misskey.io/@kot"
+      },
+      "like-of": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award",
+      "published": null,
+      "type": "entry",
+      "url": "https://gamelinks007.net/@nawashiro/115687074337463084#favorited-by-70092",
+      "wm-id": 1958448,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-12-09T08:22:53Z",
+      "wm-source": "https://brid.gy/like/mastodon/@nawashiro@gamelinks007.net/115687074337463084/70092",
+      "wm-target": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award"
+    },
+    {
+      "author": {
+        "name": "S.H.@Haloはいいぞ",
+        "photo": "https://avatars.webmention.io/media.gamelinks007.net/7c16b7f52d544f3b3c4be4c0e823aa16f18ec77b635a705b5006e00555d8fe46.png",
+        "type": "card",
+        "url": "https://gamelinks007.net/@S_H_"
+      },
+      "like-of": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award",
+      "published": null,
+      "type": "entry",
+      "url": "https://gamelinks007.net/@nawashiro/115687074337463084#favorited-by-1",
+      "wm-id": 1958449,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-12-09T08:22:55Z",
+      "wm-source": "https://brid.gy/like/mastodon/@nawashiro@gamelinks007.net/115687074337463084/1",
+      "wm-target": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award"
+    },
+    {
+      "author": {
+        "name": "S.H.@Haloはいいぞ",
+        "photo": "https://avatars.webmention.io/media.gamelinks007.net/7c16b7f52d544f3b3c4be4c0e823aa16f18ec77b635a705b5006e00555d8fe46.png",
+        "type": "card",
+        "url": "https://gamelinks007.net/@S_H_"
+      },
+      "published": null,
+      "repost-of": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award",
+      "type": "entry",
+      "url": "https://gamelinks007.net/@nawashiro/115687074337463084#reblogged-by-1",
+      "wm-id": 1958450,
+      "wm-private": false,
+      "wm-property": "repost-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-12-09T08:23:07Z",
+      "wm-source": "https://brid.gy/repost/mastodon/@nawashiro@gamelinks007.net/115687074337463084/1",
+      "wm-target": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award"
+    },
+    {
+      "author": {
+        "name": "渡辺戸羽",
+        "photo": "https://media.gamelinks007.net/cache/accounts/avatars/000/097/233/original/8cfc4c107c04560a.webp",
+        "type": "card",
+        "url": "https://misskey.io/@t_w"
+      },
+      "published": null,
+      "repost-of": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award",
+      "type": "entry",
+      "url": "https://gamelinks007.net/@nawashiro/115687074337463084#reblogged-by-97233",
+      "wm-id": 1958451,
+      "wm-private": false,
+      "wm-property": "repost-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-12-09T08:23:09Z",
+      "wm-source": "https://brid.gy/repost/mastodon/@nawashiro@gamelinks007.net/115687074337463084/97233",
+      "wm-target": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award"
+    },
+    {
+      "author": {
+        "name": "Don",
+        "photo": "https://avatars.webmention.io/cdn.bsky.app/0338d5da6dc4f1b4f73f8ce054090ef1fa0b93162ad20ca6e080e22667c17616.jpg",
+        "type": "card",
+        "url": "https://bsky.app/profile/nikolat.bsky.social"
+      },
+      "like-of": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3m7jgahb2zf2n#liked_by_did:plc:656uaefudfh7ll6leflsi4xo",
+      "wm-id": 1958550,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-12-09T13:53:43Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3m7jgahb2zf2n/did%253Aplc%253A656uaefudfh7ll6leflsi4xo",
+      "wm-target": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award"
+    },
+    {
+      "author": {
+        "name": "Don",
+        "photo": "https://avatars.webmention.io/cdn.bsky.app/0338d5da6dc4f1b4f73f8ce054090ef1fa0b93162ad20ca6e080e22667c17616.jpg",
+        "type": "card",
+        "url": "https://bsky.app/profile/nikolat.bsky.social"
+      },
+      "published": null,
+      "repost-of": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award",
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3m7jgahb2zf2n#reposted_by_did:plc:656uaefudfh7ll6leflsi4xo",
+      "wm-id": 1958551,
+      "wm-private": false,
+      "wm-property": "repost-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-12-09T13:53:43Z",
+      "wm-source": "https://brid.gy/repost/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3m7jgahb2zf2n/did%253Aplc%253A656uaefudfh7ll6leflsi4xo",
+      "wm-target": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award"
+    },
+    {
+      "author": {
+        "name": "こまもか????",
+        "photo": "https://avatars.webmention.io/cdn.bsky.app/704db80eec07000897cbbe0133cd4c4d0ebe98e8e679b425654741f9ac47e936.jpg",
+        "type": "card",
+        "url": "https://bsky.app/profile/comamoca.dev"
+      },
+      "like-of": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3m7jgahb2zf2n#liked_by_did:plc:6wkaj4y3kaertrvyfguzkd2w",
+      "wm-id": 1958874,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-12-10T18:30:48Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3m7jgahb2zf2n/did%253Aplc%253A6wkaj4y3kaertrvyfguzkd2w",
+      "wm-target": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award"
+    },
+    {
+      "author": {
+        "name": "Nawashiro",
+        "photo": "https://avatars.webmention.io/media.gamelinks007.net/63fb7f8d1252356fa12bebf3399e13e48a037182a49d2cc0f897e9ab31d3d27a.png",
+        "type": "card",
+        "url": "https://gamelinks007.net/@nawashiro"
+      },
+      "content": {
+        "html": "<p>素直にパスフレーズで秘密鍵を暗号化したほうがシンプルかも…</p>",
+        "text": "素直にパスフレーズで秘密鍵を暗号化したほうがシンプルかも…"
+      },
+      "in-reply-to": "https://nawashiro.dev/posts/20251212-i-want-to-turn-thino-into-an-indie-web-microblog",
+      "published": "2025-12-12T03:04:54+00:00",
+      "type": "entry",
+      "url": "https://gamelinks007.net/@nawashiro/115704377772968494",
+      "wm-id": 1959281,
+      "wm-private": false,
+      "wm-property": "in-reply-to",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-12-12T03:32:48Z",
+      "wm-source": "https://brid.gy/comment/mastodon/@nawashiro@gamelinks007.net/115703785945778341/115704377772968494",
+      "wm-target": "https://nawashiro.dev/posts/20251212-i-want-to-turn-thino-into-an-indie-web-microblog"
+    },
+    {
+      "author": {
+        "name": "Nawashiro",
+        "photo": "https://avatars.webmention.io/media.gamelinks007.net/63fb7f8d1252356fa12bebf3399e13e48a037182a49d2cc0f897e9ab31d3d27a.png",
+        "type": "card",
+        "url": "https://gamelinks007.net/@nawashiro"
+      },
+      "content": {
+        "html": "<p>いろいろ考えたけど、「公開コンテンツと非公開コンテンツはリポジトリを分けたほうがいい」という至極あたりまえなことを実践すればいい気がしてきた。</p>",
+        "text": "いろいろ考えたけど、「公開コンテンツと非公開コンテンツはリポジトリを分けたほうがいい」という至極あたりまえなことを実践すればいい気がしてきた。"
+      },
+      "in-reply-to": "https://nawashiro.dev/posts/20251212-i-want-to-turn-thino-into-an-indie-web-microblog",
+      "published": "2025-12-12T00:51:27+00:00",
+      "type": "entry",
+      "url": "https://gamelinks007.net/@nawashiro/115703853080049673",
+      "wm-id": 1959282,
+      "wm-private": false,
+      "wm-property": "in-reply-to",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-12-12T03:32:49Z",
+      "wm-source": "https://brid.gy/comment/mastodon/@nawashiro@gamelinks007.net/115703785945778341/115703853080049673",
+      "wm-target": "https://nawashiro.dev/posts/20251212-i-want-to-turn-thino-into-an-indie-web-microblog"
+    },
+    {
+      "author": {
+        "name": "Yuji Yokoo",
+        "photo": "https://avatars.webmention.io/media.gamelinks007.net/0b557901a42561416c86e5622d3632a3c4815ed8597ec4dd912a6818106c3995.jpg",
+        "type": "card",
+        "url": "https://ruby.social/@yujiyokoo"
+      },
+      "like-of": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award",
+      "published": null,
+      "type": "entry",
+      "url": "https://gamelinks007.net/@nawashiro/115687074337463084#favorited-by-109481864440980042",
+      "wm-id": 1959360,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-12-12T13:51:54Z",
+      "wm-source": "https://brid.gy/like/mastodon/@nawashiro@gamelinks007.net/115687074337463084/109481864440980042",
+      "wm-target": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award"
+    },
+    {
+      "author": {
+        "name": "Affective Old Truant",
+        "photo": "https://avatars.webmention.io/cdn.bsky.app/281a1c6e3fbd4ed6702481f45bdcd0c3803174121ba0c9eff31f6e0102a435a1.jpg",
+        "type": "card",
+        "url": "https://bsky.app/profile/effectivealtruist.bsky.social"
+      },
+      "like-of": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3m7jgahb2zf2n#liked_by_did:plc:xcrjvrubyf4c7cxemwekc752",
+      "wm-id": 1959817,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-12-15T00:53:14Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3m7jgahb2zf2n/did%253Aplc%253Axcrjvrubyf4c7cxemwekc752",
+      "wm-target": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award"
+    },
+    {
+      "author": {
+        "name": "Go4Know",
+        "photo": "https://avatars.webmention.io/cdn.bsky.app/91f9c32145f050f22e78dd8067775fa5d041b1bd2de4dae6d27288011950341e.jpg",
+        "type": "card",
+        "url": "https://bsky.app/profile/go4know.com"
+      },
+      "like-of": "https://nawashiro.dev/posts/20251221-notes-on-managing-adhd",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3mahl4cuhfm2o#liked_by_did:plc:ydqzin7kctnatbefaxcp6f7s",
+      "wm-id": 1960998,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-12-21T11:32:58Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3mahl4cuhfm2o/did%253Aplc%253Aydqzin7kctnatbefaxcp6f7s",
+      "wm-target": "https://nawashiro.dev/posts/20251221-notes-on-managing-adhd"
+    },
+    {
+      "author": {
+        "name": "15",
+        "photo": "https://avatars.webmention.io/cdn.bsky.app/77a04978ac314fc9fef472dbde7f64aa3071921dc5598039685dfa014e8ee416.jpg",
+        "type": "card",
+        "url": "https://bsky.app/profile/obata15.bsky.social"
+      },
+      "like-of": "https://nawashiro.dev/posts/20251221-notes-on-managing-adhd",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3mahl4cuhfm2o#liked_by_did:plc:stdoch44oi46js7geyug4usq",
+      "wm-id": 1961287,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-12-22T12:43:31Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3mahl4cuhfm2o/did%253Aplc%253Astdoch44oi46js7geyug4usq",
+      "wm-target": "https://nawashiro.dev/posts/20251221-notes-on-managing-adhd"
+    },
+    {
+      "author": {
+        "name": "あさだ",
+        "photo": "https://avatars.webmention.io/cdn.bsky.app/0b3c4533b344595fe6d9b777781592166b757f6f2ff3bda88acf87a651652b18.jpg",
+        "type": "card",
+        "url": "https://bsky.app/profile/asadaame5121.bsky.social"
+      },
+      "like-of": "https://nawashiro.dev/posts/20251221-notes-on-managing-adhd",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3mahl4cuhfm2o#liked_by_did:plc:ql5sv4umsrxadcsgtz3m5mq6",
+      "wm-id": 1962104,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2025-12-26T03:28:42Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3mahl4cuhfm2o/did%253Aplc%253Aql5sv4umsrxadcsgtz3m5mq6",
+      "wm-target": "https://nawashiro.dev/posts/20251221-notes-on-managing-adhd"
+    },
+    {
+      "author": {
+        "name": "satoruya",
+        "photo": "https://avatars.webmention.io/cdn.bsky.app/aa99189b65dbc6956ae3c780daefd3b41ede3b1af3e5796e34037bd341425fa8.jpg",
+        "type": "card",
+        "url": "https://bsky.app/profile/satrouya.bsky.social"
+      },
+      "like-of": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3m7jgahb2zf2n#liked_by_did:plc:fdk6q3nqxkwtavaxhmquglsw",
+      "wm-id": 1964246,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2026-01-03T04:47:38Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3m7jgahb2zf2n/did%253Aplc%253Afdk6q3nqxkwtavaxhmquglsw",
+      "wm-target": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award"
+    },
+    {
+      "author": {
+        "name": "たくぼう",
+        "photo": "https://avatars.webmention.io/cdn.bsky.app/c51191127135d7353b6fef91ba0f54ed6b7b090b5b46ee4f42ba6a6a4edf79e6.jpg",
+        "type": "card",
+        "url": "https://bsky.app/profile/takubows.com"
+      },
+      "like-of": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3m7jgahb2zf2n#liked_by_did:plc:mnpocjquqy2jvyh6zddyphgf",
+      "wm-id": 1964247,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2026-01-03T04:47:38Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3m7jgahb2zf2n/did%253Aplc%253Amnpocjquqy2jvyh6zddyphgf",
+      "wm-target": "https://nawashiro.dev/posts/20251208-the-story-of-how-the-windmill-transfer-guide-won-the-administrative-problem-solving-award"
+    },
+    {
+      "author": {
+        "name": "なえつき????????",
+        "photo": "",
+        "type": "card",
+        "url": "https://bsky.app/profile/naetsuki.bsky.social"
+      },
+      "like-of": "https://nawashiro.dev/posts/20260227-introduction-to-nawashiro-s-emergency-department",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3mftejh5okt2u#liked_by_did:plc:7jvvhvjfheujwc6nmf45ubn7",
+      "wm-id": 1979574,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2026-02-28T03:53:57Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3mftejh5okt2u/did%253Aplc%253A7jvvhvjfheujwc6nmf45ubn7",
+      "wm-target": "https://nawashiro.dev/posts/20260227-introduction-to-nawashiro-s-emergency-department"
+    },
+    {
+      "author": {
+        "name": "",
+        "photo": "",
+        "type": "card",
+        "url": ""
+      },
+      "content": {
+        "html": "「壊れにくい会話条件の設計が不足している」——中2階はこの問いに、別の文脈からすでに応答を始めていた。\n\n<a href=\"https://nawashiro.dev/posts/20260315-can-the-web-be-redesigned-as-a-public-sphere\">nawashiro.dev/posts/20260315-can-the-web-be-redesigned-as-a-public-sphere</a> <a href=\"https://bsky.app/search?q=%23%24CT7AZ\">$cT7aZ</a>",
+        "text": "「壊れにくい会話条件の設計が不足している」——中2階はこの問いに、別の文脈からすでに応答を始めていた。\n\nnawashiro.dev/posts/20260315-can-the-web-be-redesigned-as-a-public-sphere $cT7aZ"
+      },
+      "mention-of": "https://nawashiro.dev/posts/20260315-can-the-web-be-redesigned-as-a-public-sphere",
+      "published": "2026-03-15T09:59:50+00:00",
+      "type": "entry",
+      "url": "https://bsky.app/profile/did:plc:aajyn6qzw67cnmwf7zxzbjdy/post/3mh3oow65lc2i",
+      "wm-id": 1983529,
+      "wm-private": false,
+      "wm-property": "mention-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2026-03-15T09:59:57Z",
+      "wm-source": "https://bsky.brid.gy/convert/web/at://did:plc:aajyn6qzw67cnmwf7zxzbjdy/app.bsky.feed.post/3mh3oow65lc2i%23bridgy-fed-create-2026-03-15T09:59:51.795680+00:00",
+      "wm-target": "https://nawashiro.dev/posts/20260315-can-the-web-be-redesigned-as-a-public-sphere"
+    },
+    {
+      "author": {
+        "name": "",
+        "photo": "",
+        "type": "card",
+        "url": ""
+      },
+      "content": {
+        "html": "SNSが熟議に向かない構造的理由——投稿のスコープが狭すぎる。狭い窓が読み手のプロジェクションを誘発する。\n\n<a href=\"https://nawashiro.dev/posts/20260315-can-the-web-be-redesigned-as-a-public-sphere\">nawashiro.dev/posts/20260315-can-the-web-be-redesigned-as-a-public-sphere</a> <a href=\"https://bsky.app/search?q=%23%24ST3M0\">$sT3m0</a>",
+        "text": "SNSが熟議に向かない構造的理由——投稿のスコープが狭すぎる。狭い窓が読み手のプロジェクションを誘発する。\n\nnawashiro.dev/posts/20260315-can-the-web-be-redesigned-as-a-public-sphere $sT3m0"
+      },
+      "mention-of": "https://nawashiro.dev/posts/20260315-can-the-web-be-redesigned-as-a-public-sphere",
+      "published": "2026-03-15T10:26:46+00:00",
+      "type": "entry",
+      "url": "https://bsky.app/profile/did:plc:aajyn6qzw67cnmwf7zxzbjdy/post/3mh3q72t3hk2j",
+      "wm-id": 1983532,
+      "wm-private": false,
+      "wm-property": "mention-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2026-03-15T10:26:55Z",
+      "wm-source": "https://bsky.brid.gy/convert/web/at://did:plc:aajyn6qzw67cnmwf7zxzbjdy/app.bsky.feed.post/3mh3q72t3hk2j%23bridgy-fed-create-2026-03-15T10:26:47.612069+00:00",
+      "wm-target": "https://nawashiro.dev/posts/20260315-can-the-web-be-redesigned-as-a-public-sphere"
+    },
+    {
+      "author": {
+        "name": "Nighthaven⛺︎",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:aajyn6qzw67cnmwf7zxzbjdy/bafkreihzavyastlvn7ms5exvy3r3bzxojcrorbvktirmkxyls2nxqeaeuy",
+        "type": "card",
+        "url": "https://bsky.app/profile/moja.blue"
+      },
+      "like-of": "https://nawashiro.dev/posts/20260315-can-the-web-be-redesigned-as-a-public-sphere",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3mh3lyi5zbn2n#liked_by_did:plc:aajyn6qzw67cnmwf7zxzbjdy",
+      "wm-id": 1983556,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2026-03-15T12:54:25Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3mh3lyi5zbn2n/did%253Aplc%253Aaajyn6qzw67cnmwf7zxzbjdy",
+      "wm-target": "https://nawashiro.dev/posts/20260315-can-the-web-be-redesigned-as-a-public-sphere"
+    },
+    {
+      "author": {
+        "name": "ダダ太郎",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:7vfrh732sozc3cp4rop3wtmi/bafkreifcg7jtfttr4blgyw7dlvdt4il7j7k5grfgxr6twp4v27n4jbagji",
+        "type": "card",
+        "url": "https://bsky.app/profile/dibidabatarou.bsky.social"
+      },
+      "like-of": "https://nawashiro.dev/posts/20260316-let-s-give-qu-yuan-a-dating-sim-game-with-takeo-arishima-as-the-heroine",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3mhhhyly3b72u#liked_by_did:plc:7vfrh732sozc3cp4rop3wtmi",
+      "wm-id": 1985189,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2026-03-21T04:19:51Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3mhhhyly3b72u/did%253Aplc%253A7vfrh732sozc3cp4rop3wtmi",
+      "wm-target": "https://nawashiro.dev/posts/20260316-let-s-give-qu-yuan-a-dating-sim-game-with-takeo-arishima-as-the-heroine"
+    },
+    {
+      "author": {
+        "name": "Esquif",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:qh5sltxmuw6kbkzhew34gpwx/bafkreiavuy2rzh4tjt4vgiuxtdgqm6vj4z44v27pfgb4mpldpnjnpamzme",
+        "type": "card",
+        "url": "https://bsky.app/profile/mignon-incarne.bsky.social"
+      },
+      "like-of": "https://nawashiro.dev/posts/20260423-create-a-cool-desktop-with-hyprland",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3mk5oxwkzpv2e#liked_by_did:plc:qh5sltxmuw6kbkzhew34gpwx",
+      "wm-id": 1992966,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2026-04-27T21:47:01Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3mk5oxwkzpv2e/did%253Aplc%253Aqh5sltxmuw6kbkzhew34gpwx",
+      "wm-target": "https://nawashiro.dev/posts/20260423-create-a-cool-desktop-with-hyprland"
+    },
+    {
+      "author": {
+        "name": "椎野（si-no）",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:u7xdvvt2zpeaj5xke4esgcnb/bafkreia254vz6gn3ffk5pvfhok2nsb7t3tvredmovfro5vapyai3cwgp6a",
+        "type": "card",
+        "url": "https://bsky.app/profile/si-no-vrc.bsky.social"
+      },
+      "like-of": "https://nawashiro.dev/posts/20241230-lessons-to-read-when-you-are-harmed",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3mr35oreswe22#liked_by_did:plc:u7xdvvt2zpeaj5xke4esgcnb",
+      "wm-id": 2012936,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2026-07-21T02:11:41Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3mr35oreswe22/did%253Aplc%253Au7xdvvt2zpeaj5xke4esgcnb",
+      "wm-target": "https://nawashiro.dev/posts/20241230-lessons-to-read-when-you-are-harmed"
+    },
+    {
+      "author": {
+        "name": "あじさか",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:mdwbjlcbjfl6byms3jprhzfq/bafkreihcmv2qjhgfvoj7y6tfxettaqziybqutjgc6hyiertw7scllbla2q",
+        "type": "card",
+        "url": "https://bsky.app/profile/aji-saka.bsky.social"
+      },
+      "like-of": "https://nawashiro.dev/posts/20241230-lessons-to-read-when-you-are-harmed",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3mr35oreswe22#liked_by_did:plc:mdwbjlcbjfl6byms3jprhzfq",
+      "wm-id": 2012937,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2026-07-21T02:11:41Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3mr35oreswe22/did%253Aplc%253Amdwbjlcbjfl6byms3jprhzfq",
+      "wm-target": "https://nawashiro.dev/posts/20241230-lessons-to-read-when-you-are-harmed"
+    },
+    {
+      "author": {
+        "name": "無名人インタビュー｜無料で応募受付中",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:iysunujqnydhbsrv6sktflmz/bafkreiag4emvqobhq5qowl672in77csvevt4zr2is4bvxx3hiubh6ugff4",
+        "type": "card",
+        "url": "https://bsky.app/profile/unknowninterview.bsky.social"
+      },
+      "like-of": "https://nawashiro.dev/posts/20250202-philosophy-dialog-event-by-usable-udon-gimmick-made-story-4",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3ms2xu2cecc2r#liked_by_did:plc:iysunujqnydhbsrv6sktflmz",
+      "wm-id": 2015713,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2026-08-03T08:03:36Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3ms2xu2cecc2r/did%253Aplc%253Aiysunujqnydhbsrv6sktflmz",
+      "wm-target": "https://nawashiro.dev/posts/20250202-philosophy-dialog-event-by-usable-udon-gimmick-made-story-4"
+    },
+    {
+      "author": {
+        "name": "あさだ",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:ql5sv4umsrxadcsgtz3m5mq6/bafkreib6rqklkzxubcarglf5gsx3re2fgpbcv2h5nsdiilmu5pfikrfazu",
+        "type": "card",
+        "url": "https://bsky.app/profile/asadaame5121.bsky.social"
+      },
+      "like-of": "https://nawashiro.dev/posts/20260823-nawashiro-s-introduction-to-rdf-and-ontologies",
+      "published": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3mtqqnpuqyk2w#liked_by_did:plc:ql5sv4umsrxadcsgtz3m5mq6",
+      "wm-id": 2025623,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2026-08-23T15:13:33Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3mtqqnpuqyk2w/did%253Aplc%253Aql5sv4umsrxadcsgtz3m5mq6",
+      "wm-target": "https://nawashiro.dev/posts/20260823-nawashiro-s-introduction-to-rdf-and-ontologies"
+    },
+    {
+      "author": {
+        "name": "あさだ",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:ql5sv4umsrxadcsgtz3m5mq6/bafkreib6rqklkzxubcarglf5gsx3re2fgpbcv2h5nsdiilmu5pfikrfazu",
+        "type": "card",
+        "url": "https://bsky.app/profile/asadaame5121.bsky.social"
+      },
+      "published": null,
+      "repost-of": "https://nawashiro.dev/posts/20260823-nawashiro-s-introduction-to-rdf-and-ontologies",
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3mtqqnpuqyk2w#reposted_by_did:plc:ql5sv4umsrxadcsgtz3m5mq6",
+      "wm-id": 2025624,
+      "wm-private": false,
+      "wm-property": "repost-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2026-08-23T15:13:37Z",
+      "wm-source": "https://brid.gy/repost/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3mtqqnpuqyk2w/did%253Aplc%253Aql5sv4umsrxadcsgtz3m5mq6",
+      "wm-target": "https://nawashiro.dev/posts/20260823-nawashiro-s-introduction-to-rdf-and-ontologies"
+    }
+  ],
+  "version": 1
 }
