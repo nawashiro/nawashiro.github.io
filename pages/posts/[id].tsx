@@ -144,13 +144,15 @@ export default function Post({ id, postData }: PostProps) {
           <div className={cx(utilStyles.lightBlogText, utilStyles.lightText)}>
             <Date dateString={postData.date} />
           </div>
-          <a
-            className={cx("p-author", "h-card")}
-            href={siteUrl}
-            style={{ display: "none" }}
-          >
-            Nawashiro
-          </a>
+          <div className="h-card" style={{ display: "none" }} >
+            <a
+              className="p-name p-author u-url"
+              href={siteUrl}
+            >
+              Nawashiro
+            </a>
+            <img className="u-photo" src="https://img.nawashiro.dev/attachments/VRChat_256x256.webp" />
+          </div>
           <div
             className={cx(
               "blog",
