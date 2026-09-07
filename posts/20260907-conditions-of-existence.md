@@ -50,3 +50,7 @@ instagram 商業アカウントについて [@moja.blue](https://bsky.app/profil
 ただ、実在性の条件はどこかにあるはずです。今日はここまで。
 
 [](https://brid.gy/publish/mastodon)
+
+---
+
+[Bluesky](https://bsky.app/profile/nawashiro.dev/post/3muvccrvprk2h) か [Fediverse](https://gamelinks007.net/@nawashiro/117227042601583144) から返信して会話に参加してください。
