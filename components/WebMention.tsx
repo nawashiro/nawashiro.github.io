@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+/** @jsxImportSource react */
 import {
   FaHeart,
   FaCalendarAlt,
@@ -10,7 +10,19 @@ import {
 import { MdAccountCircle, MdClose } from "react-icons/md";
 import { FaRetweet, FaBookmark } from "react-icons/fa6";
 import webmentionStyle from "../styles/webmention.module.css";
-import Twemoji from "react-twemoji";
+import {
+  filterWebMentionsForTargets,
+  safeWebmentionUrl,
+  sortWebMentionsForDisplay,
+  type WebMentionEntry,
+  type WebMentionSortBy,
+  type WebMentionSortDir,
+} from "../lib/webmentions";
+
+export { safeWebmentionUrl } from "../lib/webmentions";
+
+const quoteClassName =
+  typeof webmentionStyle === "undefined" ? "quote" : webmentionStyle.quote;
 
 const icon = (action: string, classes: string = "") => {
   switch (action) {
@@ -27,7 +39,9 @@ const icon = (action: string, classes: string = "") => {
     case "reposted": {
       return (
         <span className="relative">
-          <FaRetweet className={`size-8 text-info drop-shadow-[0_0_2px_theme(colors.base-100)] ${classes}`} />
+          <FaRetweet
+            className={`size-8 text-info drop-shadow-[0_0_2px_theme(colors.base-100)] ${classes}`}
+          />
         </span>
       );
     }
@@ -40,6 +54,8 @@ const icon = (action: string, classes: string = "") => {
     case "followed": {
       return <FaUserCheck className={`text-success size-8 ${classes}`} />;
     }
+    default:
+      return null;
   }
 };
 
@@ -57,10 +73,12 @@ const rsvpIcon = (rsvp: string, classes: string = "") => {
     case "yes": {
       return <FaCheck className={classes} />;
     }
+    default:
+      return null;
   }
 };
 
-const ACTIONS = {
+const ACTIONS: Record<string, string> = {
   "in-reply-to": "replied",
   "like-of": "liked",
   "repost-of": "reposted",
@@ -70,37 +88,14 @@ const ACTIONS = {
   "follow-of": "followed",
 };
 
-type WebMentionAuthor = {
-  name?: string;
-  photo?: string;
-};
-
-type WebMentionContent = {
-  text?: string;
-};
-
-type WebMentionEntry = {
-  url: string;
-  "wm-property": string;
-  "wm-source"?: string;
-  author?: WebMentionAuthor;
-  content?: WebMentionContent;
-  rsvp?: string;
-};
-
-type WebMentionResponse = {
-  children?: WebMentionEntry[];
-};
-
 type WebMentionProps = {
+  mentions?: WebMentionEntry[];
   pageUrl?: string;
-  addUrls?: string;
   id?: string;
   wordcount?: number;
-  maxWebmentions?: number;
   preventSpoofing?: boolean;
-  sortBy?: "published" | "updated" | "received";
-  sortDir?: "up" | "down";
+  sortBy?: WebMentionSortBy;
+  sortDir?: WebMentionSortDir;
   commentsAreReactions?: boolean;
 };
 
@@ -114,46 +109,6 @@ const truncateText = (text: string, limit?: number) => {
   return text;
 };
 
-const getHostname = (url: string) => {
-  const index = url.indexOf("//");
-  return index === -1 ? url : url.slice(index);
-};
-
-const removeDuplicates = (mentions: WebMentionEntry[]) => {
-  const seen = new Set<string>();
-  return mentions.filter((mention) => {
-    const url = getHostname(mention.url);
-    if (seen.has(url)) return false;
-    seen.add(url);
-    return true;
-  });
-};
-
-type RenderContext = {
-  preventSpoofing: boolean;
-  wordcount?: number;
-};
-
-export const shouldFetchWebmentions = () => {
-  if (process.env.NODE_ENV === "test") return false;
-  if (process.env.DISABLE_EXTERNAL_FETCH === "1") return false;
-  if (process.env.NEXT_PUBLIC_DISABLE_EXTERNAL_FETCH === "1") return false;
-  return true;
-};
-
-export const safeWebmentionUrl = (value?: string) => {
-  if (!value) return null;
-  try {
-    const parsed = new URL(value);
-    if (parsed.protocol === "http:" || parsed.protocol === "https:") {
-      return value;
-    }
-  } catch {
-    return null;
-  }
-  return null;
-};
-
 const getSourceLabel = (url: string) => {
   try {
     return new URL(url).hostname || url;
@@ -162,14 +117,22 @@ const getSourceLabel = (url: string) => {
   }
 };
 
+type RenderContext = {
+  preventSpoofing: boolean;
+  wordcount?: number;
+};
+
 const buildActionLabel = (
   mention: WebMentionEntry,
   context: RenderContext,
   isComment: boolean,
 ) => {
-  let action =
-    ACTIONS[mention["wm-property"] as keyof typeof ACTIONS] || "reacted";
-  if (!isComment && mention.content?.text) {
+  const property =
+    typeof mention["wm-property"] === "string"
+      ? mention["wm-property"]
+      : "";
+  let action = ACTIONS[property] || "reacted";
+  if (!isComment && typeof mention.content?.text === "string") {
     action += ": " + truncateText(mention.content.text, context.wordcount);
   }
   return action;
@@ -180,14 +143,20 @@ const renderMention = (
   context: RenderContext,
   isComment = false,
 ) => {
+  const sourceUrl = mention.url || mention["wm-source"] || "";
   const authorLabel =
-    mention.author?.name || getSourceLabel(mention.url) || mention.url;
+    (typeof mention.author?.name === "string" && mention.author.name) ||
+    getSourceLabel(sourceUrl) ||
+    sourceUrl;
   const action = buildActionLabel(mention, context, isComment);
-  const rsvp = mention.rsvp;
-  const rawMentionUrl =
-    mention[context.preventSpoofing ? "wm-source" : "url"] || mention.url;
+  const rsvp = typeof mention.rsvp === "string" ? mention.rsvp : undefined;
+  const rawMentionUrl = context.preventSpoofing
+    ? mention["wm-source"]
+    : mention.url;
   const mentionUrl = safeWebmentionUrl(rawMentionUrl) || "#";
-  const photoUrl = safeWebmentionUrl(mention.author?.photo);
+  const photoUrl = safeWebmentionUrl(
+    typeof mention.author?.photo === "string" ? mention.author.photo : undefined,
+  );
 
   return (
     <a
@@ -216,120 +185,68 @@ const renderMention = (
 };
 
 const WebMention = ({
+  mentions = [],
   pageUrl,
-  addUrls = "",
   id = "webmentions",
   wordcount,
-  maxWebmentions = 30,
   preventSpoofing = false,
   sortBy = "published",
   sortDir = "up",
   commentsAreReactions = false,
 }: WebMentionProps) => {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const [comments, setComments] = useState<WebMentionEntry[]>([]);
-  const [reactions, setReactions] = useState<WebMentionEntry[]>([]);
-  const resolvedPageUrl =
-    pageUrl ??
-    (typeof window !== "undefined"
-      ? window.location.href.replace(/#.*$/, "")
-      : "");
-  const shouldFetch = shouldFetchWebmentions();
-
-  useEffect(() => {
-    if (!shouldFetch) return;
-    const loadWebMentions = async () => {
-      const container = containerRef.current;
-      if (!container || !resolvedPageUrl) return;
-
-      const targets = [getHostname(resolvedPageUrl)];
-      if (addUrls) {
-        addUrls.split("|").forEach((url) => targets.push(getHostname(url)));
-      }
-
-      const apiUrl = new URL("https://webmention.io/api/mentions.jf2");
-      apiUrl.searchParams.set("per-page", maxWebmentions.toString());
-      apiUrl.searchParams.set("sort-by", sortBy);
-      apiUrl.searchParams.set("sort-dir", sortDir);
-
-      targets.forEach((target) => {
-        apiUrl.searchParams.append("target[]", `http:${target}`);
-        apiUrl.searchParams.append("target[]", `https:${target}`);
-      });
-
-      try {
-        const response = await fetch(apiUrl.toString());
-        if (!response.ok) throw new Error("Failed to fetch webmentions");
-
-        const data = (await response.json()) as WebMentionResponse;
-        const children = Array.isArray(data.children) ? data.children : [];
-
-        const nextComments: WebMentionEntry[] = [];
-        const nextReactions: WebMentionEntry[] = [];
-        const mentionsByType: Record<string, WebMentionEntry[]> = {
-          "in-reply-to": commentsAreReactions ? nextReactions : nextComments,
-          "like-of": nextReactions,
-          "repost-of": nextReactions,
-          "bookmark-of": nextReactions,
-          "mention-of": commentsAreReactions ? nextReactions : nextComments,
-          rsvp: commentsAreReactions ? nextReactions : nextComments,
-        };
-
-        children.forEach((mention) => {
-          const target = mentionsByType[mention["wm-property"]];
-          if (target) target.push(mention);
-        });
-
-        setComments(nextComments);
-        setReactions(nextReactions);
-      } catch (error) {
-        console.error("Failed to load webmentions:", error);
-      }
-    };
-
-    if (typeof window !== "undefined") {
-      loadWebMentions();
-    }
-  }, [
-    shouldFetch,
-    resolvedPageUrl,
-    addUrls,
-    maxWebmentions,
+  const matchingMentions = pageUrl
+    ? filterWebMentionsForTargets(mentions, [pageUrl])
+    : mentions;
+  const sortedMentions = sortWebMentionsForDisplay(
+    matchingMentions,
     sortBy,
     sortDir,
-    preventSpoofing,
-    commentsAreReactions,
-    wordcount,
-  ]);
-
-  const uniqueComments = useMemo(() => removeDuplicates(comments), [comments]);
-  const uniqueReactions = useMemo(
-    () => removeDuplicates(reactions),
-    [reactions],
   );
+  const comments: WebMentionEntry[] = [];
+  const reactions: WebMentionEntry[] = [];
+
+  sortedMentions.forEach((mention) => {
+    const property = mention["wm-property"];
+    const isComment = ["in-reply-to", "mention-of", "rsvp"].includes(
+      typeof property === "string" ? property : "",
+    );
+
+    if (isComment && !commentsAreReactions) {
+      comments.push(mention);
+    } else {
+      reactions.push(mention);
+    }
+  });
+
+  const renderContext = { preventSpoofing, wordcount };
 
   return (
-    <div ref={containerRef} id={id}>
-      <Twemoji options={{ className: "twemoji" }}>      {uniqueComments.length > 0 && !commentsAreReactions && (
+    <div id={id}>
+      {comments.length > 0 && !commentsAreReactions && (
         <>
           <h2>✍️へんじ</h2>
-          {uniqueComments.map((comment) => {
-            const sourceLabel = getSourceLabel(comment.url);
-            const authorName = comment.author?.name || sourceLabel;
-            const content = comment.content?.text
-              ? truncateText(comment.content.text, wordcount)
-              : "(mention)";
+          {comments.map((comment) => {
+            const sourceUrl = comment.url || comment["wm-source"] || "";
+            const sourceLabel = getSourceLabel(sourceUrl);
+            const authorName =
+              (typeof comment.author?.name === "string" &&
+                comment.author.name) ||
+              sourceLabel;
+            const content =
+              typeof comment.content?.text === "string"
+                ? truncateText(comment.content.text, wordcount)
+                : "(mention)";
+
             return (
-              <div key={comment.url} className={webmentionStyle.quote}>
+              <div
+                key={String(comment["wm-id"])}
+                className={quoteClassName}
+              >
                 <blockquote>
                   <p>{content}</p>
                   <div className="flex leading-10 gap-2">
                     <span>by</span>
-                    {renderMention(
-                      comment,
-                      { preventSpoofing, wordcount },
-                      true,
-                    )}
+                    {renderMention(comment, renderContext, true)}
                     <span>{authorName}</span>
                   </div>
                 </blockquote>
@@ -338,16 +255,15 @@ const WebMention = ({
           })}
         </>
       )}
-        {uniqueReactions.length > 0 && (
-          <div className="mt-16 gap-4 flex flex-row flex-wrap">
-            {uniqueReactions.map((reaction) => (
-              <div key={reaction.url}>
-                {renderMention(reaction, { preventSpoofing, wordcount })}
-              </div>
-            ))}
-          </div>
-        )}
-      </Twemoji>
+      {reactions.length > 0 && (
+        <div className="mt-16 gap-4 flex flex-row flex-wrap">
+          {reactions.map((reaction) => (
+            <div key={String(reaction["wm-id"])}>
+              {renderMention(reaction, renderContext)}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

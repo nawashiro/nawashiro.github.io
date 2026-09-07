@@ -31,6 +31,8 @@ npm install
 export NEXT_PUBLIC_SITE_URL="https://example.com"
 ```
 
+WebMention の同期には `WEBMENTION_IO_TOKEN` が必要です。これはローカルで同期を実行するときだけ環境変数として設定し、GitHub Actions では `WEBMENTION_IO_TOKEN` リポジトリシークレットとして登録します。トークンをファイルや公開リポジトリへ保存しないでください。
+
 ## 開発
 
 ```bash
@@ -75,7 +77,26 @@ npm run test
 
 ## WebMention
 
-`components/WebMention.tsx` が `webmention.io` から取得します。外部入力は React 経由でレンダリングされ、安全な URL のみリンク化されます。
+受信済みの完全な Webmention データは、公開される正規アーカイブ `lib/data/webmentions.json` に保存します。記事の静的生成時にこのアーカイブを読み込むため、生成済み HTML に Webmention が含まれ、ブラウザから `webmention.io` へ取得しなくても JavaScript 無効の状態で読めます。表示件数に上限はありません。
+
+同期は次のコマンドで実行できます。
+
+```bash
+WEBMENTION_IO_TOKEN="..." npm run webmentions:sync
+npm run build
+```
+
+同期は `nawashiro.dev` の Webmention.io フィードをページングして取得し、新規または更新された `wm-id` をアーカイブへ追加します。リモートに存在しなくなったデータは自動削除しません。アーカイブの内容に差分がなければ、GitHub Actions の定期実行も静的ビルドとデプロイを起動せずに終了します。差分があるときだけコミット後に既存の公開 workflow を起動します。手動実行は Actions の `Sync Webmentions` から行えます。
+
+記事への紐付けでは、HTTPS を正規形とし、`http`/`https` の違いと末尾 `/` の有無を同一視します。元の `wm-target` はアーカイブ内にそのまま残します。表示時は受信データの HTML を挿入せずテキストとして扱い、リンクと画像は HTTP(S) URL のみ使用します。
+
+意図的に削除する場合は、次の順番を守ります。
+
+1. Webmention.io 側の削除手順で対象を削除する
+2. `lib/data/webmentions.json` から同じ `wm-id` を手動で削除する
+3. 変更をコミットして公開 workflow を実行する
+
+同期を一時停止する場合は GitHub Actions の `Sync Webmentions` workflow を無効化します。既存のアーカイブはそのまま残り、必要なら `npm run build` で手動再生成できます。削除済みエントリは Git の履歴からは自動では消えません。
 
 ## フィード
 
@@ -87,8 +108,7 @@ GitHub Pages などの静的ホスティングを想定しています。
 
 1. `NEXT_PUBLIC_SITE_URL` を設定
 2. `npm run build`
-3. `npm run output`
-4. `out/` をホスティング先へ配置
+3. `out/` をホスティング先へ配置
 
 ## 注意点
 

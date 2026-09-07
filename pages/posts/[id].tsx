@@ -13,6 +13,12 @@ import WebMention from "../../components/WebMention";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import SectionLayout from "../../components/sectionLayout";
 import rawMapping from "../../lib/data/standard-site.json";
+import rawWebMentionArchive from "../../lib/data/webmentions.json";
+import {
+  filterWebMentionsForTargets,
+  parseWebMentionArchive,
+  type WebMentionEntry,
+} from "../../lib/webmentions";
 
 type PostParams = {
   id: string;
@@ -21,9 +27,21 @@ type PostParams = {
 type PostProps = {
   id: string;
   postData: PostData;
+  webmentions: WebMentionEntry[];
 };
 
 const productionSiteUrl = "https://nawashiro.dev";
+const webmentionArchive = parseWebMentionArchive(rawWebMentionArchive);
+
+const getWebmentionPageUrl = (id: string) => {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
+  const webmentionBaseUrl =
+    process.env.NODE_ENV === "development"
+      ? productionSiteUrl
+      : siteUrl || productionSiteUrl;
+
+  return `${webmentionBaseUrl.replace(/\/+$/, "")}/posts/${id}`;
+};
 
 export const getStaticProps: GetStaticProps<PostProps, PostParams> = async ({
   params,
@@ -36,11 +54,17 @@ export const getStaticProps: GetStaticProps<PostProps, PostParams> = async ({
 
   const id = params.id;
   const postData = await getPostData(id);
+  const webmentionPageUrl = getWebmentionPageUrl(id);
+  const webmentions = filterWebMentionsForTargets(
+    webmentionArchive.mentions,
+    [webmentionPageUrl],
+  );
 
   return {
     props: {
       id,
       postData,
+      webmentions,
     },
   };
 };
@@ -53,12 +77,10 @@ export const getStaticPaths: GetStaticPaths<PostParams> = async () => {
   };
 };
 
-export default function Post({ id, postData }: PostProps) {
-  const isDevelopment = process.env.NODE_ENV === "development";
+export default function Post({ id, postData, webmentions }: PostProps) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
   const canonicalUrl = `${siteUrl}/posts/${id}`;
-  const webmentionPageUrl = `${isDevelopment ? productionSiteUrl : siteUrl
-    }/posts/${id}`;
+  const webmentionPageUrl = getWebmentionPageUrl(id);
   const publishedDate = postData.date;
 
   // 記事の先頭から説明文を抽出（HTMLタグを除去して最初の120文字）
@@ -185,6 +207,7 @@ export default function Post({ id, postData }: PostProps) {
 
         <WebMention
           pageUrl={webmentionPageUrl}
+          mentions={webmentions}
         />
 
         <h2>☕コーヒーをおごる</h2>
