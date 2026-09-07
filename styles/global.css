@@ -7,6 +7,7 @@
 }
 
 @layer base {
+
   body,
   p,
   html,
@@ -154,7 +155,7 @@ ul li code {
   }
 }
 
-.blog > p > img {
+.blog>p>img {
   width: 100%;
   max-width: var(--max-content-width);
   display: block;
@@ -196,7 +197,7 @@ ul li code {
   padding: 2px 0.5rem;
 }
 
-.blog .remark-code-title + .remark-highlight pre {
+.blog .remark-code-title+.remark-highlight pre {
   padding-top: calc(2.5rem + 4px);
 }
 
@@ -224,6 +225,32 @@ ul li code {
   position: absolute;
   top: 0;
   width: 4px;
+}
+
+/* アラート */
+.blog .alert {
+  margin: 1rem 0;
+}
+
+.blog .alert-content {
+  width: 100%;
+}
+
+.blog .alert-title {
+  margin: 0;
+  font-weight: 700;
+}
+
+.blog .alert-body {
+  color: var(--color-base-content);
+}
+
+.blog .alert-body> :first-child {
+  margin-top: 0.75rem;
+}
+
+.blog .alert-body> :last-child {
+  margin-bottom: 0;
 }
 
 /* 罫線 */

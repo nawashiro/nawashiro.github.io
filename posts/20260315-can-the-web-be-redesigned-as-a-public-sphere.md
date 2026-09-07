@@ -4,7 +4,7 @@ date: "2026-03-15T15:57:41+09:00"
 ---
 
 - categories:
-	- [😶‍🌫️いろいろな考え](categories-any-opinions.md)
+	- [📊ライトニングトーク](categories-lightning-talks.md)
 - tags:
 	- [🏷️社会問題](tags-social-issues.md)
 

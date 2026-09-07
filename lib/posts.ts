@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import type { Root } from "mdast";
 import matter, { type GrayMatterFile } from "gray-matter";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
@@ -149,6 +150,163 @@ export function getVersion() {
   return nowUTC;
 }
 
+type AlertType = "NOTE" | "TIP" | "IMPORTANT" | "WARNING" | "CAUTION";
+type AlertColor = "info" | "success" | "warning" | "error";
+
+type MarkdownNodeData = {
+  hName?: string;
+  hProperties?: Record<string, unknown>;
+};
+
+type MarkdownNode = {
+  type: string;
+  value?: string;
+  children?: MarkdownNode[];
+  data?: MarkdownNodeData;
+};
+
+type AlertDefinition = {
+  title: string;
+  color: AlertColor;
+};
+
+type AlertMatch = {
+  definition: AlertDefinition;
+  body: MarkdownNode[];
+};
+
+const alertDefinitions: Record<AlertType, AlertDefinition> = {
+  NOTE: { title: "Note", color: "info" },
+  TIP: { title: "Tip", color: "success" },
+  IMPORTANT: { title: "Important", color: "info" },
+  WARNING: { title: "Warning", color: "warning" },
+  CAUTION: { title: "Caution", color: "error" },
+};
+
+function extractAlert(node: MarkdownNode | undefined): AlertMatch | null {
+  if (node?.type !== "paragraph" || !node.children) return null;
+
+  const first = node.children[0];
+  if (first?.type !== "text" || !first.value) return null;
+
+  for (const [alertType, definition] of Object.entries(
+    alertDefinitions,
+  ) as [AlertType, AlertDefinition][]) {
+    const marker = `[!${alertType}]`;
+    const exactMarker = first.value === marker;
+    const markerWithLineBreak = `${marker}\n`;
+    const hasSoftLineBreak = first.value.startsWith(markerWithLineBreak);
+    const hasHardLineBreak = node.children[1]?.type === "break";
+
+    if (!exactMarker && !hasSoftLineBreak) continue;
+    if (exactMarker && node.children[1] && !hasHardLineBreak) continue;
+
+    const bodyChildren = hasSoftLineBreak
+      ? [
+          ...(first.value.slice(markerWithLineBreak.length)
+            ? [
+                {
+                  ...first,
+                  value: first.value.slice(markerWithLineBreak.length),
+                },
+              ]
+            : []),
+          ...node.children.slice(1),
+        ]
+      : node.children.slice(1);
+
+    while (bodyChildren[0]?.type === "break") bodyChildren.shift();
+
+    return {
+      definition,
+      body: bodyChildren.length
+        ? [{ ...node, children: bodyChildren }]
+        : [],
+    };
+  }
+
+  return null;
+}
+
+function makeAlertTitle(title: string): MarkdownNode {
+  return {
+    type: "paragraph",
+    children: [{ type: "text", value: title }],
+    data: {
+      hProperties: {
+        className: ["alert-title"],
+      },
+    },
+  };
+}
+
+function makeAlertContent(title: string, body: MarkdownNode[]): MarkdownNode {
+  return {
+    type: "githubAlertContent",
+    children: [
+      makeAlertTitle(title),
+      {
+        type: "githubAlertBody",
+        children: body,
+        data: {
+          hName: "div",
+          hProperties: {
+            className: ["alert-body"],
+          },
+        },
+      },
+    ],
+    data: {
+      hName: "div",
+      hProperties: {
+        className: ["alert-content"],
+      },
+    },
+  };
+}
+
+function transformAlertChildren(nodes: MarkdownNode[], insideAlert: boolean) {
+  for (const node of nodes) {
+    if (node.type === "blockquote") {
+      const alert = extractAlert(node.children?.[0]);
+      const definition = alert?.definition;
+
+      if (definition && !insideAlert) {
+        node.data = {
+          ...node.data,
+          hName: "div",
+          hProperties: {
+            ...node.data?.hProperties,
+            className: [
+              "alert",
+              `alert-${definition.color}`,
+              "alert-soft",
+            ],
+          },
+        };
+        node.children = [
+          makeAlertContent(definition.title, [
+            ...(alert?.body ?? []),
+            ...(node.children?.slice(1) ?? []),
+          ]),
+        ];
+        continue;
+      }
+    }
+
+    if (node.children) {
+      transformAlertChildren(
+        node.children,
+        insideAlert || node.type === "blockquote",
+      );
+    }
+  }
+}
+
+const remarkGithubAlerts = () => (tree: Root) => {
+  transformAlertChildren(tree.children as unknown as MarkdownNode[], false);
+};
+
 export async function renderMarkdown(content: string): Promise<string> {
   const normalizedContent = addPostImagePrefix(content);
   const processor = unified()
@@ -163,6 +321,7 @@ export async function renderMarkdown(content: string): Promise<string> {
     .use(remarkMermaid)
     .use(remarkPrism)
     .use(remarkGfm)
+    .use(remarkGithubAlerts)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
     .use(rehypeSlug)
