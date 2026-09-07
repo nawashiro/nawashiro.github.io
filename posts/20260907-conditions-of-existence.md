@@ -1,6 +1,6 @@
 ---
-title: マイクロブログの価値が実在性だとしたら、条件はなにか？
-date: 2026-09-07T09:20:45+09:00
+title: "マイクロブログの価値が実在性だとしたら、条件はなにか？"
+date: "2026-09-07T09:20:45+09:00"
 ---
 - categories:
 	- [😶‍🌫️いろいろな考え](categories-any-opinions.md)
@@ -51,8 +51,6 @@ instagram 商業アカウントについて [@moja.blue](https://bsky.app/profil
 
 [](https://brid.gy/publish/mastodon)
 
-
 ---
 
 [Bluesky](https://bsky.app/profile/nawashiro.dev/post/3muvccrvprk2h) か [Fediverse](https://gamelinks007.net/@nawashiro/117227042601583144) から返信して会話に参加してください。
-
