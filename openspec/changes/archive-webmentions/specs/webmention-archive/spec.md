@@ -87,3 +87,35 @@ The system SHALL preserve the complete received entry for archival purposes but 
 #### Scenario: Archived author image uses an unsafe scheme
 - **WHEN** an author photo URL uses a non-HTTP(S) scheme or is invalid
 - **THEN** the unsafe image URL is not used and the default author icon is displayed
+
+### Requirement: Routine synchronization uses an archive high-water mark
+
+The system SHALL perform scheduled synchronization incrementally after a baseline archive exists. The request to Webmention.io SHALL use the largest numeric `wm-id` in the local archive as its high-water mark, retrieve only entries with a greater identifier, and SHALL NOT traverse the complete historical feed during routine synchronization.
+
+#### Scenario: A baseline archive has a numeric high-water mark
+- **WHEN** routine synchronization starts with an archive containing Webmentions
+- **THEN** the provider request uses the archive's largest numeric `wm-id` as `since_id` and the returned entries are merged into the archive
+
+#### Scenario: No new Webmentions are available
+- **WHEN** routine synchronization returns no entries newer than the high-water mark
+- **THEN** the existing archive remains unchanged and no additional historical pages are requested
+
+#### Scenario: The archive has no usable high-water mark
+- **WHEN** routine synchronization starts with an empty archive or an archive whose identifiers cannot provide a numeric high-water mark
+- **THEN** synchronization fails before making a full-feed request and reports that an explicit full synchronization is required
+
+### Requirement: Full synchronization is explicit and manual
+
+The system SHALL provide an explicit full synchronization operation for the initial complete backfill and for reconciling updates to already archived Webmentions. Scheduled synchronization SHALL NOT silently fall back to full synchronization, and a full synchronization SHALL retain the existing non-destructive merge behavior for remote omissions.
+
+#### Scenario: Initial archive backfill is requested explicitly
+- **WHEN** an operator starts the explicit full synchronization for an empty archive
+- **THEN** the system retrieves the complete paginated domain feed, validates every page, and stores the resulting archive
+
+#### Scenario: An old Webmention needs reconciliation
+- **WHEN** an operator starts the explicit full synchronization after a provider-side update to an already archived identifier
+- **THEN** the returned entry replaces the archived entry with the same stable identifier when its data differs
+
+#### Scenario: A scheduled run is triggered without a baseline
+- **WHEN** the scheduled synchronization is triggered before the initial full backfill has completed
+- **THEN** it does not download the historical feed and instead fails with instructions to run the explicit full synchronization

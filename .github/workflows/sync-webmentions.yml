@@ -4,6 +4,15 @@ on:
   schedule:
     - cron: "34 14 * * *"
   workflow_dispatch:
+    inputs:
+      sync_mode:
+        description: "同期モード（定期実行は常にincremental）"
+        required: true
+        default: incremental
+        type: choice
+        options:
+          - incremental
+          - full
 
 concurrency:
   group: "webmention-sync"
@@ -35,6 +44,7 @@ jobs:
         env:
           WEBMENTION_DOMAIN: nawashiro.dev
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
+          WEBMENTION_SYNC_MODE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.sync_mode || 'incremental' }}
         run: |
           set -euo pipefail
           npm run webmentions:sync

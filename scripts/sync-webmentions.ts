@@ -1,4 +1,7 @@
-import { synchronizeWebMentionArchive } from "../lib/webmention-sync";
+import {
+  parseWebMentionSyncMode,
+  synchronizeWebMentionArchive,
+} from "../lib/webmention-sync";
 
 const domain = process.env.WEBMENTION_DOMAIN ?? "nawashiro.dev";
 const token = process.env.WEBMENTION_IO_TOKEN;
@@ -8,9 +11,11 @@ const syncWebMentions = async () => {
     throw new Error("WEBMENTION_IO_TOKEN is required to sync Webmentions");
   }
 
+  const mode = parseWebMentionSyncMode(process.env.WEBMENTION_SYNC_MODE);
   const { archive, changed } = await synchronizeWebMentionArchive({
     domain,
     token,
+    mode,
   });
 
   console.log(
