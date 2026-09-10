@@ -82,11 +82,20 @@ npm run test
 同期は次のコマンドで実行できます。
 
 ```bash
-WEBMENTION_IO_TOKEN="..." npm run webmentions:sync
+WEBMENTION_IO_TOKEN="..." WEBMENTION_SYNC_MODE=incremental npm run webmentions:sync
 npm run build
 ```
 
-同期は `nawashiro.dev` の Webmention.io フィードをページングして取得し、新規または更新された `wm-id` をアーカイブへ追加します。リモートに存在しなくなったデータは自動削除しません。アーカイブの内容に差分がなければ、GitHub Actions の定期実行も静的ビルドとデプロイを起動せずに終了します。差分があるときだけコミット後に既存の公開 workflow を起動します。手動実行は Actions の `Sync Webmentions` から行えます。
+`WEBMENTION_SYNC_MODE` は `incremental`（既定）または `full` を指定できます。`incremental` はローカルアーカイブ内の最大 `wm-id` を Webmention.io の `since_id` として使い、新着だけを取得します。アーカイブが空の場合、誤って全履歴を取得しないよう、APIへ接続せずに失敗します。
+
+初回の全履歴取得、または既存Webmentionの更新確認が必要な場合だけ、明示的に `full` を指定します。
+
+```bash
+WEBMENTION_IO_TOKEN="..." WEBMENTION_SYNC_MODE=full npm run webmentions:sync
+npm run build
+```
+
+GitHub Actions の定期実行は常に `incremental` です。全履歴の取得は `Sync Webmentions` の `workflow_dispatch` から `full` を選んだ場合だけ実行されます。増分・全件のどちらもページを検証してからアーカイブへマージし、リモートに存在しなくなったデータは自動削除しません。アーカイブの内容に差分がなければ、静的ビルドとデプロイを起動せずに終了します。差分があるときだけコミット後に既存の公開 workflow を起動します。
 
 記事への紐付けでは、HTTPS を正規形とし、`http`/`https` の違いと末尾 `/` の有無を同一視します。元の `wm-target` はアーカイブ内にそのまま残します。表示時は受信データの HTML を挿入せずテキストとして扱い、リンクと画像は HTTP(S) URL のみ使用します。
 

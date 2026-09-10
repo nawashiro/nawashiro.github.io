@@ -12,6 +12,7 @@ The proposal and the `webmention-archive` specification define the required pres
 - Make the archive the build-time source for Webmention display.
 - Keep remote absence non-destructive while supporting deliberate remote-then-local deletion.
 - Avoid a Next.js build when a scheduled synchronization produces no meaningful archive change.
+- Avoid routine full-feed requests to Webmention.io after the initial archive has been created.
 - Preserve the existing safe text and URL rendering behavior while removing the browser-side Webmention fetch.
 
 **Non-Goals:**
@@ -65,20 +66,31 @@ The documented manual deletion order is:
 
 The sync does not infer deletion from absence, so accidental provider loss cannot remove the local copy. A local deletion performed before the remote deletion may be reintroduced by a later sync and is therefore not the supported order.
 
+### 7. Use an explicit incremental cursor for routine synchronization
+
+Routine synchronization uses Webmention.io's `since_id` filter with the largest numeric `wm-id` currently present in the local archive. The existing `per-page=100` limit and serial pagination remain in place, so the routine request volume is proportional to new entries rather than the complete archive. The cursor is derived from the canonical archive instead of being stored as volatile synchronization metadata, which avoids an additional state file and keeps the archive deterministic.
+
+Full synchronization is an explicit operation used for the initial backfill and for manual reconciliation. A scheduled run must never silently fall back to a full feed: when the archive has no usable high-water mark, the incremental operation fails before making a remote request and reports that an explicit full run is required. This prevents an uninitialized schedule from unexpectedly downloading the entire history.
+
+`since_id` is preferred to a timestamp cursor because the provider documents it as returning entries with a greater identifier and it avoids clock and timestamp-format ambiguity. Incremental synchronization does not discover changes to already archived identifiers, so those changes are intentionally handled by the manual full operation. The non-destructive merge rule remains unchanged: an entry omitted by either operation is retained locally.
+
 ## Risks / Trade-offs
 
 - **Public personal data** -> The archive is intentionally public; render only text and safe URLs, and document the remote-then-local deletion procedure.
 - **Archive and generated HTML grow over time** -> Store all entries as required, monitor build size, and revisit per-entry files or pagination only if growth becomes material.
 - **A real archive change still runs the full Next.js build** -> Avoid no-op builds first; optimizing partial page generation is outside this change.
+- **Incremental polling does not return updates to older identifiers** -> Make full reconciliation explicit and document manual full synchronization for provider-side updates or audits.
+- **An empty or malformed archive could cause an unsafe cursor** -> Refuse incremental synchronization without a usable numeric high-water mark; require the explicit initial full backfill instead.
 - **Remote avatar images can disappear** -> Preserve the URL and use the existing default icon fallback; binary image caching is out of scope.
 - **Git history retains intentionally deleted entries** -> This is an accepted property of the public archival policy.
 - **A workflow commit does not automatically trigger deployment** -> Use explicit `workflow_dispatch` after a successful archive commit and test the handoff in CI.
 
 ## Migration Plan
 
-1. Add the Webmention.io API token as a repository secret and run a one-time full backfill.
-2. Inspect the generated public archive and commit it before switching display to build-time data.
+1. Add the Webmention.io API token as a repository secret.
+2. Run the explicit full synchronization once, inspect the generated public archive, and commit the baseline before enabling incremental scheduling.
 3. Change article generation and the WebMention component to consume the archive, then verify static HTML and JavaScript-disabled behavior.
-4. Add the scheduled synchronization workflow and conditional deployment dispatch.
-5. Run a deployment with no archive diff to verify that no static build is started, then run one with a controlled archive change to verify publication.
-6. If rollback is required, disable the scheduled workflow and restore the previous browser-fetch display; retain the archive for later retry.
+4. Configure the scheduled workflow to use incremental synchronization and expose full synchronization only through an explicit manual operation.
+5. Run a scheduled-style incremental sync with no new entries to verify that it does not traverse the historical feed or start publication; run a controlled changed sync to verify publication.
+6. Use the manual full operation when provider-side updates to old entries need to be reconciled.
+7. If rollback is required, disable the scheduled workflow and restore the previous browser-fetch display; retain the archive for later retry.
