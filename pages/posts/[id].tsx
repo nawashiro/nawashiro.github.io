@@ -19,6 +19,7 @@ import {
   parseWebMentionArchive,
   type WebMentionEntry,
 } from "../../lib/webmentions";
+import { Span } from "next/dist/trace";
 
 type PostParams = {
   id: string;
@@ -166,13 +167,13 @@ export default function Post({ id, postData, webmentions }: PostProps) {
           <div className={cx(utilStyles.lightBlogText, utilStyles.lightText)}>
             <Date dateString={postData.date} />
           </div>
-          <div className="h-card" style={{ display: "none" }} >
-            <a
-              className="p-name p-author u-url"
-              href={siteUrl}
+          <div className="p-author h-card hidden">
+            <span
+              className="p-name"
             >
               Nawashiro
-            </a>
+            </span>
+            <a rel="author" className="u-url u-uid" href={siteUrl} ></a>
             <img className="u-photo" src="https://img.nawashiro.dev/attachments/VRChat_256x256.webp" />
           </div>
           <div
