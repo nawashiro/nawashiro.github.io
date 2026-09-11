@@ -1,8 +1,9 @@
 <%*
+
 async function publishLink(){
 	const url = encodeURIComponent(`https://nawashiro.dev/posts/${tp.file.title}`);
-	const sendUrl = `https://telegraph.p3k.io/dashboard/send?url=${url}`;
-	return `\n[Telegraph](${sendUrl})\n`;
+	const sendUrl = `https://webmention.app/check?url=${url}`;
+	return `\n[Webmention.app](${sendUrl})\n`;
 }
 return publishLink();
 %>
