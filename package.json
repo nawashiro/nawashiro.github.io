@@ -8,7 +8,7 @@
     "start": "next start",
     "test": "playwright test --config=playwright.unit.config.ts",
     "typecheck": "tsc --noEmit",
-    "test:e2e": "playwright test --config=playwright.config.ts",
+    "test:e2e": "DISABLE_EXTERNAL_FETCH=1 npm run build && playwright test --config=playwright.config.ts",
     "webmentions:sync": "ts-node --compiler-options '{\"module\":\"CommonJS\",\"moduleResolution\":\"Node\"}' --transpile-only scripts/sync-webmentions.ts"
   },
   "dependencies": {

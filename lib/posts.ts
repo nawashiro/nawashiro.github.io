@@ -316,7 +316,6 @@ export async function renderMarkdown(content: string): Promise<string> {
     })
     .use(remarkParse)
     .use(remarkMath)
-    .use(remarkLinkCard)
     .use(remarkCodeTitles)
     .use(remarkMermaid)
     .use(remarkPrism)
