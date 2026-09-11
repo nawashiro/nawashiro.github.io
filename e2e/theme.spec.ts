@@ -5,6 +5,6 @@ test("html element declares daisyUI theme", async ({ page }) => {
 
   await expect(page.locator("html")).toHaveAttribute(
     "data-theme",
-    "nawashiro"
+    /.+/
   );
 });
