@@ -47,3 +47,7 @@ date: "2026-09-15T18:40:55+09:00"
 結果を待て！
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
+
+---
+
+[Bluesky](https://bsky.app/profile/nawashiro.dev/post/3mvkgelfxsf2y) か [Fediverse](https://gamelinks007.net/@nawashiro/117274602387682924) から返信して会話に参加してください。
