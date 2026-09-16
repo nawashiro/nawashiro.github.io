@@ -23,7 +23,6 @@ GIGAZINE の [世界各国のユニークなコーヒーまとめ](https://gigaz
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
 
-
 ---
 
 [Bluesky](https://bsky.app/profile/nawashiro.dev/post/3mvnntz6lwa24) か [Fediverse](https://gamelinks007.net/@nawashiro/117281883976851369) から返信して会話に参加してください。
