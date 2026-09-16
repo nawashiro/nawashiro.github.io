@@ -16,6 +16,10 @@ import remarkMermaid from "remark-mermaidjs";
 import remarkToc from "remark-toc";
 import rehypeSlug from "rehype-slug";
 import rehypeRaw from "rehype-raw";
+import {
+  extractPSummaryFromHast,
+  type HastNode,
+} from "./post-summary";
 const postsDirectory = path.join(process.cwd(), "posts");
 const postImageOrigin = "https://img.nawashiro.dev/attachments/";
 
@@ -160,14 +164,6 @@ type MarkdownNode = {
   value?: string;
   children?: MarkdownNode[];
   data?: MarkdownNodeData;
-};
-
-type HastNode = {
-  type: string;
-  tagName?: string;
-  value?: string;
-  children?: HastNode[];
-  properties?: Record<string, unknown>;
 };
 
 type AlertDefinition = {
@@ -317,39 +313,6 @@ export type RenderedMarkdown = {
   pSummary?: string;
 };
 
-function getClassTokens(node: HastNode): string[] {
-  const className = node.properties?.className;
-  if (typeof className === "string") {
-    return className.split(/\s+/).filter(Boolean);
-  }
-  if (Array.isArray(className)) {
-    return className.filter(
-      (classToken): classToken is string => typeof classToken === "string",
-    );
-  }
-  return [];
-}
-
-function getHastText(node: HastNode): string {
-  if (node.type === "text") return node.value ?? "";
-  if (node.type === "element" && node.tagName === "br") return "\n";
-  return (node.children ?? []).map(getHastText).join("");
-}
-
-function extractPSummary(node: HastNode): string | undefined {
-  if (node.type === "element" && getClassTokens(node).includes("p-summary")) {
-    const summary = getHastText(node).replace(/\s+/g, " ").trim();
-    if (summary) return summary;
-  }
-
-  for (const child of node.children ?? []) {
-    const summary = extractPSummary(child);
-    if (summary) return summary;
-  }
-
-  return undefined;
-}
-
 export async function renderMarkdownDocument(
   content: string,
 ): Promise<RenderedMarkdown> {
@@ -370,7 +333,7 @@ export async function renderMarkdownDocument(
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
     .use(() => (tree: unknown) => {
-      pSummary = extractPSummary(tree as HastNode);
+      pSummary = extractPSummaryFromHast(tree as HastNode);
     })
     .use(rehypeSlug)
     .use(rehypeKatex, { output: "mathml" })

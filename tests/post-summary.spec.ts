@@ -4,6 +4,7 @@ import {
   renderMarkdownDocument,
 } from "../lib/posts";
 import { resolvePostDescription } from "../lib/post-description";
+import { extractPostSummary } from "../lib/post-summary";
 import { buildStandardDocumentRecord } from "../lib/sync-standard-site";
 
 test("keeps external Markdown links as ordinary links", async () => {
@@ -34,6 +35,19 @@ test("extracts p-summary from an existing post", async () => {
   expect(post.pSummary).toBe(
     "昨日淹れた氷出しコーヒーを飲んだ。うまいうまい。濃厚！あとなんかトロみがついている。これはどういう理屈！？",
   );
+});
+
+test("extracts p-summary without rendering Mermaid", async () => {
+  const summary = await extractPostSummary(`
+<div class="p-summary">軽量 <strong>概要</strong></div>
+
+\`\`\`mermaid
+graph TD;
+  A[概要] --> B[本文]
+\`\`\`
+`);
+
+  expect(summary).toBe("軽量 概要");
 });
 
 test("prefers p-summary and preserves the existing page fallback", () => {
