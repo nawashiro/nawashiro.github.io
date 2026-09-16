@@ -24,7 +24,6 @@ const postImageOrigin = "https://img.nawashiro.dev/attachments/";
 type PostFrontMatter = {
   title: string;
   date: string;
-  description?: string;
   image?: string;
   tags?: string[];
   [key: string]: unknown;
@@ -42,6 +41,7 @@ export type BackLink = {
 export type PostData = PostFrontMatter & {
   id: string;
   contentHtml: string;
+  pSummary?: string;
   backLinks: BackLink[];
   imageUrl: string | null;
 };
@@ -91,13 +91,19 @@ function getPostBasicData(fileName: string) {
   };
 }
 
+function omitFrontMatterDescription(data: PostFrontMatter) {
+  const sanitized = { ...data };
+  delete (sanitized as Record<string, unknown>).description;
+  return sanitized;
+}
+
 export function getSortedPostsData(): PostMeta[] {
   const fileNames = fs.readdirSync(postsDirectory).filter((fileName) => fileName.endsWith('.md'));
   const allPostsData = fileNames.map((fileName) => {
     const { id, matterResult } = getPostBasicData(fileName);
     return {
       id,
-      ...matterResult.data,
+      ...omitFrontMatterDescription(matterResult.data),
     };
   });
 
@@ -113,7 +119,7 @@ export function getIndexPagesData(): PostMeta[] {
     const { id, matterResult } = getPostBasicData(fileName);
     return {
       id,
-      ...matterResult.data,
+      ...omitFrontMatterDescription(matterResult.data),
     };
   });
 
@@ -163,6 +169,14 @@ type MarkdownNode = {
   value?: string;
   children?: MarkdownNode[];
   data?: MarkdownNodeData;
+};
+
+type HastNode = {
+  type: string;
+  tagName?: string;
+  value?: string;
+  children?: HastNode[];
+  properties?: Record<string, unknown>;
 };
 
 type AlertDefinition = {
@@ -307,8 +321,54 @@ const remarkGithubAlerts = () => (tree: Root) => {
   transformAlertChildren(tree.children as unknown as MarkdownNode[], false);
 };
 
-export async function renderMarkdown(content: string): Promise<string> {
+export type RenderedMarkdown = {
+  contentHtml: string;
+  pSummary?: string;
+};
+
+export type RenderMarkdownOptions = {
+  enableExternalFetch?: boolean;
+};
+
+function getClassTokens(node: HastNode): string[] {
+  const className = node.properties?.className;
+  if (typeof className === "string") {
+    return className.split(/\s+/).filter(Boolean);
+  }
+  if (Array.isArray(className)) {
+    return className.filter(
+      (classToken): classToken is string => typeof classToken === "string",
+    );
+  }
+  return [];
+}
+
+function getHastText(node: HastNode): string {
+  if (node.type === "text") return node.value ?? "";
+  if (node.type === "element" && node.tagName === "br") return "\n";
+  return (node.children ?? []).map(getHastText).join("");
+}
+
+function extractPSummary(node: HastNode): string | undefined {
+  if (node.type === "element" && getClassTokens(node).includes("p-summary")) {
+    const summary = getHastText(node).replace(/\s+/g, " ").trim();
+    if (summary) return summary;
+  }
+
+  for (const child of node.children ?? []) {
+    const summary = extractPSummary(child);
+    if (summary) return summary;
+  }
+
+  return undefined;
+}
+
+export async function renderMarkdownDocument(
+  content: string,
+  options: RenderMarkdownOptions = {},
+): Promise<RenderedMarkdown> {
   const normalizedContent = addPostImagePrefix(content);
+  let pSummary: string | undefined;
   const processor = unified()
     .use(remarkToc, {
       maxDepth: 3,
@@ -323,17 +383,27 @@ export async function renderMarkdown(content: string): Promise<string> {
     .use(remarkGithubAlerts)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
+    .use(() => (tree: unknown) => {
+      pSummary = extractPSummary(tree as HastNode);
+    })
     .use(rehypeSlug)
     .use(rehypeKatex, { output: "mathml" })
     .use(rehypeStringify);
 
-  if (shouldEnableExternalFetch()) {
+  if (options.enableExternalFetch ?? shouldEnableExternalFetch()) {
     processor.use(remarkLinkCard);
   }
 
-  return processor
-    .process(normalizedContent)
-    .then((processed) => processed.toString());
+  const processed = await processor.process(normalizedContent);
+  return {
+    contentHtml: processed.toString(),
+    pSummary,
+  };
+}
+
+export async function renderMarkdown(content: string): Promise<string> {
+  const { contentHtml } = await renderMarkdownDocument(content);
+  return contentHtml;
 }
 
 export function resolveOgImageUrl(
@@ -354,7 +424,9 @@ export function resolveOgImageUrl(
 export async function getPostData(id: string): Promise<PostData> {
   const { matterResult } = getPostBasicData(`${id}.md`);
 
-  const contentHtml = await renderMarkdown(matterResult.content);
+  const { contentHtml, pSummary } = await renderMarkdownDocument(
+    matterResult.content,
+  );
 
   // 画像URLを取得
   const imageMatch = matterResult.content.match(/!\[.*?\]\((.*?)\)/);
@@ -380,10 +452,21 @@ export async function getPostData(id: string): Promise<PostData> {
   return {
     id,
     contentHtml,
-    ...matterResult.data,
+    ...omitFrontMatterDescription(matterResult.data),
+    ...(pSummary ? { pSummary } : {}),
     backLinks,
     imageUrl,
   };
+}
+
+export function resolvePostDescription(
+  postData: Pick<PostData, "contentHtml" | "pSummary" | "title">,
+): string {
+  if (postData.pSummary) return postData.pSummary;
+
+  return postData.contentHtml
+    ? postData.contentHtml.replace(/<[^>]*>/g, "").substring(0, 120) + "..."
+    : `${postData.title} - Nawashiroのブログ記事`;
 }
 
 // 記事の概要を生成する関数を追加

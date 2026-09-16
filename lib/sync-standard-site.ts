@@ -3,7 +3,32 @@
 
 import { readdirSync, readFileSync, write, writeFileSync } from "fs";
 import matter from "gray-matter";
+import { renderMarkdownDocument } from "./posts";
 const MAPPING_PATH = "lib/data/standard-site.json";
+
+type StandardSiteFrontMatter = {
+  title: string;
+  date: string;
+  tags?: string[];
+};
+
+export function buildStandardDocumentRecord(
+  documentCollection: string,
+  publicationUri: string,
+  slug: string,
+  fm: StandardSiteFrontMatter,
+  pSummary?: string,
+) {
+  return {
+    $type: documentCollection,
+    site: publicationUri,
+    title: fm.title,
+    path: `/posts/${slug}`,
+    publishedAt: new Date(fm.date).toISOString(),
+    ...(pSummary ? { description: pSummary } : {}),
+    ...(fm.tags?.length ? { tags: fm.tags } : {}),
+  };
+}
 
 // === 1. PDSとの接続・認証 ===
 
@@ -213,19 +238,21 @@ async function main() {
 
     // frontmatterパース
     const raw = readFileSync(`posts/${file}`, "utf8");
-    const fm = matter(raw).data; // { title, date, description?, tags? }
+    const parsed = matter(raw);
+    const fm = parsed.data as StandardSiteFrontMatter; // { title, date, tags? }
+    const { pSummary } = await renderMarkdownDocument(parsed.content, {
+      enableExternalFetch: false,
+    });
 
     published.add(slug);
 
-    const documentRecord = {
-      $type: documentCollection,
-      site: publicationUri,
-      title: fm.title,
-      path: `/posts/${slug}`,
-      publishedAt: new Date(fm.date).toISOString(),
-      ...(fm.description ? { description: fm.description } : {}),
-      ...(fm.tags?.length ? { tags: fm.tags } : {}),
-    }
+    const documentRecord = buildStandardDocumentRecord(
+      documentCollection,
+      publicationUri,
+      slug,
+      fm,
+      pSummary,
+    );
 
     const existingRkey = mapping.documents[`/posts/${slug}`];
 
@@ -271,4 +298,6 @@ async function main() {
   )
 }
 
-main();
+if (process.argv[1]?.endsWith("sync-standard-site.ts")) {
+  main();
+}

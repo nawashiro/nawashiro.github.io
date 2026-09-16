@@ -2,6 +2,7 @@ import Layout from "../../components/layout";
 import {
   getAllPostIds,
   getPostData,
+  resolvePostDescription,
   type PostData,
 } from "../../lib/posts";
 import Head from "next/head";
@@ -84,10 +85,7 @@ export default function Post({ id, postData, webmentions }: PostProps) {
   const webmentionPageUrl = getWebmentionPageUrl(id);
   const publishedDate = postData.date;
 
-  // 記事の先頭から説明文を抽出（HTMLタグを除去して最初の120文字）
-  const description = postData.contentHtml
-    ? postData.contentHtml.replace(/<[^>]*>/g, "").substring(0, 120) + "..."
-    : `${postData.title} - Nawashiroのブログ記事`;
+  const description = resolvePostDescription(postData);
 
   // standard-site対応
   const mapping = rawMapping as {
