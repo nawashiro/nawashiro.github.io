@@ -3,7 +3,7 @@
 
 import { readdirSync, readFileSync, write, writeFileSync } from "fs";
 import matter from "gray-matter";
-import { renderMarkdownDocument } from "./posts";
+import { extractPostSummary } from "./post-summary";
 const MAPPING_PATH = "lib/data/standard-site.json";
 
 type StandardSiteFrontMatter = {
@@ -240,7 +240,7 @@ async function main() {
     const raw = readFileSync(`posts/${file}`, "utf8");
     const parsed = matter(raw);
     const fm = parsed.data as StandardSiteFrontMatter; // { title, date, tags? }
-    const { pSummary } = await renderMarkdownDocument(parsed.content);
+    const pSummary = await extractPostSummary(parsed.content);
 
     published.add(slug);
 

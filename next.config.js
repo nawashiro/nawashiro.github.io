@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
-require("ts-node/register/transpile-only");
+require("ts-node").register({
+  transpileOnly: true,
+  compilerOptions: {
+    module: "CommonJS",
+    moduleResolution: "Node",
+  },
+});
 
 const nextConfig = {
   output: "export",
