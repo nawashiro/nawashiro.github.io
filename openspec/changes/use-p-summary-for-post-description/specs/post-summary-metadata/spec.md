@@ -58,4 +58,18 @@
 #### Scenario: frontmatter descriptionを概要決定から除外する
 
 - **WHEN** 記事がfrontmatterの`description`だけを持ち、本文に空でない`p-summary`を持たない
-- **THEN** 記事ページは既存の本文先頭120文字フォールバックを使用し、ATProto文書は`description`を出力しない
+- **THEN** 記事ページは本文先頭120文字フォールバックを使用し、ATProto文書は`description`を出力しない
+
+### Requirement: 外部リンクカード経路を除去する
+
+システムは、記事本文の外部URLから外部ページのメタデータを取得してリンクカードまたはOGP情報を生成してはならない（MUST）。システムは外部URLを通常のHTMLリンクとして扱わなければならない。
+
+#### Scenario: 外部URLを通常のリンクとして出力する
+
+- **WHEN** 記事本文が外部URLへのMarkdownリンクを含む
+- **THEN** システムは外部メタデータを取得せず、リンク先とラベルを保持した通常のHTMLリンクを出力する
+
+#### Scenario: 外部リンクカード依存を実行しない
+
+- **WHEN** 記事本文をページまたは静的ビルド向けに変換する
+- **THEN** システムは`remark-link-card`による変換または外部OGP取得を実行しない

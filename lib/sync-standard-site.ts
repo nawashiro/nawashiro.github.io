@@ -240,9 +240,7 @@ async function main() {
     const raw = readFileSync(`posts/${file}`, "utf8");
     const parsed = matter(raw);
     const fm = parsed.data as StandardSiteFrontMatter; // { title, date, tags? }
-    const { pSummary } = await renderMarkdownDocument(parsed.content, {
-      enableExternalFetch: false,
-    });
+    const { pSummary } = await renderMarkdownDocument(parsed.content);
 
     published.add(slug);
 

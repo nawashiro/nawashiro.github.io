@@ -12,6 +12,8 @@ frontmatter の `description` は記事で使用されておらず、ページ�
 - `p-summary` が未設定または空の場合、記事ページでは既存の本文先頭120文字フォールバックを使用する。
 - ATProtoの `site.standard.document.description` には `p-summary` だけを使用する。
 - ATProto同期で `p-summary` が未設定または空の場合、`description` フィールドを出力しない。
+- `remark-link-card` による外部リンクのOGP・リンクカード生成経路を削除する。
+- 外部取得制御用のフラグ、直接依存、型定義、専用テストを削除する。
 - frontmatter の `description` 型定義、伝播経路、同期処理での参照を削除する。
 - frontmatter の `description` を推奨するREADMEの投稿ルールを、`p-summary` の記載方法へ更新する。
 - HAST抽出処理をページとATProto同期で共有し、出力差異を防ぐ。
@@ -32,6 +34,8 @@ frontmatter の `description` は記事で使用されておらず、ページ�
 - `lib/posts.ts`: HASTからの概要抽出、記事データ型、frontmatter旧経路を変更する。
 - `pages/posts/[id].tsx`: p-summary由来の概要を既存のhead・JSON-LD経路へ渡す。
 - `lib/sync-standard-site.ts`: frontmatter `description` の参照をp-summary抽出へ置換する。
+- `remark-link-card` と関連する外部メタデータ取得依存を削除する。
+- `types/remark-link-card.d.ts` と外部取得専用テストを削除する。
 - `components/layout.tsx`: 既存のメタデータ出力を維持する。
 - `README.md`: 投稿ルールを更新する。
 - 関連テスト: 概要抽出、フォールバック、同期出力を追加または更新する。

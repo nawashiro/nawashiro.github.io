@@ -2,9 +2,20 @@ import { test, expect } from "@playwright/test";
 import {
   getPostData,
   renderMarkdownDocument,
-  resolvePostDescription,
 } from "../lib/posts";
+import { resolvePostDescription } from "../lib/post-description";
 import { buildStandardDocumentRecord } from "../lib/sync-standard-site";
+
+test("keeps external Markdown links as ordinary links", async () => {
+  const result = await renderMarkdownDocument(
+    "[external](https://example.com/)",
+  );
+
+  expect(result.contentHtml).toContain(
+    '<a href="https://example.com/">external</a>',
+  );
+  expect(result.contentHtml).not.toContain("remark-link-card");
+});
 
 test("extracts the first non-empty p-summary from the HAST", async () => {
   const result = await renderMarkdownDocument(`

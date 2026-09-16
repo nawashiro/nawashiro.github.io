@@ -9,7 +9,6 @@ import remarkGfm from "remark-gfm";
 import { unified } from "unified";
 import remarkCodeTitles from "remark-flexible-code-titles";
 import remarkPrism from "remark-prism";
-import remarkLinkCard from "remark-link-card";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import { Feed } from "feed";
@@ -17,7 +16,6 @@ import remarkMermaid from "remark-mermaidjs";
 import remarkToc from "remark-toc";
 import rehypeSlug from "rehype-slug";
 import rehypeRaw from "rehype-raw";
-
 const postsDirectory = path.join(process.cwd(), "posts");
 const postImageOrigin = "https://img.nawashiro.dev/attachments/";
 
@@ -44,13 +42,6 @@ export type PostData = PostFrontMatter & {
   pSummary?: string;
   backLinks: BackLink[];
   imageUrl: string | null;
-};
-
-export const shouldEnableExternalFetch = () => {
-  if (process.env.NODE_ENV === "test") return false;
-  if (process.env.DISABLE_EXTERNAL_FETCH === "1") return false;
-  if (process.env.NEXT_PUBLIC_DISABLE_EXTERNAL_FETCH === "1") return false;
-  return true;
 };
 
 function isLocalPostImageUrl(url: string) {
@@ -326,10 +317,6 @@ export type RenderedMarkdown = {
   pSummary?: string;
 };
 
-export type RenderMarkdownOptions = {
-  enableExternalFetch?: boolean;
-};
-
 function getClassTokens(node: HastNode): string[] {
   const className = node.properties?.className;
   if (typeof className === "string") {
@@ -365,7 +352,6 @@ function extractPSummary(node: HastNode): string | undefined {
 
 export async function renderMarkdownDocument(
   content: string,
-  options: RenderMarkdownOptions = {},
 ): Promise<RenderedMarkdown> {
   const normalizedContent = addPostImagePrefix(content);
   let pSummary: string | undefined;
@@ -389,10 +375,6 @@ export async function renderMarkdownDocument(
     .use(rehypeSlug)
     .use(rehypeKatex, { output: "mathml" })
     .use(rehypeStringify);
-
-  if (options.enableExternalFetch ?? shouldEnableExternalFetch()) {
-    processor.use(remarkLinkCard);
-  }
 
   const processed = await processor.process(normalizedContent);
   return {
@@ -459,15 +441,6 @@ export async function getPostData(id: string): Promise<PostData> {
   };
 }
 
-export function resolvePostDescription(
-  postData: Pick<PostData, "contentHtml" | "pSummary" | "title">,
-): string {
-  if (postData.pSummary) return postData.pSummary;
-
-  return postData.contentHtml
-    ? postData.contentHtml.replace(/<[^>]*>/g, "").substring(0, 120) + "..."
-    : `${postData.title} - Nawashiroのブログ記事`;
-}
 
 // 記事の概要を生成する関数を追加
 function generateExcerpt(content: string, maxLength = 200) {

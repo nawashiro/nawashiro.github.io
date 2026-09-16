@@ -4,6 +4,8 @@
 
 `lib/sync-standard-site.ts` は記事frontmatterを読み、ATProto文書を生成する。ページと同期が別の概要抽出を持つと結果が不一致になるため、両方が共有する抽出経路を用意する。
 
+Markdown変換には、外部URLのメタデータを取得してリンクカードを生成する旧経路が残っている。この変更では外部リンクを通常のリンクとして扱い、ビルドや記事表示から外部メタデータ取得を除去する。
+
 ## Goals / Non-Goals
 
 **Goals:**
@@ -12,6 +14,7 @@
 - ページとATProto同期で同じ`p-summary`の決定結果を使用する。
 - `p-summary`がない記事のページ表示を既存フォールバックで維持する。
 - frontmatter `description`の旧経路を型・伝播・同期処理から除去する。
+- 外部リンクカードの生成と外部メタデータ取得を除去する。
 - 追加パッケージを導入せず、既存のテスト構成で検証する。
 
 **Non-Goals:**
@@ -53,6 +56,12 @@ ATProto同期は`pSummary`がある場合だけ`description`を設定する。`p
 `PostFrontMatter`と記事データの型から`description`を削除する。frontmatter全体をそのままspreadして後続データへ渡す経路は、許可キーを明示して構築するか、少なくとも`description`を除外して旧経路を断つ。同期処理は`fm.description`を参照しない。
 
 frontmatterの既存記事値は0件なので、移行処理は追加しない。READMEと投稿テンプレートの説明は`p-summary`の記載方法へ更新する。
+
+### 外部リンクカード生成を削除する
+
+`remark-link-card`のimportとprocessor登録を削除する。`shouldEnableExternalFetch`、`RenderMarkdownOptions.enableExternalFetch`、`DISABLE_EXTERNAL_FETCH`関連の経路も削除する。外部URLを含むMarkdownは通常のHTMLリンクへ変換し、OGPや外部ページのメタデータを取得しない。
+
+この選択は、client bundleへNode.js組み込みモジュールを引き込む問題と、ビルド時の外部ネットワーク依存を同時に解消する。既存の`remark-link-card`専用型定義、専用テスト、不要になった直接依存を削除する。
 
 ## Risks / Trade-offs
 
