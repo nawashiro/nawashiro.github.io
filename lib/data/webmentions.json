@@ -944,6 +944,47 @@
       "wm-received": "2026-09-15T13:02:46Z",
       "wm-source": "https://kobliy.vercel.app/webmentions/feed-items/10c59a4e-a4e6-4696-85fc-d2091a6343ba",
       "wm-target": "https://nawashiro.dev/posts/20260915-making-iced-brewed-coffee"
+    },
+    {
+      "author": {
+        "name": "",
+        "photo": "",
+        "type": "card",
+        "url": ""
+      },
+      "mention-of": "https://nawashiro.dev/posts/20260916-result-iced-brewed-coffee",
+      "name": "氷出しコーヒーを飲んだ",
+      "published": null,
+      "published_ts": null,
+      "type": "entry",
+      "url": "https://nawashiro.dev/posts/20260916-result-iced-brewed-coffee",
+      "wm-id": 2032525,
+      "wm-private": false,
+      "wm-property": "mention-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2026-09-16T00:02:54Z",
+      "wm-source": "https://kobliy.vercel.app/webmentions/feed-items/35c651e8-c0a6-465b-88f9-3e84df02cba1",
+      "wm-target": "https://nawashiro.dev/posts/20260916-result-iced-brewed-coffee"
+    },
+    {
+      "author": {
+        "name": "Lilias_moon",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:p2mrvngjwl7767j4ixdelyhg/bafkreibpz4m4ufohqnt2yrjxsaetvnnvmzwajcljjn724ve72xiygstmra",
+        "type": "card",
+        "url": "https://bsky.app/profile/lilias-moon.bsky.social"
+      },
+      "like-of": "https://nawashiro.dev/posts/20260915-making-iced-brewed-coffee",
+      "published": null,
+      "published_ts": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3mvkgelfxsf2y#liked_by_did:plc:p2mrvngjwl7767j4ixdelyhg",
+      "wm-id": 2032585,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2026-09-16T07:52:19Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3mvkgelfxsf2y/did%253Aplc%253Ap2mrvngjwl7767j4ixdelyhg",
+      "wm-target": "https://nawashiro.dev/posts/20260915-making-iced-brewed-coffee"
     }
   ],
   "version": 1
