@@ -9,7 +9,6 @@ import remarkGfm from "remark-gfm";
 import { unified } from "unified";
 import remarkCodeTitles from "remark-flexible-code-titles";
 import remarkPrism from "remark-prism";
-import remarkLinkCard from "remark-link-card";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import { Feed } from "feed";
@@ -17,14 +16,12 @@ import remarkMermaid from "remark-mermaidjs";
 import remarkToc from "remark-toc";
 import rehypeSlug from "rehype-slug";
 import rehypeRaw from "rehype-raw";
-
 const postsDirectory = path.join(process.cwd(), "posts");
 const postImageOrigin = "https://img.nawashiro.dev/attachments/";
 
 type PostFrontMatter = {
   title: string;
   date: string;
-  description?: string;
   image?: string;
   tags?: string[];
   [key: string]: unknown;
@@ -42,15 +39,9 @@ export type BackLink = {
 export type PostData = PostFrontMatter & {
   id: string;
   contentHtml: string;
+  pSummary?: string;
   backLinks: BackLink[];
   imageUrl: string | null;
-};
-
-export const shouldEnableExternalFetch = () => {
-  if (process.env.NODE_ENV === "test") return false;
-  if (process.env.DISABLE_EXTERNAL_FETCH === "1") return false;
-  if (process.env.NEXT_PUBLIC_DISABLE_EXTERNAL_FETCH === "1") return false;
-  return true;
 };
 
 function isLocalPostImageUrl(url: string) {
@@ -91,13 +82,19 @@ function getPostBasicData(fileName: string) {
   };
 }
 
+function omitFrontMatterDescription(data: PostFrontMatter) {
+  const sanitized = { ...data };
+  delete (sanitized as Record<string, unknown>).description;
+  return sanitized;
+}
+
 export function getSortedPostsData(): PostMeta[] {
   const fileNames = fs.readdirSync(postsDirectory).filter((fileName) => fileName.endsWith('.md'));
   const allPostsData = fileNames.map((fileName) => {
     const { id, matterResult } = getPostBasicData(fileName);
     return {
       id,
-      ...matterResult.data,
+      ...omitFrontMatterDescription(matterResult.data),
     };
   });
 
@@ -113,7 +110,7 @@ export function getIndexPagesData(): PostMeta[] {
     const { id, matterResult } = getPostBasicData(fileName);
     return {
       id,
-      ...matterResult.data,
+      ...omitFrontMatterDescription(matterResult.data),
     };
   });
 
@@ -163,6 +160,14 @@ type MarkdownNode = {
   value?: string;
   children?: MarkdownNode[];
   data?: MarkdownNodeData;
+};
+
+type HastNode = {
+  type: string;
+  tagName?: string;
+  value?: string;
+  children?: HastNode[];
+  properties?: Record<string, unknown>;
 };
 
 type AlertDefinition = {
@@ -307,8 +312,49 @@ const remarkGithubAlerts = () => (tree: Root) => {
   transformAlertChildren(tree.children as unknown as MarkdownNode[], false);
 };
 
-export async function renderMarkdown(content: string): Promise<string> {
+export type RenderedMarkdown = {
+  contentHtml: string;
+  pSummary?: string;
+};
+
+function getClassTokens(node: HastNode): string[] {
+  const className = node.properties?.className;
+  if (typeof className === "string") {
+    return className.split(/\s+/).filter(Boolean);
+  }
+  if (Array.isArray(className)) {
+    return className.filter(
+      (classToken): classToken is string => typeof classToken === "string",
+    );
+  }
+  return [];
+}
+
+function getHastText(node: HastNode): string {
+  if (node.type === "text") return node.value ?? "";
+  if (node.type === "element" && node.tagName === "br") return "\n";
+  return (node.children ?? []).map(getHastText).join("");
+}
+
+function extractPSummary(node: HastNode): string | undefined {
+  if (node.type === "element" && getClassTokens(node).includes("p-summary")) {
+    const summary = getHastText(node).replace(/\s+/g, " ").trim();
+    if (summary) return summary;
+  }
+
+  for (const child of node.children ?? []) {
+    const summary = extractPSummary(child);
+    if (summary) return summary;
+  }
+
+  return undefined;
+}
+
+export async function renderMarkdownDocument(
+  content: string,
+): Promise<RenderedMarkdown> {
   const normalizedContent = addPostImagePrefix(content);
+  let pSummary: string | undefined;
   const processor = unified()
     .use(remarkToc, {
       maxDepth: 3,
@@ -323,17 +369,23 @@ export async function renderMarkdown(content: string): Promise<string> {
     .use(remarkGithubAlerts)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
+    .use(() => (tree: unknown) => {
+      pSummary = extractPSummary(tree as HastNode);
+    })
     .use(rehypeSlug)
     .use(rehypeKatex, { output: "mathml" })
     .use(rehypeStringify);
 
-  if (shouldEnableExternalFetch()) {
-    processor.use(remarkLinkCard);
-  }
+  const processed = await processor.process(normalizedContent);
+  return {
+    contentHtml: processed.toString(),
+    pSummary,
+  };
+}
 
-  return processor
-    .process(normalizedContent)
-    .then((processed) => processed.toString());
+export async function renderMarkdown(content: string): Promise<string> {
+  const { contentHtml } = await renderMarkdownDocument(content);
+  return contentHtml;
 }
 
 export function resolveOgImageUrl(
@@ -354,7 +406,9 @@ export function resolveOgImageUrl(
 export async function getPostData(id: string): Promise<PostData> {
   const { matterResult } = getPostBasicData(`${id}.md`);
 
-  const contentHtml = await renderMarkdown(matterResult.content);
+  const { contentHtml, pSummary } = await renderMarkdownDocument(
+    matterResult.content,
+  );
 
   // 画像URLを取得
   const imageMatch = matterResult.content.match(/!\[.*?\]\((.*?)\)/);
@@ -380,11 +434,13 @@ export async function getPostData(id: string): Promise<PostData> {
   return {
     id,
     contentHtml,
-    ...matterResult.data,
+    ...omitFrontMatterDescription(matterResult.data),
+    ...(pSummary ? { pSummary } : {}),
     backLinks,
     imageUrl,
   };
 }
+
 
 // 記事の概要を生成する関数を追加
 function generateExcerpt(content: string, maxLength = 200) {

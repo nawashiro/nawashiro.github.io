@@ -4,6 +4,7 @@ import {
   getPostData,
   type PostData,
 } from "../../lib/posts";
+import { resolvePostDescription } from "../../lib/post-description";
 import Head from "next/head";
 import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
@@ -13,12 +14,7 @@ import WebMention from "../../components/WebMention";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import SectionLayout from "../../components/sectionLayout";
 import rawMapping from "../../lib/data/standard-site.json";
-import rawWebMentionArchive from "../../lib/data/webmentions.json";
-import {
-  filterWebMentionsForTargets,
-  parseWebMentionArchive,
-  type WebMentionEntry,
-} from "../../lib/webmentions";
+import type { WebMentionEntry } from "../../lib/webmentions";
 import { Span } from "next/dist/trace";
 
 type PostParams = {
@@ -32,7 +28,6 @@ type PostProps = {
 };
 
 const productionSiteUrl = "https://nawashiro.dev";
-const webmentionArchive = parseWebMentionArchive(rawWebMentionArchive);
 
 const getWebmentionPageUrl = (id: string) => {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
@@ -55,6 +50,12 @@ export const getStaticProps: GetStaticProps<PostProps, PostParams> = async ({
 
   const id = params.id;
   const postData = await getPostData(id);
+  const rawWebMentionArchive = (
+    await import("../../lib/data/webmentions.json")
+  ).default;
+  const { filterWebMentionsForTargets, parseWebMentionArchive } =
+    await import("../../lib/webmentions");
+  const webmentionArchive = parseWebMentionArchive(rawWebMentionArchive);
   const webmentionPageUrl = getWebmentionPageUrl(id);
   const webmentions = filterWebMentionsForTargets(
     webmentionArchive.mentions,
@@ -84,10 +85,7 @@ export default function Post({ id, postData, webmentions }: PostProps) {
   const webmentionPageUrl = getWebmentionPageUrl(id);
   const publishedDate = postData.date;
 
-  // 記事の先頭から説明文を抽出（HTMLタグを除去して最初の120文字）
-  const description = postData.contentHtml
-    ? postData.contentHtml.replace(/<[^>]*>/g, "").substring(0, 120) + "..."
-    : `${postData.title} - Nawashiroのブログ記事`;
+  const description = resolvePostDescription(postData);
 
   // standard-site対応
   const mapping = rawMapping as {

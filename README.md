@@ -72,7 +72,8 @@ npm run test
 
 - ファイル名は `YYYYMMDD-title.md`
 - frontmatter 最低要件: `title`, `date (YYYY-MM-DD)`
-- 可能なら `description`, `image` を追加
+- 記事概要は本文に `p-summary` クラスを付けて記述
+- 画像を指定する場合は `image` を追加
 - 他記事へのリンクは `[text](slug.md)` で記述
 
 ## WebMention
