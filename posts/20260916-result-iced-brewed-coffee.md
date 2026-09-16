@@ -20,3 +20,5 @@ date: "2026-09-16T06:31:58+09:00"
 あとバターコーヒーなるものもある。無塩バターを入れるのだ。[日本の名随筆 別巻3『珈琲』清水哲男（編）](https://sakuhinsha.com/essay/8234.html) に出てきた。[『いらすとや』にも素材がある](https://www.irasutoya.com/2017/07/blog-post_228.html)。
 
 GIGAZINE の [世界各国のユニークなコーヒーまとめ](https://gigazine.net/news/20191124-coffee-around-the-world/) ではチーズや卵も登場する。コーヒーはなんでもありだ。
+
+[](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
