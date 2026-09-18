@@ -22,3 +22,7 @@ date: "2026-09-16T06:31:58+09:00"
 GIGAZINE の [世界各国のユニークなコーヒーまとめ](https://gigazine.net/news/20191124-coffee-around-the-world/) ではチーズや卵も登場する。コーヒーはなんでもありだ。
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
+
+---
+
+[Bluesky](https://bsky.app/profile/nawashiro.dev/post/3mvnntz6lwa24) か [Fediverse](https://gamelinks007.net/@nawashiro/117281883976851369) から返信して会話に参加してください。
