@@ -13,7 +13,7 @@ date: "2026-09-05T15:45:01+09:00"
 
 ウェブメンションやそれ以外の手法を使った特定の相手へのメッセージです。
 
-- 
+- [Webmention対応お疲れ様です](20260918-mention-to-silverbirder-github-io.md)
 - [WebHashtagというものもあるよ](20260911-about-tag-mention-to-asadaame5121-net.md)
 - [言及してくれた うれしい](20260905-mention-to-hacktk-net.md)
 - [送ってみたい](20260905-mention-to-w-jgs-me.md)
