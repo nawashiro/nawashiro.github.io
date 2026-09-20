@@ -1006,6 +1006,26 @@
       "wm-received": "2026-09-18T10:03:10Z",
       "wm-source": "https://kobliy.vercel.app/webmentions/feed-items/9a889ac5-db87-47f9-93a7-1c6276fbd184",
       "wm-target": "https://nawashiro.dev/posts/20260918-mention-to-silverbirder-github-io"
+    },
+    {
+      "author": {
+        "name": "まる",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:po56ygj2uowziiu2ly4ce2ab/bafkreidey3wau5lsjfrg6wg27aufi2lxdar25yh7go4a4lq6ihxtqioo3u",
+        "type": "card",
+        "url": "https://bsky.app/profile/pooh-10231101.bsky.social"
+      },
+      "like-of": "https://nawashiro.dev/posts/20260915-making-iced-brewed-coffee",
+      "published": null,
+      "published_ts": null,
+      "type": "entry",
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3mvkgelfxsf2y#liked_by_did:plc:po56ygj2uowziiu2ly4ce2ab",
+      "wm-id": 2033704,
+      "wm-private": false,
+      "wm-property": "like-of",
+      "wm-protocol": "webmention",
+      "wm-received": "2026-09-19T18:50:58Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3mvkgelfxsf2y/did%253Aplc%253Apo56ygj2uowziiu2ly4ce2ab",
+      "wm-target": "https://nawashiro.dev/posts/20260915-making-iced-brewed-coffee"
     }
   ],
   "version": 1
