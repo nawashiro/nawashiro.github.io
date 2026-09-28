@@ -574,10 +574,13 @@
     },
     {
       "author": {
-        "name": "",
-        "photo": ""
+        "name": "こぶりー",
+        "photo": "https://avatars.webmention.io/kobliy.vercel.app/70f58eaaaf16cdcc76ef37b9f10f13cb16f40e06060e90ad8bdfe3ae2cc9db2d.png"
       },
-      "url": "https://nawashiro.dev/posts/20260911-about-tag-mention-to-asadaame5121-net",
+      "content": {
+        "text": "https://nawashiro.dev/posts/20260911-about-tag-mention-to-asadaame5121-net は、https://kobliy.vercel.app/feeds/a3842222-4016-4802-9e4c-d592f6…"
+      },
+      "url": "https://kobliy.vercel.app/webmentions/feed-items/615a607e-e4e2-4f15-8184-5866ff0a446c",
       "wm-id": 2031057,
       "wm-property": "mention-of",
       "wm-received": "2026-09-11T10:03:01Z",
@@ -598,10 +601,13 @@
     },
     {
       "author": {
-        "name": "",
-        "photo": ""
+        "name": "こぶりー",
+        "photo": "https://avatars.webmention.io/kobliy.vercel.app/70f58eaaaf16cdcc76ef37b9f10f13cb16f40e06060e90ad8bdfe3ae2cc9db2d.png"
       },
-      "url": "https://nawashiro.dev/posts/20260915-making-iced-brewed-coffee",
+      "content": {
+        "text": "https://nawashiro.dev/posts/20260915-making-iced-brewed-coffee は、https://kobliy.vercel.app/feeds/a3842222-4016-4802-9e4c-d592f6ae3563からリンクさ…"
+      },
+      "url": "https://kobliy.vercel.app/webmentions/feed-items/10c59a4e-a4e6-4696-85fc-d2091a6343ba",
       "wm-id": 2032356,
       "wm-property": "mention-of",
       "wm-received": "2026-09-15T13:02:46Z",
@@ -610,10 +616,13 @@
     },
     {
       "author": {
-        "name": "",
-        "photo": ""
+        "name": "こぶりー",
+        "photo": "https://avatars.webmention.io/kobliy.vercel.app/70f58eaaaf16cdcc76ef37b9f10f13cb16f40e06060e90ad8bdfe3ae2cc9db2d.png"
       },
-      "url": "https://nawashiro.dev/posts/20260916-result-iced-brewed-coffee",
+      "content": {
+        "text": "https://nawashiro.dev/posts/20260916-result-iced-brewed-coffee は、https://kobliy.vercel.app/feeds/a3842222-4016-4802-9e4c-d592f6ae3563からリンクさ…"
+      },
+      "url": "https://kobliy.vercel.app/webmentions/feed-items/35c651e8-c0a6-465b-88f9-3e84df02cba1",
       "wm-id": 2032525,
       "wm-property": "mention-of",
       "wm-received": "2026-09-16T00:02:54Z",
@@ -634,10 +643,13 @@
     },
     {
       "author": {
-        "name": "",
-        "photo": ""
+        "name": "こぶりー",
+        "photo": "https://avatars.webmention.io/kobliy.vercel.app/70f58eaaaf16cdcc76ef37b9f10f13cb16f40e06060e90ad8bdfe3ae2cc9db2d.png"
       },
-      "url": "https://nawashiro.dev/posts/20260918-mention-to-silverbirder-github-io",
+      "content": {
+        "text": "https://nawashiro.dev/posts/20260918-mention-to-silverbirder-github-io は、https://kobliy.vercel.app/feeds/a3842222-4016-4802-9e4c-d592f6ae35…"
+      },
+      "url": "https://kobliy.vercel.app/webmentions/feed-items/9a889ac5-db87-47f9-93a7-1c6276fbd184",
       "wm-id": 2033389,
       "wm-property": "mention-of",
       "wm-received": "2026-09-18T10:03:10Z",
