@@ -42,3 +42,7 @@ date: "2026-09-28T17:51:45+09:00"
 ![乗船したクルーザーのマスト。帆は無く、航海灯が光り、レーダードームが載っている。](20260928-under-jet-cruise-15.webp)
 
 アンダージェットクルーズは羽田空港公式アプリより予約可能。[羽田旅客サービス株式会社ウェブサイト](https://www.haneda-hps.co.jp/tour/%E3%82%A2%E3%83%B3%E3%83%80%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88%E3%82%AF%E3%83%AB%E3%83%BC%E3%82%BA/) を参照のこと。
+
+---
+
+[Bluesky](https://bsky.app/profile/nawashiro.dev/post/3mwkzrquris2v) か [Fediverse](https://gamelinks007.net/@nawashiro/117348025924997694) から返信して会話に参加してください。
