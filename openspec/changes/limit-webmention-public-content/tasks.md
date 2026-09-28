@@ -12,4 +12,4 @@
 
 ## 3. Integration verification
 
-- [ ] 3.1 Run focused tests, type checks, build, and OpenSpec validation; verify all pass and report any existing environmental blockers.
+- [x] 3.1 Run focused tests, type checks, build, and OpenSpec validation; unit tests (42), typecheck, and OpenSpec validation passed locally; the user confirmed the build completed successfully and visually checked the result in their environment.
