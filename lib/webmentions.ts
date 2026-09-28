@@ -36,6 +36,43 @@ export const emptyWebMentionArchive = (): WebMentionArchive => ({
   mentions: [],
 });
 
+export const WEBMENTION_EXCERPT_LIMIT = 140;
+
+export const truncateWebMentionText = (text: string): string => {
+  const characters = Array.from(text.replace(/\s+/g, " ").trim());
+  return characters.length > WEBMENTION_EXCERPT_LIMIT
+    ? characters.slice(0, WEBMENTION_EXCERPT_LIMIT - 1).join("") + "…"
+    : characters.join("");
+};
+
+export const minimizeWebMentionEntry = (entry: WebMentionEntry): WebMentionEntry => {
+  const result: WebMentionEntry = { "wm-id": entry["wm-id"] };
+  const fields = [
+    "wm-property", "wm-source", "wm-target", "wm-received",
+    "published", "updated", "url", "rsvp",
+  ] as const;
+  for (const field of fields) {
+    if (typeof entry[field] === "string") result[field] = entry[field];
+  }
+  if (entry.author && typeof entry.author === "object") {
+    const author: WebMentionAuthor = {};
+    if (typeof entry.author.name === "string") {
+      author.name = truncateWebMentionText(entry.author.name);
+    }
+    if (typeof entry.author.photo === "string") author.photo = entry.author.photo;
+    if (Object.keys(author).length) result.author = author;
+  }
+  if (typeof entry.content?.text === "string") {
+    result.content = { text: truncateWebMentionText(entry.content.text) };
+  }
+  return result;
+};
+
+export const minimizeWebMentionArchive = (archive: WebMentionArchive): WebMentionArchive => ({
+  version: 1,
+  mentions: normalizeWebMentionEntries(archive.mentions.map(minimizeWebMentionEntry)),
+});
+
 export const isWebMentionEntry = (
   value: unknown,
 ): value is WebMentionEntry => {
@@ -133,7 +170,7 @@ export const parseWebMentionArchive = (value: unknown): WebMentionArchive => {
 export const serializeWebMentionArchive = (
   archive: WebMentionArchive,
 ): string => {
-  const normalized = parseWebMentionArchive(archive);
+  const normalized = minimizeWebMentionArchive(parseWebMentionArchive(archive));
   const stableArchive = sortObjectKeys(normalized) as WebMentionArchive;
   return `${JSON.stringify(stableArchive, null, 2)}\n`;
 };

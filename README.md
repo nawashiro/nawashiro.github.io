@@ -78,7 +78,7 @@ npm run test
 
 ## WebMention
 
-受信済みの完全な Webmention データは、公開される正規アーカイブ `lib/data/webmentions.json` に保存します。記事の静的生成時にこのアーカイブを読み込むため、生成済み HTML に Webmention が含まれ、ブラウザから `webmention.io` へ取得しなくても JavaScript 無効の状態で読めます。表示件数に上限はありません。
+受信した Webmention は、表示・照合・同期に必要なメタデータと最大140文字の本文抜粋だけを公開アーカイブ `lib/data/webmentions.json` に保存します。記事全文や `content.html` は保存しません。記事の静的生成時にこのアーカイブを読み込むため、生成済み HTML に Webmention が含まれ、ブラウザから `webmention.io` へ取得しなくても JavaScript 無効の状態で読めます。表示件数に上限はありません。
 
 同期は次のコマンドで実行できます。
 

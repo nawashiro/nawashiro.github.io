@@ -9,6 +9,7 @@ import {
 import {
   canonicalizeWebMentionTarget,
   filterWebMentionsForTargets,
+  minimizeWebMentionArchive,
   mergeWebMentionEntries,
   parseWebMentionArchive,
   serializeWebMentionArchive,
@@ -32,7 +33,7 @@ const mention = (
   ...overrides,
 });
 
-test("Webmention archive round-trips complete entry fields", () => {
+test("Webmention archive round-trips only public minimal fields", () => {
   const archive = {
     version: 1 as const,
     mentions: [mention(12, { "wm-private": false, custom: { value: true } })],
@@ -42,7 +43,7 @@ test("Webmention archive round-trips complete entry fields", () => {
     JSON.parse(serializeWebMentionArchive(archive)) as unknown,
   );
 
-  expect(parsed).toEqual(archive);
+  expect(parsed).toEqual(minimizeWebMentionArchive(archive));
 });
 
 test("target canonicalization accepts HTTPS, HTTP, and trailing slash variants", () => {
@@ -105,7 +106,7 @@ test("archive writer reports no change for identical canonical data", () => {
   try {
     expect(writeWebMentionArchiveIfChanged(archive, archivePath)).toBe(true);
     expect(writeWebMentionArchiveIfChanged(archive, archivePath)).toBe(false);
-    expect(readWebMentionArchive(archivePath)).toEqual(archive);
+    expect(readWebMentionArchive(archivePath)).toEqual(minimizeWebMentionArchive(archive));
   } finally {
     fs.rmSync(temporaryDirectory, { recursive: true, force: true });
   }

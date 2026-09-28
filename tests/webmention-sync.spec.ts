@@ -167,3 +167,49 @@ test("synchronization does not rewrite an unchanged archive", async () => {
     fs.rmSync(temporaryDirectory, { recursive: true, force: true });
   }
 });
+
+test("archive writes minimize article data and retain sync metadata", () => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), "webmention-minimize-"));
+  const file = path.join(directory, "archive.json");
+  try {
+    writeWebMentionArchiveIfChanged({ version: 1, mentions: [{
+      ...entry(42), "wm-source": "https://source.example/42",
+      "wm-received": "2026-09-28T00:00:00Z",
+      published: "2026-09-27T00:00:00Z",
+      author: { name: "A".repeat(200), photo: "https://source.example/photo", extra: "private" },
+      content: { text: "😀".repeat(200), html: "<article>full article</article>" },
+      name: "whole article", extra: { body: "whole article" },
+    }] }, file);
+    const saved = readWebMentionArchive(file).mentions[0];
+    expect(Object.keys(saved).sort()).toEqual([
+      "author", "content", "published", "url", "wm-id", "wm-property",
+      "wm-received", "wm-source", "wm-target",
+    ].sort());
+    expect(saved["wm-id"]).toBe(42);
+    expect(saved.author).toEqual({ name: "A".repeat(139) + "…", photo: "https://source.example/photo" });
+    expect(Array.from(saved.content?.text || "")).toHaveLength(140);
+    expect(saved.content?.text).toBe("😀".repeat(139) + "…");
+    expect(fs.readFileSync(file, "utf8")).not.toContain("whole article");
+    expect(fs.readFileSync(file, "utf8")).not.toContain("full article");
+  } finally {
+    fs.rmSync(directory, { recursive: true, force: true });
+  }
+});
+
+test("failed sync leaves an existing archive untouched", async () => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), "webmention-atomic-"));
+  const file = path.join(directory, "archive.json");
+  try {
+    writeWebMentionArchiveIfChanged({ version: 1, mentions: [entry(1)] }, file);
+    const before = fs.readFileSync(file, "utf8");
+    await expect(synchronizeWebMentionArchive({
+      domain: "nawashiro.dev", token: "test-token", archivePath: file,
+      mode: "full", perPage: 1,
+      fetchImpl: async (input) => new URL(String(input)).searchParams.get("page") === "0"
+        ? response([entry(2)]) : response([], false, 503),
+    })).rejects.toThrow("503");
+    expect(fs.readFileSync(file, "utf8")).toBe(before);
+  } finally {
+    fs.rmSync(directory, { recursive: true, force: true });
+  }
+});
