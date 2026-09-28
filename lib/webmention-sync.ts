@@ -6,6 +6,7 @@ import {
 import {
   isWebMentionEntry,
   mergeWebMentionEntries,
+  minimizeWebMentionArchive,
   type WebMentionEntry,
   type WebMentionArchive,
 } from "./webmentions";
@@ -152,10 +153,10 @@ export const synchronizeWebMentionArchive = async ({
       sinceId: highWaterMark,
     });
   }
-  const archive: WebMentionArchive = {
+  const archive: WebMentionArchive = minimizeWebMentionArchive({
     version: 1,
     mentions: mergeWebMentionEntries(current.mentions, incoming),
-  };
+  });
   const changed = writeWebMentionArchiveIfChanged(archive, archivePath);
 
   return { archive, changed };

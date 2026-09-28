@@ -68,3 +68,17 @@ test("archived HTML and unsafe image URLs are not rendered as executable markup"
   expect(markup).not.toContain("javascript:alert");
   expect(markup).not.toContain("<script>alert(1)</script>");
 });
+
+test("legacy long comment and reaction excerpts are capped and source links are UGC", () => {
+  const markup = renderToStaticMarkup(React.createElement(WebMention, {
+    mentions: [
+      mention(1, { content: { text: "😀".repeat(200) } }),
+      mention(2, { "wm-property": "like-of", content: { text: "字".repeat(200) } }),
+    ], pageUrl: target,
+  }));
+  expect(markup).toContain("😀".repeat(139) + "…");
+  expect(markup).not.toContain("😀".repeat(140));
+  expect(markup).toContain("字".repeat(139) + "…");
+  expect(markup).not.toContain("字".repeat(140));
+  expect(markup.match(/rel="nofollow ugc"/g)).toHaveLength(2);
+});

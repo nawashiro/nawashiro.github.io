@@ -14,6 +14,7 @@ import {
   filterWebMentionsForTargets,
   safeWebmentionUrl,
   sortWebMentionsForDisplay,
+  truncateWebMentionText,
   type WebMentionEntry,
   type WebMentionSortBy,
   type WebMentionSortDir,
@@ -100,13 +101,14 @@ type WebMentionProps = {
 };
 
 const truncateText = (text: string, limit?: number) => {
-  if (!limit) return text;
-  const words = text.replace(/\s+/g, " ").split(" ", limit + 1);
-  if (words.length > limit) {
-    words[limit - 1] += "…";
-    return words.slice(0, limit).join(" ");
-  }
-  return text;
+  // The historical wordcount prop can request a smaller excerpt, but never
+  // bypass the site-wide character cap.
+  const excerpt = truncateWebMentionText(text);
+  if (!limit || limit < 1) return excerpt;
+  const characters = Array.from(excerpt);
+  return characters.length > limit
+    ? characters.slice(0, limit - 1).join("") + "…"
+    : excerpt;
 };
 
 const getSourceLabel = (url: string) => {
@@ -144,10 +146,11 @@ const renderMention = (
   isComment = false,
 ) => {
   const sourceUrl = mention.url || mention["wm-source"] || "";
-  const authorLabel =
+  const authorLabel = truncateWebMentionText(
     (typeof mention.author?.name === "string" && mention.author.name) ||
     getSourceLabel(sourceUrl) ||
-    sourceUrl;
+    sourceUrl,
+  );
   const action = buildActionLabel(mention, context, isComment);
   const rsvp = typeof mention.rsvp === "string" ? mention.rsvp : undefined;
   const rawMentionUrl = context.preventSpoofing
@@ -228,10 +231,11 @@ const WebMention = ({
           {comments.map((comment) => {
             const sourceUrl = comment.url || comment["wm-source"] || "";
             const sourceLabel = getSourceLabel(sourceUrl);
-            const authorName =
+            const authorName = truncateWebMentionText(
               (typeof comment.author?.name === "string" &&
                 comment.author.name) ||
-              sourceLabel;
+              sourceLabel,
+            );
             const content =
               typeof comment.content?.text === "string"
                 ? truncateText(comment.content.text, wordcount)
