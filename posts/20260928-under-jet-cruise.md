@@ -7,7 +7,7 @@ date: "2026-09-28T17:51:45+09:00"
 
 ---
 
-[](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon) [](https://fed.brid.gy)
+[](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
 
 <img class="u-featured" src="https://img.nawashiro.dev/attachments/20260928-under-jet-cruise-4.webp" alt="真下から撮影したJA737N。曇天。" style="display:none"/> <!-- 添付画像 -->
 
@@ -45,4 +45,4 @@ date: "2026-09-28T17:51:45+09:00"
 
 ---
 
-[Bluesky](https://bsky.app/profile/nawashiro.dev/post/3mwkzrquris2v) か [Fediverse](https://gamelinks007.net/@nawashiro/117348025924997694) から返信して会話に参加してください。
+[Bluesky](https://bsky.app/profile/nawashiro.dev/post/3mwkzrquris2v) か [Fediverse](https://gamelinks007.net/@nawashiro/117352716040995205) から返信して会話に参加してください。
