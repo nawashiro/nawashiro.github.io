@@ -8,17 +8,17 @@
 
 ### Requirement: Webmention archive is preserved non-destructively
 
-The system SHALL maintain a version-controlled public archive of the complete Webmention entry data received from Webmention.io. Synchronization SHALL add new entries and update entries with the same stable identifier, but the absence of an entry from a later remote response SHALL NOT remove it from the local archive.
+The system SHALL maintain a version-controlled public archive containing only the Webmention fields required to identify, match, sort, synchronize, and display entries. For each received entry, the archived text content SHALL be limited to 140 characters including any omission mark, and the archive SHALL NOT contain the received article's full HTML or other unbounded article-body fields. Synchronization SHALL add new entries and update entries with the same stable identifier, but the absence of an entry from a later remote response SHALL NOT remove it from the local archive.
 
 #### Scenario: New Webmention is received
 
 - **WHEN** a successful synchronization returns an entry whose `wm-id` is not in the archive
-- **THEN** the complete entry is added to the archive
+- **THEN** only the required metadata and at most 140 characters of text are added to the archive; the full HTML and unbounded article body are not saved
 
 #### Scenario: Existing Webmention is updated
 
 - **WHEN** a successful synchronization returns an entry whose `wm-id` is already in the archive with different data
-- **THEN** the archived entry is updated with the returned complete entry
+- **THEN** the archived entry is updated with the limited representation of the returned entry
 
 #### Scenario: Remote response no longer contains an archived entry
 
@@ -29,6 +29,11 @@ The system SHALL maintain a version-controlled public archive of the complete We
 
 - **WHEN** any required remote page cannot be fetched or validated
 - **THEN** the existing archive remains unchanged and the synchronization reports failure
+
+#### Scenario: Existing archive is migrated
+
+- **WHEN** the current public archive contains previously saved full Webmention content
+- **THEN** its current file is converted to the same limited representation without rewriting Git history
 
 ### Requirement: Webmentions are matched to canonical article targets
 
@@ -93,7 +98,7 @@ The synchronization process SHALL compare a deterministic representation of the 
 
 ### Requirement: External input is rendered safely
 
-The system SHALL preserve the complete received entry for archival purposes but SHALL render user-controlled content as text and SHALL allow links and images only when they use safe HTTP or HTTPS URLs. Archived HTML content SHALL NOT be inserted directly into the article DOM.
+The system SHALL archive only the limited representation of received entries and SHALL render user-controlled content as text, with Webmention body excerpts limited to 140 characters including any omission mark. The system SHALL allow links and images only when they use safe HTTP or HTTPS URLs. Received HTML content SHALL NOT be inserted directly into the article DOM. Webmention source links SHALL carry `rel="nofollow ugc"`.
 
 #### Scenario: Archived content contains HTML markup
 
@@ -104,6 +109,16 @@ The system SHALL preserve the complete received entry for archival purposes but 
 
 - **WHEN** an author photo URL uses a non-HTTP(S) scheme or is invalid
 - **THEN** the unsafe image URL is not used and the default author icon is displayed
+
+#### Scenario: Long comment or reaction text is displayed
+
+- **WHEN** a Webmention comment body or reaction description exceeds 140 characters, including when an older archive entry still contains long text
+- **THEN** the displayed excerpt is at most 140 characters including an omission mark, without cutting a Unicode character in half
+
+#### Scenario: Webmention source is linked
+
+- **WHEN** a Webmention source link is rendered
+- **THEN** the link carries `nofollow` and `ugc` relationship tokens
 
 ### Requirement: Routine synchronization uses an archive high-water mark
 
