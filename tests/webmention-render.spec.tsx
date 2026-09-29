@@ -76,8 +76,9 @@ test("legacy long comment and reaction excerpts are capped and source links are 
       mention(2, { "wm-property": "like-of", content: { text: "字".repeat(200) } }),
     ], pageUrl: target,
   }));
-  expect(markup).toContain("😀".repeat(139) + "…");
-  expect(markup).not.toContain("😀".repeat(140));
+  const commentMarkup = markup.match(/<blockquote><p>(.*?)<\/p>/)?.[1] ?? "";
+  expect(commentMarkup.match(/alt="😀"/g)).toHaveLength(139);
+  expect(commentMarkup).toContain("…");
   expect(markup).toContain("字".repeat(139) + "…");
   expect(markup).not.toContain("字".repeat(140));
   expect(markup.match(/rel="nofollow ugc"/g)).toHaveLength(2);

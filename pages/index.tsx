@@ -11,6 +11,7 @@ import Date from "../components/date";
 import type { GetStaticProps } from "next";
 import { FaArrowRight } from "react-icons/fa";
 import SectionLayout from "../components/sectionLayout";
+import TwemojiText from "../components/TwemojiText";
 
 type HomeProps = {
   allPostsData: PostMeta[];
@@ -168,14 +169,14 @@ export default function Home({
           <h2>About</h2>
           <p>ここはNawashiroのデジタルガーデンです。</p>
           <p>
-            「関連項目」や「バックリンク」を頼りにサイトを探索してみてください 👀
+            <TwemojiText text="「関連項目」や「バックリンク」を頼りにサイトを探索してみてください 👀" />
           </p>
           <h3>注意</h3>
-          <p>だいたいは個人的なメモで、不完全なもの。悪い例 👇 </p>
+          <p><TwemojiText text="だいたいは個人的なメモで、不完全なもの。悪い例 👇 " /></p>
 
           <div className="chat chat-start">
             <div className="chat-image avatar">
-              😰
+              <TwemojiText text="😰" />
             </div>
             <div className="chat-bubble">
               すべてをすぐに正しくしなければならない
@@ -183,7 +184,7 @@ export default function Home({
           </div>
           <div className="chat chat-end">
             <div className="chat-image avatar">
-              🤩
+              <TwemojiText text="🤩" />
             </div>
             <div className="chat-bubble">
               インターネットに書いてあることはぜんぶ本当なんだ！
@@ -205,7 +206,7 @@ export default function Home({
             {indexPagesData.map(({ id, title }) => (
               <li key={id}>
                 <Link className="link link-hover text-lg" href={`/posts/${id}`}>
-                  {title}
+                  <TwemojiText text={title} />
                 </Link>
               </li>
             ))}
@@ -221,7 +222,7 @@ export default function Home({
                   className="link link-hover text-lg u-url p-name entry-title"
                   href={`/posts/${id}`}
                 >
-                  {title}
+                  <TwemojiText text={title} />
                 </Link>
                 <p className="text-sm text-base">
                   <Date dateString={date} />
