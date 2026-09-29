@@ -7,7 +7,7 @@ date: "2026-09-28T17:51:45+09:00"
 
 ---
 
-[](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
+[](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon) [](https://fed.brid.gy)
 
 <img class="u-featured" src="https://img.nawashiro.dev/attachments/20260928-under-jet-cruise-4.webp" alt="真下から撮影したJA737N。曇天。" style="display:none"/> <!-- 添付画像 -->
 
