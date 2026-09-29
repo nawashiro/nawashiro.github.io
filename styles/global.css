@@ -170,8 +170,7 @@ ul li code {
   width: 1.5em !important;
   height: 1.5em !important;
   display: inline !important;
-  margin-left: 0.1em !important;
-  margin-right: 0.1em !important;
+  margin: 0 0.1em !important;
   padding: 0 !important;
   background-color: transparent !important;
   box-shadow: none !important;
