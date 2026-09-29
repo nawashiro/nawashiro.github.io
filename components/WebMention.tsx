@@ -10,6 +10,7 @@ import {
 import { MdAccountCircle, MdClose } from "react-icons/md";
 import { FaRetweet, FaBookmark } from "react-icons/fa6";
 import webmentionStyle from "../styles/webmention.module.css";
+import TwemojiText from "./TwemojiText";
 import {
   filterWebMentionsForTargets,
   safeWebmentionUrl,
@@ -227,7 +228,7 @@ const WebMention = ({
     <div id={id}>
       {comments.length > 0 && !commentsAreReactions && (
         <>
-          <h2>✍️へんじ</h2>
+          <h2><TwemojiText text="✍️へんじ" /></h2>
           {comments.map((comment) => {
             const sourceUrl = comment.url || comment["wm-source"] || "";
             const sourceLabel = getSourceLabel(sourceUrl);
@@ -247,11 +248,11 @@ const WebMention = ({
                 className={quoteClassName}
               >
                 <blockquote>
-                  <p>{content}</p>
+                  <p><TwemojiText text={content} /></p>
                   <div className="flex leading-10 gap-2">
                     <span>by</span>
                     {renderMention(comment, renderContext, true)}
-                    <span>{authorName}</span>
+                    <span><TwemojiText text={authorName} /></span>
                   </div>
                 </blockquote>
               </div>

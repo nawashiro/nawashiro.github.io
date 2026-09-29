@@ -12,6 +12,7 @@
     "webmentions:sync": "ts-node --compiler-options '{\"module\":\"CommonJS\",\"moduleResolution\":\"Node\"}' --transpile-only scripts/sync-webmentions.ts"
   },
   "dependencies": {
+    "@twemoji/api": "15.1.0",
     "classnames": "^2.3.2",
     "date-fns": "^2.29.3",
     "feed": "^4.2.2",
@@ -20,7 +21,6 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.11.0",
-    "react-twemoji": "^0.6.0",
     "rehype-katex": "^7.0.1",
     "rehype-mermaidjs": "^2.0.0",
     "rehype-raw": "^7.0.0",
@@ -44,7 +44,6 @@
     "@types/node": "^22.16.4",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.1",
-    "@types/react-twemoji": "^0.4.3",
     "autoprefixer": "^10.4.23",
     "daisyui": "^5.5.14",
     "eslint": "^9.9.0",
