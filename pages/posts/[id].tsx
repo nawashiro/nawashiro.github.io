@@ -13,6 +13,7 @@ import Link from "next/link";
 import WebMention from "../../components/WebMention";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import SectionLayout from "../../components/sectionLayout";
+import TwemojiText from "../../components/TwemojiText";
 import rawMapping from "../../lib/data/standard-site.json";
 import type { WebMentionEntry } from "../../lib/webmentions";
 import { Span } from "next/dist/trace";
@@ -161,7 +162,7 @@ export default function Post({ id, postData, webmentions }: PostProps) {
 
       <SectionLayout>
         <article className="h-entry">
-          <h1 className="p-name">{postData.title}</h1>
+          <h1 className="p-name"><TwemojiText text={postData.title} /></h1>
           <div className={cx(utilStyles.lightBlogText, utilStyles.lightText)}>
             <Date dateString={postData.date} />
           </div>
@@ -196,7 +197,7 @@ export default function Post({ id, postData, webmentions }: PostProps) {
               {postData.backLinks.map(({ id, title }) => (
                 <li key={id} className="list-disc ml-8">
                   <Link href={id} className="underline text-accent-content">
-                    {title}
+                    <TwemojiText text={title} />
                   </Link>
                 </li>
               ))}
@@ -209,7 +210,7 @@ export default function Post({ id, postData, webmentions }: PostProps) {
           mentions={webmentions}
         />
 
-        <h2>☕コーヒーをおごる</h2>
+        <h2><TwemojiText text="☕コーヒーをおごる" /></h2>
         <p>Nawashiroは現在、労働災害で負った障害により、通常の仕事に就くことができません。貯金を切り崩して生活しています。継続的な支援があれば、活動を続けることができるかもしれません。支援をお願いします。</p>
         <iframe
           id="kofiframe"

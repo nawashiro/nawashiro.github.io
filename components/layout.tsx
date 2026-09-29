@@ -4,7 +4,6 @@ import Link from "next/link";
 import { FaHamburger, FaHome, FaGithub } from "react-icons/fa";
 import { type ReactNode, useEffect } from "react";
 import Script from "next/script";
-import Twemoji from "react-twemoji";
 import SectionLayout from "./sectionLayout";
 
 const name = "NAWASHIRO";
@@ -160,7 +159,7 @@ export default function Layout({
         </div>
       </header>
       <main>
-        <Twemoji options={{ className: "twemoji" }}>{children}</Twemoji>
+        {children}
         {blog && (
           <SectionLayout className="bg-accent pb-24">
             <Link

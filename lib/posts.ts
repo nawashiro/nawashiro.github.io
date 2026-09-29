@@ -16,6 +16,7 @@ import remarkMermaid from "remark-mermaidjs";
 import remarkToc from "remark-toc";
 import rehypeSlug from "rehype-slug";
 import rehypeRaw from "rehype-raw";
+import { renderTwemojiInHast } from "./twemoji";
 import {
   extractPSummaryFromHast,
   type HastNode,
@@ -337,6 +338,7 @@ export async function renderMarkdownDocument(
     })
     .use(rehypeSlug)
     .use(rehypeKatex, { output: "mathml" })
+    .use(() => (tree: unknown) => renderTwemojiInHast(tree as Parameters<typeof renderTwemojiInHast>[0]))
     .use(rehypeStringify);
 
   const processed = await processor.process(normalizedContent);
