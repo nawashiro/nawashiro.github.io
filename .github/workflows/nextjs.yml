@@ -55,9 +55,6 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
-      - name: Install Playwright browsers
-        run: npx playwright install chromium
-
       # out/ を生成（README どおり output: "export" 前提）
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.manager }} run build

@@ -12,7 +12,7 @@ import remarkPrism from "remark-prism";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import { Feed } from "feed";
-import remarkMermaid from "remark-mermaidjs";
+import { remarkBrowserlessMermaid } from "./mermaid";
 import remarkToc from "remark-toc";
 import rehypeSlug from "rehype-slug";
 import rehypeRaw from "rehype-raw";
@@ -316,6 +316,7 @@ export type RenderedMarkdown = {
 
 export async function renderMarkdownDocument(
   content: string,
+  location = "Markdown",
 ): Promise<RenderedMarkdown> {
   const normalizedContent = addPostImagePrefix(content);
   let pSummary: string | undefined;
@@ -327,7 +328,7 @@ export async function renderMarkdownDocument(
     .use(remarkParse)
     .use(remarkMath)
     .use(remarkCodeTitles)
-    .use(remarkMermaid)
+    .use(remarkBrowserlessMermaid, location)
     .use(remarkPrism)
     .use(remarkGfm)
     .use(remarkGithubAlerts)
@@ -373,6 +374,7 @@ export async function getPostData(id: string): Promise<PostData> {
 
   const { contentHtml, pSummary } = await renderMarkdownDocument(
     matterResult.content,
+    id,
   );
 
   // 画像URLを取得
