@@ -1,74 +1,96 @@
+import { createHash } from "node:crypto";
+import { readFile } from "node:fs/promises";
+
+// Reuse the site's font provider and weights, not a diagram-specific font asset.
+// mermaid-isomorphic loads this stylesheet before renderDiagrams, which awaits
+// every declared FontFace.load() before Mermaid performs text measurement.
+// Resolve from the project root, as the Markdown pipeline does. Avoid import.meta
+// in this shared module: Playwright's CommonJS transform must also load it.
+const siteFontStylesheet = readFile(`${process.cwd()}/pages/_document.tsx`, "utf8").then((css) => {
+  const url = css.match(/href="(https:\/\/fonts\.googleapis\.com\/css2\?family=Noto\+Sans\+JP[^" ]*)"/)?.[1];
+  if (!url) throw new Error("site Noto Sans JP stylesheet is missing");
+  return url;
+});
 import type { Root } from "mdast";
+import type { createMermaidRenderer } from "mermaid-isomorphic";
 
 type MarkdownChild = Root["children"][number];
 
-const colors = {
-  bg: "#ffffff",
-  fg: "#24292f",
-  line: "#8495a4",
-  accent: "#0969da",
-  muted: "#24292f",
-  font: "Noto Sans JP",
+// Delegate parsing and layout to official Mermaid in build-time Chromium.
+// This adapter only supplies publication context and rejects renderer errors.
+let renderer: Promise<ReturnType<typeof createMermaidRenderer>> | undefined;
+const render: ReturnType<typeof createMermaidRenderer> = async (...args) => {
+  renderer ??= import("mermaid-isomorphic").then(({ createMermaidRenderer }) => createMermaidRenderer());
+  return (await renderer)(...args);
 };
 
-const actor = /^(?:actor|participant) ([A-Za-z][A-Za-z0-9_]*)$/;
-const message = /^([A-Za-z][A-Za-z0-9_]*)(-->>|->>)([A-Za-z][A-Za-z0-9_]*):\s*(.+)$/;
-
-export function isCompleteMermaidSvg(svg: string, actors: Set<string>, labels: string[], count: number): boolean {
-  return svg.startsWith("<svg ") && (svg.match(/marker-end=/g) ?? []).length === count &&
-    [...actors, ...labels].every((text) => svg.includes(text));
-}
-
 export async function renderMermaidDiagram(source: string, location = "Markdown", index = 1): Promise<string> {
-  const fail = (reason: string): never => {
-    throw new Error(`Mermaid diagram ${index} in ${location}: ${reason}`);
-  };
-  const lines = source.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
-  if (lines.shift() !== "sequenceDiagram") fail("unsupported diagram type");
-  const actors = new Set<string>();
-  const labels: string[] = [];
-  let count = 0;
-  for (const line of lines) {
-    const declaration = actor.exec(line);
-    if (declaration) {
-      if (actors.has(declaration[1])) fail(`duplicate actor: ${declaration[1]}`);
-      actors.add(declaration[1]);
-      continue;
-    }
-    const edge = message.exec(line);
-    if (!edge) return fail(`unsupported sequence statement: ${line}`);
-    if (/[<>\&"']/.test(edge[4]) || /(?:javascript|data):/i.test(edge[4])) fail(`unsafe message label in: ${line}`);
-    actors.add(edge[1]);
-    actors.add(edge[3]);
-    labels.push(edge[4]);
-    count++;
-  }
-  if (!actors.size || !count) fail("diagram needs actors and messages");
-
-  let svg = "";
   try {
-    const { renderMermaidSVG } = await import("beautiful-mermaid");
-    svg = renderMermaidSVG(source, colors);
+    const prefix = `mermaid-${createHash("sha256").update(location).digest("hex").slice(0, 16)}-${index}`;
+    const [result] = await render([source], {
+      prefix,
+      css: await siteFontStylesheet,
+      mermaidConfig: {
+        secure: ["secure", "securityLevel", "startOnLoad", "suppressErrorRendering", "theme", "themeCSS", "themeVariables", "fontFamily", "fontSize", "htmlLabels", "sequence"],
+        htmlLabels: false,
+        securityLevel: "strict",
+        startOnLoad: false,
+        suppressErrorRendering: true,
+        theme: "base",
+        // Mermaid's .actor rule uses actorBkg for both rect and text; its
+        // actorTextColor rule only targets tspans. Style the text parent too.
+        // Mermaid scopes themeCSS to this SVG's id, leaving site text untouched.
+        themeCSS: "text.actor { fill: #24292f; stroke: none; }",
+        fontFamily: "Noto Sans JP",
+        fontSize: 13,
+        sequence: {
+          // Leave space beyond actor-man labels at the lower diagram boundary.
+          diagramMarginY: 24,
+          actorFontSize: 13,
+          noteFontSize: 13,
+          messageFontSize: 13,
+          actorFontFamily: "Noto Sans JP",
+          noteFontFamily: "Noto Sans JP",
+          messageFontFamily: "Noto Sans JP",
+        },
+        themeVariables: {
+          fontFamily: "Noto Sans JP",
+          fontSize: "13px",
+          background: "#ffffff",
+          primaryColor: "#ffffff",
+          primaryTextColor: "#24292f",
+          primaryBorderColor: "#8495a4",
+          lineColor: "#8495a4",
+          actorBkg: "#ffffff",
+          actorBorder: "#8495a4",
+          actorTextColor: "#24292f",
+          signalColor: "#0969da",
+          signalTextColor: "#24292f",
+          noteBkgColor: "#ffffff",
+          noteBorderColor: "#8495a4",
+          noteTextColor: "#24292f",
+        },
+      },
+    });
+    if (!result) throw new Error("renderer returned no result");
+    if (result.status === "rejected") throw result.reason;
+    const { svg } = result.value;
+    // Mermaid's error diagram is not publishable, even if rendering resolves.
+    // These are official error-renderer classes, not a syntax/completeness test.
+    if (!/^<svg\b/.test(svg) || /class=["'][^"']*\berror-(?:icon|text)\b/.test(svg)) {
+      throw new Error("renderer returned invalid or error SVG");
+    }
+    if (svg.includes("@import") || svg.includes("fonts.googleapis.com")) {
+      throw new Error("font import remained in SVG");
+    }
+    return svg.replace("<svg ", '<svg class="mermaid-diagram" ');
   } catch (error) {
-    fail(`render failed: ${String(error)}`);
+    const reason = error instanceof Error ? error.message : String(error);
+    throw new Error(`Mermaid diagram ${index} in ${location}: ${reason}`, { cause: error });
   }
-  if (!isCompleteMermaidSvg(svg, actors, labels, count)) {
-    fail("rendered SVG is incomplete");
-  }
-  // The renderer's font import is redundant: the site already loads Noto Sans JP.
-  svg = svg.replace(/^\s*@import url\([^\n]*\n/gm, "");
-  svg = svg.replace("<svg ", '<svg class="mermaid-diagram" role="img" ');
-  svg = svg.replace(/\btext \{/g, ".mermaid-diagram text {");
-  svg = svg.replace(/\bsvg \{/g, "svg.mermaid-diagram {");
-  svg = svg.replace("</style>", `
-.mermaid-diagram text { font-size: 13px; font-weight: 700; }
-.mermaid-diagram line { stroke-width: 1.75px; }
-</style>`);
-  if (svg.includes("@import") || svg.includes("fonts.googleapis.com")) fail("font import remained in SVG");
-  return svg;
 }
 
-export function remarkBrowserlessMermaid(location = "Markdown") {
+export function remarkMermaid(location = "Markdown") {
   return async (root: Root) => {
     let index = 0;
     const transform = async (node: { children?: MarkdownChild[] }): Promise<void> => {
