@@ -116,3 +116,7 @@ curl -i 'http://192.168.1.1:1234/' \
 ## なわしろ: はえーすっごい
 
 気にしたことなかったよ。私は横着＆個別手動送信のために [webmention.app](https://webmention.app) を使っていたんだ。ググるとクラウド怖い話がいっぱい出てくるね。
+
+---
+
+[Bluesky](https://bsky.app/profile/nawashiro.dev/post/3mwpswtjrct2i) か [Fediverse](https://gamelinks007.net/@nawashiro/117358803243365974) から返信して会話に参加してください。
