@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap");
+/* Noto Sans JP is loaded by the site document, before stylesheet rules. */
 @import url("./prism-okaidia.css");
 @import "tailwindcss";
 

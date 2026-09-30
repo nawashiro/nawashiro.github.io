@@ -5,6 +5,10 @@ export default function Document() {
     <Html lang="ja" data-theme="caramellatte">
       <Head>
         <meta charSet="utf-8" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        />
         <meta name="format-detection" content="telephone=no" />
         <meta name="theme-color" content="#48731d" />
         <link rel="manifest" href="/manifest.json" />

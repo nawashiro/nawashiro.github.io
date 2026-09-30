@@ -12,7 +12,7 @@ import remarkPrism from "remark-prism";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import { Feed } from "feed";
-import { remarkBrowserlessMermaid } from "./mermaid";
+import { remarkMermaid } from "./mermaid";
 import remarkToc from "remark-toc";
 import rehypeSlug from "rehype-slug";
 import rehypeRaw from "rehype-raw";
@@ -328,7 +328,7 @@ export async function renderMarkdownDocument(
     .use(remarkParse)
     .use(remarkMath)
     .use(remarkCodeTitles)
-    .use(remarkBrowserlessMermaid, location)
+    .use(remarkMermaid, location)
     .use(remarkPrism)
     .use(remarkGfm)
     .use(remarkGithubAlerts)
