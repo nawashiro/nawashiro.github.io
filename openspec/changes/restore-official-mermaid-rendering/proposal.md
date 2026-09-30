@@ -13,6 +13,8 @@ Deployment #319 fails because the browserless Mermaid adapter rejects valid part
 - Restore Chromium installation for the deployment build without changing browser E2E policy or the static header behavior.
 - Use fixed, article-independent Mermaid source fixtures for regression tests, including malformed syntax and Japanese layout. Build current article content as an integration check; inspect current article diagrams once during migration without freezing article wording or arrow counts.
 
+Approved task 2.4 corrections: fix the existing site font import/load entrypoint so production CSS actually loads the same Google Fonts Noto Sans JP weights; add SVG viewBox padding for all labels, including the bottom actor. No new provider/assets, header/E2E changes, or generated SVG sources.
+
 ## Capabilities
 
 ### New Capabilities

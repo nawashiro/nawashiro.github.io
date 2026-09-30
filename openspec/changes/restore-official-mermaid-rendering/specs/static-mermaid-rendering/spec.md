@@ -38,6 +38,10 @@ The system SHALL render Japanese text using the site's Noto Sans JP font with 13
 - **WHEN** their rendered SVG is displayed with the site font loaded
 - **THEN** Japanese participant names, notes, and messages remain readable and unclipped, and diagram styling does not affect unrelated content
 
+#### Scenario: Production font and complete SVG bounds
+- **WHEN** rebuilt exported pages and the fixed fixture are inspected without injected font stylesheets
+- **THEN** the existing Google Fonts Noto Sans JP strategy genuinely loads the font, and padded SVG viewBox bounds contain all labels including bottom actor labels without adding providers or font assets
+
 ### Requirement: Build-time browser dependency is explicit
 The deployment build SHALL provision the browser required for diagram rendering while published pages remain static.
 

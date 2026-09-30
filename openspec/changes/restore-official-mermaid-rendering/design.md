@@ -17,6 +17,10 @@ See proposal.md for motivation. The Markdown pipeline is shared by posts and fee
 3. Apply site-local Mermaid theme/font configuration and ensure Noto Sans JP is available and ready during Chromium text measurement. Reuse the existing site font strategy; no new committed font assets or diagram-specific external font fetch. Verify exported bounds and actual Japanese appearance, rather than merely changing SVG CSS after layout. Preserve 13px text and current contrasting text/line/arrow palette where supported by official theme configuration.
 4. Restore the build's Chromium installation aligned with the rendering dependency. Keep browser E2E configuration and static header behavior unchanged. Do not invoke the build's standard.site synchronization against live credentials solely for renderer tests; use the direct Next build for initial static verification, then exercise the deployment path with controlled credentials/environment.
 
+### Approved visual blockers (task 2.4)
+
+Correct the existing font import ordering/load entrypoint while preserving the Google Fonts provider, Noto Sans JP weights, and font strategy. Verify rebuilt, unmodified exported pages load the font without diagnostic stylesheet injection. Increase diagram viewBox margins to contain bottom actor labels and other text with padding; preserve layout and static-source policy. Inspect the fixed fixture and two current articles using real-browser screenshots and geometry before marking 2.4 complete.
+
 ## Risks / Trade-offs
 
 - Browser downloads and runtime overhead → Accept explicitly, use compatible locked dependencies, and verify a clean install/build.
