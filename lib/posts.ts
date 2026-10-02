@@ -457,7 +457,7 @@ export async function generateRssFeed() {
       title: String(post.title),
       id: url,
       link: url,
-      description: generateExcerpt(postData.contentHtml),
+      description: postData.pSummary || generateExcerpt(postData.contentHtml),
       content: postData.contentHtml,
       author: [author],
       date: new Date(post.date),
