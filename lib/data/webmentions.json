@@ -711,6 +711,30 @@
       "wm-received": "2026-09-29T09:30:29Z",
       "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3mwkzrquris2v/did%253Aplc%253Ap2mrvngjwl7767j4ixdelyhg",
       "wm-target": "https://nawashiro.dev/posts/20260928-under-jet-cruise"
+    },
+    {
+      "author": {
+        "name": "まる",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:po56ygj2uowziiu2ly4ce2ab/bafkreidey3wau5lsjfrg6wg27aufi2lxdar25yh7go4a4lq6ihxtqioo3u"
+      },
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3mvnntz6lwa24#liked_by_did:plc:po56ygj2uowziiu2ly4ce2ab",
+      "wm-id": 2037201,
+      "wm-property": "like-of",
+      "wm-received": "2026-10-02T00:51:33Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3mvnntz6lwa24/did%253Aplc%253Apo56ygj2uowziiu2ly4ce2ab",
+      "wm-target": "https://nawashiro.dev/posts/20260916-result-iced-brewed-coffee"
+    },
+    {
+      "author": {
+        "name": "あさだ",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:ql5sv4umsrxadcsgtz3m5mq6/bafkreib6rqklkzxubcarglf5gsx3re2fgpbcv2h5nsdiilmu5pfikrfazu"
+      },
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3mwpt2ph5a22a#liked_by_did:plc:ql5sv4umsrxadcsgtz3m5mq6",
+      "wm-id": 2037202,
+      "wm-property": "like-of",
+      "wm-received": "2026-10-02T00:53:12Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3mwpt2ph5a22a/did%253Aplc%253Aql5sv4umsrxadcsgtz3m5mq6",
+      "wm-target": "https://nawashiro.dev/posts/20260930-server-side-request-forgery"
     }
   ],
   "version": 1
