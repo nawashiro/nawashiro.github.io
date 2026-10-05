@@ -119,4 +119,4 @@ curl -i 'http://192.168.1.1:1234/' \
 
 ---
 
-[Bluesky](https://bsky.app/profile/nawashiro.dev/post/3mwpswtjrct2i) か [Fediverse](https://gamelinks007.net/@nawashiro/117358803243365974) から返信して会話に参加してください。
+[Bluesky](https://bsky.app/profile/nawashiro.dev/post/3mwpt2ph5a22a) か [Fediverse](https://gamelinks007.net/@nawashiro/117358803243365974) から返信して会話に参加してください。
