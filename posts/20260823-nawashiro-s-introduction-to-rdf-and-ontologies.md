@@ -4,7 +4,6 @@ date: "2026-08-23T18:21:45+09:00"
 ---
 - categories:
 	- [🔧技術](categories-develops.md)
-	- [📃下書き](categories-drafts.md)
 - tags:
 	- [🏷️ワールドワイドウェブ](tags-www.md)
 	- [🏷️なわしろのWWW入門](tags-nawashiro-s-introduction-to-the-world-wide-web.md)
