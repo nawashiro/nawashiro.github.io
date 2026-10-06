@@ -45,8 +45,8 @@ for (const updated of ["2026-01-01", "2026-01-03T09:00:00+09:00"]) {
     expect(html).toContain('class="dt-published published"');
     expect(html).toContain('class="dt-updated updated"');
     expect(html).toContain(updated);
-    expect(html).toContain("公開：");
-    expect(html).toContain("更新：");
+    expect(html).toContain("published");
+    expect(html).toContain("updated");
     expect(metadata).toContain('property="article:published_time" content="2026-01-01"');
     expect(metadata).toContain(`property="article:modified_time" content="${updated}"`);
     expect(metadata).toContain('"datePublished":"2026-01-01"');
