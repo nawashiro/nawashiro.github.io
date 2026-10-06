@@ -58,7 +58,7 @@ UI の問題だと気づいた。識別子は謎の文字列でよい。でも�
 > 
 > [Karissa Rae McKelvey](https://okdistribute.xyz) et al., 2021
 
-現実の人間関係を起点にする。連絡先を交換したいとき、QR コードを交換したりする。そのときに、互いに相手のあだ名をアドレス帳に記入しておく。
+現実の人間関係を起点にする。つなかりたいとき、QR コードを交換したりする。互いに相手のあだ名をアドレス帳に記入しておく。
 
 `@alice` みたいな、自分から名乗るプロフィールを用意しない。なりすましを防ぐためだ。`@a1ice` と `@alice` を見分ける人はそういない。
 
@@ -66,22 +66,22 @@ UI の問題だと気づいた。識別子は謎の文字列でよい。でも�
 
 [私のサイトでは ATProtocol にサイトの目録を流している。](https://github.com/nawashiro/nawashiro.github.io/blob/main/lib/sync-standard-site.ts)
 
-まずは [Standard.site](https://standard.site/) を見てみる。`document.standard.site` に`tags` が定義されている。これを使うのが順当に見える。
+まずは [Standard.site](https://standard.site/) を見てみる。`document.standard.site` に `tags` が定義されている。これを使うのが順当に見える。
 
 検索できるサービスがあるのか私は知らない。誰か教えてください。
 
 ## Indie Web に導入できるか
 
-[Octothorpe Protocol](https://docs.octothorp.es/) というのがある。比較的普及している個人サイト向けのハッシュタグだ。けれど、いささかシステムが巨大すぎるかもしれない。 [RDFトリプル](20260823-nawashiro-s-introduction-to-rdf-and-ontologies.md) まで使う本格仕様だ。[@asadaame5121.netさんの入門](https://asadaame5121.net/Article/%E3%82%BF%E3%82%B0%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E5%80%8B%E4%BA%BA%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E3%81%A4%E3%81%AA%E3%81%92%E3%82%8B(%E3%83%96%E3%83%AD%E3%83%BC%E3%82%AC%E3%82%B9%E3%83%882026_day5).html) がわかりやすい。
+[Octothorpe Protocol](https://docs.octothorp.es/) というのがある。比較的普及している個人サイト向けのハッシュタグだ。けれど、いささかシステムが巨大すぎるかもしれない。 [RDFトリプル](20260823-nawashiro-s-introduction-to-rdf-and-ontologies.md) まで使う本格仕様だ。[@asadaame5121.net](https://asadaame5121.net) さんの [入門記事](https://asadaame5121.net/Article/%E3%82%BF%E3%82%B0%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E5%80%8B%E4%BA%BA%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E3%81%A4%E3%81%AA%E3%81%92%E3%82%8B(%E3%83%96%E3%83%AD%E3%83%BC%E3%82%AC%E3%82%B9%E3%83%882026_day5).html) がわかりやすい。
 
-もっとシンプルなプロトコルもある。[@maril.blue](https://maril.blue/) さんが [WebHashtag](https://github.com/marukun712/WebHashtag/tree/main) というのを作っていた。参加するにはリンクを貼ってクリックするだけ、配信は Atom だけ、というスリムな仕組みだ。
+シンプルなプロトコルもある。[@maril.blue](https://maril.blue/) さんが [WebHashtag](https://github.com/marukun712/WebHashtag/tree/main) というのを作っていた。参加するにはリンクを貼ってクリックするだけ、配信は Atom だけ、というスリムな仕組みだ。
 
 ## もっと単純にできる気もする
 
 ここに [Webmention](20250709-share-your-indie-web-personal-website-on-social-media.md) するだけだ。
 
 ```html
-<a href="https://mezzanine.example.com/${UUIDv7}">中二階</a>
+<a href="https://mezzanine.example.com/4dza2r378">中二階</a>
 ```
 
-設置する人はいくつか ID を作っておけばいい。Atom フィードが返ってくれば充分だろう。これだけでもワークするのではないか。
+設置する人はいくつか中二階ページを作っておけばいい。そこにフィードができる。
