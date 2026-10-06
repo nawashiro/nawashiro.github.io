@@ -10,10 +10,6 @@ date: "2026-10-05T20:18:01+09:00"
 	- [理想のソーシャルメディア](240613-ideal-social-media.md)
 	- [WebHashtagというものもあるよ](20260911-about-tag-mention-to-asadaame5121-net.md)
 
-<data class="p-category mezzanine-channel" value="8PCdVGs2"></data><!-- 中二階 -->
-
-<span class="p-category hidden">ソーシャルメディア</span>
-
 ---
 
 <p><img class="u-featured" src="https://img.nawashiro.dev/attachments/20261005-mezzanine.webp" alt="中二階でくつろぐふたり。"></p>
@@ -70,13 +66,34 @@ UI の問題だと気づいた。識別子は謎の文字列でよい。でも�
 
 シンプルなプロトコルもある。[@maril.blue](https://maril.blue/) さんが [WebHashtag](https://github.com/marukun712/WebHashtag/tree/main) というのを作っていた。参加するにはリンクを貼ってクリックするだけ、配信は Atom だけ、というスリムな仕組みだ。
 
-## もっと単純にできる気もする
+## 新しくプロトコルをつくりたくない
 
-ここに [Webmention](20250709-share-your-indie-web-personal-website-on-social-media.md) するだけだ。
+既存の部品でどうにかできないか。これでリレーサーバーに [Webmention](20250709-share-your-indie-web-personal-website-on-social-media.md) するのはどうだろう。
 
-```html
-<a href="https://mezzanine.example.com/"></a>
-<data class="p-category mezzanine-channel" value="8PCdVGs2"></data>
+```html:page.html
+<link rel="collection" href="urn:uuid:550e8400-e29b-41d4-a716-446655440000">
+<a href="https://example.com/"></a>
 ```
 
-受け手が `p-category` 別に Atom フィードを配信してくれれば行ける気がする。
+`rel="collection"` は「私はこのリンク先に属しています」くらいの意味だ。`urn:uuid:...` は中二階の ID だ。ここではリンクとして書き込まれている。ランダムに作ったり、もらってきたりする。
+
+リレーは `rel="collection"` を見つけてグループ分けし、Atom を配信する。
+
+```xml:550e…0000.atom
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>urn:uuid:550e8400-e29b-41d4-a716-446655440000</id>
+
+  <link rel="self" href="https://example.com/550e8400-e29b-41d4-a716-446655440000.atom"/>
+
+  ...
+</feed>
+```
+
+複数リレーに送信してもよい。Atom の id は同じになるので、必要なら拾い集めてマージしても良い。
+
+```html:page.html
+<link rel="collection" href="urn:uuid:550e8400-e29b-41d4-a716-446655440000">
+<a href="https://example.com/"></a>
+<a href="https://alice.example.com/"></a>
+<a href="https://bob.example.com/"></a>
+```
