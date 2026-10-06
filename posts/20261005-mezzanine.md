@@ -79,4 +79,4 @@ UI の問題だと気づいた。識別子は謎の文字列でよい。でも�
 <data class="p-category mezzanine-channel" value="8PCdVGs2"></data>
 ```
 
-受け手が `p-category` 別にフィードを配信してくれれば行ける気がする。
+受け手が `p-category` 別に Atom フィードを配信してくれれば行ける気がする。
