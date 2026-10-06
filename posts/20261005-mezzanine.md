@@ -26,17 +26,17 @@ date: "2026-10-05T20:18:01+09:00"
 
 ## これはなに？
 
-[Nighthaven](https://bsky.app/profile/moja.blue) 氏が考案した。[$cT7aZ](https://bsky.app/hashtag/%24CT7AZ) みたいなランダムな記号をタグにする。ハッシュタグと違ってテーマがない。勝手にどんどん作れる。
+[Nighthaven](https://bsky.app/profile/moja.blue) 氏が考案した。[`$cT7aZ`](https://bsky.app/hashtag/%24CT7AZ) みたいなランダムな記号をタグにする。ハッシュタグと違ってテーマがない。勝手にどんどん作れる。
 
 - 共通の話題がなんとなくある。明示はされない。
 - 小さな空間だ。巨大なフィードに放り出されない。
 - 誰でも始められる。識別子はただのランダムな文字列だ。
 
-> 使い方はシンプルだ。好きな文字列を決めて、紙にでも鉛筆で書いておけばいい。それが自分の周波数になる。あとは誰かがそこにチューニングしてくるのを待つだけ。ダイヤルが合った瞬間、TL を超えた接続が生まれる。 [$cT7aZ](https://bsky.app/hashtag/%24CT7AZ)
+> 使い方はシンプルだ。好きな文字列を決めて、紙にでも鉛筆で書いておけばいい。それが自分の周波数になる。あとは誰かがそこにチューニングしてくるのを待つだけ。ダイヤルが合った瞬間、TL を超えた接続が生まれる。 [`$cT7aZ`](https://bsky.app/hashtag/%24CT7AZ)
 > 
 > [Nighthaven, 2026](https://bsky.app/profile/moja.blue/post/3mfgwqvu5cs2e)
 
-> チャンネルにテーマを添えたのは入口にすぎない。 [$xS0yV](https://bsky.app/hashtag/%24XS0YV) に「最近知って驚いたこと」と書いたが、そこで何が語られるかは使う側が決める。揺れ動き、収斂し、また発散する。タグに意味がないからこそ、文脈の変化を受け入れられる。`#読書` で映画の話をしたら場違いだ。中2階ではそれが起きない。 [$cT7aZ](https://bsky.app/hashtag/%24CT7AZ)
+> チャンネルにテーマを添えたのは入口にすぎない。 [`$xS0yV`](https://bsky.app/hashtag/%24XS0YV) に「最近知って驚いたこと」と書いたが、そこで何が語られるかは使う側が決める。揺れ動き、収斂し、また発散する。タグに意味がないからこそ、文脈の変化を受け入れられる。`#読書` で映画の話をしたら場違いだ。中 2 階ではそれが起きない。 [`$cT7aZ`](https://bsky.app/hashtag/%24CT7AZ)
 > 
 > [Nighthaven, 2026](https://bsky.app/profile/moja.blue/post/3mflid5kksk25)
 

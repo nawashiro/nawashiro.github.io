@@ -30,3 +30,7 @@ date: "2026-10-06T15:14:31+09:00"
 ```
 
 [Simplified Technical English - Wikipedia](https://en.wikipedia.org/wiki/Simplified_Technical_English) をもとにしている。Wiki に載っているのは網羅的なリストではまったくないのだが、これだけでもワークしている。
+
+---
+
+[Bluesky](https://bsky.app/profile/nawashiro.dev/post/3mx6yasyth62w) か [Fediverse](https://gamelinks007.net/@nawashiro/117392954011158215) から返信して会話に参加してください。
