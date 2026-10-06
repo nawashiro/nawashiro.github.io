@@ -154,9 +154,7 @@ const renderMention = (
   );
   const action = buildActionLabel(mention, context, isComment);
   const rsvp = typeof mention.rsvp === "string" ? mention.rsvp : undefined;
-  const rawMentionUrl = context.preventSpoofing
-    ? mention["wm-source"]
-    : mention.url;
+  const rawMentionUrl = mention["wm-source"];
   const mentionUrl = safeWebmentionUrl(rawMentionUrl) || "#";
   const photoUrl = safeWebmentionUrl(
     typeof mention.author?.photo === "string" ? mention.author.photo : undefined,
@@ -230,7 +228,7 @@ const WebMention = ({
         <>
           <h2><TwemojiText text="✍️へんじ" /></h2>
           {comments.map((comment) => {
-            const sourceUrl = comment.url || comment["wm-source"] || "";
+            const sourceUrl = comment["wm-source"] || "#";
             const sourceLabel = getSourceLabel(sourceUrl);
             const authorName = truncateWebMentionText(
               (typeof comment.author?.name === "string" &&
