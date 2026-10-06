@@ -36,7 +36,7 @@ date: "2026-10-05T20:18:01+09:00"
 > 
 > [Nighthaven, 2026](https://bsky.app/profile/moja.blue/post/3mfgwqvu5cs2e)
 
-> チャンネルにテーマを添えたのは入口にすぎない。 [$xS0yV](https://bsky.app/hashtag/%24XS0YV) に「最近知って驚いたこと」と書いたが、そこで何が語られるかは使う側が決める。揺れ動き、収斂し、また発散する。タグに意味がないからこそ、文脈の変化を受け入れられる。#読書 で映画の話をしたら場違いだ。中2階ではそれが起きない。 [$cT7aZ](https://bsky.app/hashtag/%24CT7AZ)
+> チャンネルにテーマを添えたのは入口にすぎない。 [$xS0yV](https://bsky.app/hashtag/%24XS0YV) に「最近知って驚いたこと」と書いたが、そこで何が語られるかは使う側が決める。揺れ動き、収斂し、また発散する。タグに意味がないからこそ、文脈の変化を受け入れられる。`#読書` で映画の話をしたら場違いだ。中2階ではそれが起きない。 [$cT7aZ](https://bsky.app/hashtag/%24CT7AZ)
 > 
 > [Nighthaven, 2026](https://bsky.app/profile/moja.blue/post/3mflid5kksk25)
 
