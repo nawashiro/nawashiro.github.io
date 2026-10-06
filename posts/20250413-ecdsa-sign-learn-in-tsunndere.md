@@ -6,7 +6,6 @@ date: "2025-11-30T11:05:31+09:00"
 - categories:
 	- [📃下書き](categories-drafts.md)
 - tags:
-	- [🏷️なわしろのWWW入門](tags-nawashiro-s-introduction-to-the-world-wide-web.md)
 
 ---
 
