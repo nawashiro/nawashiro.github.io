@@ -165,7 +165,7 @@ export default function Post({ id, postData, webmentions }: PostProps) {
       <SectionLayout>
         <article className="h-entry">
           <h1 className="p-name"><TwemojiText text={postData.title} /></h1>
-          <dl className={cx(utilStyles.lightBlogText, utilStyles.lightTexti, "grid", "grid-cols-[5rem_1fr]", "gap-x-2")}>
+          <dl className={cx(utilStyles.lightBlogText, utilStyles.lightText, "grid", "grid-cols-[5rem_1fr]", "gap-x-2")}>
             <dt>Published</dt><dd><Date dateString={publishedDate} kind="published" /></dd>
             <dt>Updated</dt><dd><Date dateString={updatedDate} kind="updated" /></dd>
           </dl>

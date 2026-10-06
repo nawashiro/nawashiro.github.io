@@ -5,8 +5,10 @@ import path from "node:path";
 // Render outside Playwright's JSX transform, which produces locator descriptors.
 function renderFixture(updated: string) {
   const result = execFileSync(process.execPath, ["-r", "ts-node/register/transpile-only", "-e", `
-    // CSS modules do not affect the timestamp or metadata contract.
-    require.extensions['.css'] = module => { module.exports = {}; };
+    // Give timestamp CSS classes stable names so missing module keys are detected.
+    require.extensions['.css'] = module => { module.exports = {
+      lightBlogText: 'lightBlogText', lightText: 'lightText',
+    }; };
     const React = require('react');
     const { renderToStaticMarkup } = require('react-dom/server');
     require('next/config').setConfig({ publicRuntimeConfig: {} });
@@ -45,8 +47,9 @@ for (const updated of ["2026-01-01", "2026-01-03T09:00:00+09:00"]) {
     expect(html).toContain('class="dt-published published"');
     expect(html).toContain('class="dt-updated updated"');
     expect(html).toContain(updated);
-    expect(html).toContain("published");
-    expect(html).toContain("updated");
+    expect(html).toContain('<dl class="lightBlogText lightText grid grid-cols-[5rem_1fr] gap-x-2">');
+    expect(html).toContain("<dt>Published</dt>");
+    expect(html).toContain("<dt>Updated</dt>");
     expect(metadata).toContain('property="article:published_time" content="2026-01-01"');
     expect(metadata).toContain(`property="article:modified_time" content="${updated}"`);
     expect(metadata).toContain('"datePublished":"2026-01-01"');

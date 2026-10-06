@@ -120,6 +120,25 @@ The system SHALL archive only the limited representation of received entries and
 - **WHEN** a Webmention source link is rendered
 - **THEN** the link carries `nofollow` and `ugc` relationship tokens
 
+### Requirement: Webmention source links use the verified source
+
+The system SHALL use `wm-source`, not the received entry's `url`, as the destination of comment and reaction source links. If `wm-source` is missing or is not a safe HTTP or HTTPS URL, the system SHALL use `#` without falling back to `url`. When an author name is absent, source labels SHALL be derived from `wm-source`, not `url`.
+
+#### Scenario: Source and entry URLs differ
+
+- **WHEN** a comment or reaction has different safe URLs in `wm-source` and `url`
+- **THEN** its source link points to `wm-source` and carries `nofollow` and `ugc` relationship tokens
+
+#### Scenario: Source URL is unavailable or unsafe
+
+- **WHEN** a comment or reaction has a missing or unsafe `wm-source` and a safe `url`
+- **THEN** its source link uses `#` and does not fall back to `url`
+
+#### Scenario: Author name is absent
+
+- **WHEN** a comment or reaction has no author name and its `wm-source` and `url` have different hostnames
+- **THEN** its displayed author label or link title uses the hostname of `wm-source`, not `url`
+
 ### Requirement: Routine synchronization uses an archive high-water mark
 
 The system SHALL perform scheduled synchronization incrementally after a baseline archive exists. The request to Webmention.io SHALL use the largest numeric `wm-id` in the local archive as its high-water mark, retrieve only entries with a greater identifier, and SHALL NOT traverse the complete historical feed during routine synchronization.

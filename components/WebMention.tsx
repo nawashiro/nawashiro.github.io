@@ -95,7 +95,6 @@ type WebMentionProps = {
   pageUrl?: string;
   id?: string;
   wordcount?: number;
-  preventSpoofing?: boolean;
   sortBy?: WebMentionSortBy;
   sortDir?: WebMentionSortDir;
   commentsAreReactions?: boolean;
@@ -121,7 +120,6 @@ const getSourceLabel = (url: string) => {
 };
 
 type RenderContext = {
-  preventSpoofing: boolean;
   wordcount?: number;
 };
 
@@ -146,7 +144,7 @@ const renderMention = (
   context: RenderContext,
   isComment = false,
 ) => {
-  const sourceUrl = mention.url || mention["wm-source"] || "";
+  const sourceUrl = mention["wm-source"] || "#";
   const authorLabel = truncateWebMentionText(
     (typeof mention.author?.name === "string" && mention.author.name) ||
     getSourceLabel(sourceUrl) ||
@@ -191,7 +189,6 @@ const WebMention = ({
   pageUrl,
   id = "webmentions",
   wordcount,
-  preventSpoofing = false,
   sortBy = "published",
   sortDir = "up",
   commentsAreReactions = false,
@@ -220,7 +217,7 @@ const WebMention = ({
     }
   });
 
-  const renderContext = { preventSpoofing, wordcount };
+  const renderContext = { wordcount };
 
   return (
     <div id={id}>
