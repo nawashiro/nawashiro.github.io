@@ -99,3 +99,8 @@ UI の問題だと気づいた。識別子は謎の文字列でよい。でも�
 <a href="https://alice.example.com/"></a>
 <a href="https://bob.example.com/"></a>
 ```
+
+
+---
+
+[Bluesky](https://bsky.app/profile/nawashiro.dev/post/3mx7fmcceak2d) か [Fediverse](https://gamelinks007.net/@nawashiro/117393894253548842) から返信して会話に参加してください。
