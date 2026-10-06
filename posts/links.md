@@ -1,6 +1,7 @@
 ---
 title: "リンク"
-date: "2025-01-27"
+published: "2025-01-27"
+updated: "2025-01-27"
 ---
 
 - categories:

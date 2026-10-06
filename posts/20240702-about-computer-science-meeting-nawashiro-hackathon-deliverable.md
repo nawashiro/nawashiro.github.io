@@ -1,6 +1,7 @@
 ---
 title: "コンピュータサイエンス集会「Nawashiro のハッカソン成果物について」"
-date: "2024-07-02"
+published: "2024-07-02"
+updated: "2024-07-02"
 ---
 
 - categories:

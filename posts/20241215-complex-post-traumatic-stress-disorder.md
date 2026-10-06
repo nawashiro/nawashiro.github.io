@@ -1,6 +1,7 @@
 ---
 title: "複雑性PTSD"
-date: "2024-12-15"
+published: "2024-12-15"
+updated: "2024-12-15"
 ---
 
 - categories:

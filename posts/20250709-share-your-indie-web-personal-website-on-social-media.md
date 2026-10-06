@@ -1,6 +1,7 @@
 ---
 title: "インディーウェブな個人サイトをSNSで共有する"
-date: "2025-07-09"
+published: "2025-07-09"
+updated: "2025-07-09"
 ---
 
 - categories:

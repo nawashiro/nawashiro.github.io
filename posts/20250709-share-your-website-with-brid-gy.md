@@ -1,6 +1,7 @@
 ---
 title: "Brid.gyでウェブサイトを共有してみる"
-date: "2025-07-09"
+published: "2025-07-09"
+updated: "2025-07-09"
 ---
 - topics:
 	- [インディーウェブな個人サイトをSNSで共有する](20250709-share-your-indie-web-personal-website-on-social-media.md)

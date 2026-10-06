@@ -1,6 +1,7 @@
 ---
 title: "NHK広島は原爆のなかいかに死んだか - 読書メモ"
-date: "2024-08-06"
+published: "2024-08-06"
+updated: "2024-08-06"
 ---
 
 - categories:

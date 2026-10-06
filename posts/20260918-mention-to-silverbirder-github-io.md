@@ -1,6 +1,7 @@
 ---
 title: "Webmention対応お疲れ様です"
-date: "2026-09-18T15:17:49+09:00"
+published: "2026-09-18T15:17:49+09:00"
+updated: "2026-09-18T15:17:49+09:00"
 ---
 
 <a class="u-in-reply-to" href="https://silverbirder.github.io/blog/contents/20260908/">@silverbirder.github.io</a>

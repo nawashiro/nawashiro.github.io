@@ -1,6 +1,7 @@
 ---
 title: "ゼペットじいさんへ なわしろより"
-date: "2026-07-20T13:58:46+09:00"
+published: "2026-07-20T13:58:46+09:00"
+updated: "2026-07-20T13:58:46+09:00"
 ---
 - categories:
 	- [😶‍🌫️いろいろな考え](categories-any-opinions.md)

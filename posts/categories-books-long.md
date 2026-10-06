@@ -1,6 +1,7 @@
 ---
 title: "📚読書メモ（長い）"
-date: "2025-07-07"
+published: "2025-07-07"
+updated: "2025-07-07"
 ---
 
 - categories:

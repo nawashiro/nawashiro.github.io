@@ -1,6 +1,7 @@
 ---
 title: "なわしろのRDFとオントロジー入門"
-date: "2026-08-23T18:21:45+09:00"
+published: "2026-08-23T18:21:45+09:00"
+updated: "2026-08-23T18:21:45+09:00"
 ---
 - categories:
 	- [🔧技術](categories-develops.md)

@@ -1,6 +1,7 @@
 ---
 title: "ライトニングトーク「分散型 SNS Nostr の世界」"
-date: "2023-06-09"
+published: "2023-06-09"
+updated: "2023-06-09"
 ---
 
 - categories:

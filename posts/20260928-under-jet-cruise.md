@@ -1,6 +1,7 @@
 ---
 title: "アンダージェットクルーズ"
-date: "2026-09-28T17:51:45+09:00"
+published: "2026-09-28T17:51:45+09:00"
+updated: "2026-09-28T17:51:45+09:00"
 ---
 - categories:
 	- [🎞️写真ブログ](categories-photo-blogs.md)

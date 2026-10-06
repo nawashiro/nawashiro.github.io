@@ -1,6 +1,7 @@
 ---
 title: "なわしろの WCAG 2.0 達成基準 1.4.1 入門"
-date: "2024-12-23"
+published: "2024-12-23"
+updated: "2024-12-23"
 ---
 
 - categories:

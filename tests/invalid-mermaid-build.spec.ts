@@ -27,7 +27,7 @@ function build(cwd: string): Promise<{ code: number | null; signal: string | nul
 }
 
 function markdown(second: string) {
-  return `---\ntitle: Isolated Mermaid build fixture\ndate: '2020-01-01'\n---\n\n\`\`\`mermaid\n${sequence}\n\`\`\`\n\n> \`\`\`mermaid\n> ${second.replaceAll("\n", "\n> ")}\n> \`\`\`\n`;
+  return `---\ntitle: Isolated Mermaid build fixture\npublished: '2020-01-01'\nupdated: '2020-01-01'\n---\n\n\`\`\`mermaid\n${sequence}\n\`\`\`\n\n> \`\`\`mermaid\n> ${second.replaceAll("\n", "\n> ")}\n> \`\`\`\n`;
 }
 
 test("actual isolated Next build fails on invalid diagram with article and diagram identity", async ({}, testInfo) => {

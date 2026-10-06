@@ -79,7 +79,7 @@ test("uses p-summary for ATProto descriptions and omits absent summaries", () =>
     "site.standard.document",
     "at://did:plc:example/site.standard.publication/pub",
     "example-post",
-    { title: "記事", date: "2026-09-16", tags: ["coffee"] },
+    { title: "記事", published: "2026-09-16", updated: "2026-09-18T09:00:00+09:00", tags: ["coffee"] },
     "共有用の概要",
   );
   const withoutSummary = buildStandardDocumentRecord(
@@ -88,12 +88,16 @@ test("uses p-summary for ATProto descriptions and omits absent summaries", () =>
     "example-post",
     {
       title: "記事",
-      date: "2026-09-16",
+      published: "2026-09-16",
+      updated: "2026-09-18T09:00:00+09:00",
       tags: ["coffee"],
       description: "旧frontmatter概要",
-    } as { title: string; date: string; tags?: string[] },
+    } as { title: string; published: string; updated: string; tags?: string[] },
   );
 
+  expect(withSummary.publishedAt).toBe("2026-09-16T00:00:00.000Z");
+  expect(withSummary.updatedAt).toBe("2026-09-18T00:00:00.000Z");
+  expect(withoutSummary.updatedAt).toBe(withSummary.updatedAt);
   expect(withSummary.description).toBe("共有用の概要");
   expect(withoutSummary).not.toHaveProperty("description");
   expect(withoutSummary.tags).toEqual(["coffee"]);

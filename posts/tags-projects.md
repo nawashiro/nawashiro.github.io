@@ -1,6 +1,7 @@
 ---
 title: "🏷️プロジェクト"
-date: "2025-04-28"
+published: "2025-04-28"
+updated: "2025-04-28"
 ---
 
 - categories:

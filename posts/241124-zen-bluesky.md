@@ -1,6 +1,7 @@
 ---
 title: "禅なBluesky"
-date: "2024-11-24"
+published: "2024-11-24"
+updated: "2024-11-24"
 ---
 
 - categories:

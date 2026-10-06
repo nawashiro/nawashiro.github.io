@@ -9,6 +9,16 @@ import { renderMarkdownDocument } from "../lib/posts";
 const siteUrl = "https://feed-fixture.example";
 const fixtures = [
   {
+    id: "emoji-summary",
+    markdown: '<p class="p-summary">概要 😂 🧑‍💻</p><p>本文 😂</p>',
+    summary: "概要 😂 🧑‍💻",
+  },
+  {
+    id: "emoji-excerpt",
+    markdown: '<p>本文 😂 🧑‍💻 <img src="https://example.test/authored.png" alt="著者画像"></p><p><code>😂</code></p>',
+    summary: "本文 😂 🧑‍💻 😂",
+  },
+  {
     id: "decorated-summary",
     markdown: '<p>本文の先頭。</p>\n<p class="extra p-summary">明示 <strong>概要</strong>\n<br>と <a href="https://example.com">リンク</a> &amp; 記号。</p>',
     summary: "明示 概要 と リンク & 記号。",
@@ -46,7 +56,7 @@ const fixtures = [
 ];
 
 type XmlEntry = Record<string, { _text?: string; _cdata?: string }>;
-type JsonEntry = { id: string; title: string; url: string; summary: string; content_html: string };
+type JsonEntry = { id: string; title: string; url: string; summary: string; content_html: string; date_published: string; date_modified: string };
 const xmlText = (value: { _text?: string; _cdata?: string }) => value._cdata ?? value._text;
 const formats = ["rss", "atom", "json"] as const;
 let directory: string;
@@ -65,9 +75,9 @@ test.beforeAll(async () => {
   for (const fixture of fixtures) {
     fs.writeFileSync(
       path.join(directory, "posts", `${fixture.id}.md`),
-      `---\ntitle: ${fixture.id}\ndate: '2026-01-01'\ndescription: 旧frontmatter概要\n---\n${fixture.markdown}\n`,
+      `---\ntitle: ${fixture.id}\npublished: '2026-01-01'\nupdated: '2026-01-03T09:00:00+09:00'\ndescription: 旧frontmatter概要\n---\n${fixture.markdown}\n`,
     );
-    const rendered = await renderMarkdownDocument(fixture.markdown);
+    const rendered = await renderMarkdownDocument(fixture.markdown, fixture.id, "feed");
     expectedHtml.set(fixture.id, rendered.contentHtml);
   }
   // A separate process isolates the module-level posts directory and output.
@@ -111,6 +121,8 @@ for (const format of formats) {
         expect(item.title).toBe(fixture.id);
         summary = item.summary;
         content = item.content_html;
+        expect(item.date_published).toBe("2026-01-01T00:00:00.000Z");
+        expect(item.date_modified).toBe("2026-01-03T00:00:00.000Z");
       } else {
         const entries = format === "rss" ? rss : atom;
         const idKey = format === "rss" ? "guid" : "id";
@@ -119,9 +131,21 @@ for (const format of formats) {
         expect(xmlText(item.title)).toBe(fixture.id);
         summary = xmlText(item[format === "rss" ? "description" : "summary"]);
         content = xmlText(item[format === "rss" ? "content:encoded" : "content"]);
+        if (format === "rss") {
+          expect(xmlText(item.pubDate)).toBe("Thu, 01 Jan 2026 00:00:00 GMT");
+        } else {
+          expect(xmlText(item.published)).toBe("2026-01-01T00:00:00.000Z");
+          expect(xmlText(item.updated)).toBe("2026-01-03T00:00:00.000Z");
+        }
       }
       expect(summary).toBe(fixture.summary);
       expect(content).toBe(expectedHtml.get(fixture.id));
+      expect(content).not.toContain("cdn.jsdelivr.net/gh/jdecked/twemoji");
+      if (fixture.id.startsWith("emoji-")) expect(content).toContain("😂");
+      if (fixture.id === "emoji-excerpt") {
+        expect(content).toContain('src="https://example.test/authored.png"');
+        expect(content).toContain("<code>😂</code>");
+      }
     });
   }
   test(`${format}: keeps the fixture entry count`, () => {

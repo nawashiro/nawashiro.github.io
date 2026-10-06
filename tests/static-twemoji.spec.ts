@@ -12,6 +12,18 @@ test("emoji parser preserves surrounding text and pins CDN assets", () => {
   ]);
 });
 
+test("Feed rendering preserves Unicode without changing page Twemoji", async () => {
+  const markdown = '<p class="p-summary">概要 😂</p><p>本文 🧑‍💻</p><code>😂</code>';
+  const page = await renderMarkdownDocument(markdown, "fixed-emoji", "page");
+  const feed = await renderMarkdownDocument(markdown, "fixed-emoji", "feed");
+  expect(page.contentHtml).toContain('class="twemoji"');
+  expect(feed.contentHtml).toContain("概要 😂");
+  expect(feed.contentHtml).toContain("本文 🧑‍💻");
+  expect(feed.contentHtml).toContain("<code>😂</code>");
+  expect(feed.contentHtml).not.toContain('class="twemoji"');
+  expect(feed.pSummary).toBe(page.pSummary);
+});
+
 test("Markdown converts prose, but not code or attributes", async () => {
   const { contentHtml } = await renderMarkdownDocument(
     'Hello 😂 and 🧑‍💻\n\n`😂`\n\n```text\n😂\n```\n\n<span title="😂">Text</span>',

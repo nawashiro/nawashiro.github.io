@@ -1,6 +1,7 @@
 ---
 title: "簡易技術文法スキルを使っている"
-date: "2026-10-06T15:14:31+09:00"
+published: "2026-10-06T15:14:31+09:00"
+updated: "2026-10-06T15:14:31+09:00"
 ---
 - categories:
 	- [🔧技術](categories-develops.md)

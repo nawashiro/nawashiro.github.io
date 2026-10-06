@@ -1,6 +1,7 @@
 ---
 title: "Blueskyなどの分散SNSにみんなも来ようよ、楽しいよ、という話"
-date: "2023-11-08"
+published: "2023-11-08"
+updated: "2023-11-08"
 ---
 
 - categories:

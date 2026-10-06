@@ -1,6 +1,7 @@
 ---
 title: "Support me!"
-date: "2024-08-17"
+published: "2024-08-17"
+updated: "2024-08-17"
 ---
 
 - categories:

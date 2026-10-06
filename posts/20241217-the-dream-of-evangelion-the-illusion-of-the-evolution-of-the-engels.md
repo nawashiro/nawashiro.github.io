@@ -1,6 +1,7 @@
 ---
 title: "エヴァンゲリオンの夢"
-date: "2026-05-24T00:17:30+09:00"
+published: "2026-05-24T00:17:30+09:00"
+updated: "2026-05-24T00:17:30+09:00"
 ---
 - categories:
 	- [💬読書メモ（短い）](categories-books-short.md)

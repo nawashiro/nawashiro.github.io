@@ -1,6 +1,7 @@
 ---
 title: "三体2 黒暗森林 下 - 読書メモ"
-date: "2024-12-17"
+published: "2024-12-17"
+updated: "2024-12-17"
 ---
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/WJj_5j">
 

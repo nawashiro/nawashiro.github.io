@@ -4,11 +4,11 @@
 import { readdirSync, readFileSync, write, writeFileSync } from "fs";
 import matter from "gray-matter";
 import { extractPostSummary } from "./post-summary";
+import { readPostTimestamps, type PostTimestamps } from "./post-timestamps";
 const MAPPING_PATH = "lib/data/standard-site.json";
 
-type StandardSiteFrontMatter = {
+type StandardSiteFrontMatter = PostTimestamps & {
   title: string;
-  date: string;
   tags?: string[];
 };
 
@@ -19,12 +19,14 @@ export function buildStandardDocumentRecord(
   fm: StandardSiteFrontMatter,
   pSummary?: string,
 ) {
+  const timestamps = readPostTimestamps(fm, slug);
   return {
     $type: documentCollection,
     site: publicationUri,
     title: fm.title,
     path: `/posts/${slug}`,
-    publishedAt: new Date(fm.date).toISOString(),
+    publishedAt: new Date(timestamps.published).toISOString(),
+    updatedAt: new Date(timestamps.updated).toISOString(),
     ...(pSummary ? { description: pSummary } : {}),
     ...(fm.tags?.length ? { tags: fm.tags } : {}),
   };
@@ -239,7 +241,7 @@ async function main() {
     // frontmatterパース
     const raw = readFileSync(`posts/${file}`, "utf8");
     const parsed = matter(raw);
-    const fm = parsed.data as StandardSiteFrontMatter; // { title, date, tags? }
+    const fm = parsed.data as StandardSiteFrontMatter; // { title, published, updated, tags? }
     const pSummary = await extractPostSummary(parsed.content);
 
     published.add(slug);

@@ -1,6 +1,7 @@
 ---
 title: "TAKE NOTES! - 読書メモ"
-date: "2025-01-05"
+published: "2025-01-05"
+updated: "2025-01-05"
 ---
 
 - categories:

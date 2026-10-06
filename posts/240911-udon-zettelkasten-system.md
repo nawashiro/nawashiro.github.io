@@ -1,6 +1,7 @@
 ---
 title: "ハッカソン成果物発表 - Udon Zettelkasten System の紹介"
-date: "2024-09-11"
+published: "2024-09-11"
+updated: "2024-09-11"
 ---
 
 - categories:

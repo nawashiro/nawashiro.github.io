@@ -1,6 +1,7 @@
 ---
 title: "Server-Side Request Forgery を知る日"
-date: "2026-09-30T10:26:09+09:00"
+published: "2026-09-30T10:26:09+09:00"
+updated: "2026-09-30T10:26:09+09:00"
 ---
 - categories:
 	- [🔧技術](categories-develops.md)

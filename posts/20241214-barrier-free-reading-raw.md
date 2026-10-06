@@ -1,6 +1,7 @@
 ---
 title: "読書バリアフリー法"
-date: "2024-12-14"
+published: "2024-12-14"
+updated: "2024-12-14"
 ---
 
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/ceTLrtW">

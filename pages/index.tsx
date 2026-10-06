@@ -216,7 +216,7 @@ export default function Home({
         <section>
           <h2>All Pages</h2>
           <ul className="h-feed hfeed space-y-3">
-            {allPostsData.map(({ id, date, title }) => (
+            {allPostsData.map(({ id, published, title }) => (
               <li className="h-entry hentry" key={id}>
                 <Link
                   className="link link-hover text-lg u-url p-name entry-title"
@@ -225,7 +225,7 @@ export default function Home({
                   <TwemojiText text={title} />
                 </Link>
                 <p className="text-sm text-base">
-                  <Date dateString={date} />
+                  <Date dateString={published} kind="published" />
                 </p>
               </li>
             ))}

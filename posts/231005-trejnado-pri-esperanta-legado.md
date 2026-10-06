@@ -1,6 +1,7 @@
 ---
 title: "Trejnado pri Esperanta legado"
-date: "2023-10-05"
+published: "2023-10-05"
+updated: "2023-10-05"
 ---
 
 - categories:

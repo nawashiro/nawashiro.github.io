@@ -1,6 +1,7 @@
 ---
 title: "Nostrの音楽アプリをぼんやり構想してみる"
-date: "2024-09-05"
+published: "2024-09-05"
+updated: "2024-09-05"
 ---
 
 - categories:
