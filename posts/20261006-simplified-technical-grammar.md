@@ -14,7 +14,7 @@ date: "2026-10-06T15:14:31+09:00"
 
 <p class="e-bridgy-mastodon-content e-bridgy-bluesky-content p-summary"><a href="https://aiichiro.jp/">@aiichiro.jp</a> さんが <a href="https://github.com/nanaism/yomiyasu">yomiyasu スキル</a> というのを作っていた。ここまで大規模なものではないが、私も簡易な文書規範スキルを使っている。こんなのだ。</p>
 
-```markdown
+```
 - 日本語で書く。
 - 主語と行為者を明示して能動態で書く。
 - 動詞は命令形、非過去形、単純過去形のみ使う。
