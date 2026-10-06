@@ -3,7 +3,7 @@ title: "中二階について"
 date: "2026-10-05T20:18:01+09:00"
 ---
 - categories:
-	- [📃下書き](categories-drafts.md)
+	- [🔧技術](categories-develops.md)
 - tags:
 	- [🏷️ソーシャルメディア](tags-social-media.md)
 - topics:
@@ -11,6 +11,8 @@ date: "2026-10-05T20:18:01+09:00"
 	- [WebHashtagというものもあるよ](20260911-about-tag-mention-to-asadaame5121-net.md)
 
 ---
+
+[](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
 
 <p><img class="u-featured" src="https://img.nawashiro.dev/attachments/20261005-mezzanine.webp" alt="中二階でくつろぐふたり。"></p>
 
