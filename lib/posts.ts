@@ -17,7 +17,7 @@ import remarkToc from "remark-toc";
 import rehypeSlug from "rehype-slug";
 import rehypeRaw from "rehype-raw";
 import { renderTwemojiInHast } from "./twemoji";
-import { readPostTimestamps, comparePublishedDescending, type PostTimestamps } from "./post-timestamps";
+import { readPostTimestamps, compareUpdatedDescending, type PostTimestamps } from "./post-timestamps";
 import {
   extractPSummaryFromHast,
   type HastNode,
@@ -104,7 +104,7 @@ export function getSortedPostsData(): PostMeta[] {
     };
   });
 
-  return allPostsData.sort(comparePublishedDescending);
+  return allPostsData.sort(compareUpdatedDescending);
 }
 
 export function getIndexPagesData(): PostMeta[] {
@@ -120,7 +120,7 @@ export function getIndexPagesData(): PostMeta[] {
     };
   });
 
-  return indexPosts.sort(comparePublishedDescending);
+  return indexPosts.sort(compareUpdatedDescending);
 }
 
 export function getAllPostIds() {

@@ -31,6 +31,7 @@ export function readPostTimestamps(
   return { published: data.published as string, updated: data.updated as string };
 }
 
-export function comparePublishedDescending(a: PostTimestamps, b: PostTimestamps): number {
-  return new Date(b.published).getTime() - new Date(a.published).getTime();
+export function compareUpdatedDescending(a: PostTimestamps, b: PostTimestamps): number {
+  return new Date(b.updated).getTime() - new Date(a.updated).getTime() ||
+    new Date(b.published).getTime() - new Date(a.published).getTime();
 }

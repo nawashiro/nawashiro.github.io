@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { comparePublishedDescending, parsePostTimestamp, readPostTimestamps } from "../lib/post-timestamps";
+import { compareUpdatedDescending, parsePostTimestamp, readPostTimestamps } from "../lib/post-timestamps";
 import { buildStandardDocumentRecord } from "../lib/sync-standard-site";
 
 const location = "fixture-post.md";
@@ -22,14 +22,40 @@ test("both fields are mandatory with no legacy fallback", () => {
   expect(readPostTimestamps({ published: "2026-01-01", updated: "2026-01-02" }, location)).toEqual({ published: "2026-01-01", updated: "2026-01-02" });
 });
 
-test("publication order compares instants, not strings or update dates", () => {
+test("updating an old post moves it ahead without changing its publication date", () => {
   const posts = [
-    { id: "older", published: "2026-01-02T00:00:00+09:00", updated: "2026-10-01" },
-    { id: "newer", published: "2026-01-01T20:00:00Z", updated: "2026-01-01" },
+    { id: "older", published: "2025-01-01", updated: "2025-01-01" },
+    { id: "newer", published: "2026-01-01", updated: "2026-01-01" },
   ];
-  expect(posts.sort(comparePublishedDescending).map(p => p.id)).toEqual(["newer", "older"]);
-  posts[1].updated = "2030-01-01";
-  expect(posts.sort(comparePublishedDescending).map(p => p.id)).toEqual(["newer", "older"]);
+  expect([...posts].sort(compareUpdatedDescending).map(p => p.id)).toEqual(["newer", "older"]);
+  posts[0].updated = "2026-10-01";
+  expect([...posts].sort(compareUpdatedDescending).map(p => p.id)).toEqual(["older", "newer"]);
+  expect(posts[0].published).toBe("2025-01-01");
+});
+
+test("update order compares instants across timezones, not strings", () => {
+  const posts = [
+    { id: "earlier", published: "2025-01-01", updated: "2026-01-02T00:00:00+09:00" },
+    { id: "later", published: "2025-01-01", updated: "2026-01-01T20:00:00Z" },
+  ];
+  expect(posts.sort(compareUpdatedDescending).map(p => p.id)).toEqual(["later", "earlier"]);
+});
+
+test("equal update instants use publication instants as the tiebreaker", () => {
+  const posts = [
+    { id: "older", published: "2026-01-02T00:00:00+09:00", updated: "2026-03-01T09:00:00+09:00" },
+    { id: "newer", published: "2026-01-01T20:00:00Z", updated: "2026-03-01T00:00:00Z" },
+  ];
+  expect(posts.sort(compareUpdatedDescending).map(p => p.id)).toEqual(["newer", "older"]);
+});
+
+test("equal update and publication instants preserve input order", () => {
+  const posts = [
+    { id: "z-first", published: "2026-01-01T09:00:00+09:00", updated: "2026-03-01" },
+    { id: "a-second", published: "2026-01-01T00:00:00Z", updated: "2026-03-01T09:00:00+09:00" },
+  ];
+  expect(compareUpdatedDescending(posts[0], posts[1])).toBe(0);
+  expect(posts.sort(compareUpdatedDescending).map(p => p.id)).toEqual(["z-first", "a-second"]);
 });
 
 test("standard.site rejects invalid source timestamps before record creation", () => {
