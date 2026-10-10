@@ -13,8 +13,6 @@ updated: "2026-10-10T16:55:03+09:00"
 
 ---
 
-<link rel="collection" href="urn:uuid:bbe44bfe-3a9c-410e-ad37-f1bf7402bce4" />
-
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon) [](https://indiemezzanine.nawashiro.dev)
 
 <p><img class="u-featured" src="https://img.nawashiro.dev/attachments/20261005-mezzanine.webp" alt="中二階でくつろぐふたり。"></p>
@@ -110,3 +108,5 @@ UI の問題だと気づいた。識別子は謎の文字列でよい。でも�
 ---
 
 [Bluesky](https://bsky.app/profile/nawashiro.dev/post/3mx7fmcceak2d) か [Fediverse](https://gamelinks007.net/@nawashiro/117393894253548842) から返信して会話に参加してください。
+
+<link rel="collection" href="urn:uuid:bbe44bfe-3a9c-410e-ad37-f1bf7402bce4" />
