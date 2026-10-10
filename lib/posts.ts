@@ -17,6 +17,7 @@ import remarkToc from "remark-toc";
 import rehypeSlug from "rehype-slug";
 import rehypeRaw from "rehype-raw";
 import { renderTwemojiInHast } from "./twemoji";
+import { readPostTimestamps, compareUpdatedDescending, type PostTimestamps } from "./post-timestamps";
 import {
   extractPSummaryFromHast,
   type HastNode,
@@ -24,9 +25,8 @@ import {
 const postsDirectory = path.join(process.cwd(), "posts");
 const postImageOrigin = "https://img.nawashiro.dev/attachments/";
 
-type PostFrontMatter = {
+type PostFrontMatter = PostTimestamps & {
   title: string;
-  date: string;
   image?: string;
   tags?: string[];
   [key: string]: unknown;
@@ -79,6 +79,7 @@ function getPostBasicData(fileName: string) {
   const matterResult = matter(
     fileContents.replaceAll(/(\[.+?\]\([a-z0-9\-]+)\.md(\))/g, "$1$2"),
   ) as GrayMatterFile<string> & { data: PostFrontMatter };
+  readPostTimestamps(matterResult.data, fileName);
 
   return {
     id,
@@ -103,7 +104,7 @@ export function getSortedPostsData(): PostMeta[] {
     };
   });
 
-  return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
+  return allPostsData.sort(compareUpdatedDescending);
 }
 
 export function getIndexPagesData(): PostMeta[] {
@@ -119,7 +120,7 @@ export function getIndexPagesData(): PostMeta[] {
     };
   });
 
-  return indexPosts.sort((a, b) => (a.date < b.date ? 1 : -1));
+  return indexPosts.sort(compareUpdatedDescending);
 }
 
 export function getAllPostIds() {
@@ -317,6 +318,7 @@ export type RenderedMarkdown = {
 export async function renderMarkdownDocument(
   content: string,
   location = "Markdown",
+  target: "page" | "feed" = "page",
 ): Promise<RenderedMarkdown> {
   const normalizedContent = addPostImagePrefix(content);
   let pSummary: string | undefined;
@@ -339,7 +341,9 @@ export async function renderMarkdownDocument(
     })
     .use(rehypeSlug)
     .use(rehypeKatex, { output: "mathml" })
-    .use(() => (tree: unknown) => renderTwemojiInHast(tree as Parameters<typeof renderTwemojiInHast>[0]))
+    .use(() => (tree: unknown) => {
+      if (target === "page") renderTwemojiInHast(tree as Parameters<typeof renderTwemojiInHast>[0]);
+    })
     .use(rehypeStringify);
 
   const processed = await processor.process(normalizedContent);
@@ -369,12 +373,13 @@ export function resolveOgImageUrl(
   }
 }
 
-export async function getPostData(id: string): Promise<PostData> {
+export async function getPostData(id: string, target: "page" | "feed" = "page"): Promise<PostData> {
   const { matterResult } = getPostBasicData(`${id}.md`);
 
   const { contentHtml, pSummary } = await renderMarkdownDocument(
     matterResult.content,
     id,
+    target,
   );
 
   // 画像URLを取得
@@ -425,6 +430,9 @@ export async function generateRssFeed() {
   const posts = getSortedPostsData().slice(0, 50);
   const siteURL = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
   const date = new Date();
+  const updated = posts.length
+    ? new Date(Math.max(...posts.map(post => new Date(post.updated).getTime())))
+    : new Date(0);
 
   const author = {
     name: "Nawashiro",
@@ -439,7 +447,7 @@ export async function generateRssFeed() {
     language: "ja",
     favicon: `${siteURL}/favicon.ico`,
     copyright: `All rights reserved ${date.getFullYear()}, ${author.name}`,
-    updated: date,
+    updated,
     generator: "Feed for Node.js",
     feedLinks: {
       rss2: `${siteURL}/rss/feed.xml`,
@@ -450,7 +458,7 @@ export async function generateRssFeed() {
   });
 
   for (const post of posts) {
-    const postData = await getPostData(post.id);
+    const postData = await getPostData(post.id, "feed");
     const url = `${siteURL}/posts/${post.id}`;
 
     feed.addItem({
@@ -460,7 +468,8 @@ export async function generateRssFeed() {
       description: postData.pSummary || generateExcerpt(postData.contentHtml),
       content: postData.contentHtml,
       author: [author],
-      date: new Date(post.date),
+      published: new Date(post.published),
+      date: new Date(post.updated),
     });
   }
 

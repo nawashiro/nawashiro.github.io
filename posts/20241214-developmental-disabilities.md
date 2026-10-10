@@ -1,6 +1,7 @@
 ---
 title: "発達障害の定義"
-date: "2024-12-14"
+published: "2024-12-14"
+updated: "2024-12-14"
 ---
 
 - categories:

@@ -1,6 +1,7 @@
 ---
 title: "三体 - 感想まとめ"
-date: "2025-02-12"
+published: "2025-02-12"
+updated: "2025-02-12"
 ---
 
 - categories:

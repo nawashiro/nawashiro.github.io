@@ -1,6 +1,7 @@
 ---
 title: "分散型SNS、NostrとATProtocolのちがい"
-date: "2026-03-20T17:31:05+09:00"
+published: "2026-03-20T17:31:05+09:00"
+updated: "2026-03-20T17:31:05+09:00"
 ---
 
 - categories:

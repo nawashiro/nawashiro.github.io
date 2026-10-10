@@ -1,6 +1,7 @@
 ---
 title: "なわしろの GitHub Pages & Next.js 個人サイト入門"
-date: "2023-09-27 02:44"
+published: "2023-09-27T02:44:00+09:00"
+updated: "2023-09-27T02:44:00+09:00"
 ---
 
 - categories:

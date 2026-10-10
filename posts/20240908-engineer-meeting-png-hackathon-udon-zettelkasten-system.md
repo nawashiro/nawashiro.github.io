@@ -1,6 +1,7 @@
 ---
 title: "エンジニア集会 × PNG ハッカソン「Udon Zettelkasten System」"
-date: "2024-09-08"
+published: "2024-09-08"
+updated: "2024-09-08"
 ---
 
 - categories:

@@ -1,6 +1,7 @@
 ---
 title: "Obsidianでツェッテルカステンをつけてみた"
-date: "2024-06-01"
+published: "2024-06-01"
+updated: "2024-06-01"
 ---
 
 - categories:

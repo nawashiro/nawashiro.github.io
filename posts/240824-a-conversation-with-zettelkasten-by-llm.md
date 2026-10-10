@@ -1,6 +1,7 @@
 ---
 title: "NotebookLMを通じたツェッテルカステンとの対話"
-date: "2024-08-24"
+published: "2024-08-24"
+updated: "2024-08-24"
 ---
 
 - categories:

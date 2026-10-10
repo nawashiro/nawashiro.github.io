@@ -1,6 +1,7 @@
 ---
 title: "エンジニア集会ハッカソン「NosHagaki」"
-date: "2024-03-25"
+published: "2024-03-25"
+updated: "2024-03-25"
 ---
 
 - categories:

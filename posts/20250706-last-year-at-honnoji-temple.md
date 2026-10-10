@@ -1,6 +1,7 @@
 ---
 title: "去年、本能寺で - 読書メモ"
-date: "2025-07-06"
+published: "2025-07-06"
+updated: "2025-07-06"
 ---
 
 - categories:

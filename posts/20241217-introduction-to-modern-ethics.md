@@ -1,6 +1,7 @@
 ---
 title: "現代倫理学入門 - 読書メモ"
-date: "2024-12-17"
+published: "2024-12-17"
+updated: "2024-12-17"
 ---
 
 - categories:

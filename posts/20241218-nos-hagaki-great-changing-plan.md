@@ -1,6 +1,7 @@
 ---
 title: "NosHagaki大改造計画"
-date: "2024-12-18"
+published: "2024-12-18"
+updated: "2024-12-18"
 ---
 
 - categories:

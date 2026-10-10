@@ -1,6 +1,7 @@
 ---
 title: "Misskey クライアント"
-date: "2023-09-11"
+published: "2023-09-11"
+updated: "2023-09-11"
 ---
 
 - categories:

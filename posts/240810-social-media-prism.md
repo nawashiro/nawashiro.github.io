@@ -1,6 +1,7 @@
 ---
 title: "SNSはなぜ人を過激化させるのか - 読書メモ"
-date: "2024-08-07"
+published: "2024-08-07"
+updated: "2024-08-07"
 ---
 
 - categories:

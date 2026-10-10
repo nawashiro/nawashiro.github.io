@@ -1,6 +1,7 @@
 ---
 title: "哲学対話イベントで使える Udon ギミックを作った話 まとめ"
-date: "2025-02-12"
+published: "2025-02-12"
+updated: "2025-02-12"
 ---
 
 - categories:

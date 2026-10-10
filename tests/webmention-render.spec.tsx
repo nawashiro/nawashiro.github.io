@@ -29,6 +29,43 @@ test("static Webmention rendering includes every matching entry", () => {
   expect(markup.match(/source\.example/g)).toHaveLength(31);
 });
 
+for (const property of ["in-reply-to", "like-of"]) {
+  test(`${property} links and unnamed author labels use wm-source instead of url`, () => {
+    const markup = renderToStaticMarkup(React.createElement(WebMention, {
+      mentions: [mention(1, {
+        "wm-property": property,
+        "wm-source": "https://verified.example/source",
+        url: "https://entry.example/post",
+        author: {},
+      })],
+      pageUrl: target,
+    }));
+
+    expect(markup).toContain('href="https://verified.example/source"');
+    expect(markup).toContain('rel="nofollow ugc"');
+    expect(markup).toContain('title="verified.example ');
+    expect(markup).not.toContain("entry.example");
+  });
+
+  for (const source of [undefined, "javascript:alert(1)"]) {
+    test(`${property} does not fall back to url when wm-source is ${source}`, () => {
+      const markup = renderToStaticMarkup(React.createElement(WebMention, {
+        mentions: [mention(1, {
+          "wm-property": property,
+          "wm-source": source,
+          url: "https://entry.example/post",
+        })],
+        pageUrl: target,
+      }));
+
+      expect(markup).toContain('href="#"');
+      expect(markup).toContain('rel="nofollow ugc"');
+      expect(markup).not.toContain("entry.example");
+      expect(markup).not.toContain("javascript:");
+    });
+  }
+}
+
 test("static Webmention rendering never requests the remote API", () => {
   const originalFetch = globalThis.fetch;
   let fetchCalls = 0;

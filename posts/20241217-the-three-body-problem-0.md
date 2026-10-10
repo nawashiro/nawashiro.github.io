@@ -1,6 +1,7 @@
 ---
 title: "三体0 球状閃電 - 読書メモ"
-date: "2024-12-17"
+published: "2024-12-17"
+updated: "2024-12-17"
 ---
 
 <a class="card md:card-side my-4 bg-white shadow-sm" href="https://yahoo.jp/6BREi8">

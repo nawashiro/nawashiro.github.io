@@ -1,6 +1,7 @@
 ---
 title: "ライトニングトーク「Bluesky / ATProtocol をながめる」"
-date: "2023-11-11"
+published: "2023-11-11"
+updated: "2023-11-11"
 ---
 
 - categories:

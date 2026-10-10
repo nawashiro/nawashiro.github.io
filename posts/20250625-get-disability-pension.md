@@ -1,6 +1,7 @@
 ---
 title: "なわしろの障害年金入門"
-date: "2025-06-25"
+published: "2025-06-25"
+updated: "2025-06-25"
 ---
 
 - categories:

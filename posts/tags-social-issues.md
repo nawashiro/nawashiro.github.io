@@ -1,6 +1,7 @@
 ---
 title: "🏷️社会問題"
-date: "2026-05-23T22:19:29+09:00"
+published: "2026-05-23T22:19:29+09:00"
+updated: "2026-05-23T22:19:29+09:00"
 ---
 - categories:
 	- [🏷️タグ](categories-tags.md)

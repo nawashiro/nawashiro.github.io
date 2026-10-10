@@ -84,7 +84,8 @@ export default function Post({ id, postData, webmentions }: PostProps) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
   const canonicalUrl = `${siteUrl}/posts/${id}`;
   const webmentionPageUrl = getWebmentionPageUrl(id);
-  const publishedDate = postData.date;
+  const publishedDate = postData.published;
+  const updatedDate = postData.updated;
 
   const description = resolvePostDescription(postData);
 
@@ -112,6 +113,7 @@ export default function Post({ id, postData, webmentions }: PostProps) {
       <Head>
         <title>{postData.title}</title>
         <meta property="article:published_time" content={publishedDate} />
+        <meta property="article:modified_time" content={updatedDate} />
         <meta property="article:author" content="Nawashiro" />
         {postData.tags &&
           postData.tags.map((tag) => (
@@ -139,7 +141,7 @@ export default function Post({ id, postData, webmentions }: PostProps) {
               headline: postData.title,
               description: description,
               datePublished: publishedDate,
-              dateModified: publishedDate,
+              dateModified: updatedDate,
               author: {
                 "@type": "Person",
                 name: "Nawashiro",
@@ -163,9 +165,10 @@ export default function Post({ id, postData, webmentions }: PostProps) {
       <SectionLayout>
         <article className="h-entry">
           <h1 className="p-name"><TwemojiText text={postData.title} /></h1>
-          <div className={cx(utilStyles.lightBlogText, utilStyles.lightText)}>
-            <Date dateString={postData.date} />
-          </div>
+          <dl className={cx(utilStyles.lightBlogText, utilStyles.lightText, "grid", "grid-cols-[5rem_1fr]", "gap-x-2")}>
+            <dt>Published</dt><dd><Date dateString={publishedDate} kind="published" /></dd>
+            <dt>Updated</dt><dd><Date dateString={updatedDate} kind="updated" /></dd>
+          </dl>
           <div className="p-author h-card hidden">
             <span
               className="p-name"

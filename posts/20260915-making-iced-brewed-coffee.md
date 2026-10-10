@@ -1,6 +1,7 @@
 ---
 title: "なわしろの氷出しコーヒー入門"
-date: "2026-09-15T18:40:55+09:00"
+published: "2026-09-15T18:40:55+09:00"
+updated: "2026-09-15T18:40:55+09:00"
 ---
 - categories:
 	- [🎞️写真ブログ](categories-photo-blogs.md)

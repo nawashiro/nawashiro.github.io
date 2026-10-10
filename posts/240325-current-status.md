@@ -1,6 +1,7 @@
 ---
 title: "近況など"
-date: "2024-03-25"
+published: "2024-03-25"
+updated: "2024-03-25"
 ---
 - categories:
 	- [📝覚え書き](categories-notes.md)

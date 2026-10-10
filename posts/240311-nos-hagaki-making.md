@@ -1,6 +1,7 @@
 ---
 title: "ハッカソンでバーチャルな文通ができるNostrクライアント「NosHagaki」を作ってみた"
-date: "2024-03-11"
+published: "2024-03-11"
+updated: "2024-03-11"
 ---
 
 - categories:

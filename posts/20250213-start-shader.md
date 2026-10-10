@@ -1,6 +1,7 @@
 ---
 title: "なわしろのシェーダー入門"
-date: "2025-02-13"
+published: "2025-02-13"
+updated: "2025-02-13"
 ---
 
 - categories:

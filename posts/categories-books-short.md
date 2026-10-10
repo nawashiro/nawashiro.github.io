@@ -1,6 +1,7 @@
 ---
 title: "💬読書メモ（短い）"
-date: "2025-07-06"
+published: "2025-07-06"
+updated: "2025-07-06"
 ---
 
 - categories:

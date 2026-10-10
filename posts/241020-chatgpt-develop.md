@@ -1,6 +1,7 @@
 ---
 title: "コード書くときChatGPTはどう使える？【WhiteCUL/春日部つむぎ】"
-date: "2024-10-20"
+published: "2024-10-20"
+updated: "2024-10-20"
 ---
 
 - categories:

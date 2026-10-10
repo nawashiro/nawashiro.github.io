@@ -1,6 +1,7 @@
 ---
 title: "映画『トラペジウム』を観て"
-date: "2024-06-03"
+published: "2024-06-03"
+updated: "2024-06-03"
 ---
 
 - categories:

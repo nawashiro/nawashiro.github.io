@@ -1,6 +1,7 @@
 ---
 title: "Mi eklernis Esperanton - alfabeto"
-date: "2023-10-01 21:44"
+published: "2023-10-01T21:44:00+09:00"
+updated: "2023-10-01T21:44:00+09:00"
 ---
 
 - categories:

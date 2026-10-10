@@ -1,6 +1,7 @@
 ---
 title: "哲学対話ってなんだ？ - 読書メモ"
-date: "2025-06-27"
+published: "2025-06-27"
+updated: "2025-06-27"
 ---
 
 - categories:

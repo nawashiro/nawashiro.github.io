@@ -1,6 +1,7 @@
 ---
 title: "魂をふるわせるマシン - 読書メモ"
-date: "2024-12-08"
+published: "2024-12-08"
+updated: "2024-12-08"
 ---
 
 - categories:

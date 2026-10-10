@@ -1,6 +1,7 @@
 ---
 title: "書籍情報共有アプリ"
-date: "2023-01-15"
+published: "2023-01-15"
+updated: "2023-01-15"
 ---
 
 - categories:

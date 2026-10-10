@@ -1,9 +1,10 @@
 ---
 title: "中二階について"
-date: "2026-10-05T20:18:01+09:00"
+published: "2026-10-05T20:18:01+09:00"
+updated: "2026-10-05T20:18:01+09:00"
 ---
 - categories:
-	- [📝覚え書き](categories-notes.md)
+	- [🔧技術](categories-develops.md)
 - tags:
 	- [🏷️ソーシャルメディア](tags-social-media.md)
 - topics:
@@ -24,17 +25,17 @@ date: "2026-10-05T20:18:01+09:00"
 
 ## これはなに？
 
-[Nighthaven](https://bsky.app/profile/moja.blue) 氏が考案した。[$cT7aZ](https://bsky.app/hashtag/%24CT7AZ) みたいなランダムな記号をタグにする。ハッシュタグと違ってテーマがない。勝手にどんどん作れる。
+[Nighthaven](https://bsky.app/profile/moja.blue) 氏が考案した。[`$cT7aZ`](https://bsky.app/hashtag/%24CT7AZ) みたいなランダムな記号をタグにする。ハッシュタグと違ってテーマがない。勝手にどんどん作れる。
 
 - 共通の話題がなんとなくある。明示はされない。
 - 小さな空間だ。巨大なフィードに放り出されない。
 - 誰でも始められる。識別子はただのランダムな文字列だ。
 
-> 使い方はシンプルだ。好きな文字列を決めて、紙にでも鉛筆で書いておけばいい。それが自分の周波数になる。あとは誰かがそこにチューニングしてくるのを待つだけ。ダイヤルが合った瞬間、TL を超えた接続が生まれる。 [$cT7aZ](https://bsky.app/hashtag/%24CT7AZ)
+> 使い方はシンプルだ。好きな文字列を決めて、紙にでも鉛筆で書いておけばいい。それが自分の周波数になる。あとは誰かがそこにチューニングしてくるのを待つだけ。ダイヤルが合った瞬間、TL を超えた接続が生まれる。 [`$cT7aZ`](https://bsky.app/hashtag/%24CT7AZ)
 > 
 > [Nighthaven, 2026](https://bsky.app/profile/moja.blue/post/3mfgwqvu5cs2e)
 
-> チャンネルにテーマを添えたのは入口にすぎない。 [$xS0yV](https://bsky.app/hashtag/%24XS0YV) に「最近知って驚いたこと」と書いたが、そこで何が語られるかは使う側が決める。揺れ動き、収斂し、また発散する。タグに意味がないからこそ、文脈の変化を受け入れられる。#読書 で映画の話をしたら場違いだ。中2階ではそれが起きない。 [$cT7aZ](https://bsky.app/hashtag/%24CT7AZ)
+> チャンネルにテーマを添えたのは入口にすぎない。 [`$xS0yV`](https://bsky.app/hashtag/%24XS0YV) に「最近知って驚いたこと」と書いたが、そこで何が語られるかは使う側が決める。揺れ動き、収斂し、また発散する。タグに意味がないからこそ、文脈の変化を受け入れられる。`#読書` で映画の話をしたら場違いだ。中 2 階ではそれが起きない。 [`$cT7aZ`](https://bsky.app/hashtag/%24CT7AZ)
 > 
 > [Nighthaven, 2026](https://bsky.app/profile/moja.blue/post/3mflid5kksk25)
 
@@ -62,26 +63,45 @@ UI の問題だと気づいた。識別子は謎の文字列でよい。でも�
 
 `@alice` みたいな、自分から名乗るプロフィールを用意しない。なりすましを防ぐためだ。`@a1ice` と `@alice` を見分ける人はそういない。
 
-## 個人サイトに導入できるか
-
-[私のサイトでは ATProtocol にサイトの目録を流している。](https://github.com/nawashiro/nawashiro.github.io/blob/main/lib/sync-standard-site.ts)
-
-まずは [Standard.site](https://standard.site/) を見てみる。`document.standard.site` に `tags` が定義されている。これを使うのが順当に見える。
-
-検索できるサービスがあるのか私は知らない。誰か教えてください。
-
 ## Indie Web に導入できるか
 
 [Octothorpe Protocol](https://docs.octothorp.es/) というのがある。比較的普及している個人サイト向けのハッシュタグだ。けれど、いささかシステムが巨大すぎるかもしれない。 [RDFトリプル](20260823-nawashiro-s-introduction-to-rdf-and-ontologies.md) まで使う本格仕様だ。[@asadaame5121.net](https://asadaame5121.net) さんの [入門記事](https://asadaame5121.net/Article/%E3%82%BF%E3%82%B0%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E5%80%8B%E4%BA%BA%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E3%81%A4%E3%81%AA%E3%81%92%E3%82%8B(%E3%83%96%E3%83%AD%E3%83%BC%E3%82%AC%E3%82%B9%E3%83%882026_day5).html) がわかりやすい。
 
 シンプルなプロトコルもある。[@maril.blue](https://maril.blue/) さんが [WebHashtag](https://github.com/marukun712/WebHashtag/tree/main) というのを作っていた。参加するにはリンクを貼ってクリックするだけ、配信は Atom だけ、というスリムな仕組みだ。
 
-## もっと単純にできる気もする
+## 新しくプロトコルをつくりたくない
 
-ここに [Webmention](20250709-share-your-indie-web-personal-website-on-social-media.md) するだけだ。
+既存の部品でどうにかできないか。これでリレーサーバーに [Webmention](20250709-share-your-indie-web-personal-website-on-social-media.md) するのはどうだろう。
 
-```html
-<a href="https://mezzanine.example.com/4dza2r378">中二階</a>
+```html:page.html
+<link rel="collection" href="urn:uuid:550e8400-e29b-41d4-a716-446655440000">
+<a href="https://example.com/"></a>
 ```
 
-設置する人はいくつか中二階ページを作っておけばいい。そこにフィードができる。
+`rel="collection"` は「私はこのリンク先に属しています」くらいの意味だ。`urn:uuid:...` は中二階の ID だ。ここではリンクとして書き込まれている。ランダムに作ったり、もらってきたりする。
+
+リレーは `rel="collection"` を見つけてグループ分けし、Atom を配信する。
+
+```xml:550e…0000.atom
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>urn:uuid:550e8400-e29b-41d4-a716-446655440000</id>
+
+  <link rel="self" href="https://example.com/550e8400-e29b-41d4-a716-446655440000.atom"/>
+
+  ...
+</feed>
+```
+
+複数リレーに送信してもよい。Atom の id は同じになるので、必要なら拾い集めてマージしても良い。
+
+```html:page.html
+<link rel="collection" href="urn:uuid:550e8400-e29b-41d4-a716-446655440000">
+<a href="https://example.com/"></a>
+<a href="https://alice.example.com/"></a>
+<a href="https://bob.example.com/"></a>
+```
+
+
+---
+
+[Bluesky](https://bsky.app/profile/nawashiro.dev/post/3mx7fmcceak2d) か [Fediverse](https://gamelinks007.net/@nawashiro/117393894253548842) から返信して会話に参加してください。
