@@ -1,7 +1,7 @@
 ---
-title: "中二階について"
-published: "2026-10-05T20:18:01+09:00"
-updated: "2026-10-05T20:18:01+09:00"
+title: "中2階について"
+published: 2026-10-05T20:18:01+09:00
+updated: 2026-10-10T16:39:24+09:00
 ---
 - categories:
 	- [🔧技術](categories-develops.md)
@@ -101,6 +101,11 @@ UI の問題だと気づいた。識別子は謎の文字列でよい。でも�
 <a href="https://bob.example.com/"></a>
 ```
 
+## 追記
+
+作ってみた。
+
+[nawashiro.dev/indie-mezzanine at main · Tangled](https://tangled.org/nawashiro.dev/indie-mezzanine)
 
 ---
 

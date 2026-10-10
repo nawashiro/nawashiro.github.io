@@ -63,3 +63,7 @@ updated: "2026-10-10T13:46:29+09:00"
 ```
 
 <ruby>桃<rt>もも</rt></ruby>
+
+---
+
+[Bluesky](https://bsky.app/profile/nawashiro.dev/post/3mxiy4qpssk2j) か [Fediverse](https://gamelinks007.net/@nawashiro/117415456267425199) から返信して会話に参加してください。
