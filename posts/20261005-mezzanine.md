@@ -1,7 +1,7 @@
 ---
 title: "中2階について"
 published: 2026-10-05T20:18:01+09:00
-updated: 2026-10-10T16:39:24+09:00
+updated: 2026-10-10T16:55:03+09:00
 ---
 - categories:
 	- [🔧技術](categories-develops.md)
@@ -13,7 +13,9 @@ updated: 2026-10-10T16:39:24+09:00
 
 ---
 
-[](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon)
+<link rel="collection" href="urn:uuid:bbe44bfe-3a9c-410e-ad37-f1bf7402bce4" />
+
+[](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon) [](https://indiemezzanine.nawashiro.dev)
 
 <p><img class="u-featured" src="https://img.nawashiro.dev/attachments/20261005-mezzanine.webp" alt="中二階でくつろぐふたり。"></p>
 
@@ -74,7 +76,7 @@ UI の問題だと気づいた。識別子は謎の文字列でよい。でも�
 既存の部品でどうにかできないか。これでリレーサーバーに [Webmention](20250709-share-your-indie-web-personal-website-on-social-media.md) するのはどうだろう。
 
 ```html:page.html
-<link rel="collection" href="urn:uuid:550e8400-e29b-41d4-a716-446655440000">
+<link rel="collection" href="urn:uuid:bbe44bfe-3a9c-410e-ad37-f1bf7402bce4" />
 <a href="https://example.com/"></a>
 ```
 
@@ -85,9 +87,7 @@ UI の問題だと気づいた。識別子は謎の文字列でよい。でも�
 ```xml:550e…0000.atom
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>urn:uuid:550e8400-e29b-41d4-a716-446655440000</id>
-
-  <link rel="self" href="https://example.com/550e8400-e29b-41d4-a716-446655440000.atom"/>
-
+  <link rel="self" href="urn:uuid:bbe44bfe-3a9c-410e-ad37-f1bf7402bce4" />
   ...
 </feed>
 ```
@@ -95,7 +95,7 @@ UI の問題だと気づいた。識別子は謎の文字列でよい。でも�
 複数リレーに送信してもよい。Atom の id は同じになるので、必要なら拾い集めてマージしても良い。
 
 ```html:page.html
-<link rel="collection" href="urn:uuid:550e8400-e29b-41d4-a716-446655440000">
+<link rel="collection" href="urn:uuid:bbe44bfe-3a9c-410e-ad37-f1bf7402bce4" />
 <a href="https://example.com/"></a>
 <a href="https://alice.example.com/"></a>
 <a href="https://bob.example.com/"></a>

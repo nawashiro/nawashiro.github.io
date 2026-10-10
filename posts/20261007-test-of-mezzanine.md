@@ -11,6 +11,6 @@ updated: "2026-10-07T19:53:48+09:00"
 
 ---
 
-<link rel="collection" href="urn:uuid:bbe44bfe-3a9c-410e-ad37-f1bf7402bce4">
+<link rel="collection" href="urn:uuid:bbe44bfe-3a9c-410e-ad37-f1bf7402bce4" />
 
 [mezzanine](https://indiemezzanine.nawashiro.dev/) のテストをしているよ。
