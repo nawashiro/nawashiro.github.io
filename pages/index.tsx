@@ -45,6 +45,7 @@ export default function Home({
 
   return (
     <Layout>
+      <link rel="indieauth-metadata" href="https://indiekey.id/.well-known/oauth-authorization-server/s/vy5ssgmrhye4wyae" />
       <a
         rel="me"
         href="https://gamelinks007.net/@nawashiro"
