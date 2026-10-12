@@ -45,26 +45,6 @@ export default function Home({
 
   return (
     <Layout>
-      <link rel="indieauth-metadata" href="https://indiekey.id/.well-known/oauth-authorization-server/s/vy5ssgmrhye4wyae" />
-      <a
-        rel="me"
-        href="https://gamelinks007.net/@nawashiro"
-        style={{ display: "none" }}
-      ></a>
-      <a
-        rel="me"
-        href="https://github.com/nawashiro"
-        style={{ display: "none" }}
-      >
-        github.com/nawashiro
-      </a>
-      <link rel="pgpkey" href={`${siteUrl}/openpgp_publickey.asc`} style={{ display: "none" }} />
-      <div className="h-card" style={{ display: "none" }}>
-        <a className="p-name u-url" href={siteUrl}>
-          Nawashiro
-        </a>
-        <span className="p-note">{note}</span>
-      </div>
       <Head>
         <title>{siteTitle}</title>
         <meta name="description" content={description} />
@@ -86,6 +66,12 @@ export default function Home({
             },
           })}
         </script>
+
+        <link rel="me" href="https://gamelinks007.net/@nawashiro" />
+        <link rel="me" href="https://github.com/nawashiro" />
+        <link rel="pgpkey" href={`${siteUrl}/openpgp_publickey.asc`} />
+        <link rel="indieauth-metadata" href="https://indiekey.id/.well-known/oauth-authorization-server/s/vy5ssgmrhye4wyae" />
+
         <link
           rel="alternate"
           type="application/rss+xml"
@@ -105,6 +91,14 @@ export default function Home({
           href={`${siteUrl}/rss/feed.json`}
         />
       </Head>
+
+      <div className="h-card" style={{ display: "none" }}>
+        <a className="p-name u-url" href={siteUrl}>
+          Nawashiro
+        </a>
+        <span className="p-note">{note}</span>
+      </div>
+
       <SectionLayout className="pb-20">
         <section className="hero">
           <div className="w-full space-y-3">
