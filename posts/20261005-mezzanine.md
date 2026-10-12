@@ -85,7 +85,7 @@ UI の問題だと気づいた。識別子は謎の文字列でよい。でも�
 ```xml:550e…0000.atom
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>urn:uuid:550e8400-e29b-41d4-a716-446655440000</id>
-  <link rel="self" href="urn:uuid:bbe44bfe-3a9c-410e-ad37-f1bf7402bce4" />
+  <link rel="self" href="https://relay.example/collections/bbe44bfe-3a9c-410e-ad37-f1bf7402bce4.atom" />
   ...
 </feed>
 ```
