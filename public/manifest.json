@@ -1,5 +1,5 @@
 {
-  "name": "NAWASHIRO - 個人サイト",
+  "name": "NAWASHIROの個人サイト",
   "short_name": "NAWASHIRO",
   "description": "エンジニア・プログラマーNawashiroの個人サイト。プロジェクト、デジタルガーデン、技術ブログなど。",
   "start_url": "/",
@@ -8,9 +8,9 @@
   "theme_color": "#48731d",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "any",
-      "type": "image/x-icon"
+      "src": "/icon.svg",
+      "sizes": "any"
     }
-  ]
+  ],
+  "lang": "ja-JP"
 }

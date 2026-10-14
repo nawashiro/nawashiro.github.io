@@ -76,7 +76,7 @@ export default function Layout({
         onLoad={handleKofiReady}
       />
       <Head>
-        <link rel="icon" href={`${basePath}/favicon.ico`} />
+        <link rel="icon" href={`${basePath}/icon.svg`} />
         <title>{pageTitle}</title>
         <meta name="description" content={description} />
         <meta property="og:type" content={blog ? "article" : "website"} />
