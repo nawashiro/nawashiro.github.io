@@ -14,7 +14,7 @@ updated: "2026-10-14T22:40:06+09:00"
 
 [](https://brid.gy/publish/bluesky) [](https://brid.gy/publish/mastodon) [](https://indiemezzanine.nawashiro.dev)
 
-<img class="u-featured hidden" src="https://img.nawashiro.dev/attachments/20261014-i-m-created-favicon.webp" alt="3案検討した。蓋付きゴミ箱、キャリー付きゴミ箱の塗りつぶしあり、キャリー付きゴミ箱の枠線のみがあった。" /> <!-- 添付画像 -->
+<img class="u-featured hidden" src="https://img.nawashiro.dev/attachments/20261014-i-m-created-favicon.webp" alt="3案検討した。蓋付きゴミ箱、キャリー付きゴミ箱の塗りつぶしあり、キャリー付きゴミ箱の枠線のみがあった。" style="display:none" /> <!-- 添付画像 -->
 
 ![3案検討した。蓋付きゴミ箱、キャリー付きゴミ箱の塗りつぶしあり、キャリー付きゴミ箱の枠線のみがあった。](20261014-i-m-created-favicon.webp)
 
