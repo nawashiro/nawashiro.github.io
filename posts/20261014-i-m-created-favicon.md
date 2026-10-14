@@ -35,3 +35,7 @@ updated: "2026-10-14T22:40:06+09:00"
 ざっとこんなもん。
 
 [^1]: 今回の完成品は 2 ピクセル追加して、最終的に 3 ピクセルの隙間が空いている。
+
+---
+
+[Bluesky](https://bsky.app/profile/nawashiro.dev/post/3mxtqu2qu4i2o) か [Fediverse](https://gamelinks007.net/@nawashiro/117439721484135789) から返信して会話に参加してください。
