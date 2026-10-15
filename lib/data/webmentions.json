@@ -735,6 +735,34 @@
       "wm-received": "2026-10-02T00:53:12Z",
       "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3mwpt2ph5a22a/did%253Aplc%253Aql5sv4umsrxadcsgtz3m5mq6",
       "wm-target": "https://nawashiro.dev/posts/20260930-server-side-request-forgery"
+    },
+    {
+      "author": {
+        "name": "silverbirder",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:d7jvwod6yzhk3bfooafq6tdd/bafkreideezv5h5drqqt3746ie5hxshmi3cvrqgnrk6w2udfpmrgf7ocfii"
+      },
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3mxtqu2qu4i2o#liked_by_did:plc:d7jvwod6yzhk3bfooafq6tdd",
+      "wm-id": 2040728,
+      "wm-property": "like-of",
+      "wm-received": "2026-10-15T03:18:18Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3mxtqu2qu4i2o/did%253Aplc%253Ad7jvwod6yzhk3bfooafq6tdd",
+      "wm-target": "https://nawashiro.dev/posts/20261014-i-m-created-favicon"
+    },
+    {
+      "author": {
+        "name": "Pablo Murad",
+        "photo": ""
+      },
+      "content": {
+        "text": "Go to https://desk.pbl.md and you'll find something a little unusual: a feed that doesn't tell you what it's about. There are no categories…"
+      },
+      "published": "2026-10-15T06:31:00+00:00",
+      "url": "https://pablomurad.com/a-feed-that-doesnt-need-a-topic/",
+      "wm-id": 2040897,
+      "wm-property": "mention-of",
+      "wm-received": "2026-10-15T06:32:01Z",
+      "wm-source": "https://pablomurad.com/a-feed-that-doesnt-need-a-topic/",
+      "wm-target": "https://nawashiro.dev/posts/20261005-mezzanine"
     }
   ],
   "version": 1
