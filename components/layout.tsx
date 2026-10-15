@@ -77,6 +77,7 @@ export default function Layout({
       />
       <Head>
         <link rel="icon" href={`${basePath}/icon.svg`} />
+        <link rel="icon" href={`${basePath}/favicon.ico`} />
         <title>{pageTitle}</title>
         <meta name="description" content={description} />
         <meta property="og:type" content={blog ? "article" : "website"} />

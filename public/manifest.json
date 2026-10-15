@@ -10,6 +10,10 @@
     {
       "src": "/icon.svg",
       "sizes": "any"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "any"
     }
   ],
   "lang": "ja-JP"
