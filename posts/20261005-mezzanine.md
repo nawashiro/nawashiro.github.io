@@ -1,7 +1,7 @@
 ---
 title: "中2階について"
 published: "2026-10-05T20:18:01+09:00"
-updated: "2026-10-10T16:55:03+09:00"
+updated: "2026-10-18T00:33:43+09:00"
 ---
 - categories:
 	- [🔧技術](categories-develops.md)
@@ -82,9 +82,9 @@ UI の問題だと気づいた。識別子は謎の文字列でよい。でも�
 
 リレーは `rel="collection"` を見つけてグループ分けし、Atom を配信する。
 
-```xml:550e…0000.atom
+```xml:bbe4…bce4.atom
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>urn:uuid:550e8400-e29b-41d4-a716-446655440000</id>
+  <id>urn:uuid:bbe44bfe-3a9c-410e-ad37-f1bf7402bce4</id>
   <link rel="self" href="https://example.com/collections/bbe44bfe-3a9c-410e-ad37-f1bf7402bce4.atom" />
   ...
 </feed>
