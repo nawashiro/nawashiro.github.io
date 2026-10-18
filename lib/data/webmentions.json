@@ -763,6 +763,18 @@
       "wm-received": "2026-10-15T06:32:01Z",
       "wm-source": "https://pablomurad.com/a-feed-that-doesnt-need-a-topic/",
       "wm-target": "https://nawashiro.dev/posts/20261005-mezzanine"
+    },
+    {
+      "author": {
+        "name": "椎野（si-no）",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:u7xdvvt2zpeaj5xke4esgcnb/bafkreia254vz6gn3ffk5pvfhok2nsb7t3tvredmovfro5vapyai3cwgp6a"
+      },
+      "url": "https://bsky.app/profile/nawashiro.dev/post/3my3l7ga6yc2d#liked_by_did:plc:u7xdvvt2zpeaj5xke4esgcnb",
+      "wm-id": 2041717,
+      "wm-property": "like-of",
+      "wm-received": "2026-10-17T22:28:55Z",
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:oszui3uk43smfv7nihtli3pq/at%253A%252F%252Fdid%253Aplc%253Aoszui3uk43smfv7nihtli3pq%252Fapp.bsky.feed.post%252F3my3l7ga6yc2d/did%253Aplc%253Au7xdvvt2zpeaj5xke4esgcnb",
+      "wm-target": "https://nawashiro.dev/posts/20261017-pass"
     }
   ],
   "version": 1
