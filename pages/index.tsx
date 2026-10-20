@@ -67,12 +67,20 @@ export default function Home({
           })}
         </script>
 
+        {/* indie auth */}
+
         <link rel="me" href="https://gamelinks007.net/@nawashiro" />
         <link rel="me" href="https://github.com/nawashiro" />
         <link rel="pgpkey" href={`${siteUrl}/openpgp_publickey.asc`} />
         <link rel="indieauth-metadata" href="https://indiekey.id/.well-known/oauth-authorization-server/s/vy5ssgmrhye4wyae" />
         <link rel="authorization_endpoint" href="https://indiekey.id/s/vy5ssgmrhye4wyae/auth" />
         <link rel="token_endpoint" href="https://indiekey.id/token" />
+
+        {/* indie app */}
+
+        <link rel="microsub" href="https://aperture.p3k.io/microsub/1120" />
+
+        {/* feed */}
 
         <link
           rel="alternate"
