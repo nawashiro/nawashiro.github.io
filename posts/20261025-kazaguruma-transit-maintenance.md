@@ -66,7 +66,7 @@ Next.js バージョンを `15.5.28` か `16.4.1` にアプデしてね。
 
 リリースノートからの抜粋です。
 
-### [v1.5.7](https://github.com/nawashiro/kazaguruma-transit/releases/tag/v1.5.8) - 脆弱性対応
+### [v1.5.7](https://github.com/nawashiro/kazaguruma-transit/releases/tag/v1.5.7) - 脆弱性対応
 
 **必ず、絶対に。** 使っている Node.js とかは最新版を取り込んでね。ビルド時に `--pull --no-cache` を指定すればいいよ。
 
@@ -82,7 +82,7 @@ DB は再生成するキャッシュとして扱います。旧 DB のデータ�
 
 npm audit は全依存・開発依存を除く両方で moderate 2 件です。high・critical は 0 件です。Google Maps 配下の decode-uri-component と query-string は、修正版への置換で互換性の不一致が発生したため保留しました。
 
-### [v1.5.8](https://github.com/nawashiro/kazaguruma-transit/releases/tag/v1.5.7) - 交通 DB 再生成
+### [v1.5.8](https://github.com/nawashiro/kazaguruma-transit/releases/tag/v1.5.8) - 交通 DB 再生成
 
 交通 DB を起動のたびに GTFS から再生成するよう変更しました。
 
