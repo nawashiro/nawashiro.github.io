@@ -15,9 +15,10 @@ updated: "2026-02-12T17:35:20+09:00"
 
 ![千代田区地域福祉交通「風ぐるま」](20260212-Hitachi_Jidosha_Kotsu_1555_Kazaguruma_Poncho_HX.webp)
 
+画像: <a href="https://commons.wikimedia.org/wiki/File:Hitachi_Jidosha_Kotsu_1555_Kazaguruma_Poncho_HX.jpg">Comyu</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
+
 <p class="e-bridgy-mastodon-content e-bridgy-bluesky-content">驚き屋構文というのが流行っていたので私も書いてもらった。
-Gemini が一番上手かったです。ところでオープンソースの極みってなに？
-画像: コミュ, CC BY-SA 4.0</p>
+Gemini が一番上手かったです。ところでオープンソースの極みってなに？</p>
 
 ## TOC
 
